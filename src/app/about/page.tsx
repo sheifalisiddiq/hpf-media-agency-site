@@ -10,9 +10,9 @@ export default function About() {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-red-600/10 blur-[150px] rounded-full"></div>
           <div className="absolute bottom-0 w-full h-[500px] bg-gradient-to-t from-red-900/20 to-transparent"></div>
         </div>
-        <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
+        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
           <span className="text-sm uppercase tracking-[0.3em] text-primary font-bold mb-6 block">Legacy Architecture</span>
-          <h1 className="text-6xl md:text-8xl font-black tracking-tighter text-on-surface leading-[0.9] mb-8 text-glow font-headline">
+          <h1 className="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter text-on-surface leading-[0.9] mb-8 text-glow font-headline">
             THE ARCHITECTS OF AUTHORITY
           </h1>
           <p className="text-on-surface-variant text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed mb-12">
@@ -27,8 +27,8 @@ export default function About() {
       </section>
 
       {/* Founder Section: Mo Bilal */}
-      <section className="relative py-32 bg-black overflow-hidden border-y border-white/5 text-on-surface">
-        <div className="max-w-screen-2xl mx-auto px-12 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+      <section className="relative py-20 lg:py-32 bg-black overflow-hidden border-y border-white/5 text-on-surface">
+        <div className="max-w-screen-2xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="relative group">
             <div className="absolute -inset-4 bg-red-600/20 blur-3xl opacity-50 rounded-full group-hover:opacity-70 transition-opacity"></div>
             <div className="relative aspect-[4/5] rounded-xl overflow-hidden shadow-2xl border border-white/5">
@@ -47,7 +47,7 @@ export default function About() {
           <div className="space-y-8">
             <div className="space-y-4">
               <h2 className="text-primary font-bold tracking-widest uppercase text-sm">Meet the Visionary</h2>
-              <h3 className="text-5xl md:text-6xl font-black tracking-tighter text-on-surface font-headline">Mo Bilal</h3>
+              <h3 className="text-4xl md:text-6xl font-black tracking-tighter text-on-surface font-headline">Mo Bilal</h3>
               <div className="w-20 h-1 bg-primary-container"></div>
             </div>
             <div className="space-y-6 text-on-surface-variant leading-relaxed text-lg font-light">
@@ -76,10 +76,10 @@ export default function About() {
       </section>
 
       {/* Why Us Section */}
-      <section className="py-32 bg-black text-on-surface">
-        <div className="max-w-screen-2xl mx-auto px-12">
-          <div className="mb-20 text-center max-w-3xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-on-surface mb-6 uppercase font-headline">Why the Elite Choose HPF</h2>
+      <section className="py-20 lg:py-32 bg-black text-on-surface">
+        <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
+          <div className="mb-16 lg:mb-20 text-center max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-on-surface mb-6 uppercase font-headline">Why the Elite Choose HPF</h2>
             <p className="text-on-surface-variant font-light text-lg">Precision. Exclusivity. Results. We operate at the intersection of high-art and high-conversion.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

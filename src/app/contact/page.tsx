@@ -1,7 +1,7 @@
 export default function Contact() {
   return (
     <>
-      <section className="min-h-screen cinematic-bg flex items-center justify-center py-20 px-6 md:px-12 overflow-hidden relative text-white">
+      <section className="min-h-screen cinematic-bg flex items-center justify-center py-20 px-4 md:px-12 overflow-hidden relative text-white">
         {/* Decorative background element */}
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20">
           <div className="absolute -top-24 -left-24 w-96 h-96 bg-primary-container rounded-full blur-[160px]"></div>
@@ -12,7 +12,7 @@ export default function Contact() {
           <div className="space-y-12">
             <div className="space-y-4">
               <span className="text-sm uppercase tracking-[0.2em] text-primary font-bold">Strategic Partnership</span>
-              <h1 className="text-5xl md:text-7xl font-black tracking-tighter leading-none text-white font-headline">
+              <h1 className="text-4xl md:text-7xl font-black tracking-tighter leading-none text-white font-headline">
                 Command Your<br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-container">Market Dominance</span>
               </h1>
@@ -49,7 +49,7 @@ export default function Contact() {
           </div>
           
           {/* Right Side: Form */}
-          <div className="glass-panel p-8 md:p-12 rounded-lg border border-white/5 shadow-[0_48px_48px_rgba(0,0,0,0.5)]">
+          <div className="glass-panel p-6 md:p-12 rounded-lg border border-white/5 shadow-[0_48px_48px_rgba(0,0,0,0.5)]">
             <h2 className="text-2xl font-bold tracking-tight mb-8 text-white font-headline">Book Your Strategy Audit</h2>
             <form className="space-y-8">
               <div className="relative">

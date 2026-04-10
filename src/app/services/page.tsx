@@ -7,7 +7,7 @@ export default function Services() {
       <section className="relative min-h-[921px] flex flex-col justify-center items-center text-center px-4 pt-20 red-gradient-bg bg-black text-on-surface">
         <div className="max-w-4xl mx-auto z-10">
           <span className="text-sm uppercase tracking-[0.3em] text-primary mb-6 block font-medium">Dubai / Abu Dhabi / Global</span>
-          <h1 className="text-6xl md:text-8xl font-black tracking-tighter font-headline mb-8 leading-[0.95] text-on-surface">
+          <h1 className="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter font-headline mb-8 leading-[0.95] text-on-surface">
             Precision-Engineered <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-container to-red-400">Dominance</span>
           </h1>
           <p className="text-neutral-400 max-w-2xl mx-auto leading-relaxed mb-10 text-lg">
@@ -24,17 +24,17 @@ export default function Services() {
       </section>
 
       {/* Core Services Bento Grid */}
-      <section className="py-24 px-8 max-w-screen-2xl mx-auto bg-black text-on-surface">
-        <div className="flex flex-col mb-16">
-          <h2 className="text-4xl font-headline font-bold mb-4">Core Ecosystem</h2>
+      <section className="py-20 lg:py-24 px-6 md:px-8 max-w-screen-2xl mx-auto bg-black text-on-surface">
+        <div className="flex flex-col mb-12 lg:mb-16">
+          <h2 className="text-3xl lg:text-4xl font-headline font-bold mb-4">Core Ecosystem</h2>
           <div className="w-24 h-1 bg-red-600"></div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-          <div className="md:col-span-7 glass-card rounded-lg p-10 flex flex-col justify-between overflow-hidden relative group">
+          <div className="md:col-span-7 glass-card rounded-lg p-6 md:p-10 flex flex-col justify-between overflow-hidden relative group">
             <div className="z-10">
-              <span className="material-symbols-outlined text-primary text-4xl mb-6">dynamic_feed</span>
-              <h3 className="text-3xl font-headline font-bold mb-4">Social Media Marketing / Organic Content</h3>
-              <p className="text-neutral-400 text-lg mb-8 max-w-md">Aggressive organic scaling through high-retention storytelling. We don't chase trends; we set them for the UAE market.</p>
+              <span className="material-symbols-outlined text-primary text-3xl md:text-4xl mb-6">dynamic_feed</span>
+              <h3 className="text-2xl md:text-3xl font-headline font-bold mb-4">Social Media Marketing / Organic Content</h3>
+              <p className="text-neutral-400 text-base md:text-lg mb-8 max-w-md">Aggressive organic scaling through high-retention storytelling. We don't chase trends; we set them for the UAE market.</p>
             </div>
             <Image
               fill
@@ -47,10 +47,10 @@ export default function Services() {
             </div>
           </div>
           
-          <div className="md:col-span-5 glass-card rounded-lg p-10 flex flex-col relative group overflow-hidden bg-black">
+          <div className="md:col-span-5 glass-card rounded-lg p-6 md:p-10 flex flex-col relative group overflow-hidden bg-black">
             <div className="z-10">
-              <span className="material-symbols-outlined text-primary text-4xl mb-6">movie_filter</span>
-              <h3 className="text-3xl font-headline font-bold mb-4">Content Creation</h3>
+              <span className="material-symbols-outlined text-primary text-3xl md:text-4xl mb-6">movie_filter</span>
+              <h3 className="text-2xl md:text-3xl font-headline font-bold mb-4">Content Creation</h3>
               <p className="text-neutral-400 mb-8">4K Cinematic production tailored for the discerning UAE audience. Commercial grade visual assets that demand attention.</p>
             </div>
             <Image
@@ -64,18 +64,18 @@ export default function Services() {
             </div>
           </div>
 
-          <div className="md:col-span-6 glass-card rounded-lg p-10 flex flex-col group border-l-4 border-l-primary-container bg-black">
-            <span className="material-symbols-outlined text-primary text-4xl mb-6">workspace_premium</span>
-            <h3 className="text-2xl font-headline font-bold mb-4">Personal Branding</h3>
+          <div className="md:col-span-6 glass-card rounded-lg p-6 md:p-10 flex flex-col group border-l-4 border-l-primary-container bg-black">
+            <span className="material-symbols-outlined text-primary text-3xl md:text-4xl mb-6">workspace_premium</span>
+            <h3 className="text-xl md:text-2xl font-headline font-bold mb-4">Personal Branding</h3>
             <p className="text-neutral-400 mb-6 flex-grow">Transforming executives into industry icons. We manage your reputation, voice, and presence across digital landscapes.</p>
             <div className="mt-auto">
               <button className="text-primary font-bold inline-flex items-center gap-2 group-hover:translate-x-2 transition-transform">Claim Authority <span className="material-symbols-outlined">trending_flat</span></button>
             </div>
           </div>
 
-          <div className="md:col-span-6 glass-card rounded-lg p-10 flex flex-col group border-l-4 border-l-primary-container bg-black">
-            <span className="material-symbols-outlined text-primary text-4xl mb-6">language</span>
-            <h3 className="text-2xl font-headline font-bold mb-4">SEO & Web Design</h3>
+          <div className="md:col-span-6 glass-card rounded-lg p-6 md:p-10 flex flex-col group border-l-4 border-l-primary-container bg-black">
+            <span className="material-symbols-outlined text-primary text-3xl md:text-4xl mb-6">language</span>
+            <h3 className="text-xl md:text-2xl font-headline font-bold mb-4">SEO & Web Design</h3>
             <p className="text-neutral-400 mb-6 flex-grow">High-performance digital flagships that convert. Engineered for speed, optimized for search dominance.</p>
             <div className="mt-auto">
               <button className="text-primary font-bold inline-flex items-center gap-2 group-hover:translate-x-2 transition-transform">Launch Site <span className="material-symbols-outlined">trending_flat</span></button>

@@ -122,20 +122,20 @@ export default function HomeExperience() {
     <>
       <section
         ref={heroRef}
-        className="relative flex min-h-[110svh] items-end overflow-hidden bg-black px-6 pb-16 pt-28 text-on-surface md:px-10 lg:px-14"
+        className="relative flex min-h-screen items-center overflow-hidden bg-black px-4 py-20 text-on-surface sm:px-6 lg:px-8"
       >
         <ParallaxBackground className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(255,84,73,0.18),transparent_38%),linear-gradient(180deg,rgba(255,84,73,0.08),transparent_28%),linear-gradient(180deg,#010101_0%,#000_55%,#000_100%)]" />
         <div className="absolute inset-0 grid-pattern opacity-20" />
         <div className="absolute inset-x-0 top-[18%] h-[32rem] bg-[radial-gradient(circle,rgba(255,84,73,0.24),transparent_62%)] blur-3xl" />
 
-        <div className="relative z-10 mx-auto grid w-full max-w-7xl gap-14 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.8fr)] lg:items-end">
-          <motion.div style={{ y: heroTextY, opacity: heroTextOpacity }} className="space-y-8">
-            <ScrollReveal className="space-y-6" distance={36}>
+        <div className="relative z-10 mx-auto grid w-full max-w-7xl gap-14 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] lg:items-center">
+          <motion.div style={{ y: heroTextY, opacity: heroTextOpacity }} className="space-y-10">
+            <ScrollReveal className="space-y-8" distance={20}>
               <div className="inline-flex items-center gap-3 border border-white/10 bg-white/[0.04] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.35em] text-white/70 backdrop-blur-md">
                 <span className="h-2 w-2 rounded-full bg-primary" />
                 High Performance Narrative Systems
               </div>
-              <h1 className="max-w-5xl text-6xl font-black uppercase leading-[0.84] tracking-[-0.08em] text-white md:text-8xl xl:text-[8.5rem] font-headline">
+              <h1 className="max-w-4xl text-4xl font-black uppercase leading-[0.9] tracking-[-0.06em] text-white sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-headline">
                 Move Like A
                 <br />
                 Brand People
