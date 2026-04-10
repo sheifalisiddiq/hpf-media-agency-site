@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import {
   motion,
   type MotionValue,
@@ -14,6 +15,7 @@ type StoryItem = {
   label: string;
   title: string;
   description: string;
+  image: string;
 };
 
 type StickyStoryProps = {
@@ -44,11 +46,15 @@ export function StickyStory({
   return (
     <section
       ref={ref}
-      className="relative bg-black px-6 py-24 text-on-surface md:px-10 lg:px-14"
+      className="relative overflow-hidden bg-[linear-gradient(180deg,#000000_0%,#0d0d0d_50%,#000000_100%)] px-6 py-24 text-on-surface md:px-10 lg:px-14"
     >
+      {/* Background Glows */}
+      <div className="pointer-events-none absolute left-[-10%] top-1/4 h-[500px] w-[500px] rounded-full bg-primary/10 blur-[120px]" />
+      <div className="pointer-events-none absolute right-[-10%] top-3/4 h-[400px] w-[400px] rounded-full bg-primary-container/10 blur-[100px]" />
+
       <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
         <div className="lg:sticky lg:top-24 lg:h-[calc(100vh-8rem)] lg:self-start">
-          <div className="flex h-full flex-col justify-between rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 shadow-[0_30px_120px_rgba(255,80,80,0.08)] backdrop-blur-md">
+          <div className="flex h-full flex-col justify-between rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 shadow-[0_30px_120px_rgba(0,0,0,0.4)] backdrop-blur-xl">
             <div className="space-y-6">
               <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary">
                 {eyebrow}
@@ -63,8 +69,8 @@ export function StickyStory({
             <div className="space-y-4">
               <div className="h-px w-full bg-white/10" />
               <div className="flex items-center justify-between text-[11px] font-bold uppercase tracking-[0.35em] text-white/50">
-                <span>Scroll Sequence</span>
-                <span>{items.length} Frames</span>
+                <span>Phase Progress</span>
+                <span>{items.length} Chapters</span>
               </div>
               <div className="h-1.5 overflow-hidden rounded-full bg-white/10">
                 <motion.div
@@ -136,19 +142,31 @@ function StickyStoryCard({
 
   return (
     <motion.article
-      className="relative min-h-[70vh] rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/[0.05] to-transparent p-8 md:p-12"
+      className="group relative flex min-h-[80vh] flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] shadow-xl backdrop-blur-xl transition-all duration-300 hover:bg-white/[0.04] hover:border-white/20"
       style={{ opacity, y, scale }}
     >
-      <div className="space-y-8">
-        <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-primary">
-          {item.label}
-        </p>
-        <h3 className="max-w-2xl text-3xl font-black uppercase tracking-[-0.05em] text-white md:text-5xl font-headline">
-          {item.title}
-        </h3>
-        <p className="max-w-2xl text-lg leading-8 text-on-surface-variant">
-          {item.description}
-        </p>
+      <div className="relative aspect-video w-full overflow-hidden border-b border-white/5">
+        <Image
+          src={item.image}
+          alt={item.title}
+          fill
+          className="object-cover brightness-[0.7] saturate-[0.85] transition-transform duration-700 group-hover:scale-105 group-hover:brightness-90"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
+      </div>
+
+      <div className="flex flex-1 flex-col justify-end p-8 md:p-12">
+        <div className="space-y-6">
+          <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-primary">
+            {item.label}
+          </p>
+          <h3 className="max-w-2xl text-3xl font-black uppercase tracking-[-0.05em] text-white md:text-5xl font-headline">
+            {item.title}
+          </h3>
+          <p className="max-w-2xl text-lg leading-8 text-on-surface-variant">
+            {item.description}
+          </p>
+        </div>
       </div>
     </motion.article>
   );
