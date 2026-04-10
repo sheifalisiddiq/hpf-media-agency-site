@@ -1,0 +1,233 @@
+import type { ReactElement, SVGProps } from "react";
+
+type IconName =
+  | "architecture"
+  | "movie_filter"
+  | "diamond"
+  | "dynamic_feed"
+  | "trending_flat"
+  | "workspace_premium"
+  | "language"
+  | "search"
+  | "insights"
+  | "description"
+  | "videocam"
+  | "send"
+  | "pinch"
+  | "bolt"
+  | "auto_awesome"
+  | "check_circle"
+  | "location_on"
+  | "mail"
+  | "expand_more";
+
+type IconProps = SVGProps<SVGSVGElement> & {
+  name: IconName;
+};
+
+const iconMap: Record<IconName, ReactElement> = {
+  architecture: (
+    <path
+      d="M4 19h16M7 19V9m10 10V9M9 9V5h6v4M5 9h14M8 13h2m4 0h2"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    />
+  ),
+  movie_filter: (
+    <path
+      d="M4 7.5 12 4l8 3.5v9L12 20l-8-3.5v-9ZM8.5 9.5l3.5-1.5 3.5 1.5-3.5 1.5-3.5-1.5Zm0 5 3.5-1.5 3.5 1.5"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    />
+  ),
+  diamond: (
+    <path
+      d="m12 4 6 4-6 12L6 8l6-4Zm0 0v4m0 0 6 0M12 8H6"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    />
+  ),
+  dynamic_feed: (
+    <path
+      d="M5 7h8M5 12h14M5 17h10M17 6l2 2-2 2M17 14l2 2-2 2"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    />
+  ),
+  trending_flat: (
+    <path
+      d="M4 12h12m0 0-3-3m3 3-3 3m3-3h4"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    />
+  ),
+  workspace_premium: (
+    <path
+      d="m12 4 2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 16.7 7.2 19l.9-5.4L4.2 9.7l5.4-.8L12 4Z"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    />
+  ),
+  language: (
+    <path
+      d="M4 8h10M9 4c0 6-2 12-5 16m10-16c0 6 2 12 5 16M14 16h6m-3-3v6"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    />
+  ),
+  search: (
+    <path
+      d="m10.5 17 5 5M16.5 10.5a6 6 0 1 1-12 0 6 6 0 0 1 12 0Z"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    />
+  ),
+  insights: (
+    <path
+      d="M5 18V9m7 9V5m7 13v-7"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    />
+  ),
+  description: (
+    <path
+      d="M7 4h7l5 5v11H7zM14 4v5h5M10 13h6M10 17h6"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    />
+  ),
+  videocam: (
+    <path
+      d="M4 8h10v8H4zM14 11l6-3v8l-6-3"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    />
+  ),
+  send: (
+    <path
+      d="M4 12 20 5l-4 14-4.5-5-7.5-2Z"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    />
+  ),
+  pinch: (
+    <path
+      d="M8 9V5m8 14v-4M5 12h4m6 0h4M8 15l4-3 4 3"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    />
+  ),
+  bolt: (
+    <path
+      d="M13 3 6 13h5l-1 8 7-10h-5l1-8Z"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    />
+  ),
+  auto_awesome: (
+    <path
+      d="m12 4 1.5 3.5L17 9l-3.5 1.5L12 14l-1.5-3.5L7 9l3.5-1.5L12 4Zm6 9 1 2 2 1-2 1-1 2-1-2-2-1 2-1 1-2ZM6 15l.8 1.7L8.5 18l-1.7.8L6 20.5l-.8-1.7L3.5 18l1.7-.8L6 15Z"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    />
+  ),
+  check_circle: (
+    <path
+      d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-12 0 2 2 4-4"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    />
+  ),
+  location_on: (
+    <path
+      d="M12 21s6-5.2 6-11a6 6 0 1 0-12 0c0 5.8 6 11 6 11Zm0-8.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    />
+  ),
+  mail: (
+    <path
+      d="M4 7h16v10H4zM4 8l8 6 8-6"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    />
+  ),
+  expand_more: (
+    <path
+      d="m6 9 6 6 6-6"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    />
+  ),
+};
+
+export default function Icon({ name, className, ...props }: IconProps) {
+  return (
+    <svg
+      aria-hidden
+      viewBox="0 0 24 24"
+      className={className}
+      fill="none"
+      {...props}
+    >
+      {iconMap[name]}
+    </svg>
+  );
+}

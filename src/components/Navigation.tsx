@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const links = [
@@ -32,12 +31,7 @@ export default function Navigation() {
 
   return (
     <div className="pointer-events-none fixed top-4 left-1/2 z-50 w-full max-w-5xl -translate-x-1/2 px-4">
-      <motion.nav
-        initial={{ opacity: 0, y: -14 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-        className="pointer-events-auto rounded-full border border-white/20 bg-black/30 shadow-[0_18px_55px_rgba(0,0,0,0.35)] backdrop-blur-xl"
-      >
+      <nav className="pointer-events-auto rounded-full border border-white/20 bg-black/30 shadow-[0_18px_55px_rgba(0,0,0,0.35)] backdrop-blur-xl">
         <div className="flex items-center justify-between px-6 py-3">
           <Link
             href="/"
@@ -57,19 +51,15 @@ export default function Navigation() {
           </Link>
 
           <div className="hidden items-center gap-1 md:flex">
-            {links.map((link) => {
-              const isActive = pathname === link.href;
-
-              return (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className={getLinkClasses(isActive)}
-                >
-                  {link.name}
-                </Link>
-              );
-            })}
+            {links.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={getLinkClasses(pathname === link.href)}
+              >
+                {link.name}
+              </Link>
+            ))}
           </div>
 
           <button
@@ -100,44 +90,39 @@ export default function Navigation() {
             </span>
           </button>
         </div>
-      </motion.nav>
+      </nav>
 
-      <AnimatePresence>
-        {isOpen ? (
-          <motion.div
-            key="mobile-nav-panel"
-            id="mobile-navigation"
-            initial={{ opacity: 0, y: -10, scale: 0.98 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -8, scale: 0.98 }}
-            transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
-            className="pointer-events-auto mt-3 overflow-hidden rounded-[2rem] border border-white/20 bg-black/40 p-3 shadow-[0_20px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl md:hidden"
-          >
-            <div className="flex flex-col gap-1">
-              {links.map((link) => {
-                const isActive = pathname === link.href;
+      <div
+        id="mobile-navigation"
+        className={`pointer-events-auto mt-3 overflow-hidden rounded-[2rem] border border-white/20 bg-black/40 p-3 shadow-[0_20px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl transition-all duration-200 md:hidden ${
+          isOpen
+            ? "translate-y-0 opacity-100"
+            : "pointer-events-none -translate-y-2 opacity-0"
+        }`}
+      >
+        <div className="flex flex-col gap-1">
+          {links.map((link) => {
+            const isActive = pathname === link.href;
 
-                return (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className={[
-                      "rounded-[1.25rem] px-4 py-3 text-sm font-semibold uppercase tracking-[0.18em] transition-all duration-300",
-                      "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-black/60",
-                      isActive
-                        ? "bg-white/14 text-white"
-                        : "text-white/72 hover:bg-white/10 hover:text-white",
-                    ].join(" ")}
-                  >
-                    {link.name}
-                  </Link>
-                );
-              })}
-            </div>
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className={[
+                  "rounded-[1.25rem] px-4 py-3 text-sm font-semibold uppercase tracking-[0.18em] transition-all duration-300",
+                  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-black/60",
+                  isActive
+                    ? "bg-white/14 text-white"
+                    : "text-white/72 hover:bg-white/10 hover:text-white",
+                ].join(" ")}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 }

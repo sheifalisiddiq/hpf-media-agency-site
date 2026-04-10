@@ -1,12 +1,50 @@
-"use client";
-
 import Image from "next/image";
-import { motion } from "framer-motion";
+import Icon from "@/components/Icon";
+
+const features = [
+  {
+    icon: "architecture" as const,
+    title: "Strategy First",
+    desc: "We build content around your offer, audience, and goals so every post supports real business growth.",
+  },
+  {
+    icon: "movie_filter" as const,
+    title: "Attention Engineering",
+    desc: "From scripting to editing, we create short-form videos designed to stop the scroll and keep viewers watching.",
+  },
+  {
+    icon: "diamond" as const,
+    title: "Growth You Can Feel",
+    desc: "We prioritize actual reach and leads over vanity metrics, ensuring your brand gains real authority.",
+  },
+];
+
+const faqs = [
+  {
+    q: "How long does it take to see results?",
+    a: "Most clients start seeing stronger reach, better engagement, and clearer content direction within the first 60 to 90 days. Sustainable growth comes from consistent execution, not one viral post.",
+  },
+  {
+    q: "Who do you work with?",
+    a: "We work with UAE business owners and brands that want to grow through Instagram and TikTok. That includes service businesses, personal brands, real estate, hospitality, and other high-value offers.",
+  },
+  {
+    q: "Is Mo Bilal involved in the work?",
+    a: "Yes. Mo leads the strategic direction behind client content so the messaging, positioning, and execution stay aligned with business goals.",
+  },
+  {
+    q: "What makes your approach different?",
+    a: "We focus on content that supports growth. That means strategy, scripting, production, editing, and posting systems built around visibility, engagement, and lead generation.",
+  },
+  {
+    q: "What does working with HPF Media look like?",
+    a: "We start by understanding your business, audience, and offer. Then we build a clear short-form content plan and execute it with your team so your content becomes consistent and effective.",
+  },
+];
 
 export default function About() {
   return (
     <>
-      {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden bg-black text-on-surface">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-black"></div>
@@ -14,9 +52,9 @@ export default function About() {
           <div className="absolute bottom-0 w-full h-[500px] bg-gradient-to-t from-red-900/20 to-transparent"></div>
         </div>
         <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
-          <span className="text-sm uppercase tracking-[0.3em] text-primary font-bold mb-6 block">Dubai Organic Growth Agency</span>
+          <span className="text-sm uppercase tracking-[0.3em] text-primary font-bold mb-6 block">Growth Agency for UAE</span>
           <h1 className="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter text-on-surface leading-[0.9] mb-8 text-glow font-headline">
-            ORGANIC SHORT-FORM CONTENT THAT GROWS YOUR BUSINESS
+            GROWTH THROUGH CONTENT.
           </h1>
           <p className="text-on-surface-variant text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed mb-12">
             HPF Media helps UAE business owners grow visibility, engagement, and inbound leads through strategic Instagram and TikTok content.
@@ -29,7 +67,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* Founder Section: Mo Bilal */}
       <section className="relative py-20 lg:py-32 bg-black overflow-hidden border-y border-white/5 text-on-surface">
         <div className="max-w-screen-2xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="relative group">
@@ -40,6 +77,8 @@ export default function About() {
                 alt="Mo Bilal"
                 className="object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVn51E1u5cggqQmxsBsC_-s2RYraGoAVaibpstXP6T0XuszhwhS2WLBMk1pOtjva7cVyG0vzAcSqqdVjiQKiz0iYGh0bg-_gYEWKkvTlQ2IZkirMcJorAx2UR85yzbFuQrYRwM2C5SrLdYaedFZGWqpAIuChegiq5EhajEOq7NRIxzI8ZYQxoP5wD-LYHdOx8g1olo-mSOEUlg8ONSSbkupohdOXg-udhFzb3XdxJZh4hoU3LrxMWJ5NA3xeZmb86q1Ayo8GEcQRk"
+                sizes="(min-width: 1024px) 34rem, 100vw"
+                quality={68}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
             </div>
@@ -49,7 +88,7 @@ export default function About() {
           </div>
           <div className="space-y-8">
             <div className="space-y-4">
-              <h2 className="text-primary font-bold tracking-widest uppercase text-sm">Meet the Founder</h2>
+              <h2 className="text-primary font-bold tracking-widest uppercase text-sm">The Founder</h2>
               <h3 className="text-4xl md:text-6xl font-black tracking-tighter text-on-surface font-headline">Mo Bilal</h3>
               <div className="w-20 h-1 bg-primary-container"></div>
             </div>
@@ -78,63 +117,33 @@ export default function About() {
         </div>
       </section>
 
-      {/* Why Us Section */}
       <section className="relative py-24 lg:py-32 bg-black overflow-hidden">
-        {/* Background Glows */}
         <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-red-600/5 blur-[120px] rounded-full pointer-events-none"></div>
         <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-red-900/5 blur-[120px] rounded-full pointer-events-none"></div>
 
         <div className="max-w-6xl mx-auto px-4 relative z-10">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mb-16 lg:mb-20 text-center max-w-3xl mx-auto"
-          >
-            <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-white mb-6 uppercase font-headline">Why Businesses Choose HPF</h2>
+          <div className="mb-16 lg:mb-20 text-center max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-white mb-6 uppercase font-headline">Why HPF</h2>
             <p className="text-white/70 font-light text-lg">Clear strategy, strong execution, and short-form content built to help you grow in the UAE market.</p>
-          </motion.div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-            {[
-              {
-                icon: "architecture",
-                title: "Strategy First",
-                desc: "We build content around your offer, audience, and goals so every post supports real business growth."
-              },
-              {
-                icon: "movie_filter",
-                title: "Attention Engineering",
-                desc: "From scripting to editing, we create short-form videos designed to stop the scroll and keep viewers watching."
-              },
-              {
-                icon: "diamond",
-                title: "Growth You Can Feel",
-                desc: "We prioritize actual reach and leads over vanity metrics, ensuring your brand gains real authority."
-              }
-            ].map((feature, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                whileHover={{ y: -6 }}
+            {features.map((feature) => (
+              <div
+                key={feature.title}
                 className="group relative p-8 md:p-10 bg-white/[0.03] backdrop-blur-xl rounded-2xl border border-white/10 transition-all duration-300 hover:bg-white/[0.06] hover:border-white/20 shadow-2xl"
               >
                 <div className="mb-8 flex items-center justify-center w-12 h-12 rounded-lg bg-red-600/10 text-primary">
-                  <span className="material-symbols-outlined text-3xl">{feature.icon}</span>
+                  <Icon name={feature.icon} className="h-7 w-7" />
                 </div>
                 <h4 className="text-xl md:text-2xl font-semibold text-white mb-4 font-headline">{feature.title}</h4>
                 <p className="text-white/70 font-light leading-relaxed">{feature.desc}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Strategic FAQ */}
       <section className="py-32 bg-black border-t border-white/5 text-on-surface">
         <div className="max-w-4xl mx-auto px-6">
           <div className="mb-16">
@@ -142,28 +151,21 @@ export default function About() {
             <p className="text-on-surface-variant font-light">Straight answers for business owners considering short-form content growth.</p>
           </div>
           <div className="space-y-4">
-            {[
-              { q: "How long does it take to see results?", a: "Most clients start seeing stronger reach, better engagement, and clearer content direction within the first 60 to 90 days. Sustainable growth comes from consistent execution, not one viral post." },
-              { q: "Who do you work with?", a: "We work with UAE business owners and brands that want to grow through Instagram and TikTok. That includes service businesses, personal brands, real estate, hospitality, and other high-value offers." },
-              { q: "Is Mo Bilal involved in the work?", a: "Yes. Mo leads the strategic direction behind client content so the messaging, positioning, and execution stay aligned with business goals." },
-              { q: "What makes your approach different?", a: "We focus on content that supports growth. That means strategy, scripting, production, editing, and posting systems built around visibility, engagement, and lead generation." },
-              { q: "What does working with HPF Media look like?", a: "We start by understanding your business, audience, and offer. Then we build a clear short-form content plan and execute it with your team so your content becomes consistent and effective." }
-            ].map((faq, i) => (
-              <div key={i} className="group bg-neutral-950 p-6 rounded-lg cursor-pointer border border-white/5 hover:border-primary/30 transition-all">
-                <div className="flex justify-between items-center">
+            {faqs.map((faq, i) => (
+              <details key={i} className="group rounded-lg border border-white/5 bg-neutral-950 p-6 hover:border-primary/30 transition-all">
+                <summary className="flex cursor-pointer list-none items-center justify-between">
                   <h5 className="text-lg font-bold text-on-surface group-hover:text-primary transition-colors">{faq.q}</h5>
-                  <span className="material-symbols-outlined text-primary group-hover:rotate-180 transition-transform duration-300">expand_more</span>
-                </div>
-                <div className="mt-4 text-on-surface-variant font-light leading-relaxed hidden group-hover:block transition-all animate-in fade-in slide-in-from-top-4 duration-300">
+                  <Icon name="expand_more" className="h-5 w-5 text-primary transition-transform duration-300 group-open:rotate-180" />
+                </summary>
+                <div className="mt-4 text-on-surface-variant font-light leading-relaxed">
                   {faq.a}
                 </div>
-              </div>
+              </details>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Final CTA Section */}
       <section className="relative py-40 overflow-hidden bg-black text-on-surface">
         <div className="absolute inset-0 z-0">
           <Image
@@ -171,11 +173,13 @@ export default function About() {
             className="object-cover opacity-20"
             alt="Abstract flowing red light"
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzY8jNlWbaC-J55Y6GHH4Us3sv-GRvWWjJxirCXrgrEVron8j_rgRo-lfXZONFIE1VsHiMenoxpN14cTsEM8e29lkCzlOTgTMoyHg_1SSaHydfWds1pUCuVKx6jqRPCZGzvgrdBgMot2ogNply58rZoYC59SvrH-Jpc2Zo4qrIk3jPSpvIRNq6-6hWwVfjPnInhW8my1B_pMMH_8ufiD0Mt_FLg0k-2uwi3mMEoYBHEo2u1qAM0As7rMWOp2jXzwP8FAHQuqYdg1Q"
+            quality={64}
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black"></div>
         </div>
         <div className="relative z-10 text-center px-6">
-          <h2 className="text-5xl md:text-7xl font-black tracking-tighter text-on-surface mb-10 max-w-4xl mx-auto font-headline">READY TO GROW YOUR BUSINESS WITH BETTER CONTENT?</h2>
+          <h2 className="text-5xl md:text-7xl font-black tracking-tighter text-on-surface mb-10 max-w-4xl mx-auto font-headline">START GROWING TODAY.</h2>
           <p className="text-on-surface-variant text-xl mb-12 max-w-2xl mx-auto font-light">If you want more visibility, stronger engagement, and content that actually supports sales, HPF Media is ready to help.</p>
           <button className="bg-primary-container text-on-primary-container px-14 py-6 rounded-full text-xl font-bold tracking-tight hover:scale-110 active:scale-95 transition-all duration-300 shadow-[0_0_60px_rgba(255,84,73,0.5)]">
             Book Your Strategy Call

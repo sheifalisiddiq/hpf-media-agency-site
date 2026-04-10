@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="space-y-4 mb-8 md:mb-0">
           <div className="text-xl font-black text-primary font-headline tracking-tighter">HPF MEDIA</div>
           <p className="text-[10px] tracking-[0.2em] uppercase text-neutral-600 font-light">
-            © 2024 HPF MEDIA. CINEMATIC EXCELLENCE BY DESIGN.
+            Copyright 2024 HPF Media. Organic growth content for UAE brands.
           </p>
         </div>
         <div className="flex flex-col items-center md:items-end gap-6">

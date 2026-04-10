@@ -1,3 +1,5 @@
+import Icon from "@/components/Icon";
+
 export default function Contact() {
   return (
     <>
@@ -11,10 +13,9 @@ export default function Contact() {
           {/* Left Side: Content */}
           <div className="space-y-12">
             <div className="space-y-4">
-              <span className="text-sm uppercase tracking-[0.2em] text-primary font-bold">Strategic Partnership</span>
+              <span className="text-sm uppercase tracking-[0.2em] text-primary font-bold">Contact Us</span>
               <h1 className="text-4xl md:text-7xl font-black tracking-tighter leading-none text-white font-headline">
-                Command Your<br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-container">Market Dominance</span>
+                Work With Us.
               </h1>
             </div>
             
@@ -25,7 +26,7 @@ export default function Contact() {
               
               <div className="space-y-6 pt-4">
                 <div className="flex items-start gap-4">
-                  <span className="material-symbols-outlined text-primary text-2xl">location_on</span>
+                  <Icon name="location_on" className="h-6 w-6 text-primary" />
                   <div>
                     <h4 className="text-xs uppercase tracking-widest text-primary mb-1">Headquarters</h4>
                     <p className="text-white font-medium">Dubai Design District, Building 4<br />Dubai, United Arab Emirates</p>
@@ -33,7 +34,7 @@ export default function Contact() {
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <span className="material-symbols-outlined text-primary text-2xl">mail</span>
+                  <Icon name="mail" className="h-6 w-6 text-primary" />
                   <div>
                     <h4 className="text-xs uppercase tracking-widest text-primary mb-1">Direct Inquiry</h4>
                     <p className="text-white font-medium">concierge@hpfmedia.com</p>
@@ -50,7 +51,7 @@ export default function Contact() {
           
           {/* Right Side: Form */}
           <div className="glass-panel p-6 md:p-12 rounded-lg border border-white/5 shadow-[0_48px_48px_rgba(0,0,0,0.5)]">
-            <h2 className="text-2xl font-bold tracking-tight mb-8 text-white font-headline">Book Your Strategy Audit</h2>
+            <h2 className="text-2xl font-bold tracking-tight mb-8 text-white font-headline">Strategy Audit</h2>
             <form className="space-y-8">
               <div className="relative">
                 <input 
@@ -116,7 +117,7 @@ export default function Contact() {
                   <option value="50m+">$50M+</option>
                 </select>
                 <div className="absolute right-0 top-4 pointer-events-none">
-                  <span className="material-symbols-outlined text-white/30">expand_more</span>
+                  <Icon name="expand_more" className="h-5 w-5 text-white/30" />
                 </div>
               </div>
               

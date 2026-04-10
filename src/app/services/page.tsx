@@ -1,14 +1,14 @@
 import Image from "next/image";
+import Icon from "@/components/Icon";
 
 export default function Services() {
   return (
     <>
-      {/* Hero Section */}
       <section className="relative min-h-[921px] flex flex-col justify-center items-center text-center px-4 pt-20 red-gradient-bg bg-black text-on-surface">
         <div className="max-w-4xl mx-auto z-10">
           <span className="text-sm uppercase tracking-[0.3em] text-primary mb-6 block font-medium">Dubai / Abu Dhabi / Global</span>
           <h1 className="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter font-headline mb-8 leading-[0.95] text-on-surface">
-            Grow Your Business With <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-container to-red-400">High-Impact Content</span>
+            Strategies That <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-container to-red-400">Scale.</span>
           </h1>
           <p className="text-neutral-400 max-w-2xl mx-auto leading-relaxed mb-10 text-lg">
             We help UAE business owners get more views, more leads, and more customers through strategic Instagram and TikTok videos.
@@ -23,16 +23,15 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Core Services Bento Grid */}
       <section className="py-20 lg:py-24 px-6 md:px-8 max-w-screen-2xl mx-auto bg-black text-on-surface">
         <div className="flex flex-col mb-12 lg:mb-16">
-          <h2 className="text-3xl lg:text-4xl font-headline font-bold mb-4">Our Services</h2>
+          <h2 className="text-3xl lg:text-4xl font-headline font-bold mb-4">Services</h2>
           <div className="w-24 h-1 bg-red-600"></div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
           <div className="md:col-span-7 glass-card rounded-lg p-6 md:p-10 flex flex-col justify-between overflow-hidden relative group">
             <div className="z-10">
-              <span className="material-symbols-outlined text-primary text-3xl md:text-4xl mb-6">dynamic_feed</span>
+              <Icon name="dynamic_feed" className="mb-6 h-8 w-8 text-primary md:h-10 md:w-10" />
               <h3 className="text-2xl md:text-3xl font-headline font-bold mb-4">Social Media Growth</h3>
               <p className="text-neutral-400 text-base md:text-lg mb-8 max-w-md">We manage your entire organic strategy to increase your reach. We don't just post; we build a plan to make your brand visible to the right people in the UAE.</p>
             </div>
@@ -41,15 +40,17 @@ export default function Services() {
               className="absolute right-[-10%] bottom-[-10%] w-2/3 object-cover rounded-xl opacity-30 group-hover:opacity-50 group-hover:scale-105 transition-all duration-700"
               alt="Social media management concept"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgH9mK_9Cfu1a1EU9PnVoqzhzhoR8BHV51BeUA6C5EHc6N0IABj31lkRrOmJ_C5zJz5InsWKSCcmJlJNbqmvjf1-cdPY-tA2WVM0e7gsIK2ddcgrdZuczpJuhB-8l1VPq2_1xGfS4bMUcF6IrhKMb86F2tdAIcfetyIgdd_ZdFPBjJQt9pndRtDIPAz9FgmkFeho_mTFy30wQveEAKPvJBr5JmSuJ7GXGNPoKC50NcYmSwA5IksrdMN1anRJZ8JR13MerF1MpctcM"
+              sizes="(min-width: 768px) 40vw, 100vw"
+              quality={64}
             />
             <div className="mt-auto z-10 w-fit">
-              <button className="text-primary font-bold inline-flex items-center gap-2 group-hover:translate-x-2 transition-transform">Increase Your Reach <span className="material-symbols-outlined">trending_flat</span></button>
+              <button className="text-primary font-bold inline-flex items-center gap-2 group-hover:translate-x-2 transition-transform">Increase Your Reach <Icon name="trending_flat" className="h-4 w-4" /></button>
             </div>
           </div>
-          
+
           <div className="md:col-span-5 glass-card rounded-lg p-6 md:p-10 flex flex-col relative group overflow-hidden bg-black">
             <div className="z-10">
-              <span className="material-symbols-outlined text-primary text-3xl md:text-4xl mb-6">movie_filter</span>
+              <Icon name="movie_filter" className="mb-6 h-8 w-8 text-primary md:h-10 md:w-10" />
               <h3 className="text-2xl md:text-3xl font-headline font-bold mb-4">Video Production</h3>
               <p className="text-neutral-400 mb-8">High-quality video content designed for mobile screens. We handle everything from filming to editing so your videos look professional and keep people watching.</p>
             </div>
@@ -58,52 +59,53 @@ export default function Services() {
               className="absolute right-[-20%] top-[40%] w-full h-1/2 object-cover opacity-20 group-hover:opacity-40 transition-all duration-700"
               alt="Cinematic production concept"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuAy0JhtGu7QQIB4_ADA_JSiJwYzcLxdO-ion3FRm-EeG_e8moSWn-NZmDdvXijVUAIXpHOSgDJSAnInf4hFOxhQmxeSWcH4pomQu664QOBoOd4NzOwRIXUcjf4f-Sab7xpETLL5FLYLEWoCqE8JAFO3X3Zk3ETXv6QEBxJyrJhrGun3ZmEvWTj-kS1RIQ1JOEM3vEBKHMPe_IoRRCB-g5r7ZIZrJREMRq9VDwD-yrleFmzBpgQLNpBfMtJ6QDSkCUBnX4NVtMdTplU"
+              sizes="(min-width: 768px) 32vw, 100vw"
+              quality={64}
             />
             <div className="mt-auto z-10 w-fit">
-              <button className="text-primary font-bold inline-flex items-center gap-2 group-hover:translate-x-2 transition-transform">Start Production <span className="material-symbols-outlined">trending_flat</span></button>
+              <button className="text-primary font-bold inline-flex items-center gap-2 group-hover:translate-x-2 transition-transform">Start Production <Icon name="trending_flat" className="h-4 w-4" /></button>
             </div>
           </div>
 
           <div className="md:col-span-6 glass-card rounded-lg p-6 md:p-10 flex flex-col group border-l-4 border-l-primary-container bg-black">
-            <span className="material-symbols-outlined text-primary text-3xl md:text-4xl mb-6">workspace_premium</span>
+            <Icon name="workspace_premium" className="mb-6 h-8 w-8 text-primary md:h-10 md:w-10" />
             <h3 className="text-xl md:text-2xl font-headline font-bold mb-4">Personal Branding</h3>
             <p className="text-neutral-400 mb-6 flex-grow">We help business owners become the face of their industry. We build your reputation and voice so you are recognized as an expert in your field.</p>
             <div className="mt-auto">
-              <button className="text-primary font-bold inline-flex items-center gap-2 group-hover:translate-x-2 transition-transform">Build Your Authority <span className="material-symbols-outlined">trending_flat</span></button>
+              <button className="text-primary font-bold inline-flex items-center gap-2 group-hover:translate-x-2 transition-transform">Build Your Authority <Icon name="trending_flat" className="h-4 w-4" /></button>
             </div>
           </div>
 
           <div className="md:col-span-6 glass-card rounded-lg p-6 md:p-10 flex flex-col group border-l-4 border-l-primary-container bg-black">
-            <span className="material-symbols-outlined text-primary text-3xl md:text-4xl mb-6">language</span>
+            <Icon name="language" className="mb-6 h-8 w-8 text-primary md:h-10 md:w-10" />
             <h3 className="text-xl md:text-2xl font-headline font-bold mb-4">Web Design & Strategy</h3>
             <p className="text-neutral-400 mb-6 flex-grow">Fast, professional websites built to turn your social media followers into paying customers. We ensure your digital presence is built to convert.</p>
             <div className="mt-auto">
-              <button className="text-primary font-bold inline-flex items-center gap-2 group-hover:translate-x-2 transition-transform">Launch Your Site <span className="material-symbols-outlined">trending_flat</span></button>
+              <button className="text-primary font-bold inline-flex items-center gap-2 group-hover:translate-x-2 transition-transform">Launch Your Site <Icon name="trending_flat" className="h-4 w-4" /></button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* The Methodology */}
       <section className="py-24 bg-black text-on-surface">
         <div className="max-w-screen-2xl mx-auto px-8">
           <div className="text-center mb-20">
-            <h2 className="text-5xl font-headline font-bold mb-4">How We Work</h2>
+            <h2 className="text-5xl font-headline font-bold mb-4">Process</h2>
             <p className="text-neutral-500 max-w-xl mx-auto">Our simple 5-step process ensures your content is delivered on time and at the highest quality.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-5 gap-4 relative">
             <div className="hidden md:block absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-red-600/30 to-transparent -translate-y-1/2"></div>
-            
+
             {[
-              { icon: 'search', step: '01', label: 'Business Review' },
-              { icon: 'insights', step: '02', label: 'Content Plan' },
-              { icon: 'description', step: '03', label: 'Script Writing' },
-              { icon: 'videocam', step: '04', label: 'Filming' },
-              { icon: 'send', step: '05', label: 'Publishing' }
+              { icon: "search", step: "01", label: "Business Review" },
+              { icon: "insights", step: "02", label: "Content Plan" },
+              { icon: "description", step: "03", label: "Script Writing" },
+              { icon: "videocam", step: "04", label: "Filming" },
+              { icon: "send", step: "05", label: "Publishing" }
             ].map((step, idx) => (
               <div key={idx} className="relative z-10 flex flex-col items-center text-center p-6 group">
                 <div className="w-16 h-16 rounded-full bg-black flex items-center justify-center mb-6 border border-red-600/20 group-hover:bg-primary-container group-hover:border-primary-container transition-all duration-500">
-                  <span className="material-symbols-outlined text-primary group-hover:text-on-primary-container transition-colors">{step.icon}</span>
+                  <Icon name={step.icon as "search" | "insights" | "description" | "videocam" | "send"} className="h-6 w-6 text-primary group-hover:text-on-primary-container transition-colors" />
                 </div>
                 <h4 className="font-headline font-bold text-xl mb-2">{step.label}</h4>
                 <p className="text-xs text-neutral-500 uppercase tracking-widest font-bold">Step {step.step}</p>
@@ -113,20 +115,19 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Strategic Edge */}
       <section className="py-24 px-8 max-w-screen-xl mx-auto bg-black text-on-surface">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-5xl font-headline font-bold mb-8 leading-tight">Why <span className="text-primary">Business Owners</span> Choose Us</h2>
+            <h2 className="text-5xl font-headline font-bold mb-8 leading-tight">The <span className="text-primary">HPF Edge</span></h2>
             <div className="space-y-8">
               {[
-                { icon: 'pinch', title: 'Local Market Expertise', desc: 'Deep understanding of what Dubai and UAE customers want to see in their feeds.' },
-                { icon: 'bolt', title: 'Fast Results', desc: 'We deliver high-quality content quickly so you start seeing growth in weeks, not months.' },
-                { icon: 'auto_awesome', title: 'High-Quality Standards', desc: 'Professional filming and editing that makes your brand stand out from the competition.' }
+                { icon: "pinch", title: "Local Market Expertise", desc: "Deep understanding of what Dubai and UAE customers want to see in their feeds." },
+                { icon: "bolt", title: "Fast Results", desc: "We deliver high-quality content quickly so you start seeing growth in weeks, not months." },
+                { icon: "auto_awesome", title: "High-Quality Standards", desc: "Professional filming and editing that makes your brand stand out from the competition." }
               ].map((edge, idx) => (
                 <div key={idx} className="flex gap-6">
                   <div className="flex-shrink-0 w-12 h-12 bg-black border border-red-600/10 flex items-center justify-center rounded-lg">
-                    <span className="material-symbols-outlined text-primary">{edge.icon}</span>
+                    <Icon name={edge.icon as "pinch" | "bolt" | "auto_awesome"} className="h-6 w-6 text-primary" />
                   </div>
                   <div>
                     <h4 className="font-headline font-bold text-lg mb-2">{edge.title}</h4>
@@ -142,34 +143,35 @@ export default function Services() {
               className="object-cover rounded-lg opacity-80"
               alt="Dubai architecture night scene"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuAm04fis2eDF95mGghyIGwpGqjo_nyk2qRimt0oHCVI8AmrV5pdzwB1IhAvTyA5nuZXM8PLDXgwfC_N_O5aqyafVsRt8hSUnouznGq9J3HHXJ8tIjo6jXWv9_h8Ud5ZE0pRVFzKAkbC-pIvsuZN6npNWz9YOTQuvXyTVyTDFXQeBe1cQUC3KEc9sG1nTJ8d2koC4QmY3e0h2XXoEIHFKHedg0tzLFAaitsBlOfO4cwDFS6DzrDAMK8EiOODgUBS75l7Qxu06kJBywA"
+              sizes="(min-width: 768px) 50vw, 100vw"
+              quality={64}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
             <div className="absolute bottom-10 left-10 right-10">
               <div className="bg-black/90 backdrop-blur-md p-6 rounded-lg border border-red-600/30">
-                <p className="font-headline font-bold text-xl italic">"They handle everything—I just focus on my business while the leads come in."</p>
-                <p className="text-neutral-400 mt-2 text-sm">— UAE Business Owner</p>
+                <p className="font-headline font-bold text-xl italic">"They handle everything. I just focus on my business while the leads come in."</p>
+                <p className="text-neutral-400 mt-2 text-sm">- UAE Business Owner</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Final CTA */}
       <section className="py-32 px-8 bg-black">
         <div className="max-w-5xl mx-auto glass-card rounded-lg p-16 text-center relative overflow-hidden bg-black text-on-surface">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-red-600 to-transparent"></div>
-          <h2 className="text-5xl md:text-6xl font-headline font-bold mb-6">Ready to Grow Your Reach and Revenue?</h2>
+          <h2 className="text-5xl md:text-6xl font-headline font-bold mb-6">Let's Start.</h2>
           <p className="text-neutral-400 text-xl mb-12 max-w-2xl mx-auto">We take on a limited number of clients each month to ensure the highest quality of service. Book your strategy call today to secure your spot.</p>
           <button className="bg-primary-container text-on-primary-container px-12 py-5 rounded font-black text-xl uppercase tracking-tighter hover:scale-105 active:scale-95 transition-all shadow-xl shadow-red-600/20">
             Book Your Strategy Call
           </button>
           <div className="mt-8 flex justify-center gap-8 text-neutral-500">
             <div className="flex items-center gap-2">
-              <span className="material-symbols-outlined text-red-600 text-sm">check_circle</span>
+              <Icon name="check_circle" className="h-4 w-4 text-red-600" />
               <span className="text-sm font-bold uppercase tracking-widest">Global Reach</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="material-symbols-outlined text-red-600 text-sm">check_circle</span>
+              <Icon name="check_circle" className="h-4 w-4 text-red-600" />
               <span className="text-sm font-bold uppercase tracking-widest">Premium Assets</span>
             </div>
           </div>
