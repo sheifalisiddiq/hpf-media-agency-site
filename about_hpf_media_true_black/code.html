@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About | HPF Media</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary": "#ffb4ab",
+                      "on-error": "#690005",
+                      "outline": "#af8783",
+                      "on-secondary": "#60140c",
+                      "on-secondary-fixed": "#410000",
+                      "on-secondary-container": "#ff9a8a",
+                      "tertiary-container": "#ff5541",
+                      "primary-fixed-dim": "#ffb4ab",
+                      "on-tertiary-fixed-variant": "#930000",
+                      "error-container": "#93000a",
+                      "on-primary": "#690005",
+                      "on-primary-container": "#5c0004",
+                      "on-surface": "#e2e2e2",
+                      "on-primary-fixed": "#410002",
+                      "tertiary-fixed-dim": "#ffb4a8",
+                      "surface-tint": "#ffb4ab",
+                      "surface-container-highest": "#111111",
+                      "surface-dim": "#000000",
+                      "primary-fixed": "#ffdad6",
+                      "primary-container": "#ff5449",
+                      "on-error-container": "#ffdad6",
+                      "secondary-container": "#7e2a20",
+                      "tertiary-fixed": "#ffdad4",
+                      "surface-bright": "#1a1a1a",
+                      "inverse-primary": "#c00011",
+                      "error": "#ffb4ab",
+                      "tertiary": "#ffb4a8",
+                      "surface-variant": "#111111",
+                      "on-surface-variant": "#a0a0a0",
+                      "surface-container-lowest": "#000000",
+                      "on-secondary-fixed-variant": "#7e2a20",
+                      "secondary": "#ffb4a8",
+                      "on-primary-fixed-variant": "#93000a",
+                      "inverse-on-surface": "#e2e2e2",
+                      "surface-container": "#080808",
+                      "surface": "#000000",
+                      "on-background": "#e2e2e2",
+                      "on-tertiary-container": "#5c0000",
+                      "surface-container-low": "#050505",
+                      "surface-container-high": "#0c0c0c",
+                      "on-tertiary-fixed": "#410000",
+                      "inverse-surface": "#e2e2e2",
+                      "secondary-fixed-dim": "#ffb4a8",
+                      "secondary-fixed": "#ffdad4",
+                      "outline-variant": "#404040",
+                      "on-tertiary": "#690000",
+                      "background": "#000000"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["Inter"],
+                      "body": ["Inter"],
+                      "label": ["Inter"]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #000000;
+            color: #e2e2e2;
+            overflow-x: hidden;
+        }
+        .cinematic-glow {
+            background: radial-gradient(circle at center, rgba(255, 42, 42, 0.2) 0%, transparent 70%);
+        }
+        .text-glow {
+            text-shadow: 0 0 30px rgba(255, 180, 171, 0.4);
+        }
+        .glass-header {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="font-body selection:bg-primary/30 selection:text-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-xl border-b border-white/5 shadow-[0_8px_32px_rgba(255,42,42,0.1)]">
+<div class="flex justify-between items-center px-12 py-6 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-black tracking-tighter text-red-600 uppercase font-headline">
+            HPF Media
+        </div>
+<div class="hidden md:flex items-center gap-10 font-inter tracking-tighter uppercase font-bold text-xs">
+<a class="text-neutral-500 hover:text-neutral-100 transition-colors hover:bg-white/5 px-2 py-1 rounded" href="#">Home</a>
+<a class="text-red-500 border-b-2 border-red-600 pb-1 px-2 py-1 rounded" href="#">About</a>
+<a class="text-neutral-500 hover:text-neutral-100 transition-colors hover:bg-white/5 px-2 py-1 rounded" href="#">Services</a>
+<a class="text-neutral-500 hover:text-neutral-100 transition-colors hover:bg-white/5 px-2 py-1 rounded" href="#">Contact</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-8 py-2 rounded font-inter tracking-tighter uppercase font-bold scale-95 active:duration-75 transition-all duration-300 hover:brightness-110">
+            Inquire
+        </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden bg-black">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-b from-black via-black to-black"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-red-600/10 blur-[150px] rounded-full"></div>
+<div class="absolute bottom-0 w-full h-[500px] bg-gradient-to-t from-red-900/20 to-transparent"></div>
+</div>
+<div class="relative z-10 text-center px-6 max-w-5xl mx-auto">
+<span class="label-sm uppercase tracking-[0.3em] text-primary font-bold mb-6 block">Legacy Architecture</span>
+<h1 class="text-6xl md:text-8xl font-black tracking-tighter text-on-surface leading-[0.9] mb-8 text-glow">
+            THE ARCHITECTS OF AUTHORITY
+        </h1>
+<p class="text-on-surface-variant text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed mb-12">
+            We don't just create content; we build digital monuments. HPF Media is the sanctuary where elite visionaries transform into industry titans.
+        </p>
+<div class="flex flex-col md:flex-row gap-6 justify-center">
+<button class="bg-primary-container text-on-primary-container px-10 py-5 rounded-lg text-lg font-bold tracking-tight hover:scale-105 transition-transform duration-300 shadow-2xl shadow-primary/30">
+                Explore the Vision
+            </button>
+</div>
+</div>
+</section>
+<!-- Founder Section: Mo Bilal -->
+<section class="relative py-32 bg-black overflow-hidden border-y border-white/5">
+<div class="max-w-screen-2xl mx-auto px-12 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="relative group">
+<!-- Decorative Layer -->
+<div class="absolute -inset-4 bg-red-600/20 blur-3xl opacity-50 rounded-full group-hover:opacity-70 transition-opacity"></div>
+<div class="relative aspect-[4/5] rounded-xl overflow-hidden shadow-2xl border border-white/5">
+<img class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105" data-alt="monochrome cinematic portrait of Mo Bilal, a handsome man in a tailored dark suit, dramatic side lighting, deep scarlet background glow, luxury aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVn51E1u5cggqQmxsBsC_-s2RYraGoAVaibpstXP6T0XuszhwhS2WLBMk1pOtjva7cVyG0vzAcSqqdVjiQKiz0iYGh0bg-_gYEWKkvTlQ2IZkirMcJorAx2UR85yzbFuQrYRwM2C5SrLdYaedFZGWqpAIuChegiq5EhajEOq7NRIxzI8ZYQxoP5wD-LYHdOx8g1olo-mSOEUlg8ONSSbkupohdOXg-udhFzb3XdxJZh4hoU3LrxMWJ5NA3xeZmb86q1Ayo8GEcQRk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+</div>
+<div class="absolute -bottom-10 -right-10 hidden xl:block">
+<div class="text-[12rem] font-black text-white/5 select-none leading-none">MO</div>
+</div>
+</div>
+<div class="space-y-8">
+<div class="space-y-4">
+<h2 class="text-primary font-bold tracking-widest uppercase text-sm">Meet the Visionary</h2>
+<h3 class="text-5xl md:text-6xl font-black tracking-tighter text-on-surface">Mo Bilal</h3>
+<div class="w-20 h-1 bg-primary-container"></div>
+</div>
+<div class="space-y-6 text-on-surface-variant leading-relaxed text-lg font-light">
+<p>
+                    Mo Bilal is the mastermind behind the growth of the world's most influential figures. With a background in engineering digital monuments and cinematic movements, Mo approaches brand authority with the precision of an architect and the soul of a filmmaker.
+                </p>
+<p>
+                    Based in the heart of the UAE's luxury market, he has pioneered a methodology that transcends traditional marketing. It is about <span class="text-primary font-medium italic">Cinematic Authority</span>—the art of being felt before being seen, and heard long after the screen goes dark.
+                </p>
+<p>
+                    "In a world of noise, true authority is silent, certain, and undeniable. We don't chase attention; we demand it through excellence."
+                </p>
+</div>
+<div class="flex gap-8 pt-6">
+<div class="text-center">
+<div class="text-4xl font-black text-on-surface">500M+</div>
+<div class="text-xs uppercase tracking-widest text-primary font-bold">Total Reach</div>
+</div>
+<div class="text-center border-l border-white/10 pl-8">
+<div class="text-4xl font-black text-on-surface">50+</div>
+<div class="text-xs uppercase tracking-widest text-primary font-bold">Titans Scaled</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Us Section -->
+<section class="py-32 bg-black">
+<div class="max-w-screen-2xl mx-auto px-12">
+<div class="mb-20 text-center max-w-3xl mx-auto">
+<h2 class="text-4xl md:text-5xl font-black tracking-tighter text-on-surface mb-6 uppercase">Why the Elite Choose HPF</h2>
+<p class="text-on-surface-variant font-light">Precision. Exclusivity. Results. We operate at the intersection of high-art and high-conversion.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="group relative p-10 bg-neutral-950 rounded-lg transition-all duration-500 hover:bg-neutral-900 hover:-translate-y-2 outline outline-1 outline-white/5">
+<div class="mb-8">
+<span class="material-symbols-outlined text-4xl text-primary" data-weight="fill">architecture</span>
+</div>
+<h4 class="text-2xl font-bold text-on-surface mb-4">Strategic Engineering</h4>
+<p class="text-on-surface-variant font-light leading-relaxed">We don't guess. Every campaign is engineered with forensic precision to ensure your message hits with maximum impact.</p>
+<div class="absolute bottom-0 left-0 h-1 w-0 bg-primary-container transition-all duration-500 group-hover:w-full"></div>
+</div>
+<!-- Card 2 -->
+<div class="group relative p-10 bg-neutral-950 rounded-lg transition-all duration-500 hover:bg-neutral-900 hover:-translate-y-2 outline outline-1 outline-white/5">
+<div class="mb-8">
+<span class="material-symbols-outlined text-4xl text-primary" data-weight="fill">movie_filter</span>
+</div>
+<h4 class="text-2xl font-bold text-on-surface mb-4">Cinematic Excellence</h4>
+<p class="text-on-surface-variant font-light leading-relaxed">Your brand is treated like a feature film. We use high-end production techniques to create a visual language of luxury.</p>
+<div class="absolute bottom-0 left-0 h-1 w-0 bg-primary-container transition-all duration-500 group-hover:w-full"></div>
+</div>
+<!-- Card 3 -->
+<div class="group relative p-10 bg-neutral-950 rounded-lg transition-all duration-500 hover:bg-neutral-900 hover:-translate-y-2 outline outline-1 outline-white/5">
+<div class="mb-8">
+<span class="material-symbols-outlined text-4xl text-primary" data-weight="fill">diamond</span>
+</div>
+<h4 class="text-2xl font-bold text-on-surface mb-4">Market Domination</h4>
+<p class="text-on-surface-variant font-light leading-relaxed">We focus on the top 1% of the market. Our strategies are designed to position you as the only logical choice in your niche.</p>
+<div class="absolute bottom-0 left-0 h-1 w-0 bg-primary-container transition-all duration-500 group-hover:w-full"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-32 bg-black border-t border-white/5">
+<div class="max-w-4xl mx-auto px-6">
+<div class="mb-16">
+<h2 class="text-4xl font-black tracking-tighter text-on-surface mb-4">Strategy &amp; Logistics</h2>
+<p class="text-on-surface-variant font-light">Unfiltered answers for the discerning client.</p>
+</div>
+<div class="space-y-4">
+<!-- FAQ Item -->
+<div class="group bg-neutral-950 p-6 rounded-lg cursor-pointer border border-white/5 hover:border-primary/30 transition-all">
+<div class="flex justify-between items-center">
+<h5 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors">How long until I see results?</h5>
+<span class="material-symbols-outlined text-primary">expand_more</span>
+</div>
+<div class="mt-4 text-on-surface-variant font-light leading-relaxed hidden group-hover:block transition-all">
+                    Authority isn't built overnight, but our momentum strategies typically show significant market shifts within the first 60-90 days. We focus on long-term assets over short-term spikes.
+                </div>
+</div>
+<!-- FAQ Item -->
+<div class="group bg-neutral-950 p-6 rounded-lg cursor-pointer border border-white/5 hover:border-primary/30 transition-all">
+<div class="flex justify-between items-center">
+<h5 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors">What industries do you specialize in?</h5>
+<span class="material-symbols-outlined text-primary">expand_more</span>
+</div>
+<div class="mt-4 text-on-surface-variant font-light leading-relaxed hidden group-hover:block transition-all">
+                    We specialize in the high-ticket, luxury, and professional services sectors. Real estate titans, elite coaches, and venture capitalists are where we perform best.
+                </div>
+</div>
+<!-- FAQ Item -->
+<div class="group bg-neutral-950 p-6 rounded-lg cursor-pointer border border-white/5 hover:border-primary/30 transition-all">
+<div class="flex justify-between items-center">
+<h5 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors">Is Mo Bilal personally involved?</h5>
+<span class="material-symbols-outlined text-primary">expand_more</span>
+</div>
+<div class="mt-4 text-on-surface-variant font-light leading-relaxed hidden group-hover:block transition-all">
+                    Mo oversees the architectural strategy for every elite client. While we have a world-class execution team, the visionary blueprint always passes through his hands.
+                </div>
+</div>
+<!-- FAQ Item -->
+<div class="group bg-neutral-950 p-6 rounded-lg cursor-pointer border border-white/5 hover:border-primary/30 transition-all">
+<div class="flex justify-between items-center">
+<h5 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors">How do you measure authority?</h5>
+<span class="material-symbols-outlined text-primary">expand_more</span>
+</div>
+<div class="mt-4 text-on-surface-variant font-light leading-relaxed hidden group-hover:block transition-all">
+                    Through three pillars: Market Recognition, Inbound Deal Flow, and Pricing Power. When you can charge 10x your competitors and still have a waitlist, authority has been achieved.
+                </div>
+</div>
+<!-- FAQ Item -->
+<div class="group bg-neutral-950 p-6 rounded-lg cursor-pointer border border-white/5 hover:border-primary/30 transition-all">
+<div class="flex justify-between items-center">
+<h5 class="text-lg font-bold text-on-surface group-hover:text-primary transition-colors">What is the investment?</h5>
+<span class="material-symbols-outlined text-primary">expand_more</span>
+</div>
+<div class="mt-4 text-on-surface-variant font-light leading-relaxed hidden group-hover:block transition-all">
+                    HPF Media is a boutique firm. Our partnerships begin at a premium level, reflecting the value of the digital real estate and market position we secure for you.
+                </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="relative py-40 overflow-hidden bg-black">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-20" data-alt="abstract flowing red light in a dark void, cinematic long exposure, luxury background texture, deep scarlet and obsidian" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzY8jNlWbaC-J55Y6GHH4Us3sv-GRvWWjJxirCXrgrEVron8j_rgRo-lfXZONFIE1VsHiMenoxpN14cTsEM8e29lkCzlOTgTMoyHg_1SSaHydfWds1pUCuVKx6jqRPCZGzvgrdBgMot2ogNply58rZoYC59SvrH-Jpc2Zo4qrIk3jPSpvIRNq6-6hWwVfjPnInhW8my1B_pMMH_8ufiD0Mt_FLg0k-2uwi3mMEoYBHEo2u1qAM0As7rMWOp2jXzwP8FAHQuqYdg1Q"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black"></div>
+</div>
+<div class="relative z-10 text-center px-6">
+<h2 class="text-5xl md:text-7xl font-black tracking-tighter text-on-surface mb-10 max-w-4xl mx-auto">READY TO CLAIM YOUR AUTHORITY?</h2>
+<p class="text-on-surface-variant text-xl mb-12 max-w-2xl mx-auto font-light">The architects are ready. Your seat at the top is waiting.</p>
+<button class="bg-primary-container text-on-primary-container px-14 py-6 rounded-full text-xl font-bold tracking-tight hover:scale-110 active:scale-95 transition-all duration-300 shadow-[0_0_60px_rgba(255,84,73,0.5)]">
+            Secure Your Consultation
+        </button>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-black w-full border-t border-white/5">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full max-w-screen-2xl mx-auto">
+<div class="space-y-4 mb-8 md:mb-0">
+<div class="text-xl font-black text-red-600 font-headline">HPF MEDIA</div>
+<p class="font-inter text-xs tracking-widest uppercase text-neutral-600">© 2024 HPF MEDIA. CINEMATIC EXCELLENCE.</p>
+</div>
+<div class="flex gap-10 font-inter text-xs tracking-widest uppercase font-bold">
+<a class="text-neutral-600 hover:text-red-400 transition-colors" href="#">Privacy Policy</a>
+<a class="text-neutral-600 hover:text-red-400 transition-colors" href="#">Terms of Service</a>
+<a class="text-neutral-600 hover:text-red-400 transition-colors" href="#">Careers</a>
+<a class="text-neutral-600 hover:text-red-400 transition-colors" href="#">Press</a>
+</div>
+</div>
+</footer>
+</body></html>

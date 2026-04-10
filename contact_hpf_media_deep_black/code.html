@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact | HPF MEDIA</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-on-surface": "#303030",
+                    "on-tertiary-fixed": "#410000",
+                    "error-container": "#93000a",
+                    "surface": "#000000",
+                    "tertiary-fixed": "#ffdad4",
+                    "on-primary-fixed-variant": "#93000a",
+                    "surface-container-high": "#050505",
+                    "outline": "#af8783",
+                    "on-tertiary-fixed-variant": "#930000",
+                    "on-tertiary": "#690000",
+                    "secondary-fixed-dim": "#ffb4a8",
+                    "tertiary-fixed-dim": "#ffb4a8",
+                    "surface-container": "#020617",
+                    "on-secondary": "#60140c",
+                    "surface-variant": "#0a0a0a",
+                    "on-surface": "#ffffff",
+                    "surface-container-low": "#010101",
+                    "inverse-surface": "#e2e2e2",
+                    "on-error": "#690005",
+                    "on-background": "#ffffff",
+                    "outline-variant": "#5e3f3b",
+                    "tertiary": "#ffb4a8",
+                    "secondary": "#ffb4a8",
+                    "primary-container": "#ff5449",
+                    "primary": "#ffb4ab",
+                    "secondary-fixed": "#ffdad4",
+                    "on-primary": "#690005",
+                    "on-secondary-fixed": "#410000",
+                    "on-primary-fixed": "#410002",
+                    "surface-dim": "#000000",
+                    "secondary-container": "#7e2a20",
+                    "on-secondary-fixed-variant": "#7e2a20",
+                    "on-error-container": "#ffdad6",
+                    "tertiary-container": "#ff5541",
+                    "error": "#ffb4ab",
+                    "surface-tint": "#ffb4ab",
+                    "surface-bright": "#0a0a0a",
+                    "primary-fixed-dim": "#ffb4ab",
+                    "on-surface-variant": "#e8bcb7",
+                    "inverse-primary": "#c00011",
+                    "primary-fixed": "#ffdad6",
+                    "on-primary-container": "#5c0004",
+                    "surface-container-lowest": "#000000",
+                    "surface-container-highest": "#0f0f0f",
+                    "background": "#000000",
+                    "on-secondary-container": "#ff9a8a",
+                    "on-tertiary-container": "#5c0000"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .cinematic-bg {
+            background: radial-gradient(circle at bottom right, rgba(255, 42, 42, 0.12) 0%, rgba(0, 0, 0, 1) 70%);
+        }
+        .glass-panel {
+            background: rgba(2, 6, 23, 0.8);
+            backdrop-filter: blur(40px);
+        }
+        input:focus ~ label, input:not(:placeholder-shown) ~ label {
+            transform: translateY(-1.5rem) scale(0.85);
+            color: #ffb4ab;
+        }
+    </style>
+</head>
+<body class="bg-black text-white font-body selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="sticky top-0 w-full z-50 bg-black/80 backdrop-blur-[20px] bg-gradient-to-b from-black to-transparent">
+<div class="flex justify-between items-center px-12 py-6 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-black tracking-tighter text-white">HPF MEDIA</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-['Inter'] font-medium tracking-tight uppercase text-xs text-white/70 hover:text-[#FFB4AB] transition-colors duration-300" href="#">Home</a>
+<a class="font-['Inter'] font-medium tracking-tight uppercase text-xs text-white/70 hover:text-[#FFB4AB] transition-colors duration-300" href="#">About</a>
+<a class="font-['Inter'] font-medium tracking-tight uppercase text-xs text-white/70 hover:text-[#FFB4AB] transition-colors duration-300" href="#">Services</a>
+<a class="font-['Inter'] font-medium tracking-tight uppercase text-xs text-[#FFB4AB] border-b border-[#FF5449] pb-1" href="#">Contact</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2.5 rounded-DEFAULT font-['Inter'] font-medium tracking-tight uppercase text-xs ease-out scale-[0.99] active:scale-[0.95] transition-all duration-300 hover:brightness-110">
+                Book Your Strategy Call
+            </button>
+</div>
+</nav>
+<main class="min-h-screen cinematic-bg flex items-center justify-center py-20 px-6 md:px-12 overflow-hidden relative">
+<!-- Decorative background element -->
+<div class="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20">
+<div class="absolute -top-24 -left-24 w-96 h-96 bg-primary-container rounded-full blur-[160px]"></div>
+</div>
+<div class="max-w-screen-2xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+<!-- Left Side: Content -->
+<div class="space-y-12">
+<div class="space-y-4">
+<span class="label-sm uppercase tracking-[0.2em] text-primary font-bold">Strategic Partnership</span>
+<h1 class="display-lg text-5xl md:text-7xl font-black tracking-tighter leading-none text-white">
+                        Command Your<br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-container">Market Dominance</span>
+</h1>
+</div>
+<div class="space-y-8 max-w-lg">
+<p class="body-lg text-on-surface-variant leading-relaxed">
+                        HPF Media is an exclusive boutique agency for high-growth enterprises. We don't just manage media; we architect influence. 
+                    </p>
+<div class="space-y-6 pt-4">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary text-2xl">location_on</span>
+<div>
+<h4 class="text-xs uppercase tracking-widest text-primary mb-1">Headquarters</h4>
+<p class="text-white font-medium">Dubai Design District, Building 4<br/>Dubai, United Arab Emirates</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary text-2xl">mail</span>
+<div>
+<h4 class="text-xs uppercase tracking-widest text-primary mb-1">Direct Inquiry</h4>
+<p class="text-white font-medium">concierge@hpfmedia.com</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Subtle Brand Texture -->
+<div class="hidden lg:block opacity-[0.03] select-none">
+<span class="text-[12rem] font-black tracking-tighter leading-none">HPF</span>
+</div>
+</div>
+<!-- Right Side: Form -->
+<div class="glass-panel p-8 md:p-12 rounded-lg border border-white/5 shadow-[0_48px_48px_rgba(0,0,0,0.5)]">
+<h2 class="text-2xl font-bold tracking-tight mb-8 text-white">Book Your Strategy Audit</h2>
+<form class="space-y-8">
+<!-- Floating Label Inputs -->
+<div class="relative">
+<input class="w-full bg-black/40 border-0 border-b border-white/10 py-4 px-0 text-white focus:ring-0 focus:border-primary transition-all duration-300 peer" id="fullname" name="fullname" placeholder=" " type="text"/>
+<label class="absolute left-0 top-4 text-white/50 font-label text-sm uppercase tracking-wider transition-all duration-300 pointer-events-none peer-focus:text-primary peer-focus:-translate-y-6 peer-focus:scale-90" for="fullname">Full Name</label>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="relative">
+<input class="w-full bg-black/40 border-0 border-b border-white/10 py-4 px-0 text-white focus:ring-0 focus:border-primary transition-all duration-300 peer" id="domain" name="domain" placeholder=" " type="text"/>
+<label class="absolute left-0 top-4 text-white/50 font-label text-sm uppercase tracking-wider transition-all duration-300 pointer-events-none peer-focus:text-primary peer-focus:-translate-y-6 peer-focus:scale-90" for="domain">Company Domain</label>
+</div>
+<div class="relative">
+<input class="w-full bg-black/40 border-0 border-b border-white/10 py-4 px-0 text-white focus:ring-0 focus:border-primary transition-all duration-300 peer" id="email" name="email" placeholder=" " type="email"/>
+<label class="absolute left-0 top-4 text-white/50 font-label text-sm uppercase tracking-wider transition-all duration-300 pointer-events-none peer-focus:text-primary peer-focus:-translate-y-6 peer-focus:scale-90" for="email">Corporate Email</label>
+</div>
+</div>
+<div class="relative">
+<select class="w-full bg-black/40 border-0 border-b border-white/10 py-4 px-0 text-white/70 focus:ring-0 focus:border-primary transition-all duration-300 appearance-none" id="revenue" name="revenue">
+<option disabled="" selected="" value="">Annual Revenue Range</option>
+<option value="1-5m">$1M - $5M</option>
+<option value="5-20m">$5M - $20M</option>
+<option value="20-50m">$20M - $50M</option>
+<option value="50m+">$50M+</option>
+</select>
+<div class="absolute right-0 top-4 pointer-events-none">
+<span class="material-symbols-outlined text-white/30">expand_more</span>
+</div>
+</div>
+<div class="relative">
+<textarea class="w-full bg-black/40 border-0 border-b border-white/10 py-4 px-0 text-white focus:ring-0 focus:border-primary transition-all duration-300 peer resize-none" id="objectives" name="objectives" placeholder=" " rows="3"></textarea>
+<label class="absolute left-0 top-4 text-white/50 font-label text-sm uppercase tracking-wider transition-all duration-300 pointer-events-none peer-focus:text-primary peer-focus:-translate-y-6 peer-focus:scale-90" for="objectives">Growth Objectives</label>
+</div>
+<div class="pt-4">
+<button class="w-full bg-gradient-to-r from-primary-container to-primary-container/80 text-on-primary-container font-bold py-5 rounded-DEFAULT uppercase tracking-widest text-sm shadow-xl hover:shadow-primary-container/20 transition-all duration-500 ease-out active:scale-[0.98]" type="submit">
+                            Apply for Consultation
+                        </button>
+</div>
+</form>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 bg-black border-t border-white/5">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 max-w-screen-2xl mx-auto gap-8">
+<div class="text-lg font-black text-white">HPF MEDIA</div>
+<div class="flex gap-8">
+<a class="font-['Inter'] text-[10px] uppercase tracking-[0.2em] font-light text-white/40 hover:text-red-400 transition-colors duration-500" href="#">Privacy</a>
+<a class="font-['Inter'] text-[10px] uppercase tracking-[0.2em] font-light text-white/40 hover:text-red-400 transition-colors duration-500" href="#">Terms</a>
+<a class="font-['Inter'] text-[10px] uppercase tracking-[0.2em] font-light text-white/40 hover:text-red-400 transition-colors duration-500" href="#">Careers</a>
+<a class="font-['Inter'] text-[10px] uppercase tracking-[0.2em] font-light text-white/40 hover:text-red-400 transition-colors duration-500" href="#">Press</a>
+</div>
+<div class="font-['Inter'] text-[10px] uppercase tracking-[0.2em] font-light text-white/40 text-center md:text-right">
+                © 2024 HPF MEDIA. ALL RIGHTS RESERVED. CINEMATIC EXCELLENCE BY DESIGN.
+            </div>
+</div>
+</footer>
+</body></html>

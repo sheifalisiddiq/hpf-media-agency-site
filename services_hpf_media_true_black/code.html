@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Services | HPF Media - Cinematic Monolith</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @font-face {
+            font-family: 'Clash Display';
+            src: url('https://api.fontshare.com/v2/css?f[]=clash-display@700,600,500&display=swap');
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000000;
+        }
+        .font-headline { font-family: 'Clash Display', sans-serif; }
+        .glass-card {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 42, 42, 0.15);
+        }
+        .red-gradient-bg {
+            background: radial-gradient(circle at bottom right, rgba(255, 42, 42, 0.15) 0%, transparent 70%),
+                        radial-gradient(circle at top left, rgba(255, 42, 42, 0.05) 0%, transparent 50%);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-fixed-dim": "#ffb4a8",
+                      "on-surface": "#e2e2e2",
+                      "secondary-fixed": "#ffdad4",
+                      "on-tertiary-container": "#5c0000",
+                      "surface-container": "#000000",
+                      "surface-bright": "#1a1a1a",
+                      "on-surface-variant": "#e8bcb7",
+                      "surface-variant": "#0a0a0a",
+                      "on-error-container": "#ffdad6",
+                      "secondary-container": "#7e2a20",
+                      "error-container": "#93000a",
+                      "tertiary": "#ffb4a8",
+                      "on-secondary-container": "#ff9a8a",
+                      "surface": "#000000",
+                      "surface-container-highest": "#0f0f0f",
+                      "tertiary-fixed-dim": "#ffb4a8",
+                      "primary-fixed-dim": "#ffb4ab",
+                      "on-primary-fixed-variant": "#93000a",
+                      "on-primary": "#690005",
+                      "surface-container-high": "#080808",
+                      "background": "#000000",
+                      "surface-tint": "#ffb4ab",
+                      "error": "#ffb4ab",
+                      "outline": "#af8783",
+                      "primary-fixed": "#ffdad6",
+                      "on-secondary-fixed": "#410000",
+                      "on-background": "#e2e2e2",
+                      "surface-container-low": "#000000",
+                      "on-tertiary-fixed-variant": "#930000",
+                      "on-secondary-fixed-variant": "#7e2a20",
+                      "inverse-primary": "#c00011",
+                      "primary": "#ffb4ab",
+                      "on-error": "#690005",
+                      "on-tertiary-fixed": "#410000",
+                      "surface-dim": "#000000",
+                      "on-primary-fixed": "#410002",
+                      "inverse-surface": "#e2e2e2",
+                      "outline-variant": "#5e3f3b",
+                      "tertiary-fixed": "#ffdad4",
+                      "on-tertiary": "#690000",
+                      "tertiary-container": "#ff5541",
+                      "surface-container-lowest": "#000000",
+                      "secondary": "#ffb4a8",
+                      "on-primary-container": "#5c0004",
+                      "inverse-on-surface": "#303030",
+                      "on-secondary": "#60140c",
+                      "primary-container": "#ff5449"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              }
+            },
+          }
+        }
+      </script>
+</head>
+<body class="bg-black text-on-surface selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-xl border-b border-red-900/10">
+<div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-black tracking-tighter text-red-600 dark:text-red-500 font-headline">HPF Media</div>
+<div class="hidden md:flex gap-10 items-center">
+<a class="font-['Inter'] tracking-tight headline-sm uppercase text-neutral-500 hover:text-neutral-200 transition-colors" href="#">Home</a>
+<a class="font-['Inter'] tracking-tight headline-sm uppercase text-neutral-500 hover:text-neutral-200 transition-colors" href="#">About</a>
+<a class="font-['Inter'] tracking-tight headline-sm uppercase text-red-500 font-bold border-b-2 border-red-600 pb-1" href="#">Services</a>
+<a class="font-['Inter'] tracking-tight headline-sm uppercase text-neutral-500 hover:text-neutral-200 transition-colors" href="#">Contact</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2.5 rounded-DEFAULT font-bold uppercase tracking-wide hover:scale-95 active:scale-90 transition-all duration-300">
+                Book Your Strategy Call
+            </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex flex-col justify-center items-center text-center px-4 pt-20 red-gradient-bg bg-black">
+<div class="max-w-4xl mx-auto z-10">
+<span class="label-md uppercase tracking-[0.3em] text-primary mb-6 block font-medium">Dubai / Abu Dhabi / Global</span>
+<h1 class="text-6xl md:text-8xl font-black tracking-tighter font-headline mb-8 leading-[0.95] text-on-surface">
+                Precision-Engineered <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-container to-red-400">Dominance</span>
+</h1>
+<p class="body-lg text-neutral-400 max-w-2xl mx-auto leading-relaxed mb-10 text-lg">
+                We craft cinematic content and organic growth engines for UAE's elite brands. Not just impressions—authority.
+            </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-primary-container text-on-primary-container px-10 py-4 rounded-DEFAULT font-bold text-lg hover:bg-red-500 transition-all">Explore Our Ecosystem</button>
+<button class="border border-red-600/30 text-on-surface px-10 py-4 rounded-DEFAULT font-bold text-lg hover:bg-white/5 transition-all backdrop-blur-md">View Case Studies</button>
+</div>
+</div>
+<div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
+<div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-to-t from-red-600/20 to-transparent blur-3xl"></div>
+</div>
+</section>
+<!-- Core Services Bento Grid -->
+<section class="py-24 px-8 max-w-screen-2xl mx-auto bg-black">
+<div class="flex flex-col mb-16">
+<h2 class="text-4xl font-headline font-bold mb-4">Core Ecosystem</h2>
+<div class="w-24 h-1 bg-red-600"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Social Media Marketing -->
+<div class="md:col-span-7 glass-card rounded-lg p-10 flex flex-col justify-between overflow-hidden relative group">
+<div class="z-10">
+<span class="material-symbols-outlined text-primary text-4xl mb-6">dynamic_feed</span>
+<h3 class="text-3xl font-headline font-bold mb-4">Social Media Marketing / Organic Content</h3>
+<p class="text-neutral-400 text-lg mb-8 max-w-md">Aggressive organic scaling through high-retention storytelling. We don't chase trends; we set them for the UAE market.</p>
+</div>
+<img class="absolute right-[-10%] bottom-[-10%] w-2/3 object-cover rounded-xl opacity-30 group-hover:opacity-50 group-hover:scale-105 transition-all duration-700" data-alt="close-up of high-end smartphone displaying cinematic social media feed with luxury lifestyle aesthetic in dark moody studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgH9mK_9Cfu1a1EU9PnVoqzhzhoR8BHV51BeUA6C5EHc6N0IABj31lkRrOmJ_C5zJz5InsWKSCcmJlJNbqmvjf1-cdPY-tA2WVM0e7gsIK2ddcgrdZuczpJuhB-8l1VPq2_1xGfS4bMUcF6IrhKMb86F2tdAIcfetyIgdd_ZdFPBjJQt9pndRtDIPAz9FgmkFeho_mTFy30wQveEAKPvJBr5JmSuJ7GXGNPoKC50NcYmSwA5IksrdMN1anRJZ8JR13MerF1MpctcM"/>
+<div class="mt-auto z-10">
+<button class="text-primary font-bold inline-flex items-center gap-2 group-hover:translate-x-2 transition-transform">Command Growth <span class="material-symbols-outlined">trending_flat</span></button>
+</div>
+</div>
+<!-- Content Creation -->
+<div class="md:col-span-5 glass-card rounded-lg p-10 flex flex-col relative group overflow-hidden bg-black">
+<div class="z-10">
+<span class="material-symbols-outlined text-primary text-4xl mb-6">movie_filter</span>
+<h3 class="text-3xl font-headline font-bold mb-4">Content Creation</h3>
+<p class="text-neutral-400 mb-8">4K Cinematic production tailored for the discerning UAE audience. Commercial grade visual assets that demand attention.</p>
+</div>
+<img class="absolute right-[-20%] top-[40%] w-full h-1/2 object-cover opacity-20 group-hover:opacity-40 transition-all duration-700" data-alt="professional cinema camera on a gimbal in a dark studio setting with red rim lighting and atmospheric haze" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAy0JhtGu7QQIB4_ADA_JSiJwYzcLxdO-ion3FRm-EeG_e8moSWn-NZmDdvXijVUAIXpHOSgDJSAnInf4hFOxhQmxeSWcH4pomQu664QOBoOd4NzOwRIXUcjf4f-Sab7xpETLL5FLYLEWoCqE8JAFO3X3Zk3ETXv6QEBxJyrJhrGun3ZmEvWTj-kS1RIQ1JOEM3vEBKHMPe_IoRRCB-g5r7ZIZrJREMRq9VDwD-yrleFmzBpgQLNpBfMtJ6QDSkCUBnX4NVtMdTplU"/>
+<div class="mt-auto z-10">
+<button class="text-primary font-bold inline-flex items-center gap-2 group-hover:translate-x-2 transition-transform">Start Production <span class="material-symbols-outlined">trending_flat</span></button>
+</div>
+</div>
+<!-- Personal Branding -->
+<div class="md:col-span-6 glass-card rounded-lg p-10 flex flex-col group border-l-4 border-l-primary-container bg-black">
+<span class="material-symbols-outlined text-primary text-4xl mb-6">workspace_premium</span>
+<h3 class="text-2xl font-headline font-bold mb-4">Personal Branding</h3>
+<p class="text-neutral-400 mb-6">Transforming executives into industry icons. We manage your reputation, voice, and presence across digital landscapes.</p>
+<div class="mt-auto">
+<button class="text-primary font-bold inline-flex items-center gap-2 group-hover:translate-x-2 transition-transform">Claim Authority <span class="material-symbols-outlined">trending_flat</span></button>
+</div>
+</div>
+<!-- SEO & Web Design -->
+<div class="md:col-span-6 glass-card rounded-lg p-10 flex flex-col group border-l-4 border-l-primary-container bg-black">
+<span class="material-symbols-outlined text-primary text-4xl mb-6">language</span>
+<h3 class="text-2xl font-headline font-bold mb-4">SEO &amp; Web Design</h3>
+<p class="text-neutral-400 mb-6">High-performance digital flagships that convert. Engineered for speed, optimized for search dominance.</p>
+<div class="mt-auto">
+<button class="text-primary font-bold inline-flex items-center gap-2 group-hover:translate-x-2 transition-transform">Launch Site <span class="material-symbols-outlined">trending_flat</span></button>
+</div>
+</div>
+</div>
+</section>
+<!-- The Methodology -->
+<section class="py-24 bg-black">
+<div class="max-w-screen-2xl mx-auto px-8">
+<div class="text-center mb-20">
+<h2 class="text-5xl font-headline font-bold mb-4">The Methodology</h2>
+<p class="text-neutral-500 max-w-xl mx-auto">A relentless 5-step flow designed for velocity and uncompromising cinematic quality.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-5 gap-4 relative">
+<!-- Connectors for Desktop -->
+<div class="hidden md:block absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-red-600/30 to-transparent -translate-y-1/2"></div>
+<!-- Step 1 -->
+<div class="relative z-10 flex flex-col items-center text-center p-6 group">
+<div class="w-16 h-16 rounded-full bg-black flex items-center justify-center mb-6 border border-red-600/20 group-hover:bg-primary-container group-hover:border-primary-container transition-all duration-500">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary-container transition-colors">search</span>
+</div>
+<h4 class="font-headline font-bold text-xl mb-2">Discovery</h4>
+<p class="text-xs text-neutral-500 uppercase tracking-widest font-bold">Step 01</p>
+</div>
+<!-- Step 2 -->
+<div class="relative z-10 flex flex-col items-center text-center p-6 group">
+<div class="w-16 h-16 rounded-full bg-black flex items-center justify-center mb-6 border border-red-600/20 group-hover:bg-primary-container group-hover:border-primary-container transition-all duration-500">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary-container transition-colors">insights</span>
+</div>
+<h4 class="font-headline font-bold text-xl mb-2">Strategy</h4>
+<p class="text-xs text-neutral-500 uppercase tracking-widest font-bold">Step 02</p>
+</div>
+<!-- Step 3 -->
+<div class="relative z-10 flex flex-col items-center text-center p-6 group">
+<div class="w-16 h-16 rounded-full bg-black flex items-center justify-center mb-6 border border-red-600/20 group-hover:bg-primary-container group-hover:border-primary-container transition-all duration-500">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary-container transition-colors">description</span>
+</div>
+<h4 class="font-headline font-bold text-xl mb-2">Scripting</h4>
+<p class="text-xs text-neutral-500 uppercase tracking-widest font-bold">Step 03</p>
+</div>
+<!-- Step 4 -->
+<div class="relative z-10 flex flex-col items-center text-center p-6 group">
+<div class="w-16 h-16 rounded-full bg-black flex items-center justify-center mb-6 border border-red-600/20 group-hover:bg-primary-container group-hover:border-primary-container transition-all duration-500">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary-container transition-colors">videocam</span>
+</div>
+<h4 class="font-headline font-bold text-xl mb-2">Production</h4>
+<p class="text-xs text-neutral-500 uppercase tracking-widest font-bold">Step 04</p>
+</div>
+<!-- Step 5 -->
+<div class="relative z-10 flex flex-col items-center text-center p-6 group">
+<div class="w-16 h-16 rounded-full bg-black flex items-center justify-center mb-6 border border-red-600/20 group-hover:bg-primary-container group-hover:border-primary-container transition-all duration-500">
+<span class="material-symbols-outlined text-primary group-hover:text-on-primary-container transition-colors">send</span>
+</div>
+<h4 class="font-headline font-bold text-xl mb-2">Delivery</h4>
+<p class="text-xs text-neutral-500 uppercase tracking-widest font-bold">Step 05</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Strategic Edge -->
+<section class="py-24 px-8 max-w-screen-xl mx-auto bg-black">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="text-5xl font-headline font-bold mb-8 leading-tight">The <span class="text-primary">Strategic Edge</span> We Provide</h2>
+<div class="space-y-8">
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 bg-black border border-red-600/10 flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined text-primary">pinch</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-lg mb-2">UAE Cultural Mastery</h4>
+<p class="text-neutral-400">Deep understanding of local nuances from Dubai luxury to regional business ethics.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 bg-black border border-red-600/10 flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined text-primary">bolt</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-lg mb-2">Velocity of Results</h4>
+<p class="text-neutral-400">Our content engines are built for speed, delivering measurable growth in weeks, not months.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 bg-black border border-red-600/10 flex items-center justify-center rounded-lg">
+<span class="material-symbols-outlined text-primary">auto_awesome</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-lg mb-2">Cinematic Standards</h4>
+<p class="text-neutral-400">Uncompromising visual quality that aligns with the premium status of your brand.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative h-[600px] rounded-lg overflow-hidden glass-card p-4">
+<img class="w-full h-full object-cover rounded-lg opacity-80" data-alt="abstract architectural shot of Dubai skyscrapers at night with long exposure light trails and deep red highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAm04fis2eDF95mGghyIGwpGqjo_nyk2qRimt0oHCVI8AmrV5pdzwB1IhAvTyA5nuZXM8PLDXgwfC_N_O5aqyafVsRt8hSUnouznGq9J3HHXJ8tIjo6jXWv9_h8Ud5ZE0pRVFzKAkbC-pIvsuZN6npNWz9YOTQuvXyTVyTDFXQeBe1cQUC3KEc9sG1nTJ8d2koC4QmY3e0h2XXoEIHFKHedg0tzLFAaitsBlOfO4cwDFS6DzrDAMK8EiOODgUBS75l7Qxu06kJBywA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+<div class="absolute bottom-10 left-10 right-10">
+<div class="bg-black/90 backdrop-blur-md p-6 rounded-lg border border-red-600/30">
+<p class="font-headline font-bold text-xl italic">"They don't just create content; they build digital empires."</p>
+<p class="text-neutral-400 mt-2 text-sm">— UAE Real Estate Titan</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-32 px-8 bg-black">
+<div class="max-w-5xl mx-auto glass-card rounded-lg p-16 text-center relative overflow-hidden bg-black">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-red-600 to-transparent"></div>
+<h2 class="text-5xl md:text-6xl font-headline font-bold mb-6">Ready to Claim Your Market?</h2>
+<p class="text-neutral-400 text-xl mb-12 max-w-2xl mx-auto">Slots for our strategic partnership program are limited to 3 new clients per quarter. Secure your dominance now.</p>
+<button class="bg-primary-container text-on-primary-container px-12 py-5 rounded-DEFAULT font-black text-xl uppercase tracking-tighter hover:scale-105 active:scale-95 transition-all shadow-xl shadow-red-600/20">
+                Book Your Strategy Call
+            </button>
+<div class="mt-8 flex justify-center gap-8 text-neutral-500">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-red-600 text-sm">check_circle</span>
+<span class="text-sm font-bold uppercase tracking-widest">Global Reach</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-red-600 text-sm">check_circle</span>
+<span class="text-sm font-bold uppercase tracking-widest">Premium Assets</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full border-t border-red-900/10 bg-black">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full max-w-screen-2xl mx-auto">
+<div class="font-headline text-xl font-bold tracking-tighter text-neutral-500 mb-8 md:mb-0">HPF MEDIA</div>
+<div class="flex flex-col items-center md:items-end gap-6">
+<div class="flex gap-8">
+<a class="font-['Inter'] text-[0.6875rem] uppercase tracking-[0.1em] font-medium text-neutral-500 hover:text-red-500 transition-colors duration-300" href="#">Privacy Policy</a>
+<a class="font-['Inter'] text-[0.6875rem] uppercase tracking-[0.1em] font-medium text-neutral-500 hover:text-red-500 transition-colors duration-300" href="#">Terms of Service</a>
+<a class="font-['Inter'] text-[0.6875rem] uppercase tracking-[0.1em] font-medium text-neutral-500 hover:text-red-500 transition-colors duration-300" href="#">LinkedIn</a>
+<a class="font-['Inter'] text-[0.6875rem] uppercase tracking-[0.1em] font-medium text-neutral-500 hover:text-red-500 transition-colors duration-300" href="#">Instagram</a>
+</div>
+<p class="font-['Inter'] text-[0.6875rem] uppercase tracking-[0.1em] font-medium text-neutral-500">© 2024 HPF Media. Built for the Cinematic Monolith.</p>
+</div>
+</div>
+</footer>
+</body></html>

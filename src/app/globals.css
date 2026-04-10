@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #ffb4ab;
+  --color-on-error: #690005;
+  --color-outline: #af8783;
+  --color-on-secondary: #60140c;
+  --color-on-secondary-fixed: #410000;
+  --color-on-secondary-container: #ff9a8a;
+  --color-tertiary-container: #ff5541;
+  --color-primary-fixed-dim: #ffb4ab;
+  --color-on-tertiary-fixed-variant: #930000;
+  --color-error-container: #93000a;
+  --color-on-primary: #690005;
+  --color-on-primary-container: #5c0004;
+  --color-on-surface: #e2e2e2;
+  --color-on-primary-fixed: #410002;
+  --color-tertiary-fixed-dim: #ffb4a8;
+  --color-surface-tint: #ffb4ab;
+  --color-surface-container-highest: #111111;
+  --color-surface-dim: #000000;
+  --color-primary-fixed: #ffdad6;
+  --color-primary-container: #ff5449;
+  --color-on-error-container: #ffdad6;
+  --color-secondary-container: #7e2a20;
+  --color-tertiary-fixed: #ffdad4;
+  --color-surface-bright: #1a1a1a;
+  --color-inverse-primary: #c00011;
+  --color-error: #ffb4ab;
+  --color-tertiary: #ffb4a8;
+  --color-surface-variant: #111111;
+  --color-on-surface-variant: #a0a0a0;
+  --color-surface-container-lowest: #000000;
+  --color-on-secondary-fixed-variant: #7e2a20;
+  --color-secondary: #ffb4a8;
+  --color-on-primary-fixed-variant: #93000a;
+  --color-inverse-on-surface: #e2e2e2;
+  --color-surface-container: #080808;
+  --color-surface: #000000;
+  --color-on-background: #e2e2e2;
+  --color-on-tertiary-container: #5c0000;
+  --color-surface-container-low: #050505;
+  --color-surface-container-high: #0c0c0c;
+  --color-on-tertiary-fixed: #410000;
+  --color-inverse-surface: #e2e2e2;
+  --color-secondary-fixed-dim: #ffb4a8;
+  --color-secondary-fixed: #ffdad4;
+  --color-outline-variant: #404040;
+  --color-on-tertiary: #690000;
+  --color-background: #000000;
+
+  --font-headline: var(--font-inter), "Clash Display", sans-serif;
+  --font-body: var(--font-inter), sans-serif;
+  --font-label: var(--font-inter), sans-serif;
+
+  --radius-DEFAULT: 1rem;
+  --radius-lg: 2rem;
+  --radius-xl: 3rem;
+  --radius-full: 9999px;
+}
+
+@font-face {
+  font-family: "Clash Display";
+  src: url("https://api.fontshare.com/v2/css?f[]=clash-display@700,600,500&display=swap");
+}
+
+body {
+  background-color: var(--color-background, #000000);
+  color: var(--color-on-background, #e2e2e2);
+  overflow-x: hidden;
+  font-family: var(--font-body);
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+/* Home / Index specific styles */
+.scarlet-glow-bg {
+  background: linear-gradient(180deg, #000000 0%, #000000 60%, #FF2A2A 100%);
+}
+.scarlet-radial-glow {
+  background: radial-gradient(circle at center, rgba(255, 42, 42, 0.12) 0%, transparent 70%);
+}
+.grid-pattern {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.cinematic-bleed {
+  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+}
+.soft-gradient-transition {
+  transition: background 1s ease-in-out;
+}
+
+/* About page specific styles */
+.cinematic-glow {
+  background: radial-gradient(circle at center, rgba(255, 42, 42, 0.2) 0%, transparent 70%);
+}
+.text-glow {
+  text-shadow: 0 0 30px rgba(255, 180, 171, 0.4);
+}
+.glass-header {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Services page specific styles */
+.glass-card {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 42, 42, 0.15);
+}
+.red-gradient-bg {
+  background: radial-gradient(circle at bottom right, rgba(255, 42, 42, 0.15) 0%, transparent 70%),
+              radial-gradient(circle at top left, rgba(255, 42, 42, 0.05) 0%, transparent 50%);
+}
+
+/* Contact page specific styles */
+.cinematic-bg {
+  background: radial-gradient(circle at bottom right, rgba(255, 42, 42, 0.12) 0%, rgba(0, 0, 0, 1) 70%);
+}
+.glass-panel {
+  background: rgba(2, 6, 23, 0.8);
+  backdrop-filter: blur(40px);
+}
+input:focus ~ label, input:not(:placeholder-shown) ~ label {
+  transform: translateY(-1.5rem) scale(0.85);
+  color: var(--color-primary, #ffb4ab);
+}
+textarea:focus ~ label, textarea:not(:placeholder-shown) ~ label {
+  transform: translateY(-1.5rem) scale(0.85);
+  color: var(--color-primary, #ffb4ab);
+}
