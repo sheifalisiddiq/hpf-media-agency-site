@@ -12,6 +12,16 @@ const links = [
   { name: "Contact", href: "/contact" },
 ];
 
+function getLinkClasses(isActive: boolean) {
+  return [
+    "rounded-full px-4 py-2 text-sm font-semibold tracking-[0.18em] uppercase transition-all duration-300",
+    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-black/60",
+    isActive
+      ? "bg-white/14 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.14)]"
+      : "text-white/70 hover:text-white hover:bg-white/8",
+  ].join(" ");
+}
+
 export default function Navigation() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
@@ -20,26 +30,33 @@ export default function Navigation() {
     setIsOpen(false);
   }, [pathname]);
 
-  useEffect(() => {
-    document.body.style.overflow = isOpen ? "hidden" : "";
-
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [isOpen]);
-
   return (
-    <>
-      <nav className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-black/80 backdrop-blur-xl shadow-[0_8px_32px_rgba(255,42,42,0.1)]">
-        <div className="mx-auto flex max-w-screen-2xl items-center justify-between px-5 py-4 md:px-8">
+    <div className="pointer-events-none fixed top-4 left-1/2 z-50 w-full max-w-5xl -translate-x-1/2 px-4">
+      <motion.nav
+        initial={{ opacity: 0, y: -14 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+        className="pointer-events-auto rounded-full border border-white/20 bg-black/30 shadow-[0_18px_55px_rgba(0,0,0,0.35)] backdrop-blur-xl"
+      >
+        <div className="flex items-center justify-between px-6 py-3">
           <Link
             href="/"
-            className="text-2xl font-black uppercase tracking-tighter text-primary font-headline"
+            className="group flex min-h-12 items-center gap-3 rounded-full pr-4 text-white transition-opacity duration-300 hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-black/60"
           >
-            HPF Media
+            <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/10 text-xs font-black uppercase tracking-[0.24em] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.18)]">
+              H
+            </span>
+            <span className="flex flex-col leading-none">
+              <span className="text-[0.65rem] font-medium uppercase tracking-[0.34em] text-white/55">
+                Studio
+              </span>
+              <span className="text-base font-semibold tracking-[0.18em] text-white">
+                HPF Media
+              </span>
+            </span>
           </Link>
 
-          <div className="hidden items-center gap-10 text-xs font-bold uppercase tracking-tighter md:flex">
+          <div className="hidden items-center gap-1 md:flex">
             {links.map((link) => {
               const isActive = pathname === link.href;
 
@@ -47,22 +64,12 @@ export default function Navigation() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`rounded px-2 py-1 transition-colors duration-300 ${
-                    isActive
-                      ? "border-b-2 border-primary pb-1 text-primary"
-                      : "text-neutral-500 hover:bg-white/5 hover:text-neutral-100"
-                  }`}
+                  className={getLinkClasses(isActive)}
                 >
                   {link.name}
                 </Link>
               );
             })}
-          </div>
-
-          <div className="hidden md:block">
-            <button className="rounded bg-primary-container px-6 py-2.5 font-bold uppercase tracking-wide text-on-primary-container transition-all duration-300 hover:scale-95 active:scale-90">
-              Inquire
-            </button>
           </div>
 
           <button
@@ -71,87 +78,66 @@ export default function Navigation() {
             aria-expanded={isOpen}
             aria-controls="mobile-navigation"
             onClick={() => setIsOpen((open) => !open)}
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-white transition-colors duration-300 hover:bg-white/[0.08] md:hidden"
+            className="flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white transition-colors duration-300 hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-black/60 md:hidden"
           >
             <span className="sr-only">Toggle navigation</span>
-            <div className="relative h-4 w-5">
+            <span className="relative h-4 w-5">
               <span
-                className={`absolute left-0 top-0 h-0.5 w-5 bg-current transition-all duration-300 ${
+                className={`absolute left-0 top-0 h-0.5 w-5 rounded-full bg-current transition-all duration-300 ${
                   isOpen ? "top-[7px] rotate-45" : ""
                 }`}
               />
               <span
-                className={`absolute left-0 top-[7px] h-0.5 w-5 bg-current transition-all duration-300 ${
+                className={`absolute left-0 top-[7px] h-0.5 w-5 rounded-full bg-current transition-all duration-300 ${
                   isOpen ? "opacity-0" : "opacity-100"
                 }`}
               />
               <span
-                className={`absolute left-0 top-[14px] h-0.5 w-5 bg-current transition-all duration-300 ${
+                className={`absolute left-0 top-[14px] h-0.5 w-5 rounded-full bg-current transition-all duration-300 ${
                   isOpen ? "top-[7px] -rotate-45" : ""
                 }`}
               />
-            </div>
+            </span>
           </button>
         </div>
-      </nav>
+      </motion.nav>
 
       <AnimatePresence>
         {isOpen ? (
-          <>
-            <motion.button
-              key="mobile-nav-backdrop"
-              type="button"
-              aria-label="Close navigation menu"
-              onClick={() => setIsOpen(false)}
-              className="fixed inset-0 z-40 bg-black/70 backdrop-blur-sm md:hidden"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2, ease: "easeOut" }}
-            />
+          <motion.div
+            key="mobile-nav-panel"
+            id="mobile-navigation"
+            initial={{ opacity: 0, y: -10, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -8, scale: 0.98 }}
+            transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+            className="pointer-events-auto mt-3 overflow-hidden rounded-[2rem] border border-white/20 bg-black/40 p-3 shadow-[0_20px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl md:hidden"
+          >
+            <div className="flex flex-col gap-1">
+              {links.map((link) => {
+                const isActive = pathname === link.href;
 
-            <motion.aside
-              key="mobile-nav-panel"
-              id="mobile-navigation"
-              className="fixed inset-x-4 top-20 z-50 overflow-hidden rounded-[1.75rem] border border-white/10 bg-neutral-950/95 p-6 shadow-[0_30px_90px_rgba(0,0,0,0.45)] md:hidden"
-              initial={{ opacity: 0, y: -16 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -12 }}
-              transition={{ duration: 0.24, ease: [0.22, 1, 0.36, 1] }}
-            >
-              <div className="space-y-2">
-                {links.map((link) => {
-                  const isActive = pathname === link.href;
-
-                  return (
-                    <Link
-                      key={link.name}
-                      href={link.href}
-                      onClick={() => setIsOpen(false)}
-                      className={`block rounded-2xl px-4 py-4 text-base font-bold uppercase tracking-[0.22em] transition-colors duration-300 ${
-                        isActive
-                          ? "bg-primary text-black"
-                          : "bg-white/[0.03] text-white hover:bg-white/[0.07]"
-                      }`}
-                    >
-                      {link.name}
-                    </Link>
-                  );
-                })}
-              </div>
-
-              <div className="mt-6 border-t border-white/10 pt-6">
-                <button
-                  type="button"
-                  className="w-full rounded-2xl bg-primary-container px-6 py-4 font-bold uppercase tracking-[0.22em] text-on-primary-container transition-transform duration-300 active:scale-[0.98]"
-                >
-                  Inquire
-                </button>
-              </div>
-            </motion.aside>
-          </>
+                return (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className={[
+                      "rounded-[1.25rem] px-4 py-3 text-sm font-semibold uppercase tracking-[0.18em] transition-all duration-300",
+                      "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-black/60",
+                      isActive
+                        ? "bg-white/14 text-white"
+                        : "text-white/72 hover:bg-white/10 hover:text-white",
+                    ].join(" ")}
+                  >
+                    {link.name}
+                  </Link>
+                );
+              })}
+            </div>
+          </motion.div>
         ) : null}
       </AnimatePresence>
-    </>
+    </div>
   );
 }
