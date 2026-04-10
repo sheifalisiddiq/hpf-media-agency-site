@@ -19,31 +19,31 @@ import { StickyStory } from "@/components/motion/StickyStory";
 
 const services = [
   {
-    icon: "dynamic_feed",
-    title: "Attention Systems",
+    icon: "insights",
+    title: "Organic Strategy",
     description:
-      "We build editorial rhythms, launch windows, and distribution patterns that make premium brands feel unavoidable.",
+      "We build the blueprint for unavoidable reach. No generic templates—just high-impact strategy tailored for UAE SMEs.",
     span: "lg:col-span-7",
   },
   {
-    icon: "videocam",
-    title: "Cinematic Production",
+    icon: "edit_note",
+    title: "Viral Scripting",
     description:
-      "Frames with weight, pacing with tension, and assets engineered to survive both paid and organic distribution.",
+      "Content is won in the first 3 seconds. Our scripts are engineered to hook viewers and force them to take notice.",
     span: "lg:col-span-5",
   },
   {
-    icon: "trending_up",
-    title: "Growth Loops",
+    icon: "movie_filter",
+    title: "High-Retention Editing",
     description:
-      "Hooks, sequencing, and offer architecture tuned for compounding reach instead of one-off spikes.",
+      "Retention is the only metric that matters. We edit for speed, psychological triggers, and absolute brand clarity.",
     span: "lg:col-span-5",
   },
   {
-    icon: "diamond",
-    title: "Founder Authority",
+    icon: "send",
+    title: "Posting Systems",
     description:
-      "We sharpen the face of the brand until the founder becomes the signal the market recognizes instantly.",
+      "Consistency kills competition. We manage your entire distribution pipeline so you stay dominant across IG and TikTok.",
     span: "lg:col-span-7",
   },
 ];
@@ -51,44 +51,44 @@ const services = [
 const processSteps = [
   {
     num: "01",
-    title: "Audit The Signal",
-    desc: "We strip the brand down to positioning, perception, and leverage gaps.",
+    title: "The Audit",
+    desc: "We identify exactly where your current content is failing and where you're losing leads.",
   },
   {
     num: "02",
-    title: "Design The Narrative",
-    desc: "Every campaign is scored for rhythm, tension, and memorability before launch.",
+    title: "The Blueprint",
+    desc: "A custom 90-day roadmap designed to hit 5–10 million views for your UAE business.",
   },
   {
     num: "03",
-    title: "Capture The Assets",
-    desc: "Production is built to feel precise on mobile and commanding on large screens.",
+    title: "Velocity Production",
+    desc: "High-speed filming and editing cycles that keep your feed fresh and high-performing.",
   },
   {
     num: "04",
-    title: "Release In Waves",
-    desc: "We sequence content and paid traffic so each touchpoint reinforces the next.",
+    title: "Market Dominance",
+    desc: "Scaling winning content into a compounding lead generation engine for your brand.",
   },
 ];
 
 const stickyFrames = [
   {
-    label: "Frame 01",
-    title: "Open With Tension",
+    label: "Month 01",
+    title: "The Reset",
     description:
-      "The first screen moves like a poster in motion: background drift, foreground lift, and text that arrives in measured beats.",
+      "We overhaul your positioning and start the velocity posting cycle. Our target is the first 500k views and baseline engagement.",
   },
   {
-    label: "Frame 02",
-    title: "Hold The Viewer",
+    label: "Month 02",
+    title: "The Surge",
     description:
-      "As the page scrolls, sections lock into place long enough to feel intentional, not decorative. Each reveal earns its space.",
+      "The algorithm recognizes your authority. We double down on high-retention hooks and viral formats. Expected: 2M+ views.",
   },
   {
-    label: "Frame 03",
-    title: "Escalate The Payoff",
+    label: "Month 03",
+    title: "Dominance",
     description:
-      "The cadence tightens near conversion. Visual density increases, copy gets shorter, and the call-to-action lands after a controlled build.",
+      "You become the go-to brand in your niche. Leads start flowing in automatically as you hit the 5M-10M view milestone.",
   },
 ];
 
@@ -133,31 +133,30 @@ export default function HomeExperience() {
             <ScrollReveal className="space-y-8" distance={20}>
               <div className="inline-flex items-center gap-3 border border-white/10 bg-white/[0.04] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.35em] text-white/70 backdrop-blur-md">
                 <span className="h-2 w-2 rounded-full bg-primary" />
-                High Performance Narrative Systems
+                Trusted by 50+ UAE Brands | 500M+ Views
               </div>
               <h1 className="max-w-4xl text-4xl font-black uppercase leading-[0.9] tracking-[-0.06em] text-white sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-headline">
-                Move Like A
+                5–10 Million
                 <br />
-                Brand People
+                Organic Views
                 <br />
-                Cannot Ignore
+                In 90 Days.
               </h1>
               <p className="max-w-xl text-base leading-7 text-on-surface-variant md:text-lg">
-                Inspired by cinematic editorial sites, this experience uses depth,
-                parallax, and staged reveals to make every section feel authored
-                instead of merely loaded.
+                We build creator-led short-form content for UAE SMEs that turns zero
+                reach into undeniable market authority. Stop guessing—start dominating.
               </p>
             </ScrollReveal>
 
             <StaggerReveal className="flex flex-col gap-4 sm:flex-row" stagger={0.1}>
               <StaggerItem>
                 <button className="bg-primary px-8 py-4 text-sm font-black uppercase tracking-[0.24em] text-black transition-transform duration-300 hover:scale-[1.03]">
-                  Start The Brief
+                  Book Strategy Call
                 </button>
               </StaggerItem>
               <StaggerItem>
                 <button className="border border-white/15 px-8 py-4 text-sm font-black uppercase tracking-[0.24em] text-white transition-colors duration-300 hover:bg-white/5">
-                  See The Motion
+                  See Our Work
                 </button>
               </StaggerItem>
             </StaggerReveal>
@@ -179,11 +178,11 @@ export default function HomeExperience() {
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-8">
                 <p className="text-[11px] font-bold uppercase tracking-[0.35em] text-primary">
-                  Hero Parallax
+                  The HPF Promise
                 </p>
                 <p className="mt-3 max-w-xs text-sm leading-6 text-white/70">
-                  Background and foreground move at different speeds so the entry
-                  feels dimensional without heavy scripting.
+                  We don't just post; we engineer attention. Built for UAE business
+                  owners who demand real-world impact and trackable leads.
                 </p>
               </div>
             </div>
@@ -195,13 +194,18 @@ export default function HomeExperience() {
         <div className="mx-auto max-w-7xl">
           <ScrollReveal className="mb-16 max-w-3xl space-y-5">
             <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary">
-              Progressive Sections
+              The Problem
             </p>
             <h2 className="text-4xl font-black uppercase tracking-[-0.06em] text-white md:text-6xl font-headline">
-              Scroll Should Feel
+              Is Your Brand
               <br />
-              Composed, Not Triggered
+              Invisible?
             </h2>
+            <p className="max-w-2xl text-lg text-on-surface-variant">
+              Most UAE businesses are struggling to stay relevant. Low reach, no
+              engagement, and zero leads. Your competitors are winning the attention
+              game. We help you take it back.
+            </p>
           </ScrollReveal>
 
           <StaggerReveal className="grid gap-6 lg:grid-cols-12" stagger={0.12}>
@@ -231,9 +235,9 @@ export default function HomeExperience() {
       </section>
 
       <StickyStory
-        eyebrow="Sticky Narrative"
-        title="Reveal The Story As The Viewport Travels"
-        intro="This section pins the framing while the content advances in measured blocks, echoing the editorial pacing of the reference without copying its structure."
+        eyebrow="The Roadmap"
+        title="From Zero to 10 Million Views"
+        intro="The algorithm doesn't reward hard work; it rewards strategy. Here is our 90-day blueprint to turning your brand into a UAE powerhouse."
         items={stickyFrames}
       />
 
@@ -241,17 +245,17 @@ export default function HomeExperience() {
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.1fr)] lg:items-center">
           <ScrollReveal className="space-y-6">
             <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary">
-              Layered Depth
+              The Architect
             </p>
             <h2 className="text-4xl font-black uppercase tracking-[-0.06em] text-white md:text-6xl font-headline">
-              Background Drift
+              Mo Bilal:
               <br />
-              Keeps The Page Alive
+              Creator-Led Authority
             </h2>
             <p className="max-w-md text-base leading-7 text-on-surface-variant">
-              Parallax is strongest when it stays subtle. The image breathes at a
-              different rate than the copy, which adds depth without degrading
-              readability or frame rate.
+              Mo doesn't just manage media; he understands the psychology of
+              attention. Built by a creator for creators, HPF Media brings
+              real-world results to the UAE's high-growth SMEs.
             </p>
           </ScrollReveal>
 
@@ -265,11 +269,11 @@ export default function HomeExperience() {
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/15 to-transparent" />
             <div className="absolute inset-x-0 bottom-0 p-8">
               <p className="text-[11px] font-bold uppercase tracking-[0.35em] text-primary">
-                Motion Layer
+                The Founder
               </p>
               <p className="mt-3 max-w-md text-sm leading-6 text-white/70">
-                Image panels use transform-only motion so the browser can keep the
-                animation on the compositor thread.
+                Strategic engineering meets cinematic soul. Every client strategy
+                passes through Mo's hands.
               </p>
             </div>
           </ParallaxSection>
@@ -280,12 +284,12 @@ export default function HomeExperience() {
         <div className="mx-auto max-w-7xl">
           <ScrollReveal className="mb-14 max-w-2xl space-y-5">
             <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary">
-              Timed Reveal
+              Our Values
             </p>
             <h2 className="text-4xl font-black uppercase tracking-[-0.06em] text-white md:text-6xl font-headline">
-              A Section Can
+              No Generic
               <br />
-              Unfold In Sequence
+              Marketing. Ever.
             </h2>
           </ScrollReveal>
 
@@ -317,17 +321,17 @@ export default function HomeExperience() {
         <div className="relative mx-auto max-w-5xl text-center">
           <ScrollReveal className="space-y-8">
             <h2 className="text-5xl font-black uppercase tracking-[-0.08em] text-white md:text-7xl font-headline">
-              Build A Scroll
+              Ready to Claim
               <br />
-              People Remember
+              Your Market?
             </h2>
             <p className="mx-auto max-w-2xl text-lg leading-8 text-white/70">
-              The motion system is client-only, reusable, and hydration-safe. From
-              here we can apply the same primitives to the other routes without
-              changing the document structure again.
+              Stop posting content that no one sees. Join the elite UAE brands
+              scaling their impact through HPF Media. Your seat at the top is
+              waiting.
             </p>
             <button className="bg-white px-10 py-5 text-sm font-black uppercase tracking-[0.24em] text-black transition-transform duration-300 hover:scale-[1.03]">
-              Continue The Build
+              Book Your Strategy Call
             </button>
           </ScrollReveal>
         </div>
