@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function About() {
   return (
@@ -11,16 +14,16 @@ export default function About() {
           <div className="absolute bottom-0 w-full h-[500px] bg-gradient-to-t from-red-900/20 to-transparent"></div>
         </div>
         <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
-          <span className="text-sm uppercase tracking-[0.3em] text-primary font-bold mb-6 block">Legacy Architecture</span>
+          <span className="text-sm uppercase tracking-[0.3em] text-primary font-bold mb-6 block">Dubai Organic Growth Agency</span>
           <h1 className="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter text-on-surface leading-[0.9] mb-8 text-glow font-headline">
-            THE ARCHITECTS OF AUTHORITY
+            ORGANIC SHORT-FORM CONTENT THAT GROWS YOUR BUSINESS
           </h1>
           <p className="text-on-surface-variant text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed mb-12">
-            We don't just create content; we build digital monuments. HPF Media is the sanctuary where elite visionaries transform into industry titans.
+            HPF Media helps UAE business owners grow visibility, engagement, and inbound leads through strategic Instagram and TikTok content.
           </p>
           <div className="flex flex-col md:flex-row gap-6 justify-center">
             <button className="bg-primary-container text-on-primary-container px-10 py-5 rounded-lg text-lg font-bold tracking-tight hover:scale-105 transition-transform duration-300 shadow-2xl shadow-primary/30">
-              Explore the Vision
+              See How We Work
             </button>
           </div>
         </div>
@@ -46,29 +49,29 @@ export default function About() {
           </div>
           <div className="space-y-8">
             <div className="space-y-4">
-              <h2 className="text-primary font-bold tracking-widest uppercase text-sm">Meet the Visionary</h2>
+              <h2 className="text-primary font-bold tracking-widest uppercase text-sm">Meet the Founder</h2>
               <h3 className="text-4xl md:text-6xl font-black tracking-tighter text-on-surface font-headline">Mo Bilal</h3>
               <div className="w-20 h-1 bg-primary-container"></div>
             </div>
             <div className="space-y-6 text-on-surface-variant leading-relaxed text-lg font-light">
               <p>
-                Mo Bilal is the mastermind behind the growth of the world's most influential figures. With a background in engineering digital monuments and cinematic movements, Mo approaches brand authority with the precision of an architect and the soul of a filmmaker.
+                Mo Bilal leads HPF Media with a clear focus: helping businesses turn short-form content into real attention, stronger positioning, and qualified inbound demand.
               </p>
               <p>
-                Based in the heart of the UAE's luxury market, he has pioneered a methodology that transcends traditional marketing. It is about <span className="text-primary font-medium italic">Cinematic Authority</span>—the art of being felt before being seen, and heard long after the screen goes dark.
+                Working with brands across the UAE, he has built content systems designed for Instagram and TikTok growth, combining strategy, scripting, production, and editing into one execution process.
               </p>
               <p>
-                "In a world of noise, true authority is silent, certain, and undeniable. We don't chase attention; we demand it through excellence."
+                The goal is simple: create content that gets seen, keeps people watching, and helps business owners convert attention into trust and leads.
               </p>
             </div>
             <div className="flex gap-8 pt-6">
               <div className="text-center">
                 <div className="text-4xl font-black text-on-surface">500M+</div>
-                <div className="text-xs uppercase tracking-widest text-primary font-bold mt-1">Total Reach</div>
+                <div className="text-xs uppercase tracking-widest text-primary font-bold mt-1">Organic Views Generated</div>
               </div>
               <div className="text-center border-l border-white/10 pl-8">
                 <div className="text-4xl font-black text-on-surface">50+</div>
-                <div className="text-xs uppercase tracking-widest text-primary font-bold mt-1">Titans Scaled</div>
+                <div className="text-xs uppercase tracking-widest text-primary font-bold mt-1">Brands Supported</div>
               </div>
             </div>
           </div>
@@ -76,37 +79,57 @@ export default function About() {
       </section>
 
       {/* Why Us Section */}
-      <section className="py-20 lg:py-32 bg-black text-on-surface">
-        <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
-          <div className="mb-16 lg:mb-20 text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-on-surface mb-6 uppercase font-headline">Why the Elite Choose HPF</h2>
-            <p className="text-on-surface-variant font-light text-lg">Precision. Exclusivity. Results. We operate at the intersection of high-art and high-conversion.</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="group relative p-10 bg-neutral-950 rounded-lg transition-all duration-500 hover:bg-neutral-900 hover:-translate-y-2 outline outline-1 outline-white/5">
-              <div className="mb-8">
-                <span className="material-symbols-outlined text-4xl text-primary">architecture</span>
-              </div>
-              <h4 className="text-2xl font-bold text-on-surface mb-4">Strategic Engineering</h4>
-              <p className="text-on-surface-variant font-light leading-relaxed">We don't guess. Every campaign is engineered with forensic precision to ensure your message hits with maximum impact.</p>
-              <div className="absolute bottom-0 left-0 h-1 w-0 bg-primary-container transition-all duration-500 group-hover:w-full"></div>
-            </div>
-            <div className="group relative p-10 bg-neutral-950 rounded-lg transition-all duration-500 hover:bg-neutral-900 hover:-translate-y-2 outline outline-1 outline-white/5">
-              <div className="mb-8">
-                <span className="material-symbols-outlined text-4xl text-primary">movie_filter</span>
-              </div>
-              <h4 className="text-2xl font-bold text-on-surface mb-4">Cinematic Excellence</h4>
-              <p className="text-on-surface-variant font-light leading-relaxed">Your brand is treated like a feature film. We use high-end production techniques to create a visual language of luxury.</p>
-              <div className="absolute bottom-0 left-0 h-1 w-0 bg-primary-container transition-all duration-500 group-hover:w-full"></div>
-            </div>
-            <div className="group relative p-10 bg-neutral-950 rounded-lg transition-all duration-500 hover:bg-neutral-900 hover:-translate-y-2 outline outline-1 outline-white/5">
-              <div className="mb-8">
-                <span className="material-symbols-outlined text-4xl text-primary">diamond</span>
-              </div>
-              <h4 className="text-2xl font-bold text-on-surface mb-4">Market Domination</h4>
-              <p className="text-on-surface-variant font-light leading-relaxed">We focus on the top 1% of the market. Our strategies are designed to position you as the only logical choice in your niche.</p>
-              <div className="absolute bottom-0 left-0 h-1 w-0 bg-primary-container transition-all duration-500 group-hover:w-full"></div>
-            </div>
+      <section className="relative py-24 lg:py-32 bg-black overflow-hidden">
+        {/* Background Glows */}
+        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-red-600/5 blur-[120px] rounded-full pointer-events-none"></div>
+        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-red-900/5 blur-[120px] rounded-full pointer-events-none"></div>
+
+        <div className="max-w-6xl mx-auto px-4 relative z-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-16 lg:mb-20 text-center max-w-3xl mx-auto"
+          >
+            <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-white mb-6 uppercase font-headline">Why Businesses Choose HPF</h2>
+            <p className="text-white/70 font-light text-lg">Clear strategy, strong execution, and short-form content built to help you grow in the UAE market.</p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            {[
+              {
+                icon: "architecture",
+                title: "Strategy First",
+                desc: "We build content around your offer, audience, and goals so every post supports real business growth."
+              },
+              {
+                icon: "movie_filter",
+                title: "Attention Engineering",
+                desc: "From scripting to editing, we create short-form videos designed to stop the scroll and keep viewers watching."
+              },
+              {
+                icon: "diamond",
+                title: "Growth You Can Feel",
+                desc: "We prioritize actual reach and leads over vanity metrics, ensuring your brand gains real authority."
+              }
+            ].map((feature, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                whileHover={{ y: -6 }}
+                className="group relative p-8 md:p-10 bg-white/[0.03] backdrop-blur-xl rounded-2xl border border-white/10 transition-all duration-300 hover:bg-white/[0.06] hover:border-white/20 shadow-2xl"
+              >
+                <div className="mb-8 flex items-center justify-center w-12 h-12 rounded-lg bg-red-600/10 text-primary">
+                  <span className="material-symbols-outlined text-3xl">{feature.icon}</span>
+                </div>
+                <h4 className="text-xl md:text-2xl font-semibold text-white mb-4 font-headline">{feature.title}</h4>
+                <p className="text-white/70 font-light leading-relaxed">{feature.desc}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -115,16 +138,16 @@ export default function About() {
       <section className="py-32 bg-black border-t border-white/5 text-on-surface">
         <div className="max-w-4xl mx-auto px-6">
           <div className="mb-16">
-            <h2 className="text-4xl font-black tracking-tighter text-on-surface mb-4 font-headline">Strategy & Logistics</h2>
-            <p className="text-on-surface-variant font-light">Unfiltered answers for the discerning client.</p>
+            <h2 className="text-4xl font-black tracking-tighter text-on-surface mb-4 font-headline">Frequently Asked Questions</h2>
+            <p className="text-on-surface-variant font-light">Straight answers for business owners considering short-form content growth.</p>
           </div>
           <div className="space-y-4">
             {[
-              { q: "How long until I see results?", a: "Authority isn't built overnight, but our momentum strategies typically show significant market shifts within the first 60-90 days. We focus on long-term assets over short-term spikes." },
-              { q: "What industries do you specialize in?", a: "We specialize in the high-ticket, luxury, and professional services sectors. Real estate titans, elite coaches, and venture capitalists are where we perform best." },
-              { q: "Is Mo Bilal personally involved?", a: "Mo oversees the architectural strategy for every elite client. While we have a world-class execution team, the visionary blueprint always passes through his hands." },
-              { q: "How do you measure authority?", a: "Through three pillars: Market Recognition, Inbound Deal Flow, and Pricing Power. When you can charge 10x your competitors and still have a waitlist, authority has been achieved." },
-              { q: "What is the investment?", a: "HPF Media is a boutique firm. Our partnerships begin at a premium level, reflecting the value of the digital real estate and market position we secure for you." }
+              { q: "How long does it take to see results?", a: "Most clients start seeing stronger reach, better engagement, and clearer content direction within the first 60 to 90 days. Sustainable growth comes from consistent execution, not one viral post." },
+              { q: "Who do you work with?", a: "We work with UAE business owners and brands that want to grow through Instagram and TikTok. That includes service businesses, personal brands, real estate, hospitality, and other high-value offers." },
+              { q: "Is Mo Bilal involved in the work?", a: "Yes. Mo leads the strategic direction behind client content so the messaging, positioning, and execution stay aligned with business goals." },
+              { q: "What makes your approach different?", a: "We focus on content that supports growth. That means strategy, scripting, production, editing, and posting systems built around visibility, engagement, and lead generation." },
+              { q: "What does working with HPF Media look like?", a: "We start by understanding your business, audience, and offer. Then we build a clear short-form content plan and execute it with your team so your content becomes consistent and effective." }
             ].map((faq, i) => (
               <div key={i} className="group bg-neutral-950 p-6 rounded-lg cursor-pointer border border-white/5 hover:border-primary/30 transition-all">
                 <div className="flex justify-between items-center">
@@ -152,10 +175,10 @@ export default function About() {
           <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black"></div>
         </div>
         <div className="relative z-10 text-center px-6">
-          <h2 className="text-5xl md:text-7xl font-black tracking-tighter text-on-surface mb-10 max-w-4xl mx-auto font-headline">READY TO CLAIM YOUR AUTHORITY?</h2>
-          <p className="text-on-surface-variant text-xl mb-12 max-w-2xl mx-auto font-light">The architects are ready. Your seat at the top is waiting.</p>
+          <h2 className="text-5xl md:text-7xl font-black tracking-tighter text-on-surface mb-10 max-w-4xl mx-auto font-headline">READY TO GROW YOUR BUSINESS WITH BETTER CONTENT?</h2>
+          <p className="text-on-surface-variant text-xl mb-12 max-w-2xl mx-auto font-light">If you want more visibility, stronger engagement, and content that actually supports sales, HPF Media is ready to help.</p>
           <button className="bg-primary-container text-on-primary-container px-14 py-6 rounded-full text-xl font-bold tracking-tight hover:scale-110 active:scale-95 transition-all duration-300 shadow-[0_0_60px_rgba(255,84,73,0.5)]">
-            Secure Your Consultation
+            Book Your Strategy Call
           </button>
         </div>
       </section>
