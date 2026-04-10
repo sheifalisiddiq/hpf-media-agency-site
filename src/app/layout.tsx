@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import CursorTrail from "@/components/CursorTrail";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
@@ -26,6 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={htmlClassName} suppressHydrationWarning>
       <body className={bodyClassName}>
+        <CursorTrail />
         <Navigation />
         <main className="flex-grow">
           {children}
