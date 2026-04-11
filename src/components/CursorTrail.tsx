@@ -3,14 +3,14 @@
 import { useEffect, useRef } from "react";
 
 /**
- * Enhanced CursorTrail Component
+ * DEBUG VERSION: CursorTrail Component
  * 
- * Features:
- * - Smooth Lerp (Linear Interpolation) for fluid motion
- * - Trail Lag/Friction for a premium, organic feel
- * - Single Canvas rendering for high performance (60fps)
- * - Accessibility: Disables for touch devices and reduced-motion settings
- * - Hover Detection: Subtly reacts to clickable elements
+ * Visibility priority:
+ * - Disabled pointer/motion checks
+ * - High z-index (9999)
+ * - Removed blend modes
+ * - Increased opacity
+ * - Forced animation loop
  */
 
 type Point = {
@@ -30,26 +30,23 @@ export default function CursorTrail() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    // Accessibility and Device Checks
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const isTouchDevice = window.matchMedia("(pointer: coarse)");
-
-    if (prefersReducedMotion.matches || isTouchDevice.matches) return;
+    // DEBUG: Disable checks
+    // const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    // const isTouchDevice = window.matchMedia("(pointer: coarse)");
+    // if (prefersReducedMotion.matches || isTouchDevice.matches) return;
 
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    // Configuration
     const TRAIL_LENGTH = 20;
-    const LERP_FACTOR = 0.18; // Speed of the lead point
-    const FRICTION = 0.5;    // Lag of the trailing points
-    const ACCENT_COLOR = "255, 84, 73"; // Base RGB for #ff5449
+    const LERP_FACTOR = 0.18;
+    const FRICTION = 0.5;
+    const ACCENT_COLOR = "255, 84, 73"; 
     
     let width = 0;
     let height = 0;
     let dpr = 1;
 
-    // Initialize points
     pointsRef.current = Array.from({ length: TRAIL_LENGTH }, () => ({ x: 0, y: 0 }));
 
     const resize = () => {
@@ -60,22 +57,21 @@ export default function CursorTrail() {
       canvas.height = Math.floor(height * dpr);
       canvas.style.width = `${width}px`;
       canvas.style.height = `${height}px`;
-      ctx.scale(dpr, dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0); // Use setTransform to avoid stacking scales
     };
 
     const handlePointerMove = (e: PointerEvent) => {
       cursorRef.current = { x: e.clientX, y: e.clientY };
       
-      // Check for hover on clickable elements
       const target = e.target as HTMLElement;
       hoverRef.current = !!target?.closest('a, button, [role="button"], input, textarea');
       
       if (!activeRef.current) {
         activeRef.current = true;
-        // Initialize points to current cursor to avoid jump
-        pointsRef.current.forEach(p => {
-          p.x = e.clientX;
-          p.y = e.clientY;
+        // Initialize points offset from cursor to ensure movement loop starts
+        pointsRef.current.forEach((p, i) => {
+          p.x = e.clientX + i; 
+          p.y = e.clientY + i;
         });
         render();
       }
@@ -86,15 +82,12 @@ export default function CursorTrail() {
 
       ctx.clearRect(0, 0, width, height);
 
-      // 1. Update Points with Lerp and Friction
       const points = pointsRef.current;
       const target = cursorRef.current;
 
-      // Lead point follows cursor
       points[0].x += (target.x - points[0].x) * LERP_FACTOR;
       points[0].y += (target.y - points[0].y) * LERP_FACTOR;
 
-      // Rest of points follow previous point with lag
       for (let i = 1; i < points.length; i++) {
         const p = points[i];
         const prev = points[i - 1];
@@ -102,14 +95,13 @@ export default function CursorTrail() {
         p.y += (prev.y - p.y) * FRICTION;
       }
 
-      // 2. Visual Styling
-      const baseOpacity = hoverRef.current ? 0.45 : 0.3;
-      const glowBlur = hoverRef.current ? 6 : 4;
+      // DEBUG: Highly visible styling
+      const baseOpacity = hoverRef.current ? 0.9 : 0.7; // High opacity
+      const glowBlur = hoverRef.current ? 10 : 8;
       
       ctx.lineCap = "round";
       ctx.lineJoin = "round";
       
-      // Draw smooth curve using quadratic sections
       ctx.beginPath();
       ctx.moveTo(points[0].x, points[0].y);
 
@@ -119,36 +111,27 @@ export default function CursorTrail() {
         ctx.quadraticCurveTo(points[i].x, points[i].y, xc, yc);
       }
 
-      // Create gradient along the trail
       const gradient = ctx.createLinearGradient(
         points[0].x, points[0].y, 
         points[points.length - 1].x, points[points.length - 1].y
       );
       gradient.addColorStop(0, `rgba(${ACCENT_COLOR}, ${baseOpacity})`);
-      gradient.addColorStop(1, `rgba(${ACCENT_COLOR}, 0)`);
+      gradient.addColorStop(1, `rgba(${ACCENT_COLOR}, 0.1)`); // Visible tail
 
       ctx.strokeStyle = gradient;
-      ctx.lineWidth = 2.5;
+      ctx.lineWidth = 4; // Thicker
       
-      // Premium Glow Effect
       ctx.shadowBlur = glowBlur;
-      ctx.shadowColor = `rgba(${ACCENT_COLOR}, ${baseOpacity * 0.8})`;
+      ctx.shadowColor = `rgba(${ACCENT_COLOR}, 1)`; // Solid glow color
       
-      // Multiple passes for glass-like finish
       ctx.stroke();
       
-      // Subtly shrink trailing edge (optional but premium)
-      ctx.lineWidth = 1;
-      ctx.globalAlpha = 0.5;
-      ctx.stroke();
-      ctx.globalAlpha = 1.0;
-
-      // 3. Loop or Stop
       const dist = Math.hypot(target.x - points[points.length - 1].x, target.y - points[points.length - 1].y);
-      if (dist < 0.1) {
-        // Stop animation if trail has settled
+      if (dist < 0.01) { // Much smaller threshold
+        // Don't stop immediately in debug mode if you want to keep it visible
+        // But for trail effect, we keep the stop logic but much more sensitive
         activeRef.current = false;
-        ctx.clearRect(0, 0, width, height); // Clear final frame
+        // ctx.clearRect(0, 0, width, height); // Removed clear to see where it stops
       } else {
         rafRef.current = requestAnimationFrame(render);
       }
@@ -172,11 +155,12 @@ export default function CursorTrail() {
       style={{
         position: 'fixed',
         inset: 0,
-        zIndex: 40,
+        zIndex: 9999, // Super high z-index
         pointerEvents: 'none',
-        mixBlendMode: 'screen', // Blends nicely with dark backgrounds
+        // mixBlendMode: 'screen', // Disabled blend mode for high visibility
       }}
     />
   );
 }
+
 

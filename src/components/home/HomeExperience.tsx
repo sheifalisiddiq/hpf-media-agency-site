@@ -253,36 +253,50 @@ export default function HomeExperience() {
       </section>
 
       <section className="bg-black px-6 py-24 text-on-surface md:px-10 lg:px-14">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.1fr)] lg:items-center">
-          <div className="space-y-6">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-16 space-y-6 text-center lg:text-left">
             <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary">
-              The Founder
+              The Leadership
             </p>
             <h2 className="text-4xl font-black uppercase tracking-[-0.06em] text-white md:text-6xl font-headline">
-              Mo Bilal
+              Founding Partners
             </h2>
-            <p className="max-w-md text-base leading-7 text-on-surface-variant">
-              Mo leads HPF Media with a practical approach to content growth, turning strategy, scripting, production, and editing into one clear engine for business results.
-            </p>
           </div>
 
-          <div className="relative h-[32rem] overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03]">
-            <Image
-              alt="Founder portrait"
-              fill
-              quality={68}
-              sizes="(min-width: 1024px) 42rem, 100vw"
-              className="object-cover brightness-[0.55]"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjppca15YrX1JXc96EFGOee8aatZ7_ElpID1yfGOtOtBfFsp489B0pQEfPN9dwxcriFnOGHawJcIR-YVKzEfj_3ed2fxCF2yzoobv5PX1WxrBCXGv6-eZdMnhiTt6ybyQOnLrB4R6gwkvjnqtALwZPAEbKJxSLl6XgUAcTKWA_SbLYDjbhKzlXDVG6hewmOAdiU5PCGH_otIMORNwoRBMFxIgchyKyV_gtp383ltQmTKNOVwKAtxHqnddKC3eb9ig8yRkf9kgxX0Q"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/15 to-transparent" />
-            <div className="absolute inset-x-0 bottom-0 p-8">
-              <p className="text-[11px] font-bold uppercase tracking-[0.35em] text-primary">
-                The Founder
-              </p>
-              <p className="mt-3 max-w-md text-sm leading-6 text-white/70">
-                Every growth plan is built to help UAE businesses earn more reach, stronger positioning, and consistent inbound interest.
-              </p>
+          <div className="grid gap-12 md:grid-cols-2 lg:items-start">
+            {/* Bilal Sidheeq */}
+            <div className="space-y-8">
+              <div className="relative h-[32rem] overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03]">
+                <Image
+                  alt="Bilal Sidheeq"
+                  fill
+                  quality={68}
+                  sizes="(min-width: 1024px) 42rem, 100vw"
+                  className="object-cover brightness-[0.55]"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjppca15YrX1JXc96EFGOee8aatZ7_ElpID1yfGOtOtBfFsp489B0pQEfPN9dwxcriFnOGHawJcIR-YVKzEfj_3ed2fxCF2yzoobv5PX1WxrBCXGv6-eZdMnhiTt6ybyQOnLrB4R6gwkvjnqtALwZPAEbKJxSLl6XgUAcTKWA_SbLYDjbhKzlXDVG6hewmOAdiU5PCGH_otIMORNwoRBMFxIgchyKyV_gtp383ltQmTKNOVwKAtxHqnddKC3eb9ig8yRkf9kgxX0Q"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent" />
+              </div>
+              <div className="space-y-4">
+                <h3 className="text-3xl font-black uppercase tracking-[-0.05em] text-white font-headline">Bilal Sidheeq</h3>
+                <p className="max-w-md text-base leading-7 text-on-surface-variant">
+                  Bilal leads HPF Media with a practical approach to content growth, turning strategy, scripting, production, and editing into one clear engine for business results.
+                </p>
+              </div>
+            </div>
+
+            {/* Empty Second Founder */}
+            <div className="space-y-8">
+              <div className="relative h-[32rem] overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] flex items-center justify-center bg-neutral-950">
+                <div className="text-white/5 text-8xl font-black font-headline select-none">HPF</div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent" />
+              </div>
+              <div className="space-y-4">
+                <h3 className="text-3xl font-black uppercase tracking-[-0.05em] text-white font-headline">&nbsp;</h3>
+                <p className="max-w-md text-base leading-7 text-on-surface-variant">
+                  Our co-founding partner brings expertise in operational scaling and brand positioning, ensuring that every piece of content supports the long-term growth objectives of UAE businesses.
+                </p>
+              </div>
             </div>
           </div>
         </div>

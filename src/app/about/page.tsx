@@ -68,50 +68,65 @@ export default function About() {
       </section>
 
       <section className="relative py-20 lg:py-32 bg-black overflow-hidden border-y border-white/5 text-on-surface">
-        <div className="max-w-screen-2xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <div className="relative group">
-            <div className="absolute -inset-4 bg-red-600/20 blur-3xl opacity-50 rounded-full group-hover:opacity-70 transition-opacity"></div>
-            <div className="relative aspect-[4/5] rounded-xl overflow-hidden shadow-2xl border border-white/5">
-              <Image
-                fill
-                alt="Mo Bilal"
-                className="object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVn51E1u5cggqQmxsBsC_-s2RYraGoAVaibpstXP6T0XuszhwhS2WLBMk1pOtjva7cVyG0vzAcSqqdVjiQKiz0iYGh0bg-_gYEWKkvTlQ2IZkirMcJorAx2UR85yzbFuQrYRwM2C5SrLdYaedFZGWqpAIuChegiq5EhajEOq7NRIxzI8ZYQxoP5wD-LYHdOx8g1olo-mSOEUlg8ONSSbkupohdOXg-udhFzb3XdxJZh4hoU3LrxMWJ5NA3xeZmb86q1Ayo8GEcQRk"
-                sizes="(min-width: 1024px) 34rem, 100vw"
-                quality={68}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+        <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
+          <div className="mb-16 text-center lg:text-left">
+            <h2 className="text-primary font-bold tracking-widest uppercase text-sm mb-4">The Leadership</h2>
+            <h3 className="text-4xl md:text-6xl font-black tracking-tighter text-on-surface font-headline uppercase">Founding Partners</h3>
+            <div className="w-20 h-1 bg-primary-container mt-6 mx-auto lg:mx-0"></div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 items-start">
+            {/* Bilal Sidheeq (formerly Mo Bilal) */}
+            <div className="group space-y-8">
+              <div className="relative">
+                <div className="absolute -inset-4 bg-red-600/20 blur-3xl opacity-50 rounded-full group-hover:opacity-70 transition-opacity"></div>
+                <div className="relative aspect-[4/5] rounded-xl overflow-hidden shadow-2xl border border-white/5">
+                  <Image
+                    fill
+                    alt="Bilal Sidheeq"
+                    className="object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVn51E1u5cggqQmxsBsC_-s2RYraGoAVaibpstXP6T0XuszhwhS2WLBMk1pOtjva7cVyG0vzAcSqqdVjiQKiz0iYGh0bg-_gYEWKkvTlQ2IZkirMcJorAx2UR85yzbFuQrYRwM2C5SrLdYaedFZGWqpAIuChegiq5EhajEOq7NRIxzI8ZYQxoP5wD-LYHdOx8g1olo-mSOEUlg8ONSSbkupohdOXg-udhFzb3XdxJZh4hoU3LrxMWJ5NA3xeZmb86q1Ayo8GEcQRk"
+                    sizes="(min-width: 1024px) 34rem, 100vw"
+                    quality={68}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                </div>
+              </div>
+              <div className="space-y-4">
+                <h4 className="text-3xl font-black tracking-tighter text-on-surface font-headline uppercase">Bilal Sidheeq</h4>
+                <p className="text-on-surface-variant leading-relaxed text-lg font-light">
+                  Bilal leads HPF Media with a focus on turning short-form content into real attention and inbound demand. He specializes in creating scripted video systems that stop the scroll and build brand authority across the UAE.
+                </p>
+              </div>
             </div>
-            <div className="absolute -bottom-10 -right-10 hidden xl:block">
-              <div className="text-[12rem] font-black text-white/5 select-none leading-none font-headline">MO</div>
+
+            {/* Second Founder */}
+            <div className="group space-y-8">
+              <div className="relative">
+                <div className="absolute -inset-4 bg-red-600/20 blur-3xl opacity-50 rounded-full group-hover:opacity-70 transition-opacity"></div>
+                <div className="relative aspect-[4/5] rounded-xl overflow-hidden shadow-2xl border border-white/5 bg-neutral-900 flex items-center justify-center">
+                   {/* Placeholder Image or Empty State */}
+                  <div className="text-white/10 text-9xl font-black font-headline select-none">HPF</div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                </div>
+              </div>
+              <div className="space-y-4">
+                <h4 className="text-3xl font-black tracking-tighter text-on-surface font-headline uppercase">&nbsp;</h4>
+                <p className="text-on-surface-variant leading-relaxed text-lg font-light">
+                  Our founding partner focuses on the operational scaling and conversion mechanics that turn views into business results. Together, we ensure every piece of content produced at HPF Media serves a strategic goal.
+                </p>
+              </div>
             </div>
           </div>
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <h2 className="text-primary font-bold tracking-widest uppercase text-sm">The Founder</h2>
-              <h3 className="text-4xl md:text-6xl font-black tracking-tighter text-on-surface font-headline">Mo Bilal</h3>
-              <div className="w-20 h-1 bg-primary-container"></div>
+
+          <div className="flex flex-wrap gap-12 pt-20 justify-center">
+            <div className="text-center">
+              <div className="text-5xl font-black text-on-surface">500M+</div>
+              <div className="text-xs uppercase tracking-widest text-primary font-bold mt-2">Organic Views Generated</div>
             </div>
-            <div className="space-y-6 text-on-surface-variant leading-relaxed text-lg font-light">
-              <p>
-                Mo Bilal leads HPF Media with a clear focus: helping businesses turn short-form content into real attention, stronger positioning, and qualified inbound demand.
-              </p>
-              <p>
-                Working with brands across the UAE, he has built content systems designed for Instagram and TikTok growth, combining strategy, scripting, production, and editing into one execution process.
-              </p>
-              <p>
-                The goal is simple: create content that gets seen, keeps people watching, and helps business owners convert attention into trust and leads.
-              </p>
-            </div>
-            <div className="flex gap-8 pt-6">
-              <div className="text-center">
-                <div className="text-4xl font-black text-on-surface">500M+</div>
-                <div className="text-xs uppercase tracking-widest text-primary font-bold mt-1">Organic Views Generated</div>
-              </div>
-              <div className="text-center border-l border-white/10 pl-8">
-                <div className="text-4xl font-black text-on-surface">50+</div>
-                <div className="text-xs uppercase tracking-widest text-primary font-bold mt-1">Brands Supported</div>
-              </div>
+            <div className="text-center border-l md:border-l-0 lg:border-l border-white/10 md:pl-0 lg:pl-12">
+              <div className="text-5xl font-black text-on-surface">50+</div>
+              <div className="text-xs uppercase tracking-widest text-primary font-bold mt-2">Brands Supported</div>
             </div>
           </div>
         </div>
