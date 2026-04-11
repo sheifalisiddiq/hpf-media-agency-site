@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Icon from "@/components/Icon";
+import RevealOnScroll, { RevealItem } from "@/components/RevealOnScroll";
 
 export default function Services() {
   return (
     <>
       <section className="relative min-h-[921px] flex flex-col justify-center items-center text-center px-4 pt-20 red-gradient-bg bg-black text-on-surface">
-        <div className="max-w-4xl mx-auto z-10">
+        <RevealOnScroll className="max-w-4xl mx-auto z-10">
           <span className="text-sm uppercase tracking-[0.3em] text-primary mb-6 block font-medium">Dubai / Abu Dhabi / Global</span>
           <h1 className="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter font-headline mb-8 leading-[0.95] text-on-surface">
             Strategies That <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-container to-red-400">Scale.</span>
@@ -17,19 +18,20 @@ export default function Services() {
             <button className="bg-primary-container text-on-primary-container px-10 py-4 rounded font-bold text-lg hover:bg-red-500 transition-all">See Our Services</button>
             <button className="border border-red-600/30 text-on-surface px-10 py-4 rounded font-bold text-lg hover:bg-white/5 transition-all backdrop-blur-md">View Case Studies</button>
           </div>
-        </div>
+        </RevealOnScroll>
         <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-to-t from-red-600/20 to-transparent blur-3xl"></div>
         </div>
       </section>
 
       <section className="py-20 lg:py-24 px-6 md:px-8 max-w-screen-2xl mx-auto bg-black text-on-surface">
-        <div className="flex flex-col mb-12 lg:mb-16">
+        <RevealOnScroll className="flex flex-col mb-12 lg:mb-16">
           <h2 className="text-3xl lg:text-4xl font-headline font-bold mb-4">Services</h2>
           <div className="w-24 h-1 bg-red-600"></div>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-          <div className="md:col-span-7 glass-card rounded-lg p-6 md:p-10 flex flex-col justify-between overflow-hidden relative group">
+        </RevealOnScroll>
+        
+        <RevealOnScroll isContainer staggerChildren={0.1} className="grid grid-cols-1 md:grid-cols-12 gap-6">
+          <RevealItem className="md:col-span-7 glass-card rounded-lg p-6 md:p-10 flex flex-col justify-between overflow-hidden relative group">
             <div className="z-10">
               <Icon name="dynamic_feed" className="mb-6 h-8 w-8 text-primary md:h-10 md:w-10" />
               <h3 className="text-2xl md:text-3xl font-headline font-bold mb-4">Social Media Growth</h3>
@@ -46,9 +48,9 @@ export default function Services() {
             <div className="mt-auto z-10 w-fit">
               <button className="text-primary font-bold inline-flex items-center gap-2 group-hover:translate-x-2 transition-transform">Increase Your Reach <Icon name="trending_flat" className="h-4 w-4" /></button>
             </div>
-          </div>
+          </RevealItem>
 
-          <div className="md:col-span-5 glass-card rounded-lg p-6 md:p-10 flex flex-col relative group overflow-hidden bg-black">
+          <RevealItem className="md:col-span-5 glass-card rounded-lg p-6 md:p-10 flex flex-col relative group overflow-hidden bg-black">
             <div className="z-10">
               <Icon name="movie_filter" className="mb-6 h-8 w-8 text-primary md:h-10 md:w-10" />
               <h3 className="text-2xl md:text-3xl font-headline font-bold mb-4">Video Production</h3>
@@ -65,59 +67,32 @@ export default function Services() {
             <div className="mt-auto z-10 w-fit">
               <button className="text-primary font-bold inline-flex items-center gap-2 group-hover:translate-x-2 transition-transform">Start Production <Icon name="trending_flat" className="h-4 w-4" /></button>
             </div>
-          </div>
+          </RevealItem>
 
-          <div className="md:col-span-6 glass-card rounded-lg p-6 md:p-10 flex flex-col group border-l-4 border-l-primary-container bg-black">
+          <RevealItem className="md:col-span-6 glass-card rounded-lg p-6 md:p-10 flex flex-col group border-l-4 border-l-primary-container bg-black">
             <Icon name="workspace_premium" className="mb-6 h-8 w-8 text-primary md:h-10 md:w-10" />
             <h3 className="text-xl md:text-2xl font-headline font-bold mb-4">Personal Branding</h3>
             <p className="text-neutral-400 mb-6 flex-grow">We help business owners become the face of their industry. We build your reputation and voice so you are recognized as an expert in your field.</p>
             <div className="mt-auto">
               <button className="text-primary font-bold inline-flex items-center gap-2 group-hover:translate-x-2 transition-transform">Build Your Authority <Icon name="trending_flat" className="h-4 w-4" /></button>
             </div>
-          </div>
+          </RevealItem>
 
-          <div className="md:col-span-6 glass-card rounded-lg p-6 md:p-10 flex flex-col group border-l-4 border-l-primary-container bg-black">
+          <RevealItem className="md:col-span-6 glass-card rounded-lg p-6 md:p-10 flex flex-col group border-l-4 border-l-primary-container bg-black">
             <Icon name="language" className="mb-6 h-8 w-8 text-primary md:h-10 md:w-10" />
             <h3 className="text-xl md:text-2xl font-headline font-bold mb-4">Web Design & Strategy</h3>
             <p className="text-neutral-400 mb-6 flex-grow">Fast, professional websites built to turn your social media followers into paying customers. We ensure your digital presence is built to convert.</p>
             <div className="mt-auto">
               <button className="text-primary font-bold inline-flex items-center gap-2 group-hover:translate-x-2 transition-transform">Launch Your Site <Icon name="trending_flat" className="h-4 w-4" /></button>
             </div>
-          </div>
-        </div>
+          </RevealItem>
+        </RevealOnScroll>
       </section>
 
-      <section className="py-24 bg-black text-on-surface">
-        <div className="max-w-screen-2xl mx-auto px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl font-headline font-bold mb-4">Process</h2>
-            <p className="text-neutral-500 max-w-xl mx-auto">Our simple 5-step process ensures your content is delivered on time and at the highest quality.</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4 relative">
-            <div className="hidden md:block absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-red-600/30 to-transparent -translate-y-1/2"></div>
-
-            {[
-              { icon: "search", step: "01", label: "Business Review" },
-              { icon: "insights", step: "02", label: "Content Plan" },
-              { icon: "description", step: "03", label: "Script Writing" },
-              { icon: "videocam", step: "04", label: "Filming" },
-              { icon: "send", step: "05", label: "Publishing" }
-            ].map((step, idx) => (
-              <div key={idx} className="relative z-10 flex flex-col items-center text-center p-6 group">
-                <div className="w-16 h-16 rounded-full bg-black flex items-center justify-center mb-6 border border-red-600/20 group-hover:bg-primary-container group-hover:border-primary-container transition-all duration-500">
-                  <Icon name={step.icon as "search" | "insights" | "description" | "videocam" | "send"} className="h-6 w-6 text-primary group-hover:text-on-primary-container transition-colors" />
-                </div>
-                <h4 className="font-headline font-bold text-xl mb-2">{step.label}</h4>
-                <p className="text-xs text-neutral-500 uppercase tracking-widest font-bold">Step {step.step}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <section className="py-24 px-8 max-w-screen-xl mx-auto bg-black text-on-surface">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          <div>
+          <RevealOnScroll>
             <h2 className="text-5xl font-headline font-bold mb-8 leading-tight">The <span className="text-primary">HPF Edge</span></h2>
             <div className="space-y-8">
               {[
@@ -136,8 +111,8 @@ export default function Services() {
                 </div>
               ))}
             </div>
-          </div>
-          <div className="relative h-[600px] rounded-lg overflow-hidden glass-card p-4">
+          </RevealOnScroll>
+          <RevealOnScroll className="relative h-[600px] rounded-lg overflow-hidden glass-card p-4">
             <Image
               fill
               className="object-cover rounded-lg opacity-80"
@@ -153,12 +128,12 @@ export default function Services() {
                 <p className="text-neutral-400 mt-2 text-sm">- UAE Business Owner</p>
               </div>
             </div>
-          </div>
+          </RevealOnScroll>
         </div>
       </section>
 
       <section className="py-32 px-8 bg-black">
-        <div className="max-w-5xl mx-auto glass-card rounded-lg p-16 text-center relative overflow-hidden bg-black text-on-surface">
+        <RevealOnScroll className="max-w-5xl mx-auto glass-card rounded-lg p-16 text-center relative overflow-hidden bg-black text-on-surface">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-red-600 to-transparent"></div>
           <h2 className="text-5xl md:text-6xl font-headline font-bold mb-6">Let's Start.</h2>
           <p className="text-neutral-400 text-xl mb-12 max-w-2xl mx-auto">We take on a limited number of clients each month to ensure the highest quality of service. Book your strategy call today to secure your spot.</p>
@@ -175,7 +150,7 @@ export default function Services() {
               <span className="text-sm font-bold uppercase tracking-widest">Premium Assets</span>
             </div>
           </div>
-        </div>
+        </RevealOnScroll>
       </section>
     </>
   );

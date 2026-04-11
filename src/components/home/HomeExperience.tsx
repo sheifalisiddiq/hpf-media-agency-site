@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Icon from "@/components/Icon";
+import RevealOnScroll, { RevealItem } from "@/components/RevealOnScroll";
 
 const services = [
   {
@@ -82,6 +83,14 @@ const roadmapItems = [
   },
 ];
 
+const executionSteps = [
+  { icon: "search" as const, step: "01", label: "Business Review", desc: "Audit and strategy" },
+  { icon: "insights" as const, step: "02", label: "Content Plan", desc: "90-day roadmap" },
+  { icon: "description" as const, step: "03", label: "Script Writing", desc: "Viral hooks" },
+  { icon: "videocam" as const, step: "04", label: "Filming", desc: "Premium production" },
+  { icon: "send" as const, step: "05", label: "Publishing", desc: "Distribution" },
+];
+
 export default function HomeExperience() {
   return (
     <>
@@ -143,7 +152,7 @@ export default function HomeExperience() {
       </section>
 
       <section className="bg-black px-6 py-24 text-on-surface md:px-10 lg:px-14">
-        <div className="mx-auto max-w-7xl">
+        <RevealOnScroll className="mx-auto max-w-7xl">
           <div className="mb-16 max-w-3xl space-y-5">
             <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary">
               The Problem
@@ -158,9 +167,9 @@ export default function HomeExperience() {
             </p>
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-12">
+          <RevealOnScroll isContainer staggerChildren={0.1} className="grid gap-6 lg:grid-cols-12">
             {services.map((service) => (
-              <article
+              <RevealItem
                 key={service.title}
                 className={`${service.span} group relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-8 md:p-10`}
               >
@@ -176,10 +185,33 @@ export default function HomeExperience() {
                     </p>
                   </div>
                 </div>
-              </article>
+              </RevealItem>
             ))}
+          </RevealOnScroll>
+
+          {/* New Execution Process Section */}
+          <div className="mt-24 max-w-7xl mx-auto">
+            <RevealOnScroll className="mb-12 border-l border-primary pl-6">
+              <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary mb-2">The Execution</p>
+              <h3 className="text-3xl font-black uppercase tracking-[-0.05em] text-white font-headline">The Process</h3>
+            </RevealOnScroll>
+            
+            <RevealOnScroll isContainer staggerChildren={0.1} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+              {executionSteps.map((step) => (
+                <RevealItem key={step.step} className="group relative rounded-2xl border border-white/5 bg-white/[0.02] p-8 transition-colors hover:border-primary/20 hover:bg-white/[0.04]">
+                  <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-lg bg-red-600/10 text-primary group-hover:bg-primary group-hover:text-black transition-colors duration-300">
+                    <Icon name={step.icon} className="h-5 w-5" />
+                  </div>
+                  <div className="space-y-2">
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-primary/60">Step {step.step}</p>
+                    <h4 className="text-xl font-black uppercase tracking-tight text-white font-headline">{step.label}</h4>
+                    <p className="text-sm text-on-surface-variant leading-relaxed">{step.desc}</p>
+                  </div>
+                </RevealItem>
+              ))}
+            </RevealOnScroll>
           </div>
-        </div>
+        </RevealOnScroll>
       </section>
 
       <section className="relative overflow-hidden bg-[linear-gradient(180deg,#000000_0%,#0d0d0d_50%,#000000_100%)] px-6 py-24 text-on-surface md:px-10 lg:px-14">
@@ -188,7 +220,7 @@ export default function HomeExperience() {
 
         <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
           <div className="lg:sticky lg:top-24 lg:h-[calc(100vh-8rem)] lg:self-start">
-            <div className="flex h-full flex-col justify-between rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 shadow-[0_30px_120px_rgba(0,0,0,0.4)] backdrop-blur-xl">
+            <RevealOnScroll className="flex h-full flex-col justify-between rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 shadow-[0_30px_120px_rgba(0,0,0,0.4)] backdrop-blur-xl">
               <div className="space-y-6">
                 <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary">
                   The Process
@@ -212,12 +244,12 @@ export default function HomeExperience() {
                   ))}
                 </div>
               </div>
-            </div>
+            </RevealOnScroll>
           </div>
 
-          <div className="space-y-20 pb-10 pt-2">
+          <RevealOnScroll isContainer staggerChildren={0.2} className="space-y-20 pb-10 pt-2">
             {roadmapItems.map((item) => (
-              <article
+              <RevealItem
                 key={item.label}
                 className="group relative flex min-h-[80vh] flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] shadow-xl backdrop-blur-xl transition-all duration-300 hover:bg-white/[0.04] hover:border-white/20"
               >
@@ -246,26 +278,26 @@ export default function HomeExperience() {
                     </p>
                   </div>
                 </div>
-              </article>
+              </RevealItem>
             ))}
-          </div>
+          </RevealOnScroll>
         </div>
       </section>
 
       <section className="bg-black px-6 py-24 text-on-surface md:px-10 lg:px-14">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-16 space-y-6 text-center lg:text-left">
+          <RevealOnScroll className="mb-16 space-y-6 text-center lg:text-left">
             <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary">
               The Leadership
             </p>
             <h2 className="text-4xl font-black uppercase tracking-[-0.06em] text-white md:text-6xl font-headline">
               Founding Partners
             </h2>
-          </div>
+          </RevealOnScroll>
 
-          <div className="grid gap-12 md:grid-cols-2 lg:items-start">
+          <RevealOnScroll isContainer staggerChildren={0.2} className="grid gap-12 md:grid-cols-2 lg:items-start">
             {/* Bilal Sidheeq */}
-            <div className="space-y-8">
+            <RevealItem className="space-y-8">
               <div className="relative h-[32rem] overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03]">
                 <Image
                   alt="Bilal Sidheeq"
@@ -283,10 +315,10 @@ export default function HomeExperience() {
                   Bilal leads HPF Media with a practical approach to content growth, turning strategy, scripting, production, and editing into one clear engine for business results.
                 </p>
               </div>
-            </div>
+            </RevealItem>
 
             {/* Empty Second Founder */}
-            <div className="space-y-8">
+            <RevealItem className="space-y-8">
               <div className="relative h-[32rem] overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] flex items-center justify-center bg-neutral-950">
                 <div className="text-white/5 text-8xl font-black font-headline select-none">HPF</div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent" />
@@ -297,14 +329,14 @@ export default function HomeExperience() {
                   Our co-founding partner brings expertise in operational scaling and brand positioning, ensuring that every piece of content supports the long-term growth objectives of UAE businesses.
                 </p>
               </div>
-            </div>
-          </div>
+            </RevealItem>
+          </RevealOnScroll>
         </div>
       </section>
 
       <section className="bg-black px-6 py-24 text-on-surface md:px-10 lg:px-14">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-14 max-w-2xl space-y-5">
+          <RevealOnScroll className="mb-14 max-w-2xl space-y-5">
             <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary">
               The Philosophy
             </p>
@@ -313,11 +345,11 @@ export default function HomeExperience() {
               <br />
               Marketing.
             </h2>
-          </div>
+          </RevealOnScroll>
 
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <RevealOnScroll isContainer staggerChildren={0.1} className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {processSteps.map((step) => (
-              <article
+              <RevealItem
                 key={step.num}
                 className="rounded-[1.5rem] border border-white/10 bg-white/[0.02] p-8"
               >
@@ -332,15 +364,15 @@ export default function HomeExperience() {
                     {step.desc}
                   </p>
                 </div>
-              </article>
+              </RevealItem>
             ))}
-          </div>
+          </RevealOnScroll>
         </div>
       </section>
 
       <section className="relative overflow-hidden bg-[linear-gradient(180deg,#050505_0%,#0d0504_55%,#180504_100%)] px-6 py-32 text-on-surface md:px-10 lg:px-14">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,84,73,0.16),transparent_45%)]" />
-        <div className="relative mx-auto max-w-5xl text-center">
+        <RevealOnScroll className="relative mx-auto max-w-5xl text-center">
           <div className="space-y-8">
             <h2 className="text-5xl font-black uppercase tracking-[-0.08em] text-white md:text-7xl font-headline">
               Let's Work
@@ -354,7 +386,7 @@ export default function HomeExperience() {
               Book Your Strategy Call
             </button>
           </div>
-        </div>
+        </RevealOnScroll>
       </section>
     </>
   );

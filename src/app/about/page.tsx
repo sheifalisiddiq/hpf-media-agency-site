@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Icon from "@/components/Icon";
+import RevealOnScroll, { RevealItem } from "@/components/RevealOnScroll";
 
 const features = [
   {
@@ -51,7 +52,7 @@ export default function About() {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-red-600/10 blur-[150px] rounded-full"></div>
           <div className="absolute bottom-0 w-full h-[500px] bg-gradient-to-t from-red-900/20 to-transparent"></div>
         </div>
-        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
+        <RevealOnScroll className="relative z-10 text-center px-4 max-w-5xl mx-auto">
           <span className="text-sm uppercase tracking-[0.3em] text-primary font-bold mb-6 block">Growth Agency for UAE</span>
           <h1 className="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter text-on-surface leading-[0.9] mb-8 text-glow font-headline">
             GROWTH THROUGH CONTENT.
@@ -64,20 +65,20 @@ export default function About() {
               See How We Work
             </button>
           </div>
-        </div>
+        </RevealOnScroll>
       </section>
 
       <section className="relative py-20 lg:py-32 bg-black overflow-hidden border-y border-white/5 text-on-surface">
         <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
-          <div className="mb-16 text-center lg:text-left">
+          <RevealOnScroll className="mb-16 text-center lg:text-left">
             <h2 className="text-primary font-bold tracking-widest uppercase text-sm mb-4">The Leadership</h2>
             <h3 className="text-4xl md:text-6xl font-black tracking-tighter text-on-surface font-headline uppercase">Founding Partners</h3>
             <div className="w-20 h-1 bg-primary-container mt-6 mx-auto lg:mx-0"></div>
-          </div>
+          </RevealOnScroll>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 items-start">
+          <RevealOnScroll isContainer staggerChildren={0.2} className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 items-start">
             {/* Bilal Sidheeq (formerly Mo Bilal) */}
-            <div className="group space-y-8">
+            <RevealItem className="group space-y-8">
               <div className="relative">
                 <div className="absolute -inset-4 bg-red-600/20 blur-3xl opacity-50 rounded-full group-hover:opacity-70 transition-opacity"></div>
                 <div className="relative aspect-[4/5] rounded-xl overflow-hidden shadow-2xl border border-white/5">
@@ -98,10 +99,10 @@ export default function About() {
                   Bilal leads HPF Media with a focus on turning short-form content into real attention and inbound demand. He specializes in creating scripted video systems that stop the scroll and build brand authority across the UAE.
                 </p>
               </div>
-            </div>
+            </RevealItem>
 
             {/* Second Founder */}
-            <div className="group space-y-8">
+            <RevealItem className="group space-y-8">
               <div className="relative">
                 <div className="absolute -inset-4 bg-red-600/20 blur-3xl opacity-50 rounded-full group-hover:opacity-70 transition-opacity"></div>
                 <div className="relative aspect-[4/5] rounded-xl overflow-hidden shadow-2xl border border-white/5 bg-neutral-900 flex items-center justify-center">
@@ -116,10 +117,10 @@ export default function About() {
                   Our founding partner focuses on the operational scaling and conversion mechanics that turn views into business results. Together, we ensure every piece of content produced at HPF Media serves a strategic goal.
                 </p>
               </div>
-            </div>
-          </div>
+            </RevealItem>
+          </RevealOnScroll>
 
-          <div className="flex flex-wrap gap-12 pt-20 justify-center">
+          <RevealOnScroll className="flex flex-wrap gap-12 pt-20 justify-center">
             <div className="text-center">
               <div className="text-5xl font-black text-on-surface">500M+</div>
               <div className="text-xs uppercase tracking-widest text-primary font-bold mt-2">Organic Views Generated</div>
@@ -128,7 +129,7 @@ export default function About() {
               <div className="text-5xl font-black text-on-surface">50+</div>
               <div className="text-xs uppercase tracking-widest text-primary font-bold mt-2">Brands Supported</div>
             </div>
-          </div>
+          </RevealOnScroll>
         </div>
       </section>
 
@@ -137,14 +138,14 @@ export default function About() {
         <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-red-900/5 blur-[120px] rounded-full pointer-events-none"></div>
 
         <div className="max-w-6xl mx-auto px-4 relative z-10">
-          <div className="mb-16 lg:mb-20 text-center max-w-3xl mx-auto">
+          <RevealOnScroll className="mb-16 lg:mb-20 text-center max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-white mb-6 uppercase font-headline">Why HPF</h2>
             <p className="text-white/70 font-light text-lg">Clear strategy, strong execution, and short-form content built to help you grow in the UAE market.</p>
-          </div>
+          </RevealOnScroll>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          <RevealOnScroll isContainer staggerChildren={0.2} className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {features.map((feature) => (
-              <div
+              <RevealItem
                 key={feature.title}
                 className="group relative p-8 md:p-10 bg-white/[0.03] backdrop-blur-xl rounded-2xl border border-white/10 transition-all duration-300 hover:bg-white/[0.06] hover:border-white/20 shadow-2xl"
               >
@@ -153,31 +154,33 @@ export default function About() {
                 </div>
                 <h4 className="text-xl md:text-2xl font-semibold text-white mb-4 font-headline">{feature.title}</h4>
                 <p className="text-white/70 font-light leading-relaxed">{feature.desc}</p>
-              </div>
+              </RevealItem>
             ))}
-          </div>
+          </RevealOnScroll>
         </div>
       </section>
 
       <section className="py-32 bg-black border-t border-white/5 text-on-surface">
         <div className="max-w-4xl mx-auto px-6">
-          <div className="mb-16">
+          <RevealOnScroll className="mb-16">
             <h2 className="text-4xl font-black tracking-tighter text-on-surface mb-4 font-headline">Frequently Asked Questions</h2>
             <p className="text-on-surface-variant font-light">Straight answers for business owners considering short-form content growth.</p>
-          </div>
-          <div className="space-y-4">
+          </RevealOnScroll>
+          <RevealOnScroll isContainer staggerChildren={0.1} className="space-y-4">
             {faqs.map((faq, i) => (
-              <details key={i} className="group rounded-lg border border-white/5 bg-neutral-950 p-6 hover:border-primary/30 transition-all">
-                <summary className="flex cursor-pointer list-none items-center justify-between">
-                  <h5 className="text-lg font-bold text-on-surface group-hover:text-primary transition-colors">{faq.q}</h5>
-                  <Icon name="expand_more" className="h-5 w-5 text-primary transition-transform duration-300 group-open:rotate-180" />
-                </summary>
-                <div className="mt-4 text-on-surface-variant font-light leading-relaxed">
-                  {faq.a}
-                </div>
-              </details>
+              <RevealItem key={i}>
+                <details className="group rounded-lg border border-white/5 bg-neutral-950 p-6 hover:border-primary/30 transition-all">
+                  <summary className="flex cursor-pointer list-none items-center justify-between">
+                    <h5 className="text-lg font-bold text-on-surface group-hover:text-primary transition-colors">{faq.q}</h5>
+                    <Icon name="expand_more" className="h-5 w-5 text-primary transition-transform duration-300 group-open:rotate-180" />
+                  </summary>
+                  <div className="mt-4 text-on-surface-variant font-light leading-relaxed">
+                    {faq.a}
+                  </div>
+                </details>
+              </RevealItem>
             ))}
-          </div>
+          </RevealOnScroll>
         </div>
       </section>
 
@@ -193,13 +196,13 @@ export default function About() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black"></div>
         </div>
-        <div className="relative z-10 text-center px-6">
+        <RevealOnScroll className="relative z-10 text-center px-6">
           <h2 className="text-5xl md:text-7xl font-black tracking-tighter text-on-surface mb-10 max-w-4xl mx-auto font-headline">START GROWING TODAY.</h2>
           <p className="text-on-surface-variant text-xl mb-12 max-w-2xl mx-auto font-light">If you want more visibility, stronger engagement, and content that actually supports sales, HPF Media is ready to help.</p>
           <button className="bg-primary-container text-on-primary-container px-14 py-6 rounded-full text-xl font-bold tracking-tight hover:scale-110 active:scale-95 transition-all duration-300 shadow-[0_0_60px_rgba(255,84,73,0.5)]">
             Book Your Strategy Call
           </button>
-        </div>
+        </RevealOnScroll>
       </section>
     </>
   );

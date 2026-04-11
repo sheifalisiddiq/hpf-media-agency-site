@@ -1,4 +1,5 @@
 import Icon from "@/components/Icon";
+import RevealOnScroll from "@/components/RevealOnScroll";
 
 export default function Contact() {
   return (
@@ -11,7 +12,7 @@ export default function Contact() {
         
         <div className="max-w-screen-2xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10 pt-16">
           {/* Left Side: Content */}
-          <div className="space-y-12">
+          <RevealOnScroll className="space-y-12">
             <div className="space-y-4">
               <span className="text-sm uppercase tracking-[0.2em] text-primary font-bold">Contact Us</span>
               <h1 className="text-4xl md:text-7xl font-black tracking-tighter leading-none text-white font-headline">
@@ -47,10 +48,10 @@ export default function Contact() {
             <div className="hidden lg:block opacity-[0.03] select-none pointer-events-none absolute bottom-0 left-0">
               <span className="text-[12rem] font-black tracking-tighter leading-none font-headline">HPF</span>
             </div>
-          </div>
+          </RevealOnScroll>
           
           {/* Right Side: Form */}
-          <div className="glass-panel p-6 md:p-12 rounded-lg border border-white/5 shadow-[0_48px_48px_rgba(0,0,0,0.5)]">
+          <RevealOnScroll className="glass-panel p-6 md:p-12 rounded-lg border border-white/5 shadow-[0_48px_48px_rgba(0,0,0,0.5)]">
             <h2 className="text-2xl font-bold tracking-tight mb-8 text-white font-headline">Strategy Audit</h2>
             <form className="space-y-8">
               <div className="relative">
@@ -146,7 +147,7 @@ export default function Contact() {
                 </button>
               </div>
             </form>
-          </div>
+          </RevealOnScroll>
         </div>
       </section>
     </>
