@@ -4,6 +4,7 @@ import ScrollReveal, { RevealItem } from "@/components/ScrollReveal";
 import StaggerText from "@/components/StaggerText";
 import Parallax from "@/components/Parallax";
 import { DottedSurface } from "@/components/ui/dotted-surface";
+import { GradientDots } from "@/components/ui/gradient-dots";
 import GlowingDivider from "@/components/GlowingDivider";
 
 const features = [
@@ -88,7 +89,8 @@ export default function About() {
       </section>
 
       <section className="relative py-20 lg:py-32 bg-black overflow-hidden border-y border-white/5 text-on-surface">
-        <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
+        <GradientDots className="opacity-60" duration={45} />
+        <div className="relative z-10 max-w-screen-2xl mx-auto px-6 md:px-12">
           <ScrollReveal className="mb-16 text-center lg:text-left">
             <p className="text-primary font-bold tracking-widest uppercase text-sm mb-4">The Leadership</p>
             <StaggerText
@@ -164,6 +166,7 @@ export default function About() {
       </section>
 
       <section className="relative py-24 lg:py-32 bg-black overflow-hidden">
+        <GradientDots className="opacity-60" duration={35} />
         <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-red-600/5 blur-[120px] rounded-full pointer-events-none"></div>
         <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-red-900/5 blur-[120px] rounded-full pointer-events-none"></div>
 
@@ -190,8 +193,9 @@ export default function About() {
         </div>
       </section>
 
-      <section className="py-32 bg-black border-t border-white/5 text-on-surface">
-        <div className="max-w-4xl mx-auto px-6">
+      <section className="relative overflow-hidden py-32 bg-black border-t border-white/5 text-on-surface">
+        <GradientDots className="opacity-60" duration={50} />
+        <div className="relative z-10 max-w-4xl mx-auto px-6">
           <ScrollReveal className="mb-16">
             <h2 className="text-4xl font-black tracking-tighter text-on-surface mb-4 font-headline">Frequently Asked Questions</h2>
             <p className="text-on-surface-variant font-light">Straight answers for business owners considering short-form content growth.</p>

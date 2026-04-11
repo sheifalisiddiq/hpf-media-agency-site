@@ -5,6 +5,7 @@ import StaggerText from "@/components/StaggerText";
 import Parallax from "@/components/Parallax";
 import HorizontalScroll from "@/components/HorizontalScroll";
 import GlowingDivider from "@/components/GlowingDivider";
+import { GradientDots } from "@/components/ui/gradient-dots";
 
 const services = [
   {
@@ -168,8 +169,9 @@ export default function HomeExperience() {
       </section>
 
       {/* Services Section */}
-      <section className="bg-black px-6 py-24 text-on-surface md:px-10 lg:px-14">
-        <div className="mx-auto max-w-7xl">
+      <section className="relative overflow-hidden bg-black px-6 py-24 text-on-surface md:px-10 lg:px-14">
+        <GradientDots className="opacity-60" duration={40} />
+        <div className="relative z-10 mx-auto max-w-7xl">
           <div className="mb-16 max-w-3xl space-y-5">
             <ScrollReveal yOffset={10}>
               <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary">
@@ -290,8 +292,9 @@ export default function HomeExperience() {
       </section>
 
       {/* Leadership Section */}
-      <section className="bg-black px-6 py-24 text-on-surface md:px-10 lg:px-14">
-        <div className="mx-auto max-w-7xl">
+      <section className="relative overflow-hidden bg-black px-6 py-24 text-on-surface md:px-10 lg:px-14">
+        <GradientDots className="opacity-60" duration={50} />
+        <div className="relative z-10 mx-auto max-w-7xl">
           <ScrollReveal className="mb-16 space-y-6 text-center lg:text-left">
             <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary">
               The Leadership
@@ -356,8 +359,9 @@ export default function HomeExperience() {
       </section>
 
       {/* Philosophy Section */}
-      <section className="bg-black px-6 py-24 text-on-surface md:px-10 lg:px-14">
-        <div className="mx-auto max-w-7xl">
+      <section className="relative overflow-hidden bg-black px-6 py-24 text-on-surface md:px-10 lg:px-14">
+        <GradientDots className="opacity-60" duration={45} />
+        <div className="relative z-10 mx-auto max-w-7xl">
           <div className="mb-14 max-w-2xl space-y-5">
             <ScrollReveal yOffset={10}>
               <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary">
