@@ -1,35 +1,43 @@
 import Icon from "@/components/Icon";
-import RevealOnScroll from "@/components/RevealOnScroll";
+import ScrollReveal from "@/components/ScrollReveal";
+import StaggerText from "@/components/StaggerText";
+import Parallax from "@/components/Parallax";
 
 export default function Contact() {
   return (
     <>
-      <section className="min-h-screen cinematic-bg flex items-center justify-center py-20 px-4 md:px-12 overflow-hidden relative text-white">
+      <section className="min-h-screen cinematic-bg flex items-center justify-center py-20 px-4 md:px-12 overflow-hidden relative text-white bg-black">
         {/* Decorative background element */}
-        <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20">
-          <div className="absolute -top-24 -left-24 w-96 h-96 bg-primary-container rounded-full blur-[160px]"></div>
+        <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20 z-0">
+          <Parallax speed={0.8} className="absolute -top-24 -left-24 w-96 h-96 bg-primary-container rounded-full blur-[160px]" />
         </div>
         
         <div className="max-w-screen-2xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10 pt-16">
           {/* Left Side: Content */}
-          <RevealOnScroll className="space-y-12">
+          <ScrollReveal className="space-y-12">
             <div className="space-y-4">
-              <span className="text-sm uppercase tracking-[0.2em] text-primary font-bold">Contact Us</span>
-              <h1 className="text-4xl md:text-7xl font-black tracking-tighter leading-none text-white font-headline">
-                Work With Us.
-              </h1>
+              <ScrollReveal yOffset={10} delay={0.2}>
+                <span className="text-sm uppercase tracking-[0.2em] text-primary font-bold">Contact Us</span>
+              </ScrollReveal>
+              <StaggerText
+                tag="h1"
+                text="Work With Us."
+                className="text-4xl md:text-7xl font-black tracking-tighter leading-none text-white font-headline uppercase"
+              />
             </div>
             
             <div className="space-y-8 max-w-lg">
-              <p className="text-lg text-on-surface-variant leading-relaxed font-light">
-                HPF Media is an exclusive boutique agency for high-growth enterprises. We don't just manage media; we architect influence. 
-              </p>
+              <ScrollReveal delay={0.4}>
+                <p className="text-lg text-on-surface-variant leading-relaxed font-light">
+                  HPF Media is an exclusive boutique agency for high-growth enterprises. We don't just manage media; we architect influence. 
+                </p>
+              </ScrollReveal>
               
-              <div className="space-y-6 pt-4">
+              <ScrollReveal delay={0.6} isContainer staggerChildren={0.1} className="space-y-6 pt-4">
                 <div className="flex items-start gap-4">
                   <Icon name="location_on" className="h-6 w-6 text-primary" />
                   <div>
-                    <h4 className="text-xs uppercase tracking-widest text-primary mb-1">Headquarters</h4>
+                    <h4 className="text-xs uppercase tracking-widest text-primary mb-1 font-bold">Headquarters</h4>
                     <p className="text-white font-medium">Dubai Design District, Building 4<br />Dubai, United Arab Emirates</p>
                   </div>
                 </div>
@@ -37,22 +45,22 @@ export default function Contact() {
                 <div className="flex items-start gap-4">
                   <Icon name="mail" className="h-6 w-6 text-primary" />
                   <div>
-                    <h4 className="text-xs uppercase tracking-widest text-primary mb-1">Direct Inquiry</h4>
+                    <h4 className="text-xs uppercase tracking-widest text-primary mb-1 font-bold">Direct Inquiry</h4>
                     <p className="text-white font-medium">concierge@hpfmedia.com</p>
                   </div>
                 </div>
-              </div>
+              </ScrollReveal>
             </div>
             
             {/* Subtle Brand Texture */}
-            <div className="hidden lg:block opacity-[0.03] select-none pointer-events-none absolute bottom-0 left-0">
+            <Parallax speed={1.2} className="hidden lg:block opacity-[0.03] select-none pointer-events-none absolute bottom-0 left-0">
               <span className="text-[12rem] font-black tracking-tighter leading-none font-headline">HPF</span>
-            </div>
-          </RevealOnScroll>
+            </Parallax>
+          </ScrollReveal>
           
           {/* Right Side: Form */}
-          <RevealOnScroll className="glass-panel p-6 md:p-12 rounded-lg border border-white/5 shadow-[0_48px_48px_rgba(0,0,0,0.5)]">
-            <h2 className="text-2xl font-bold tracking-tight mb-8 text-white font-headline">Strategy Audit</h2>
+          <ScrollReveal delay={0.5} yOffset={40} className="bg-neutral-900/90 backdrop-blur-[40px] p-6 md:p-12 rounded-lg border border-white/10 shadow-[0_48px_48px_rgba(0,0,0,0.5)] bg-black">
+            <h2 className="text-2xl font-bold tracking-tight mb-8 text-white font-headline uppercase">Strategy Audit</h2>
             <form className="space-y-8">
               <div className="relative">
                 <input 
@@ -64,7 +72,7 @@ export default function Contact() {
                 />
                 <label 
                   htmlFor="fullname" 
-                  className="absolute left-0 top-4 text-white/50 text-sm uppercase tracking-wider transition-all duration-300 pointer-events-none peer-focus:text-primary peer-focus:-translate-y-6 peer-focus:scale-90"
+                  className="absolute left-0 top-4 text-white/50 text-sm uppercase tracking-wider transition-all duration-300 pointer-events-none peer-focus:text-primary peer-focus:-translate-y-6 peer-focus:scale-90 font-bold"
                 >
                   Full Name
                 </label>
@@ -81,7 +89,7 @@ export default function Contact() {
                   />
                   <label 
                     htmlFor="domain" 
-                    className="absolute left-0 top-4 text-white/50 text-sm uppercase tracking-wider transition-all duration-300 pointer-events-none peer-focus:text-primary peer-focus:-translate-y-6 peer-focus:scale-90"
+                    className="absolute left-0 top-4 text-white/50 text-sm uppercase tracking-wider transition-all duration-300 pointer-events-none peer-focus:text-primary peer-focus:-translate-y-6 peer-focus:scale-90 font-bold"
                   >
                     Company Domain
                   </label>
@@ -97,7 +105,7 @@ export default function Contact() {
                   />
                   <label 
                     htmlFor="email" 
-                    className="absolute left-0 top-4 text-white/50 text-sm uppercase tracking-wider transition-all duration-300 pointer-events-none peer-focus:text-primary peer-focus:-translate-y-6 peer-focus:scale-90"
+                    className="absolute left-0 top-4 text-white/50 text-sm uppercase tracking-wider transition-all duration-300 pointer-events-none peer-focus:text-primary peer-focus:-translate-y-6 peer-focus:scale-90 font-bold"
                   >
                     Corporate Email
                   </label>
@@ -109,7 +117,7 @@ export default function Contact() {
                   id="revenue" 
                   name="revenue" 
                   defaultValue=""
-                  className="w-full bg-black/40 border-0 border-b border-white/10 py-4 px-0 text-white/70 focus:ring-0 focus:border-primary transition-all duration-300 appearance-none"
+                  className="w-full bg-black/40 border-0 border-b border-white/10 py-4 px-0 text-white/70 focus:ring-0 focus:border-primary transition-all duration-300 appearance-none font-bold text-sm uppercase"
                 >
                   <option value="" disabled>Annual Revenue Range</option>
                   <option value="1-5m">$1M - $5M</option>
@@ -132,7 +140,7 @@ export default function Contact() {
                 ></textarea>
                 <label 
                   htmlFor="objectives" 
-                  className="absolute left-0 top-4 text-white/50 text-sm uppercase tracking-wider transition-all duration-300 pointer-events-none peer-focus:text-primary peer-focus:-translate-y-6 peer-focus:scale-90"
+                  className="absolute left-0 top-4 text-white/50 text-sm uppercase tracking-wider transition-all duration-300 pointer-events-none peer-focus:text-primary peer-focus:-translate-y-6 peer-focus:scale-90 font-bold"
                 >
                   Growth Objectives
                 </label>
@@ -141,13 +149,13 @@ export default function Contact() {
               <div className="pt-4">
                 <button 
                   type="button" 
-                  className="w-full bg-gradient-to-r from-primary-container to-red-500 text-white font-bold py-5 rounded uppercase tracking-widest text-sm shadow-xl hover:shadow-primary-container/20 transition-all duration-500 ease-out active:scale-[0.98]"
+                  className="w-full bg-gradient-to-r from-primary-container to-red-500 text-white font-black py-5 rounded uppercase tracking-[0.2em] text-sm shadow-xl hover:shadow-primary-container/20 transition-all duration-500 ease-out active:scale-[0.98]"
                 >
                   Apply for Consultation
                 </button>
               </div>
             </form>
-          </RevealOnScroll>
+          </ScrollReveal>
         </div>
       </section>
     </>

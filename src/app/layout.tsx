@@ -4,6 +4,8 @@ import "./globals.css";
 import CursorTrail from "@/components/CursorTrail";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import VisualBackground from "@/components/VisualBackground";
+import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -27,11 +29,14 @@ export default function RootLayout({
   return (
     <html lang="en" className={htmlClassName} suppressHydrationWarning>
       <body className={bodyClassName}>
+        <VisualBackground />
         <CursorTrail />
         <Navigation />
-        <main className="flex-grow">
-          {children}
-        </main>
+        <SmoothScrollProvider>
+          <main className="flex-grow">
+            {children}
+          </main>
+        </SmoothScrollProvider>
         <Footer />
       </body>
     </html>
