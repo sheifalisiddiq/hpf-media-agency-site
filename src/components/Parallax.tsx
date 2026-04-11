@@ -5,7 +5,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 interface ParallaxProps {
-  children: ReactNode;
+  children?: ReactNode;
   speed?: number; // 0.1 to 1.0 (slower than scroll), > 1.0 (faster)
   className?: string;
 }
