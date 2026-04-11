@@ -142,7 +142,7 @@ export default function HomeExperience() {
 
           <Parallax speed={1.15} className="relative ml-auto hidden w-full max-w-md lg:block">
             <div className="absolute inset-0 rounded-[2rem] bg-[radial-gradient(circle_at_center,rgba(255,84,73,0.24),transparent_60%)] blur-3xl" />
-            <ScrollReveal className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] shadow-[0_40px_140px_rgba(0,0,0,0.55)]">
+            <ScrollReveal scale={0.9} rotateX={10} className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] shadow-[0_40px_140px_rgba(0,0,0,0.55)]">
               <Image
                 alt="Architectural night scene"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeDiP024rVyKNnjcQdLTZRSgJyvweO-N20uRgSZa5dSk5FnbBXerf6NGsplK4Omia94fh-x_JmuqoCS3kl77HO84XIJZWWMHA1f4beNJ-JA33DR-f15Vl9bAXnKdnbqrvdCYXOAfAZl0zt3R-KmdxFe_c6wciHVJWYQougqlHBEGLryyf61w_H8dkyycYWI87d5aGHzOifopkSLL3TPFcmdg97OJ9n1K7aBKDOPsP9iAq5iHZ6K0UcK91VCdZof2PRQKOCGVqTA1c"
@@ -169,7 +169,7 @@ export default function HomeExperience() {
 
       {/* Services Section */}
       <section className="bg-black px-6 py-24 text-on-surface md:px-10 lg:px-14">
-        <ScrollReveal className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-7xl">
           <div className="mb-16 max-w-3xl space-y-5">
             <ScrollReveal yOffset={10}>
               <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary">
@@ -188,7 +188,7 @@ export default function HomeExperience() {
             </ScrollReveal>
           </div>
 
-          <ScrollReveal isContainer staggerChildren={0.15} className="grid gap-6 lg:grid-cols-12">
+          <ScrollReveal isContainer staggerChildren={0.15} scale={0.96} yOffset={30} className="grid gap-6 lg:grid-cols-12">
             {services.map((service) => (
               <RevealItem
                 key={service.title}
@@ -217,7 +217,7 @@ export default function HomeExperience() {
               <h3 className="text-3xl font-black uppercase tracking-[-0.05em] text-white font-headline">The Process</h3>
             </ScrollReveal>
             
-            <ScrollReveal isContainer staggerChildren={0.1} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            <ScrollReveal isContainer staggerChildren={0.1} scale={0.98} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
               {executionSteps.map((step) => (
                 <RevealItem key={step.step} className="group relative rounded-2xl border border-white/5 bg-white/[0.02] p-8 transition-colors hover:border-primary/20 hover:bg-white/[0.04]">
                   <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-lg bg-red-600/10 text-primary group-hover:bg-primary group-hover:text-black transition-colors duration-300">
@@ -232,7 +232,7 @@ export default function HomeExperience() {
               ))}
             </ScrollReveal>
           </div>
-        </ScrollReveal>
+        </div>
       </section>
 
       {/* Roadmap Section (Horizontal Scroll) */}
@@ -303,10 +303,10 @@ export default function HomeExperience() {
             />
           </ScrollReveal>
 
-          <ScrollReveal isContainer staggerChildren={0.2} className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-12 lg:items-start">
+          <ScrollReveal isContainer staggerChildren={0.2} scale={0.97} rotateX={5} className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-12 lg:items-start">
             {/* Bilal Sidheeq */}
             <RevealItem className="space-y-8">
-              <ScrollReveal yOffset={60}>
+              <ScrollReveal yOffset={60} scale={1.05}>
                 <div className="relative h-[32rem] overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03]">
                   <Image
                     alt="Bilal Sidheeq"
@@ -336,7 +336,7 @@ export default function HomeExperience() {
 
             {/* Empty Second Founder */}
             <RevealItem className="space-y-8">
-              <ScrollReveal yOffset={60} delay={0.2}>
+              <ScrollReveal yOffset={60} delay={0.2} scale={1.05}>
                 <div className="relative h-[32rem] overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] flex items-center justify-center bg-neutral-950">
                   <div className="text-white/5 text-8xl font-black font-headline select-none">HPF</div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent" />
@@ -358,18 +358,20 @@ export default function HomeExperience() {
       {/* Philosophy Section */}
       <section className="bg-black px-6 py-24 text-on-surface md:px-10 lg:px-14">
         <div className="mx-auto max-w-7xl">
-          <ScrollReveal className="mb-14 max-w-2xl space-y-5">
-            <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary">
-              The Philosophy
-            </p>
+          <div className="mb-14 max-w-2xl space-y-5">
+            <ScrollReveal yOffset={10}>
+              <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary">
+                The Philosophy
+              </p>
+            </ScrollReveal>
             <StaggerText
               tag="h2"
               text="No Generic Marketing."
               className="text-4xl font-black uppercase tracking-[-0.06em] text-white md:text-6xl font-headline"
             />
-          </ScrollReveal>
+          </div>
 
-          <ScrollReveal isContainer staggerChildren={0.1} className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+          <ScrollReveal isContainer staggerChildren={0.1} scale={0.98} className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {processSteps.map((step) => (
               <RevealItem
                 key={step.num}
@@ -407,7 +409,7 @@ export default function HomeExperience() {
                 Stop posting content that no one sees. Join UAE brands scaling their impact through HPF Media and turn visibility into real business growth.
               </p>
             </ScrollReveal>
-            <ScrollReveal delay={0.6}>
+            <ScrollReveal delay={0.6} scale={0.9}>
               <button className="bg-white px-10 py-5 text-sm font-black uppercase tracking-[0.24em] text-black transition-transform duration-300 hover:scale-[1.03]">
                 Book Your Strategy Call
               </button>

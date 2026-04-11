@@ -25,7 +25,7 @@ export default function Services() {
             </p>
           </ScrollReveal>
           
-          <ScrollReveal delay={0.6} yOffset={20}>
+          <ScrollReveal delay={0.6} yOffset={20} scale={0.9}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-primary-container text-on-primary-container px-10 py-4 rounded font-bold text-lg hover:bg-primary transition-all">See Our Services</button>
               <button className="border border-red-600/30 text-on-surface px-10 py-4 rounded font-bold text-lg hover:bg-white/5 transition-all backdrop-blur-md">View Case Studies</button>
@@ -44,7 +44,7 @@ export default function Services() {
           <div className="w-24 h-1 bg-red-600"></div>
         </ScrollReveal>
         
-        <ScrollReveal isContainer staggerChildren={0.15} className="grid grid-cols-1 md:grid-cols-12 gap-6">
+        <ScrollReveal isContainer staggerChildren={0.15} scale={0.96} yOffset={30} className="grid grid-cols-1 md:grid-cols-12 gap-6">
           <RevealItem className="md:col-span-7 glass-card rounded-lg p-6 md:p-10 flex flex-col justify-between overflow-hidden relative group bg-black">
             <div className="z-10">
               <Icon name="dynamic_feed" className="mb-6 h-8 w-8 text-primary md:h-10 md:w-10" />
@@ -133,7 +133,7 @@ export default function Services() {
           </ScrollReveal>
           
           <Parallax speed={1.1} className="relative h-[600px] rounded-lg overflow-hidden glass-card p-4">
-            <ScrollReveal className="h-full w-full relative">
+            <ScrollReveal scale={1.1} rotateX={5} className="h-full w-full relative">
               <Image
                 fill
                 className="object-cover rounded-lg opacity-80"
@@ -142,9 +142,9 @@ export default function Services() {
                 sizes="(min-width: 768px) 50vw, 100vw"
                 quality={64}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
               <div className="absolute bottom-10 left-10 right-10">
-                <ScrollReveal delay={0.3} yOffset={20}>
+                <ScrollReveal delay={0.6} yOffset={20} scale={0.8}>
                   <div className="bg-black/90 backdrop-blur-md p-6 rounded-lg border border-primary/30 shadow-2xl">
                     <p className="font-headline font-bold text-xl italic leading-relaxed">"They handle everything. I just focus on my business while the leads come in."</p>
                     <p className="text-primary mt-2 text-sm font-bold uppercase tracking-widest">- UAE Business Owner</p>
@@ -157,7 +157,7 @@ export default function Services() {
       </section>
 
       <section className="py-32 px-8 bg-black">
-        <ScrollReveal className="max-w-5xl mx-auto glass-card rounded-lg p-16 text-center relative overflow-hidden bg-black text-on-surface border border-white/5">
+        <ScrollReveal scale={0.97} rotateX={2} className="max-w-5xl mx-auto glass-card rounded-lg p-16 text-center relative overflow-hidden bg-black text-on-surface border border-white/5">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
           
           <StaggerText
@@ -170,7 +170,7 @@ export default function Services() {
             <p className="text-neutral-400 text-xl mb-12 max-w-2xl mx-auto font-light">We take on a limited number of clients each month to ensure the highest quality of service. Book your strategy call today to secure your spot.</p>
           </ScrollReveal>
           
-          <ScrollReveal delay={0.6} yOffset={20}>
+          <ScrollReveal delay={0.6} yOffset={20} scale={0.9}>
             <button className="bg-primary-container text-on-primary-container px-12 py-5 rounded font-black text-xl uppercase tracking-tighter hover:scale-105 active:scale-95 transition-all shadow-xl shadow-primary/20">
               Book Your Strategy Call
             </button>

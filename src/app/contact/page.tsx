@@ -8,7 +8,7 @@ export default function Contact() {
     <>
       <section className="min-h-screen cinematic-bg flex items-center justify-center py-20 px-4 md:px-12 overflow-hidden relative text-white bg-black">
         {/* Decorative background element */}
-        <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20 z-0">
+        <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20 z-0 text-white">
           <Parallax speed={0.8} className="absolute -top-24 -left-24 w-96 h-96 bg-primary-container rounded-full blur-[160px]" />
         </div>
         
@@ -59,7 +59,7 @@ export default function Contact() {
           </ScrollReveal>
           
           {/* Right Side: Form */}
-          <ScrollReveal delay={0.5} yOffset={40} className="bg-neutral-900/90 backdrop-blur-[40px] p-6 md:p-12 rounded-lg border border-white/10 shadow-[0_48px_48px_rgba(0,0,0,0.5)] bg-black">
+          <ScrollReveal delay={0.3} yOffset={60} scale={0.94} rotateX={5} className="bg-neutral-900/90 backdrop-blur-[40px] p-6 md:p-12 rounded-lg border border-white/10 shadow-[0_48px_48px_rgba(0,0,0,0.5)] bg-black">
             <h2 className="text-2xl font-bold tracking-tight mb-8 text-white font-headline uppercase">Strategy Audit</h2>
             <form className="space-y-8">
               <div className="relative">

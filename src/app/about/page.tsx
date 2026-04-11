@@ -50,7 +50,7 @@ export default function About() {
   return (
     <>
       <section className="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden bg-black text-on-surface">
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 text-white">
           <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-black"></div>
           <Parallax speed={0.8} className="absolute inset-0 pointer-events-none">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-red-600/10 blur-[150px] rounded-full"></div>
@@ -75,7 +75,7 @@ export default function About() {
             </p>
           </ScrollReveal>
           
-          <ScrollReveal delay={0.6} yOffset={20}>
+          <ScrollReveal delay={0.6} yOffset={20} scale={0.9}>
             <div className="flex flex-col md:flex-row gap-6 justify-center">
               <button className="bg-primary-container text-on-primary-container px-10 py-5 rounded-lg text-lg font-bold tracking-tight hover:scale-105 transition-transform duration-300 shadow-2xl shadow-primary/30">
                 See How We Work
@@ -97,12 +97,12 @@ export default function About() {
             <div className="w-20 h-1 bg-primary-container mt-6 mx-auto lg:mx-0"></div>
           </ScrollReveal>
 
-          <ScrollReveal isContainer staggerChildren={0.2} className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-12 items-start">
+          <ScrollReveal isContainer staggerChildren={0.2} scale={0.96} rotateX={5} className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-12 items-start">
             {/* Bilal Sidheeq */}
             <RevealItem className="group space-y-8">
               <div className="relative">
                 <Parallax speed={1.1} className="absolute -inset-4 bg-red-600/20 blur-3xl opacity-50 rounded-full group-hover:opacity-70 transition-opacity pointer-events-none" />
-                <ScrollReveal className="relative aspect-[4/5] rounded-xl overflow-hidden shadow-2xl border border-white/5">
+                <ScrollReveal scale={1.05} yOffset={30} className="relative aspect-[4/5] rounded-xl overflow-hidden shadow-2xl border border-white/5">
                   <Image
                     fill
                     alt="Bilal Sidheeq"
@@ -131,7 +131,7 @@ export default function About() {
 
             {/* Empty Second Founder */}
             <RevealItem className="space-y-8">
-              <ScrollReveal yOffset={60} delay={0.2}>
+              <ScrollReveal yOffset={60} delay={0.2} scale={1.05}>
                 <div className="relative h-[32rem] overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] flex items-center justify-center bg-neutral-950">
                   <div className="text-white/5 text-8xl font-black font-headline select-none">HPF</div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent" />
@@ -148,7 +148,7 @@ export default function About() {
             </RevealItem>
           </ScrollReveal>
 
-          <ScrollReveal isContainer staggerChildren={0.2} className="flex flex-wrap gap-12 pt-20 justify-center">
+          <ScrollReveal isContainer staggerChildren={0.2} scale={0.98} className="flex flex-wrap gap-12 pt-20 justify-center">
             <RevealItem className="text-center">
               <div className="text-5xl font-black text-on-surface">500M+</div>
               <div className="text-xs uppercase tracking-widest text-primary font-bold mt-2">Organic Views Generated</div>
@@ -171,7 +171,7 @@ export default function About() {
             <p className="text-white/70 font-light text-lg">Clear strategy, strong execution, and short-form content built to help you grow in the UAE market.</p>
           </ScrollReveal>
 
-          <ScrollReveal isContainer staggerChildren={0.15} className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          <ScrollReveal isContainer staggerChildren={0.15} scale={0.96} className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {features.map((feature) => (
               <RevealItem
                 key={feature.title}
@@ -194,7 +194,7 @@ export default function About() {
             <h2 className="text-4xl font-black tracking-tighter text-on-surface mb-4 font-headline">Frequently Asked Questions</h2>
             <p className="text-on-surface-variant font-light">Straight answers for business owners considering short-form content growth.</p>
           </ScrollReveal>
-          <ScrollReveal isContainer staggerChildren={0.1} className="space-y-4">
+          <ScrollReveal isContainer staggerChildren={0.1} yOffset={20} className="space-y-4">
             {faqs.map((faq, i) => (
               <RevealItem key={i}>
                 <details className="group rounded-lg border border-white/5 bg-neutral-950 p-6 hover:border-primary/30 transition-all">
@@ -235,7 +235,7 @@ export default function About() {
           <ScrollReveal delay={0.4}>
             <p className="text-on-surface-variant text-xl mb-12 max-w-2xl mx-auto font-light">If you want more visibility, stronger engagement, and content that actually supports sales, HPF Media is ready to help.</p>
           </ScrollReveal>
-          <ScrollReveal delay={0.6}>
+          <ScrollReveal delay={0.6} scale={0.8}>
             <button className="bg-primary-container text-on-primary-container px-14 py-6 rounded-full text-xl font-bold tracking-tight hover:scale-110 active:scale-95 transition-all duration-300 shadow-[0_0_60px_rgba(255,84,73,0.5)]">
               Book Your Strategy Call
             </button>
