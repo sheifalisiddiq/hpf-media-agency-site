@@ -40,11 +40,13 @@ export default function Services() {
         </div>
       </section>
 
-      <section className="py-20 lg:py-24 px-6 md:px-8 max-w-screen-2xl mx-auto bg-black text-on-surface">
-        <ScrollReveal className="flex flex-col mb-12 lg:mb-16">
-          <h2 className="text-3xl lg:text-4xl font-headline font-bold mb-4 uppercase tracking-tight">Services</h2>
-          <div className="w-24 h-1 bg-red-600"></div>
-        </ScrollReveal>
+      <section className="relative py-20 lg:py-24 px-6 md:px-8 mx-auto bg-black text-on-surface overflow-hidden">
+        <DottedSurface className="absolute inset-0 z-0 opacity-10 mix-blend-screen" />
+        <div className="relative z-10 max-w-screen-2xl mx-auto">
+          <ScrollReveal className="flex flex-col mb-12 lg:mb-16">
+            <h2 className="text-3xl lg:text-4xl font-headline font-bold mb-4 uppercase tracking-tight">Services</h2>
+            <div className="w-24 h-1 bg-red-600"></div>
+          </ScrollReveal>
         
         <ScrollReveal isContainer staggerChildren={0.15} scale={0.96} yOffset={30} className="grid grid-cols-1 md:grid-cols-12 gap-6">
           <RevealItem className="md:col-span-7 glass-card rounded-lg p-6 md:p-10 flex flex-col justify-between overflow-hidden relative group bg-black">
@@ -109,10 +111,12 @@ export default function Services() {
             </div>
           </RevealItem>
         </ScrollReveal>
+        </div>
       </section>
 
-      <section className="py-24 px-8 max-w-screen-xl mx-auto bg-black text-on-surface">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+      <section className="relative py-24 px-8 mx-auto bg-black text-on-surface overflow-hidden border-t border-white/5">
+        <DottedSurface className="absolute inset-0 z-0 opacity-10 mix-blend-screen" />
+        <div className="relative z-10 max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <ScrollReveal>
             <h2 className="text-5xl font-headline font-bold mb-8 leading-tight uppercase tracking-tighter">The <span className="text-primary">HPF Edge</span></h2>
             <div className="space-y-8">
