@@ -3,11 +3,13 @@ import Icon from "@/components/Icon";
 import ScrollReveal, { RevealItem } from "@/components/ScrollReveal";
 import StaggerText from "@/components/StaggerText";
 import Parallax from "@/components/Parallax";
+import { DottedSurface } from "@/components/ui/dotted-surface";
 
 export default function Services() {
   return (
     <>
       <section className="relative min-h-[921px] flex flex-col justify-center items-center text-center px-4 pt-20 red-gradient-bg bg-black text-on-surface overflow-hidden">
+        <DottedSurface className="absolute inset-0 z-0 opacity-15 mix-blend-screen" />
         <ScrollReveal className="max-w-4xl mx-auto z-10">
           <ScrollReveal yOffset={10} delay={0.2}>
             <span className="text-sm uppercase tracking-[0.3em] text-primary mb-6 block font-medium">Dubai / Abu Dhabi / Global</span>

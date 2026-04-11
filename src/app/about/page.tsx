@@ -3,6 +3,7 @@ import Icon from "@/components/Icon";
 import ScrollReveal, { RevealItem } from "@/components/ScrollReveal";
 import StaggerText from "@/components/StaggerText";
 import Parallax from "@/components/Parallax";
+import { DottedSurface } from "@/components/ui/dotted-surface";
 import GlowingDivider from "@/components/GlowingDivider";
 
 const features = [
@@ -51,7 +52,8 @@ export default function About() {
     <>
       <section className="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden bg-black text-on-surface">
         <div className="absolute inset-0 z-0 text-white">
-          <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-black"></div>
+          <DottedSurface className="opacity-20 mix-blend-screen" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black"></div>
           <Parallax speed={0.8} className="absolute inset-0 pointer-events-none">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-red-600/10 blur-[150px] rounded-full"></div>
           </Parallax>
