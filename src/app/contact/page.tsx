@@ -59,7 +59,7 @@ export default function Contact() {
           </ScrollReveal>
           
           {/* Right Side: Form */}
-          <ScrollReveal delay={0.3} yOffset={60} scale={0.94} rotateX={5} className="bg-neutral-900/90 backdrop-blur-[40px] p-6 md:p-12 rounded-lg border border-white/10 shadow-[0_48px_48px_rgba(0,0,0,0.5)] bg-black">
+          <ScrollReveal delay={0.3} yOffset={60} scale={0.94} rotateX={5} className="bg-black/95 backdrop-blur-[40px] p-6 md:p-12 rounded-lg border border-white/10 shadow-[0_48px_48px_rgba(0,0,0,0.5)]">
             <h2 className="text-2xl font-bold tracking-tight mb-8 text-white font-headline uppercase">Strategy Audit</h2>
             <form className="space-y-8">
               <div className="relative">
@@ -68,7 +68,7 @@ export default function Contact() {
                   id="fullname" 
                   name="fullname" 
                   placeholder=" " 
-                  className="w-full bg-black/40 border-0 border-b border-white/10 py-4 px-0 text-white focus:ring-0 focus:border-primary transition-all duration-300 peer"
+                  className="w-full bg-black border-0 border-b border-white/10 py-4 px-0 text-white focus:ring-0 focus:border-primary transition-all duration-300 peer"
                 />
                 <label 
                   htmlFor="fullname" 
@@ -85,7 +85,7 @@ export default function Contact() {
                     id="domain" 
                     name="domain" 
                     placeholder=" " 
-                    className="w-full bg-black/40 border-0 border-b border-white/10 py-4 px-0 text-white focus:ring-0 focus:border-primary transition-all duration-300 peer"
+                    className="w-full bg-black border-0 border-b border-white/10 py-4 px-0 text-white focus:ring-0 focus:border-primary transition-all duration-300 peer"
                   />
                   <label 
                     htmlFor="domain" 
@@ -101,7 +101,7 @@ export default function Contact() {
                     id="email" 
                     name="email" 
                     placeholder=" " 
-                    className="w-full bg-black/40 border-0 border-b border-white/10 py-4 px-0 text-white focus:ring-0 focus:border-primary transition-all duration-300 peer"
+                    className="w-full bg-black border-0 border-b border-white/10 py-4 px-0 text-white focus:ring-0 focus:border-primary transition-all duration-300 peer"
                   />
                   <label 
                     htmlFor="email" 
@@ -117,7 +117,7 @@ export default function Contact() {
                   id="revenue" 
                   name="revenue" 
                   defaultValue=""
-                  className="w-full bg-black/40 border-0 border-b border-white/10 py-4 px-0 text-white/70 focus:ring-0 focus:border-primary transition-all duration-300 appearance-none font-bold text-sm uppercase"
+                  className="w-full bg-black border-0 border-b border-white/10 py-4 px-0 text-white/70 focus:ring-0 focus:border-primary transition-all duration-300 appearance-none font-bold text-sm uppercase"
                 >
                   <option value="" disabled>Annual Revenue Range</option>
                   <option value="1-5m">$1M - $5M</option>
@@ -136,7 +136,7 @@ export default function Contact() {
                   name="objectives" 
                   placeholder=" " 
                   rows={3}
-                  className="w-full bg-black/40 border-0 border-b border-white/10 py-4 px-0 text-white focus:ring-0 focus:border-primary transition-all duration-300 peer resize-none"
+                  className="w-full bg-black border-0 border-b border-white/10 py-4 px-0 text-white focus:ring-0 focus:border-primary transition-all duration-300 peer resize-none"
                 ></textarea>
                 <label 
                   htmlFor="objectives" 
