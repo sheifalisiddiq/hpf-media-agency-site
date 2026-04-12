@@ -19,7 +19,8 @@ type IconName =
   | "check_circle"
   | "location_on"
   | "mail"
-  | "expand_more";
+  | "expand_more"
+  | "check";
 
 type IconProps = SVGProps<SVGSVGElement> & {
   name: IconName;
@@ -214,6 +215,16 @@ const iconMap: Record<IconName, ReactElement> = {
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth="1.8"
+    />
+  ),
+  check: (
+    <path
+      d="m5 12 5 5 9-9"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
     />
   ),
 };
