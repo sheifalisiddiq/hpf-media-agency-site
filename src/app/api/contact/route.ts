@@ -29,7 +29,7 @@ export async function POST(request: Request) {
 
     // Send email via Resend
     const { data, error } = await resend.emails.send({
-      from: 'HPF Media <onboarding@resend.dev>', // Default Resend domain until domain is verified
+      from: 'HPF Media <notifications@hpf-media.com>', // Using your verified domain for better deliverability
       to: 'admin@hpf-media.com',
       replyTo: email,
       subject: `New Strategy Audit Request: ${fullname}`,
