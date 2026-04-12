@@ -63,7 +63,7 @@ export default function Services() {
               />
             </Parallax>
             <div className="mt-auto z-10 w-fit">
-              <button className="text-primary font-bold inline-flex items-center gap-2 group-hover:translate-x-2 transition-transform uppercase tracking-wider text-sm">Increase Your Reach <Icon name="trending_flat" className="h-4 w-4" /></button>
+              <a href="https://wa.me/971509418430?text=I%20am%20looking%20for%20Social%20Media%20Growth%20services%2C%20can%20I%20get%20more%20info%3F" target="_blank" rel="noopener noreferrer" className="text-primary font-bold inline-flex items-center gap-2 group-hover:translate-x-2 transition-transform uppercase tracking-wider text-sm">Increase Your Reach <Icon name="trending_flat" className="h-4 w-4" /></a>
             </div>
           </RevealItem>
 
@@ -85,7 +85,7 @@ export default function Services() {
               />
             </Parallax>
             <div className="mt-auto z-10 w-fit">
-              <button className="text-primary font-bold inline-flex items-center gap-2 group-hover:translate-x-2 transition-transform uppercase tracking-wider text-sm">Start Production <Icon name="trending_flat" className="h-4 w-4" /></button>
+              <a href="https://wa.me/971509418430?text=I%20am%20looking%20for%20Video%20Production%20services%2C%20can%20I%20get%20more%20info%3F" target="_blank" rel="noopener noreferrer" className="text-primary font-bold inline-flex items-center gap-2 group-hover:translate-x-2 transition-transform uppercase tracking-wider text-sm">Start Production <Icon name="trending_flat" className="h-4 w-4" /></a>
             </div>
           </RevealItem>
 
@@ -94,7 +94,7 @@ export default function Services() {
             <h3 className="text-xl md:text-2xl font-headline font-bold mb-4 uppercase">Personal Branding</h3>
             <p className="text-neutral-400 mb-6 flex-grow">We help business owners become the face of their industry. We build your reputation and voice so you are recognized as an expert in your field.</p>
             <div className="mt-auto">
-              <button className="text-primary font-bold inline-flex items-center gap-2 group-hover:translate-x-2 transition-transform uppercase tracking-wider text-sm">Build Your Authority <Icon name="trending_flat" className="h-4 w-4" /></button>
+              <a href="https://wa.me/971509418430?text=I%20am%20looking%20for%20Personal%20Branding%20services%2C%20can%20I%20get%20more%20info%3F" target="_blank" rel="noopener noreferrer" className="text-primary font-bold inline-flex items-center gap-2 group-hover:translate-x-2 transition-transform uppercase tracking-wider text-sm">Build Your Authority <Icon name="trending_flat" className="h-4 w-4" /></a>
             </div>
           </RevealItem>
 
@@ -103,7 +103,7 @@ export default function Services() {
             <h3 className="text-xl md:text-2xl font-headline font-bold mb-4 uppercase">Web Design & Strategy</h3>
             <p className="text-neutral-400 mb-6 flex-grow">Fast, professional websites built to turn your social media followers into paying customers. We ensure your digital presence is built to convert.</p>
             <div className="mt-auto">
-              <button className="text-primary font-bold inline-flex items-center gap-2 group-hover:translate-x-2 transition-transform uppercase tracking-wider text-sm">Launch Your Site <Icon name="trending_flat" className="h-4 w-4" /></button>
+              <a href="https://wa.me/971509418430?text=I%20am%20looking%20for%20Web%20Design%20%26%20Strategy%20services%2C%20can%20I%20get%20more%20info%3F" target="_blank" rel="noopener noreferrer" className="text-primary font-bold inline-flex items-center gap-2 group-hover:translate-x-2 transition-transform uppercase tracking-wider text-sm">Launch Your Site <Icon name="trending_flat" className="h-4 w-4" /></a>
             </div>
           </RevealItem>
         </ScrollReveal>
