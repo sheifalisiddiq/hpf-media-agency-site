@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 const links = [
   { name: "Home", href: "/" },
@@ -37,9 +38,14 @@ export default function Navigation() {
             href="/"
             className="group flex min-h-12 items-center gap-3 rounded-full pr-4 text-white transition-opacity duration-300 hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-black/60"
           >
-            <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/10 text-xs font-black uppercase tracking-[0.24em] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.18)]">
-              H
-            </span>
+            <div className="relative h-10 w-10 overflow-hidden rounded-full border border-white/15 bg-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.18)]">
+              <Image
+                src="/logo.jpg"
+                alt="HPF Media Logo"
+                fill
+                className="object-cover"
+              />
+            </div>
             <span className="flex flex-col leading-none">
               <span className="text-[0.65rem] font-medium uppercase tracking-[0.34em] text-white/55">
                 Studio
