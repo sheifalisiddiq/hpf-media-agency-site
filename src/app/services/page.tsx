@@ -26,12 +26,8 @@ export default function Services() {
             </p>
           </ScrollReveal>
           
-          <ScrollReveal delay={0.6} yOffset={20} scale={0.9}>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="#services-list" className="bg-primary-container text-on-primary-container px-10 py-4 rounded font-bold text-lg hover:bg-primary transition-all inline-flex items-center justify-center">See Our Services</a>
-              <a href="/#our-work" className="border border-red-600/30 text-on-surface px-10 py-4 rounded font-bold text-lg hover:bg-white/5 transition-all backdrop-blur-md inline-flex items-center justify-center">View Case Studies</a>
-            </div>
-          </ScrollReveal>
+          {/* Buttons removed per user request */}
+
 
         </ScrollReveal>
         

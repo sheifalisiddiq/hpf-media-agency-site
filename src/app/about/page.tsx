@@ -33,9 +33,10 @@ const faqs = [
     a: "We work with UAE business owners and brands that want to grow through Instagram and TikTok. That includes service businesses, personal brands, real estate, hospitality, and other high-value offers.",
   },
   {
-    q: "Is Mo Bilal involved in the work?",
-    a: "Yes. Mo leads the strategic direction behind client content so the messaging, positioning, and execution stay aligned with business goals.",
+    q: "Is Bilal involved in the work?",
+    a: "Yes. Bilal leads the strategic direction behind client content so the messaging, positioning, and execution stay aligned with business goals.",
   },
+
   {
     q: "What makes your approach different?",
     a: "We focus on content that supports growth. That means strategy, scripting, production, editing, and posting systems built around visibility, engagement, and lead generation.",
@@ -74,13 +75,8 @@ export default function About() {
             </p>
           </ScrollReveal>
           
-          <ScrollReveal delay={0.6} yOffset={20} scale={0.9}>
-            <div className="flex flex-col md:flex-row gap-6 justify-center">
-              <button className="bg-primary-container text-on-primary-container px-10 py-5 rounded-lg text-lg font-bold tracking-tight hover:scale-105 transition-transform duration-300 shadow-2xl shadow-primary/30">
-                See How We Work
-              </button>
-            </div>
-          </ScrollReveal>
+          {/* Buttons removed per user request */}
+
         </ScrollReveal>
       </section>
 
