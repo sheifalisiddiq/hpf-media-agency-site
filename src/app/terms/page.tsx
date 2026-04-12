@@ -62,9 +62,10 @@ export default function TermsOfService() {
 
           <section className="space-y-4 pt-8 border-t border-white/10">
             <p className="text-sm italic">
-              Last updated: April 2024. For questions regarding these terms, please contact us at admin@hpf-media.com.
+              Last updated: April 2026. For questions regarding these terms, please contact us at admin@hpf-media.com.
             </p>
           </section>
+
         </ScrollReveal>
       </div>
     </div>

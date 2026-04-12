@@ -19,8 +19,9 @@ export default function Footer() {
             <div className="text-xl font-black text-white font-headline tracking-tighter">HPF MEDIA</div>
           </div>
           <p className="text-[10px] tracking-[0.2em] uppercase text-neutral-600 font-light text-center md:text-left">
-            Copyright 2024 HPF Media. Organic growth content for UAE brands.
+            Copyright {new Date().getFullYear()} HPF Media. Organic growth content for UAE brands.
           </p>
+
         </div>
         <div className="flex flex-col items-center md:items-end gap-6">
           <div className="flex items-center gap-6 mb-2">
