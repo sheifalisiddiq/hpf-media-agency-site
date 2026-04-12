@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Icon from "@/components/Icon";
 import ScrollReveal from "@/components/ScrollReveal";
 import StaggerText from "@/components/StaggerText";
@@ -17,7 +17,9 @@ const workVideos = [
 
 const VideoCard = ({ src }: { src: string }) => {
   const [isMuted, setIsMuted] = useState(true);
+  const [isActive, setIsActive] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
 
   const toggleMute = () => {
     if (videoRef.current) {
@@ -26,8 +28,33 @@ const VideoCard = ({ src }: { src: string }) => {
     }
   };
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // Only trigger color activation on mobile/touch devices
+        const isTouch = window.matchMedia("(pointer: coarse)").matches;
+        if (isTouch) {
+          setIsActive(entry.isIntersecting);
+        }
+      },
+      { 
+        threshold: 0.7, // Card must be 70% visible
+        rootMargin: "-10% 0px -10% 0px" // Focus on the center of the screen
+      }
+    );
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="group relative flex w-[75vw] md:w-[45vw] lg:w-[25vw] aspect-[9/16] flex-col overflow-hidden rounded-2xl bg-[#0a0a0a] shadow-xl border border-white/10 transition-all duration-300 hover:border-white/20">
+    <div 
+      ref={cardRef}
+      className="group relative flex w-[75vw] md:w-[45vw] lg:w-[25vw] aspect-[9/16] flex-col overflow-hidden rounded-2xl bg-[#0a0a0a] shadow-xl border border-white/10 transition-all duration-300 hover:border-white/20"
+    >
       <video
         ref={videoRef}
         src={src}
@@ -35,7 +62,7 @@ const VideoCard = ({ src }: { src: string }) => {
         loop
         muted={isMuted}
         playsInline
-        className="h-full w-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
+        className={`h-full w-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105 ${isActive ? 'grayscale-0' : ''}`}
       />
       
       {/* Dark overlay for contrast */}
