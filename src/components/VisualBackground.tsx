@@ -47,8 +47,8 @@ export default function VisualBackground() {
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40%] h-[40%] rounded-full bg-red-500/5 blur-[60px] md:blur-[100px]"
       />
 
-      {/* Grain / Noise Overlay - Hidden on mobile for performance */}
-      <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay pointer-events-none hidden md:block">
+      {/* Grain / Noise Overlay */}
+      <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay pointer-events-none">
         <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
           <filter id="noiseFilter">
             <feTurbulence 
@@ -60,6 +60,7 @@ export default function VisualBackground() {
           <rect width="100%" height="100%" filter="url(#noiseFilter)" />
         </svg>
       </div>
+
 
       {/* Vignette */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)]" />
