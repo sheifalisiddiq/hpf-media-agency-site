@@ -79,24 +79,21 @@ const roadmapItems = [
     title: "The Reset",
     description:
       "We overhaul your positioning and begin a disciplined posting cycle. The immediate target is your first 500k views and a stronger baseline for engagement.",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAeDiP024rVyKNnjcQdLTZRSgJyvweO-N20uRgSZa5dSk5FnbBXerf6NGsplK4Omia94fh-x_JmuqoCS3kl77HO84XIJZWWMHA1f4beNJ-JA33DR-f15Vl9bAXnKdnbqrvdCYXOAfAZl0zt3R-KmdxFe_c6wciHVJWYQougqlHBEGLryyf61w_H8dkyycYWI87d5aGHzOifopkSLL3TPFcmdg97OJ9n1K7aBKDOPsP9iAq5iHZ6K0UcK91VCdZof2PRQKOCGVqTA1c",
+    image: "/roadmap-1.png",
   },
   {
     label: "Month 02",
     title: "The Surge",
     description:
       "The algorithm begins recognizing your authority. We double down on high-retention hooks and proven formats with a target of two million plus views.",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAm04fis2eDF95mGghyIGwpGqjo_nyk2qRimt0oHCVI8AmrV5pdzwB1IhAvTyA5nuZXM8PLDXgwfC_N_O5aqyafVsRt8hSUnouznGq9J3HHXJ8tIjo6jXWv9_h8Ud5ZE0pRVFzKAkbC-pIvsuZN6npNWz9YOTQuvXyTVyTDFXQeBe1cQUC3KEc9sG1nTJ8d2koC4QmY3e0h2XXoEIHFKHedg0tzLFAaitsBlOfO4cwDFS6DzrDAMK8EiOODgUBS75l7Qxu06kJBywA",
+    image: "/roadmap-2.png",
   },
   {
     label: "Month 03",
     title: "Dominance",
     description:
       "You become the go-to brand in your niche. Leads begin flowing more consistently as your content pushes toward the five to ten million view milestone.",
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCzY8jNlWbaC-J55Y6GHH4Us3sv-GRvWWjJxirCXrgrEVron8j_rgRo-lfXZONFIE1VsHiMenoxpN14cTsEM8e29lkCzlOTgTMoyHg_1SSaHydfWds1pUCuVKx6jqRPCZGzvgrdBgMot2ogNply58rZoYC59SvrH-Jpc2Zo4qrIk3jPSpvIRNq6-6hWwVfjPnInhW8my1B_pMMH_8ufiD0Mt_FLg0k-2uwi3mMEoYBHEo2u1qAM0As7rMWOp2jXzwP8FAHQuqYdg1Q",
+    image: "/roadmap-3.png",
   },
 ];
 
@@ -115,7 +112,7 @@ export default function HomeExperience() {
       <section className="relative flex min-h-screen items-center overflow-hidden bg-black px-4 py-20 text-on-surface sm:px-6 lg:px-8">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(255,84,73,0.18),transparent_38%),linear-gradient(180deg,rgba(255,84,73,0.08),transparent_28%),linear-gradient(180deg,#010101_0%,#000_55%,#000_100%)]" />
         <div className="absolute inset-0 grid-pattern opacity-20" />
-        <DottedSurface className="absolute inset-0 z-0 opacity-[0.12] mix-blend-screen" />
+        <DottedSurface className="absolute inset-0 z-0 opacity-[0.12]" />
         
         <Parallax speed={0.8} className="absolute inset-x-0 top-[10%] h-[40rem] pointer-events-none">
           <div className="h-full w-full bg-[radial-gradient(circle,rgba(255,84,73,0.24),transparent_62%)] blur-2xl" />
@@ -272,7 +269,7 @@ export default function HomeExperience() {
             {roadmapItems.map((item) => (
               <div
                 key={item.label}
-                className="group relative flex w-[75vw] md:w-[45vw] lg:w-[32vw] flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] shadow-xl backdrop-blur-xl transition-all duration-300 hover:bg-white/[0.04] hover:border-white/20"
+                className="group relative flex w-[75vw] md:w-[45vw] lg:w-[32vw] flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a] shadow-xl transition-all duration-300 hover:bg-[#111111] hover:border-white/20"
               >
                 <div className="relative h-48 md:h-56 w-full overflow-hidden border-b border-white/5">
                   <Image

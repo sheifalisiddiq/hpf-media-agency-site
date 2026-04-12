@@ -158,7 +158,6 @@ export default function CursorTrail() {
       style={{
         width: "100%",
         height: "100%",
-        mixBlendMode: "screen", // Good for the visual effect
       }}
     />
   );
