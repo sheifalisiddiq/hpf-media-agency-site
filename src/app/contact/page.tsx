@@ -82,8 +82,12 @@ export default function Contact() {
                   <Icon name="mail" className="h-6 w-6 text-primary" />
                   <div>
                     <h4 className="text-xs uppercase tracking-widest text-primary mb-1 font-bold">Direct Inquiry</h4>
-                    <p className="text-white font-medium">concierge@hpfmedia.com</p>
+                    <a href="mailto:admin@hpf-media.com" className="text-white font-medium hover:text-primary transition-colors">
+                      admin@hpf-media.com
+                    </a>
                   </div>
+
+
                 </div>
 
                 <div className="flex items-start gap-4">
