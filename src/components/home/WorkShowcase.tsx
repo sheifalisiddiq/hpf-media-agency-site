@@ -12,6 +12,7 @@ const workVideos = [
   { id: 3, src: "/work3.MOV" },
   { id: 4, src: "/work4.mp4" },
   { id: 5, src: "/work5.mp4" },
+  { id: 6, src: "/work6.MOV" },
 ];
 
 const VideoCard = ({ src }: { src: string }) => {
