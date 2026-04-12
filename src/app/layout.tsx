@@ -19,6 +19,9 @@ const bodyClassName =
 export const metadata: Metadata = {
   title: "HPF Media | Dominate Your Market",
   description: "High-performance marketing for elite brands.",
+  icons: {
+    icon: "/logo.jpg",
+  },
 };
 
 export default function RootLayout({
