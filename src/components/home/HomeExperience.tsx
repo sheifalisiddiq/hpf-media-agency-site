@@ -6,6 +6,7 @@ import Parallax from "@/components/Parallax";
 import HorizontalScroll from "@/components/HorizontalScroll";
 import GlowingDivider from "@/components/GlowingDivider";
 import { GradientDots } from "@/components/ui/gradient-dots";
+import { DottedSurface } from "@/components/ui/dotted-surface";
 
 const services = [
   {
@@ -103,6 +104,7 @@ export default function HomeExperience() {
       <section className="relative flex min-h-screen items-center overflow-hidden bg-black px-4 py-20 text-on-surface sm:px-6 lg:px-8">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(255,84,73,0.18),transparent_38%),linear-gradient(180deg,rgba(255,84,73,0.08),transparent_28%),linear-gradient(180deg,#010101_0%,#000_55%,#000_100%)]" />
         <div className="absolute inset-0 grid-pattern opacity-20" />
+        <DottedSurface className="absolute inset-0 z-0 opacity-[0.12] mix-blend-screen" />
         
         <Parallax speed={0.8} className="absolute inset-x-0 top-[10%] h-[40rem] pointer-events-none">
           <div className="h-full w-full bg-[radial-gradient(circle,rgba(255,84,73,0.24),transparent_62%)] blur-3xl" />
