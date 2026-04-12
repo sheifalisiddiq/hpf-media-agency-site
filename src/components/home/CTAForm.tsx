@@ -58,9 +58,9 @@ export default function CTAForm() {
               {[1, 2, 3].map((i) => (
                 <div key={i} className="h-12 w-12 rounded-full border-2 border-black bg-white/10 overflow-hidden">
                   <img 
-                    src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${i + 10}`} 
-                    alt="Agency Member"
-                    className="h-full w-full object-cover" 
+                    src={`https://api.dicebear.com/7.x/notionists/svg?seed=${i + 22}`} 
+                    alt="Agency Client"
+                    className="h-full w-full object-cover translate-y-1" 
                   />
                 </div>
               ))}
