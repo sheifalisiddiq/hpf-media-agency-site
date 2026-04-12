@@ -10,7 +10,7 @@ export default function Services() {
   return (
     <>
       <section className="relative min-h-[921px] flex flex-col justify-center items-center text-center px-4 pt-20 red-gradient-bg bg-black text-on-surface overflow-hidden">
-        <DottedSurface className="absolute inset-0 z-0 opacity-15 mix-blend-screen" />
+        <DottedSurface className="absolute inset-0 z-0 opacity-15" />
         <ScrollReveal className="max-w-4xl mx-auto z-10">
           <ScrollReveal yOffset={10} delay={0.2}>
             <span className="text-sm uppercase tracking-[0.3em] text-primary mb-6 block font-medium">Dubai / Abu Dhabi / Global</span>
@@ -145,14 +145,14 @@ export default function Services() {
                 fill
                 className="object-cover rounded-lg opacity-80"
                 alt="Dubai architecture night scene"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAm04fis2eDF95mGghyIGwpGqjo_nyk2qRimt0oHCVI8AmrV5pdzwB1IhAvTyA5nuZXM8PLDXgwfC_N_O5aqyafVsRt8hSUnouznGq9J3HHXJ8tIjo6jXWv9_h8Ud5ZE0pRVFzKAkbC-pIvsuZN6npNWz9YOTQuvXyTVyTDFXQeBe1cQUC3KEc9sG1nTJ8d2koC4QmY3e0h2XXoEIHFKHedg0tzLFAaitsBlOfO4cwDFS6DzrDAMK8EiOODgUBS75l7Qxu06kJBywA"
+                src="/services-hero.png"
                 sizes="(min-width: 768px) 50vw, 100vw"
                 quality={64}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
               <div className="absolute bottom-10 left-10 right-10">
                 <ScrollReveal delay={0.6} yOffset={20} scale={0.8}>
-                  <div className="bg-black/90 backdrop-blur-md p-6 rounded-lg border border-primary/30 shadow-2xl">
+                  <div className="bg-[#0a0a0a] p-6 rounded-lg border border-primary/30 shadow-2xl">
                     <p className="font-headline font-bold text-xl italic leading-relaxed">"They handle everything. I just focus on my business while the leads come in."</p>
                     <p className="text-primary mt-2 text-sm font-bold uppercase tracking-widest">- UAE Business Owner</p>
                   </div>
