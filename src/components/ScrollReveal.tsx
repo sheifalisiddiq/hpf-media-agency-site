@@ -16,12 +16,12 @@ interface ScrollRevealProps {
   isContainer?: boolean;
 }
 
-export default function ScrollReveal({
+const ScrollReveal = React.memo(function ScrollReveal({
   children,
   delay = 0,
-  duration = 0.8, // Reduced for much snappier feel
-  yOffset = 30,   // More subtle movement
-  scale = 1, 
+  duration = 0.8,
+  yOffset = 30,
+  scale = 1,
   rotateX = 0,
   staggerChildren = 0,
   className = "",
@@ -60,7 +60,7 @@ export default function ScrollReveal({
             ease: "expo.out",
             scrollTrigger: {
               trigger: element,
-              start: "top 92%", // Trigger earlier
+              start: "top 92%",
               toggleActions: "play none none none",
               once: true,
             },
@@ -85,7 +85,7 @@ export default function ScrollReveal({
             ease: "expo.out",
             scrollTrigger: {
               trigger: element,
-              start: "top 92%", // Trigger earlier for better response
+              start: "top 92%",
               toggleActions: "play none none none",
               once: true,
             },
@@ -106,9 +106,11 @@ export default function ScrollReveal({
       {children}
     </div>
   );
-}
+});
 
 // Helper for staggered items
-export function RevealItem({ children, className = "" }: { children: ReactNode; className?: string }) {
+export const RevealItem = React.memo(function RevealItem({ children, className = "" }: { children: ReactNode; className?: string }) {
   return <div className={className}>{children}</div>;
-}
+});
+
+export default ScrollReveal;

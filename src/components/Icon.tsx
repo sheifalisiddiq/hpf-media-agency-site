@@ -230,7 +230,7 @@ const iconMap: Record<IconName, ReactElement> = {
   ),
 };
 
-export default function Icon({ name, className, ...props }: IconProps) {
+const Icon = React.memo(function Icon({ name, className, ...props }: IconProps) {
   return (
     <svg
       aria-hidden
@@ -242,4 +242,6 @@ export default function Icon({ name, className, ...props }: IconProps) {
       {iconMap[name]}
     </svg>
   );
-}
+});
+
+export default Icon;

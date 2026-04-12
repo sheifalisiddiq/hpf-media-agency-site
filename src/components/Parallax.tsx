@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, ReactNode } from "react";
+import React, { useEffect, useRef, ReactNode, memo } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -10,7 +10,7 @@ interface ParallaxProps {
   className?: string;
 }
 
-export default function Parallax({
+const Parallax = memo(function Parallax({
   children,
   speed = 1,
   className = "",
@@ -21,9 +21,14 @@ export default function Parallax({
     const element = targetRef.current;
     if (!element) return;
 
-    // Movement calculation
-    // Speed < 1: move less than scroll (lagging behind)
-    // Speed > 1: move more than scroll (leading)
+    const isMobile = typeof window !== "undefined" && window.innerWidth < 1024;
+    const reducedMotion = typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (isMobile || reducedMotion || speed === 1) {
+      gsap.set(element, { y: 0 });
+      return;
+    }
+
     const yMovement = (1 - speed) * 100;
 
     const ctx = gsap.context(() => {
@@ -47,4 +52,6 @@ export default function Parallax({
       {children}
     </div>
   );
-}
+});
+
+export default Parallax;

@@ -24,9 +24,14 @@ export function DottedSurface({ className, ...props }: DottedSurfaceProps) {
     if (!containerRef.current) return;
 
     const isMobile = window.innerWidth < 768;
-    const SEPARATION = isMobile ? 200 : 150;
-    const AMOUNTX = isMobile ? 25 : 40;
-    const AMOUNTY = isMobile ? 35 : 60;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    
+    // Completely disable on very heavy constraints
+    if (reducedMotion) return;
+
+    const SEPARATION = isMobile ? 250 : 150;
+    const AMOUNTX = isMobile ? 15 : 40;
+    const AMOUNTY = isMobile ? 20 : 60;
 
     // Scene setup
     const scene = new THREE.Scene();

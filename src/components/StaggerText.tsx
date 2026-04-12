@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, ElementType } from "react";
+import React, { useEffect, useRef, ElementType, memo } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -14,11 +14,11 @@ interface StaggerTextProps {
   once?: boolean;
 }
 
-export default function StaggerText({
+const StaggerText = memo(function StaggerText({
   text,
   className = "",
   delay = 0,
-  stagger = 0.03, // Tighter stagger for more fluid feel
+  stagger = 0.03,
   duration = 1.0,
   tag: Tag = "div",
   once = true,
@@ -51,7 +51,7 @@ export default function StaggerText({
         ease: "expo.out",
         scrollTrigger: {
           trigger: element,
-          start: "top 92%", // Delayed trigger
+          start: "top 92%",
           toggleActions: "play none none none",
           once: once,
         },
@@ -68,4 +68,6 @@ export default function StaggerText({
       style={{ willChange: "transform, opacity" }}
     />
   );
-}
+});
+
+export default StaggerText;

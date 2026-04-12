@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import Icon from "@/components/Icon";
 import ScrollReveal from "@/components/ScrollReveal";
 import StaggerText from "@/components/StaggerText";
@@ -56,11 +57,12 @@ export default function CTAForm() {
           <div className="flex items-center gap-6 pt-4">
             <div className="flex -space-x-3">
               {[1, 2, 3].map((i) => (
-                <div key={i} className="h-12 w-12 rounded-full border-2 border-black bg-white/10 overflow-hidden">
-                  <img 
+                <div key={i} className="h-12 w-12 rounded-full border-2 border-black bg-white/10 overflow-hidden relative">
+                  <Image 
                     src={`https://api.dicebear.com/7.x/notionists/svg?seed=${i + 22}`} 
                     alt="Agency Client"
-                    className="h-full w-full object-cover translate-y-1" 
+                    fill
+                    className="object-cover translate-y-1" 
                   />
                 </div>
               ))}

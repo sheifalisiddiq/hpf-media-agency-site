@@ -1,3 +1,4 @@
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Icon from "@/components/Icon";
 import ScrollReveal, { RevealItem } from "@/components/ScrollReveal";
@@ -6,8 +7,15 @@ import Parallax from "@/components/Parallax";
 import HorizontalScroll from "@/components/HorizontalScroll";
 import GlowingDivider from "@/components/GlowingDivider";
 import { GradientDots } from "@/components/ui/gradient-dots";
-import { DottedSurface } from "@/components/ui/dotted-surface";
-import CTAForm from "./CTAForm";
+
+const DottedSurface = dynamic(() => import("@/components/ui/dotted-surface").then(mod => mod.DottedSurface), {
+  ssr: false,
+  loading: () => <div className="absolute inset-0 bg-black/10" />
+});
+
+const CTAForm = dynamic(() => import("./CTAForm"), {
+  ssr: false
+});
 
 const services = [
   {
@@ -154,7 +162,7 @@ export default function HomeExperience() {
                 height={1120}
                 priority
                 quality={72}
-                sizes="(min-width: 1280px) 28rem, (min-width: 1024px) 24rem, 0px"
+                sizes="(min-width: 1024px) 24rem, 100vw"
                 className="h-full w-full object-cover brightness-[0.55] saturate-[0.85]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
