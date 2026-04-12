@@ -22,6 +22,9 @@ export default function HorizontalScroll({
     if (!section || !trigger) return;
 
     const ctx = gsap.context(() => {
+      const isMobile = window.matchMedia("(pointer: coarse), (max-width: 768px)").matches;
+      if (isMobile) return; // Use native scroll on mobile
+
       const totalWidth = section.scrollWidth;
       const viewportWidth = window.innerWidth;
       const xDistance = -(totalWidth - viewportWidth);
@@ -44,10 +47,10 @@ export default function HorizontalScroll({
   }, []);
 
   return (
-    <div ref={triggerRef} className="overflow-hidden">
+    <div ref={triggerRef} className="w-full overflow-x-auto overflow-y-hidden md:overflow-visible no-scrollbar">
       <div 
         ref={sectionRef} 
-        className={`flex w-max flex-nowrap ${className}`}
+        className={`flex w-max flex-nowrap ${className} px-4 md:px-0`}
         style={{ willChange: "transform" }}
       >
         {children}

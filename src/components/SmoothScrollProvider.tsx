@@ -18,6 +18,9 @@ export default function SmoothScrollProvider({ children }: { children: ReactNode
   const [lenisInstance, setLenisInstance] = useState<Lenis | null>(null);
 
   useEffect(() => {
+    const isMobile = window.matchMedia("(pointer: coarse), (max-width: 768px)").matches;
+    if (isMobile) return;
+
     // Initializing Lenis
     const lenis = new Lenis({
       duration: 1.2,

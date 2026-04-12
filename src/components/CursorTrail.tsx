@@ -30,10 +30,12 @@ export default function CursorTrail() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    // DEBUG: Disable checks
-    // const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    // const isTouchDevice = window.matchMedia("(pointer: coarse)");
-    // if (prefersReducedMotion.matches || isTouchDevice.matches) return;
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const isTouchDevice = window.matchMedia("(pointer: coarse)");
+    
+    if (prefersReducedMotion.matches || isTouchDevice.matches) {
+      return;
+    }
 
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
