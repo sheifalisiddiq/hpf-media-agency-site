@@ -19,6 +19,10 @@ const CTAForm = dynamic(() => import("./CTAForm"), {
   ssr: false
 });
 
+const WorkShowcase = dynamic(() => import("./WorkShowcase"), {
+  ssr: false
+});
+
 const services = [
   {
     icon: "insights" as const,
@@ -145,9 +149,9 @@ export default function HomeExperience() {
               <button className="bg-primary px-8 py-4 text-sm font-black uppercase tracking-[0.24em] text-black transition-transform duration-300 hover:scale-[1.03]">
                 Book Strategy Call
               </button>
-              <button className="border border-white/15 px-8 py-4 text-sm font-black uppercase tracking-[0.24em] text-white transition-colors duration-300 hover:bg-white/5">
+              <a href="#our-work" className="border border-white/15 px-8 py-4 text-sm font-black uppercase tracking-[0.24em] text-white transition-colors duration-300 hover:bg-white/5 inline-flex items-center justify-center">
                 See Our Work
-              </button>
+              </a>
             </ScrollReveal>
           </div>
 
@@ -343,6 +347,7 @@ export default function HomeExperience() {
         </div>
       </section>
 
+      <WorkShowcase />
       <CTAForm />
     </>
   );
