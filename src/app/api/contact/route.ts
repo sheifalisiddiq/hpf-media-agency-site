@@ -2,7 +2,8 @@ import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
 // Initialize Resend with the provided key from Vercel env
-const resend = new Resend(process.env.HPF_key);
+// Initialize Resend - handle missing key during build
+const resend = process.env.HPF_key ? new Resend(process.env.HPF_key) : null;
 
 export async function POST(request: Request) {
   try {
@@ -14,6 +15,15 @@ export async function POST(request: Request) {
       return NextResponse.json(
         { error: 'Missing required fields' },
         { status: 400 }
+      );
+    }
+
+    // Check if Resend was initialized
+    if (!resend) {
+      console.error('Resend API key is missing');
+      return NextResponse.json(
+        { error: 'Mail service unavailable' },
+        { status: 503 }
       );
     }
 
