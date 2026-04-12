@@ -63,7 +63,7 @@ export default function About() {
         
         <ScrollReveal className="relative z-10 text-center px-4 max-w-5xl mx-auto">
           <ScrollReveal yOffset={10} delay={0.2}>
-            <span className="text-sm uppercase tracking-[0.3em] text-primary font-bold mb-6 block">Growth Agency for UAE</span>
+            <span className="text-sm uppercase tracking-[0.3em] text-primary font-bold mb-6 block">social media marketing</span>
           </ScrollReveal>
           
           <StaggerText
