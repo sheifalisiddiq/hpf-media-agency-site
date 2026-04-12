@@ -26,23 +26,26 @@ export default function CursorTrail() {
   const rafRef = useRef<number>(0);
   const activeRef = useRef(false);
 
+  const [isClient, setIsClient] = React.useState(false);
+  const [isTouchDevice, setIsTouchDevice] = React.useState(false);
+
   useEffect(() => {
+    setIsClient(true);
+    const checkTouch = window.matchMedia("(pointer: coarse)").matches;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    setIsTouchDevice(checkTouch || reducedMotion);
+
+    if (checkTouch || reducedMotion) return;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
-
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const isTouchDevice = window.matchMedia("(pointer: coarse)");
-    
-    if (prefersReducedMotion.matches || isTouchDevice.matches) {
-      return;
-    }
 
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    const TRAIL_LENGTH = 20;
-    const LERP_FACTOR = 0.18;
-    const FRICTION = 0.5;
+    const TRAIL_LENGTH = 15; // Shorter trail
+    const LERP_FACTOR = 0.45; // Much faster following (was 0.18)
+    const FRICTION = 0.65; // Less sluggish (was 0.5)
     const ACCENT_COLOR = "255, 84, 73"; 
     
     let width = 0;
@@ -59,7 +62,7 @@ export default function CursorTrail() {
       canvas.height = Math.floor(height * dpr);
       canvas.style.width = `${width}px`;
       canvas.style.height = `${height}px`;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0); // Use setTransform to avoid stacking scales
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     };
 
     const handlePointerMove = (e: PointerEvent) => {
@@ -70,7 +73,6 @@ export default function CursorTrail() {
       
       if (!activeRef.current) {
         activeRef.current = true;
-        // Initialize points offset from cursor to ensure movement loop starts
         pointsRef.current.forEach((p, i) => {
           p.x = e.clientX + i; 
           p.y = e.clientY + i;
@@ -97,8 +99,7 @@ export default function CursorTrail() {
         p.y += (prev.y - p.y) * FRICTION;
       }
 
-      // DEBUG: Highly visible styling
-      const baseOpacity = hoverRef.current ? 0.9 : 0.7; // High opacity
+      const baseOpacity = hoverRef.current ? 0.9 : 0.7;
       const glowBlur = hoverRef.current ? 10 : 8;
       
       ctx.lineCap = "round";
@@ -118,22 +119,19 @@ export default function CursorTrail() {
         points[points.length - 1].x, points[points.length - 1].y
       );
       gradient.addColorStop(0, `rgba(${ACCENT_COLOR}, ${baseOpacity})`);
-      gradient.addColorStop(1, `rgba(${ACCENT_COLOR}, 0.1)`); // Visible tail
+      gradient.addColorStop(1, `rgba(${ACCENT_COLOR}, 0.1)`);
 
       ctx.strokeStyle = gradient;
-      ctx.lineWidth = 4; // Thicker
+      ctx.lineWidth = 4;
       
       ctx.shadowBlur = glowBlur;
-      ctx.shadowColor = `rgba(${ACCENT_COLOR}, 1)`; // Solid glow color
+      ctx.shadowColor = `rgba(${ACCENT_COLOR}, 1)`;
       
       ctx.stroke();
       
       const dist = Math.hypot(target.x - points[points.length - 1].x, target.y - points[points.length - 1].y);
-      if (dist < 0.01) { // Much smaller threshold
-        // Don't stop immediately in debug mode if you want to keep it visible
-        // But for trail effect, we keep the stop logic but much more sensitive
+      if (dist < 0.01) {
         activeRef.current = false;
-        // ctx.clearRect(0, 0, width, height); // Removed clear to see where it stops
       } else {
         rafRef.current = requestAnimationFrame(render);
       }
@@ -150,16 +148,17 @@ export default function CursorTrail() {
     };
   }, []);
 
+  if (!isClient || isTouchDevice) return null;
+
   return (
     <canvas
       ref={canvasRef}
       aria-hidden
+      className="pointer-events-none fixed inset-0 z-[9999]"
       style={{
-        position: 'fixed',
-        inset: 0,
-        zIndex: 9999, // Super high z-index
-        pointerEvents: 'none',
-        // mixBlendMode: 'screen', // Disabled blend mode for high visibility
+        width: "100%",
+        height: "100%",
+        mixBlendMode: "screen", // Good for the visual effect
       }}
     />
   );
