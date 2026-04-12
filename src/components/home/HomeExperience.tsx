@@ -203,6 +203,29 @@ export default function HomeExperience() {
             </ScrollReveal>
           </div>
 
+          {/* Execution Process */}
+          <div className="mb-24 max-w-7xl mx-auto">
+            <ScrollReveal className="mb-12 border-l border-primary pl-6">
+              <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary mb-2">The Execution</p>
+              <h3 className="text-3xl font-black uppercase tracking-[-0.05em] text-white font-headline">The Process</h3>
+            </ScrollReveal>
+            
+            <ScrollReveal isContainer staggerChildren={0.1} scale={0.98} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+              {executionSteps.map((step) => (
+                <RevealItem key={step.step} className="group relative rounded-2xl border border-white/5 bg-white/[0.02] p-8 transition-colors hover:border-primary/20 hover:bg-white/[0.04]">
+                  <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-lg bg-red-600/10 text-primary group-hover:bg-primary group-hover:text-black transition-colors duration-300">
+                    <Icon name={step.icon} className="h-5 w-5" />
+                  </div>
+                  <div className="space-y-2">
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-primary/60">Step {step.step}</p>
+                    <h4 className="text-xl font-black uppercase tracking-tight text-white font-headline">{step.label}</h4>
+                    <p className="text-sm text-on-surface-variant leading-relaxed">{step.desc}</p>
+                  </div>
+                </RevealItem>
+              ))}
+            </ScrollReveal>
+          </div>
+
           <ScrollReveal isContainer staggerChildren={0.15} scale={0.96} yOffset={30} className="grid gap-6 lg:grid-cols-12">
             {services.map((service) => (
               <RevealItem
@@ -225,28 +248,6 @@ export default function HomeExperience() {
             ))}
           </ScrollReveal>
 
-          {/* Execution Process */}
-          <div className="mt-24 max-w-7xl mx-auto">
-            <ScrollReveal className="mb-12 border-l border-primary pl-6">
-              <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary mb-2">The Execution</p>
-              <h3 className="text-3xl font-black uppercase tracking-[-0.05em] text-white font-headline">The Process</h3>
-            </ScrollReveal>
-            
-            <ScrollReveal isContainer staggerChildren={0.1} scale={0.98} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-              {executionSteps.map((step) => (
-                <RevealItem key={step.step} className="group relative rounded-2xl border border-white/5 bg-white/[0.02] p-8 transition-colors hover:border-primary/20 hover:bg-white/[0.04]">
-                  <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-lg bg-red-600/10 text-primary group-hover:bg-primary group-hover:text-black transition-colors duration-300">
-                    <Icon name={step.icon} className="h-5 w-5" />
-                  </div>
-                  <div className="space-y-2">
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-primary/60">Step {step.step}</p>
-                    <h4 className="text-xl font-black uppercase tracking-tight text-white font-headline">{step.label}</h4>
-                    <p className="text-sm text-on-surface-variant leading-relaxed">{step.desc}</p>
-                  </div>
-                </RevealItem>
-              ))}
-            </ScrollReveal>
-          </div>
         </div>
       </section>
 
