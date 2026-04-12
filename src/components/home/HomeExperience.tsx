@@ -291,74 +291,8 @@ export default function HomeExperience() {
         </div>
       </section>
 
-      {/* Leadership Section */}
-      <section className="relative overflow-hidden bg-black px-6 py-24 text-on-surface md:px-10 lg:px-14">
-        <GradientDots className="opacity-60" duration={50} />
-        <div className="relative z-10 mx-auto max-w-7xl">
-          <ScrollReveal className="mb-16 space-y-6 text-center lg:text-left">
-            <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary">
-              The Leadership
-            </p>
-            <StaggerText
-              tag="h2"
-              text="Founding Partners"
-              className="text-4xl font-black uppercase tracking-[-0.06em] text-white md:text-6xl font-headline"
-            />
-          </ScrollReveal>
-
-          <ScrollReveal isContainer staggerChildren={0.2} scale={0.97} rotateX={5} className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-12 lg:items-start">
-            {/* Bilal Sidheeq */}
-            <RevealItem className="space-y-8">
-              <ScrollReveal yOffset={60} scale={1.05}>
-                <div className="relative h-[32rem] overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03]">
-                  <Image
-                    alt="Bilal Sidheeq"
-                    fill
-                    quality={68}
-                    sizes="(min-width: 1024px) 42rem, 100vw"
-                    className="object-cover brightness-[0.55]"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjppca15YrX1JXc96EFGOee8aatZ7_ElpID1yfGOtOtBfFsp489B0pQEfPN9dwxcriFnOGHawJcIR-YVKzEfj_3ed2fxCF2yzoobv5PX1WxrBCXGv6-eZdMnhiTt6ybyQOnLrB4R6gwkvjnqtALwZPAEbKJxSLl6XgUAcTKWA_SbLYDjbhKzlXDVG6hewmOAdiU5PCGH_otIMORNwoRBMFxIgchyKyV_gtp383ltQmTKNOVwKAtxHqnddKC3eb9ig8yRkf9kgxX0Q"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent" />
-                </div>
-              </ScrollReveal>
-              <div className="space-y-4">
-                <ScrollReveal delay={0.2}>
-                  <h3 className="text-3xl font-black uppercase tracking-[-0.05em] text-white font-headline">Bilal Sidheeq</h3>
-                  <p className="max-w-md text-base leading-7 text-on-surface-variant">
-                    Bilal leads HPF Media with a practical approach to content growth, turning strategy, scripting, production, and editing into one clear engine for business results.
-                  </p>
-                </ScrollReveal>
-              </div>
-            </RevealItem>
-
-            {/* Glowing Divider */}
-            <div className="hidden md:flex flex-col items-center justify-center self-stretch py-12">
-              <GlowingDivider height="h-full" />
-            </div>
-
-            {/* Empty Second Founder */}
-            <RevealItem className="space-y-8">
-              <ScrollReveal yOffset={60} delay={0.2} scale={1.05}>
-                <div className="relative h-[32rem] overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.03] flex items-center justify-center bg-neutral-950">
-                  <div className="text-white/5 text-8xl font-black font-headline select-none">HPF</div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent" />
-                </div>
-              </ScrollReveal>
-              <div className="space-y-4">
-                <ScrollReveal delay={0.4}>
-                  <h3 className="text-3xl font-black uppercase tracking-[-0.05em] text-white font-headline">&nbsp;</h3>
-                  <p className="max-w-md text-base leading-7 text-on-surface-variant">
-                    Our co-founding partner brings expertise in operational scaling and brand positioning, ensuring that every piece of content supports the long-term growth objectives of UAE businesses.
-                  </p>
-                </ScrollReveal>
-              </div>
-            </RevealItem>
-          </ScrollReveal>
-        </div>
-      </section>
-
       {/* Philosophy Section */}
+
       <section className="relative overflow-hidden bg-black px-6 py-24 text-on-surface md:px-10 lg:px-14">
         <GradientDots className="opacity-60" duration={45} />
         <div className="relative z-10 mx-auto max-w-7xl">
