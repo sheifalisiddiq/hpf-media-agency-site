@@ -6,7 +6,7 @@ import Icon from "@/components/Icon";
 import ScrollReveal, { RevealItem } from "@/components/ScrollReveal";
 import StaggerText from "@/components/StaggerText";
 import Parallax from "@/components/Parallax";
-import HorizontalScroll from "@/components/HorizontalScroll";
+
 import GlowingDivider from "@/components/GlowingDivider";
 import { GradientDots } from "@/components/ui/gradient-dots";
 
@@ -269,11 +269,11 @@ export default function HomeExperience() {
             </ScrollReveal>
           </div>
 
-          <HorizontalScroll className="gap-6 pb-6">
+          <ScrollReveal isContainer staggerChildren={0.15} scale={0.96} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-6">
             {roadmapItems.map((item) => (
-              <div
+              <RevealItem
                 key={item.label}
-                className="group relative flex w-[75vw] md:w-[45vw] lg:w-[32vw] flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a] shadow-xl transition-all duration-300 hover:bg-[#111111] hover:border-white/20"
+                className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0a] shadow-xl transition-all duration-300 hover:bg-[#111111] hover:border-white/20"
               >
                 <div className="relative h-48 md:h-56 w-full overflow-hidden border-b border-white/5">
                   <Image
@@ -281,7 +281,7 @@ export default function HomeExperience() {
                     alt={item.title}
                     fill
                     quality={60}
-                    sizes="(min-width: 1024px) 32vw, (min-width: 768px) 45vw, 75vw"
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                     className="object-cover brightness-[0.7] saturate-[0.85] transition-transform duration-700 group-hover:scale-105 group-hover:brightness-90"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
@@ -300,9 +300,9 @@ export default function HomeExperience() {
                     </p>
                   </div>
                 </div>
-              </div>
+              </RevealItem>
             ))}
-          </HorizontalScroll>
+          </ScrollReveal>
         </div>
       </section>
 
