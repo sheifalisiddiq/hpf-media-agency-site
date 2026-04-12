@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 /**
  * DEBUG VERSION: CursorTrail Component
@@ -26,8 +26,8 @@ export default function CursorTrail() {
   const rafRef = useRef<number>(0);
   const activeRef = useRef(false);
 
-  const [isClient, setIsClient] = React.useState(false);
-  const [isTouchDevice, setIsTouchDevice] = React.useState(false);
+  const [isClient, setIsClient] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
