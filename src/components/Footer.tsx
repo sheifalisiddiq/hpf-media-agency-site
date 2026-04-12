@@ -45,13 +45,14 @@ export default function Footer() {
           </div>
 
           <div className="flex gap-8 text-[10px] uppercase tracking-[0.2em] font-medium">
-            <Link href="#" className="text-neutral-500 hover:text-primary transition-colors duration-300">
+            <Link href="/privacy" className="text-neutral-500 hover:text-primary transition-colors duration-300">
               Privacy Policy
             </Link>
-            <Link href="#" className="text-neutral-500 hover:text-primary transition-colors duration-300">
+            <Link href="/terms" className="text-neutral-500 hover:text-primary transition-colors duration-300">
               Terms of Service
             </Link>
           </div>
+
         </div>
       </div>
     </footer>
