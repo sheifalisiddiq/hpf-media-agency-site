@@ -23,7 +23,9 @@ type IconName =
   | "expand_more"
   | "check"
   | "volume_off"
-  | "volume_up";
+  | "volume_up"
+  | "instagram";
+
 
 type IconProps = SVGProps<SVGSVGElement> & {
   name: IconName;
@@ -242,7 +244,15 @@ const iconMap: Record<IconName, ReactElement> = {
       fill="currentColor"
     />
   ),
+  instagram: (
+    <g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+      <path d="M16 11.37a4 4 0 1 1-7.63-1.63 4 4 0 0 1 7.63 1.63z"/>
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+    </g>
+  ),
 };
+
 
 const Icon = React.memo(function Icon({ name, className, ...props }: IconProps) {
   return (

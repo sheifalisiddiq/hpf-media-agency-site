@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import Icon from "./Icon";
 
 export default function Footer() {
   return (
@@ -22,6 +23,17 @@ export default function Footer() {
           </p>
         </div>
         <div className="flex flex-col items-center md:items-end gap-6">
+          <div className="flex items-center gap-6 mb-2">
+            <Link 
+              href="https://www.instagram.com/hpfmedia?igsh=ODZxejNxdXlic3Zv&utm_source=qr" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-2 text-white/50 hover:text-primary transition-colors duration-300"
+            >
+              <Icon name="instagram" className="h-5 w-5" />
+              <span className="text-[10px] font-bold uppercase tracking-widest">Instagram</span>
+            </Link>
+          </div>
           <div className="flex gap-8 text-[10px] uppercase tracking-[0.2em] font-medium">
             <Link href="#" className="text-neutral-500 hover:text-primary transition-colors duration-300">
               Privacy Policy
@@ -29,15 +41,10 @@ export default function Footer() {
             <Link href="#" className="text-neutral-500 hover:text-primary transition-colors duration-300">
               Terms of Service
             </Link>
-            <Link href="#" className="text-neutral-500 hover:text-primary transition-colors duration-300">
-              Careers
-            </Link>
-            <Link href="#" className="text-neutral-500 hover:text-primary transition-colors duration-300">
-              Press
-            </Link>
           </div>
         </div>
       </div>
     </footer>
   );
 }
+

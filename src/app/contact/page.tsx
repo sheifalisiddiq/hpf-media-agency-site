@@ -85,7 +85,23 @@ export default function Contact() {
                     <p className="text-white font-medium">concierge@hpfmedia.com</p>
                   </div>
                 </div>
+
+                <div className="flex items-start gap-4">
+                  <Icon name="instagram" className="h-6 w-6 text-primary" />
+                  <div>
+                    <h4 className="text-xs uppercase tracking-widest text-primary mb-1 font-bold">Social</h4>
+                    <a 
+                      href="https://www.instagram.com/hpfmedia?igsh=ODZxejNxdXlic3Zv&utm_source=qr" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-white font-medium hover:text-primary transition-colors"
+                    >
+                      @hpfmedia
+                    </a>
+                  </div>
+                </div>
               </ScrollReveal>
+
             </div>
             
             {/* Subtle Brand Texture */}

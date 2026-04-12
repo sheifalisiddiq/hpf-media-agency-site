@@ -4,6 +4,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Icon from "./Icon";
+ 
+
 
 const links = [
   { name: "Home", href: "/" },
@@ -66,7 +69,17 @@ export default function Navigation() {
                 {link.name}
               </Link>
             ))}
+            <div className="mx-2 h-4 w-[1px] bg-white/10" />
+            <Link 
+              href="https://www.instagram.com/hpfmedia?igsh=ODZxejNxdXlic3Zv&utm_source=qr" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex h-10 w-10 items-center justify-center rounded-full text-white/50 hover:bg-white/10 hover:text-white transition-all duration-300"
+            >
+              <Icon name="instagram" className="h-5 w-5" />
+            </Link>
           </div>
+
 
           <button
             type="button"
@@ -127,7 +140,19 @@ export default function Navigation() {
               </Link>
             );
           })}
+          <div className="my-2 h-[1px] w-full bg-white/10" />
+          <Link
+            href="https://www.instagram.com/hpfmedia?igsh=ODZxejNxdXlic3Zv&utm_source=qr"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setIsOpen(false)}
+            className="flex items-center gap-3 rounded-[1.25rem] px-4 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white/72 transition-all duration-300 hover:bg-white/10 hover:text-white"
+          >
+            <Icon name="instagram" className="h-5 w-5" />
+            Instagram
+          </Link>
         </div>
+
       </div>
     </div>
   );
