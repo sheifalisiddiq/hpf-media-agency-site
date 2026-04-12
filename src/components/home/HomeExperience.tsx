@@ -268,33 +268,33 @@ export default function HomeExperience() {
             </ScrollReveal>
           </div>
 
-          <HorizontalScroll className="gap-8 pb-10">
+          <HorizontalScroll className="gap-6 pb-6">
             {roadmapItems.map((item) => (
               <div
                 key={item.label}
-                className="group relative flex w-[85vw] md:w-[60vw] lg:w-[45vw] flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] shadow-xl backdrop-blur-xl transition-all duration-300 hover:bg-white/[0.04] hover:border-white/20"
+                className="group relative flex w-[75vw] md:w-[45vw] lg:w-[32vw] flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] shadow-xl backdrop-blur-xl transition-all duration-300 hover:bg-white/[0.04] hover:border-white/20"
               >
-                <div className="relative aspect-video w-full overflow-hidden border-b border-white/5">
+                <div className="relative h-48 md:h-56 w-full overflow-hidden border-b border-white/5">
                   <Image
                     src={item.image}
                     alt={item.title}
                     fill
-                    quality={68}
-                    sizes="(min-width: 1024px) 48rem, 100vw"
+                    quality={60}
+                    sizes="(min-width: 1024px) 32vw, (min-width: 768px) 45vw, 75vw"
                     className="object-cover brightness-[0.7] saturate-[0.85] transition-transform duration-700 group-hover:scale-105 group-hover:brightness-90"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
                 </div>
 
-                <div className="flex flex-1 flex-col justify-end p-8 md:p-12">
-                  <div className="space-y-6">
-                    <p className="text-[11px] font-bold uppercase tracking-[0.4em] text-primary">
+                <div className="flex flex-1 flex-col justify-end p-6 md:p-8">
+                  <div className="space-y-4">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.4em] text-primary">
                       {item.label}
                     </p>
-                    <h3 className="max-w-2xl text-3xl font-black uppercase tracking-[-0.05em] text-white md:text-5xl font-headline">
+                    <h3 className="text-2xl font-black uppercase tracking-[-0.05em] text-white md:text-3xl font-headline">
                       {item.title}
                     </h3>
-                    <p className="max-w-2xl text-lg leading-8 text-on-surface-variant">
+                    <p className="text-sm leading-6 text-on-surface-variant line-clamp-3">
                       {item.description}
                     </p>
                   </div>
