@@ -7,6 +7,7 @@ import HorizontalScroll from "@/components/HorizontalScroll";
 import GlowingDivider from "@/components/GlowingDivider";
 import { GradientDots } from "@/components/ui/gradient-dots";
 import { DottedSurface } from "@/components/ui/dotted-surface";
+import CTAForm from "./CTAForm";
 
 const services = [
   {
@@ -334,29 +335,7 @@ export default function HomeExperience() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="relative overflow-hidden bg-[linear-gradient(180deg,#050505_0%,#0d0504_55%,#180504_100%)] px-6 py-32 text-on-surface md:px-10 lg:px-14">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,84,73,0.16),transparent_45%)]" />
-        <ScrollReveal className="relative mx-auto max-w-5xl text-center">
-          <div className="space-y-8">
-            <StaggerText
-              tag="h2"
-              text="Let's Work Together."
-              className="text-5xl font-black uppercase tracking-[-0.08em] text-white md:text-7xl font-headline text-center"
-            />
-            <ScrollReveal delay={0.4}>
-              <p className="mx-auto max-w-2xl text-lg leading-8 text-white/70">
-                Stop posting content that no one sees. Join UAE brands scaling their impact through HPF Media and turn visibility into real business growth.
-              </p>
-            </ScrollReveal>
-            <ScrollReveal delay={0.6} scale={0.9}>
-              <button className="bg-white px-10 py-5 text-sm font-black uppercase tracking-[0.24em] text-black transition-transform duration-300 hover:scale-[1.03]">
-                Book Your Strategy Call
-              </button>
-            </ScrollReveal>
-          </div>
-        </ScrollReveal>
-      </section>
+      <CTAForm />
     </>
   );
 }
