@@ -28,10 +28,11 @@ export default function Services() {
           
           <ScrollReveal delay={0.6} yOffset={20} scale={0.9}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-primary-container text-on-primary-container px-10 py-4 rounded font-bold text-lg hover:bg-primary transition-all">See Our Services</button>
-              <button className="border border-red-600/30 text-on-surface px-10 py-4 rounded font-bold text-lg hover:bg-white/5 transition-all backdrop-blur-md">View Case Studies</button>
+              <a href="#services-list" className="bg-primary-container text-on-primary-container px-10 py-4 rounded font-bold text-lg hover:bg-primary transition-all inline-flex items-center justify-center">See Our Services</a>
+              <a href="/#our-work" className="border border-red-600/30 text-on-surface px-10 py-4 rounded font-bold text-lg hover:bg-white/5 transition-all backdrop-blur-md inline-flex items-center justify-center">View Case Studies</a>
             </div>
           </ScrollReveal>
+
         </ScrollReveal>
         
         <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
@@ -39,8 +40,9 @@ export default function Services() {
         </div>
       </section>
 
-      <section className="relative py-20 lg:py-24 px-6 md:px-8 mx-auto bg-transparent text-on-surface overflow-hidden">
+      <section id="services-list" className="relative py-20 lg:py-24 px-6 md:px-8 mx-auto bg-transparent text-on-surface overflow-hidden">
         <div className="relative z-10 max-w-screen-2xl mx-auto">
+
           <ScrollReveal className="flex flex-col mb-12 lg:mb-16">
             <h2 className="text-3xl lg:text-4xl font-headline font-bold mb-4 uppercase tracking-tight">Services</h2>
             <div className="w-24 h-1 bg-red-600"></div>
@@ -174,10 +176,11 @@ export default function Services() {
           </ScrollReveal>
           
           <ScrollReveal delay={0.6} yOffset={20} scale={0.9}>
-            <button className="bg-primary-container text-on-primary-container px-12 py-5 rounded font-black text-xl uppercase tracking-tighter hover:scale-105 active:scale-95 transition-all shadow-xl shadow-primary/20">
+            <a href="/contact" className="bg-primary-container text-on-primary-container px-12 py-5 rounded font-black text-xl uppercase tracking-tighter hover:scale-105 active:scale-95 transition-all shadow-xl shadow-primary/20 inline-flex items-center justify-center">
               Book Your Strategy Call
-            </button>
+            </a>
           </ScrollReveal>
+
           
           <ScrollReveal delay={0.8} yOffset={10} isContainer staggerChildren={0.2} className="mt-8 flex justify-center gap-8 text-neutral-500">
             <RevealItem className="flex items-center gap-2">

@@ -139,9 +139,10 @@ export default function HomeExperience() {
             </div>
 
             <ScrollReveal delay={0.6} yOffset={20} className="flex flex-col gap-4 sm:flex-row">
-              <button className="bg-primary px-8 py-4 text-sm font-black uppercase tracking-[0.24em] text-black transition-transform duration-300 hover:scale-[1.03]">
+              <a href="/contact" className="bg-primary px-8 py-4 text-sm font-black uppercase tracking-[0.24em] text-black transition-transform duration-300 hover:scale-[1.03] inline-flex items-center justify-center">
                 Book Strategy Call
-              </button>
+              </a>
+
               <a href="#our-work" className="border border-white/15 px-8 py-4 text-sm font-black uppercase tracking-[0.24em] text-white transition-colors duration-300 hover:bg-white/5 inline-flex items-center justify-center">
                 See Our Work
               </a>
