@@ -1,3 +1,4 @@
+import React from "react";
 import type { ReactElement, SVGProps } from "react";
 
 type IconName =

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import Icon from "@/components/Icon";
 import ScrollReveal from "@/components/ScrollReveal";
 import StaggerText from "@/components/StaggerText";

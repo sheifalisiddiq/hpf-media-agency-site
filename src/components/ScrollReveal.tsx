@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, ReactNode } from "react";
+import React, { useEffect, useRef, ReactNode } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
