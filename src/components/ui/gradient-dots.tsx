@@ -30,6 +30,7 @@ export function GradientDots({
       className={cn("absolute inset-0 pointer-events-none z-0 mix-blend-screen opacity-40", className)}
       style={{
         backgroundColor,
+        willChange: "background-position",
         backgroundImage: `
           radial-gradient(circle at 50% 50%, transparent 1.5px, ${backgroundColor} 0 ${dotSize}px, transparent ${dotSize}px),
           radial-gradient(circle at 50% 50%, transparent 1.5px, ${backgroundColor} 0 ${dotSize}px, transparent ${dotSize}px),

@@ -19,9 +19,9 @@ interface ScrollRevealProps {
 export default function ScrollReveal({
   children,
   delay = 0,
-  duration = 1.4, // Increased for premium feel
-  yOffset = 50,
-  scale = 1, // Default to 1 (no scaling)
+  duration = 0.8, // Reduced for much snappier feel
+  yOffset = 30,   // More subtle movement
+  scale = 1, 
   rotateX = 0,
   staggerChildren = 0,
   className = "",
@@ -60,7 +60,7 @@ export default function ScrollReveal({
             ease: "expo.out",
             scrollTrigger: {
               trigger: element,
-              start: "top 88%", // Slightly later trigger for more intentional feel
+              start: "top 92%", // Trigger earlier
               toggleActions: "play none none none",
               once: true,
             },
@@ -85,7 +85,7 @@ export default function ScrollReveal({
             ease: "expo.out",
             scrollTrigger: {
               trigger: element,
-              start: "top 88%",
+              start: "top 92%", // Trigger earlier for better response
               toggleActions: "play none none none",
               once: true,
             },

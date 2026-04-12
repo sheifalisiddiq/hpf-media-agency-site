@@ -107,7 +107,7 @@ export default function HomeExperience() {
         <DottedSurface className="absolute inset-0 z-0 opacity-[0.12] mix-blend-screen" />
         
         <Parallax speed={0.8} className="absolute inset-x-0 top-[10%] h-[40rem] pointer-events-none">
-          <div className="h-full w-full bg-[radial-gradient(circle,rgba(255,84,73,0.24),transparent_62%)] blur-3xl" />
+          <div className="h-full w-full bg-[radial-gradient(circle,rgba(255,84,73,0.24),transparent_62%)] blur-2xl" />
         </Parallax>
 
         <div className="relative z-10 mx-auto grid w-full max-w-7xl gap-14 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] lg:items-center">

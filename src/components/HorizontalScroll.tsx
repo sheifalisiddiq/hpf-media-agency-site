@@ -36,7 +36,7 @@ export default function HorizontalScroll({
           trigger: trigger,
           start: "top top",
           end: () => `+=${totalWidth}`,
-          scrub: 1,
+          scrub: 0.6,
           pin: true,
           invalidateOnRefresh: true,
         },

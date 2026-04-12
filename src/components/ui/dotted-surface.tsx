@@ -23,9 +23,10 @@ export function DottedSurface({ className, ...props }: DottedSurfaceProps) {
   useEffect(() => {
     if (!containerRef.current) return;
 
-    const SEPARATION = 150;
-    const AMOUNTX = 40;
-    const AMOUNTY = 60;
+    const isMobile = window.innerWidth < 768;
+    const SEPARATION = isMobile ? 200 : 150;
+    const AMOUNTX = isMobile ? 25 : 40;
+    const AMOUNTY = isMobile ? 35 : 60;
 
     // Scene setup
     const scene = new THREE.Scene();
@@ -43,7 +44,8 @@ export function DottedSurface({ className, ...props }: DottedSurfaceProps) {
       alpha: true,
       antialias: true,
     });
-    renderer.setPixelRatio(window.devicePixelRatio);
+    const pixelRatio = Math.min(window.devicePixelRatio, 2);
+    renderer.setPixelRatio(pixelRatio);
     renderer.setSize(containerRef.current.clientWidth, containerRef.current.clientHeight);
     renderer.setClearColor(scene.fog.color, 0);
 
