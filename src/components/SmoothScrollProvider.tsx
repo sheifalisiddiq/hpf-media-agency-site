@@ -18,15 +18,13 @@ export default function SmoothScrollProvider({ children }: { children: ReactNode
   const [lenisInstance, setLenisInstance] = useState<Lenis | null>(null);
 
   useEffect(() => {
-    const isMobile = window.matchMedia("(pointer: coarse), (max-width: 768px)").matches;
-    if (isMobile) return;
-
-    // Initializing Lenis
+    // Initializing Lenis for all devices (including mobile)
     const lenis = new Lenis({
-      duration: 1.0,
+      duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // expoOut
       touchMultiplier: 2,
       infinite: false,
+      smoothWheel: true,
     });
 
     setLenisInstance(lenis);
