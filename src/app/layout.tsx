@@ -27,11 +27,16 @@ export const viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "HPF Media | Dominate Your Market",
-  description: "High-performance marketing for elite brands. Strategic content, viral scripting, and growth systems for UAE SMEs.",
+  metadataBase: new URL("https://www.hpf-media.com"),
+  title: {
+    default: "HPF Media",
+    template: "%s | HPF Media",
+  },
+  description: "Social media marketing, content creation, and branding agency in UAE.",
   openGraph: {
-    title: "HPF Media | Dominate Your Market",
-    description: "High-performance marketing for elite brands.",
+    title: "HPF Media",
+    description: "Social media marketing, content creation, and branding agency in UAE.",
+    url: "https://www.hpf-media.com",
     siteName: "HPF Media",
     images: [
       {
@@ -46,12 +51,13 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "HPF Media | Dominate Your Market",
-    description: "High-performance marketing for elite brands.",
+    title: "HPF Media",
+    description: "Social media marketing, content creation, and branding agency in UAE.",
     images: ["/logo.jpg"],
   },
   icons: {
     icon: "/logo.jpg",
+    apple: "/logo.jpg",
   },
 };
 
