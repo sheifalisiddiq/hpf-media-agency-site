@@ -41,8 +41,9 @@ export default function CTAForm() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-[linear-gradient(180deg,#050505_0%,#0d0504_55%,#180504_100%)] px-6 py-32 text-on-surface md:px-10 lg:px-14">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,84,73,0.16),transparent_45%)]" />
+    <section className="relative overflow-hidden bg-transparent px-6 py-32 text-on-surface md:px-10 lg:px-14">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,84,73,0.08),transparent_45%)]" />
+
       <div className="relative mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         
         <ScrollReveal className="space-y-8">

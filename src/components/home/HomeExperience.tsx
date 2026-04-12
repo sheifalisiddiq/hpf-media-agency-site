@@ -8,12 +8,6 @@ import StaggerText from "@/components/StaggerText";
 import Parallax from "@/components/Parallax";
 
 import GlowingDivider from "@/components/GlowingDivider";
-import { GradientDots } from "@/components/ui/gradient-dots";
-
-const DottedSurface = dynamic(() => import("@/components/ui/dotted-surface").then(mod => mod.DottedSurface), {
-  ssr: false,
-  loading: () => <div className="absolute inset-0 bg-black/10" />
-});
 
 const CTAForm = dynamic(() => import("./CTAForm"), {
   ssr: false
@@ -113,14 +107,13 @@ export default function HomeExperience() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative flex min-h-screen items-center overflow-hidden bg-black px-4 py-20 text-on-surface sm:px-6 lg:px-8">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(255,84,73,0.18),transparent_38%),linear-gradient(180deg,rgba(255,84,73,0.08),transparent_28%),linear-gradient(180deg,#010101_0%,#000_55%,#000_100%)]" />
-        <div className="absolute inset-0 grid-pattern opacity-20" />
-        <DottedSurface className="absolute inset-0 z-0 opacity-[0.12]" />
+      <section className="relative flex min-h-screen items-center overflow-hidden bg-transparent px-4 py-20 text-on-surface sm:px-6 lg:px-8">
         
         <Parallax speed={0.8} className="absolute inset-x-0 top-[10%] h-[40rem] pointer-events-none">
-          <div className="h-full w-full bg-[radial-gradient(circle,rgba(255,84,73,0.24),transparent_62%)] blur-2xl" />
+
+          <div className="h-full w-full bg-[radial-gradient(circle,rgba(255,84,73,0.15),transparent_62%)] blur-2xl" />
         </Parallax>
+
 
         <div className="relative z-10 mx-auto grid w-full max-w-7xl gap-14 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] lg:items-center">
           <div className="space-y-10">
@@ -183,8 +176,7 @@ export default function HomeExperience() {
       </section>
 
       {/* Services Section */}
-      <section className="relative overflow-hidden bg-black px-6 py-24 text-on-surface md:px-10 lg:px-14">
-        <GradientDots className="opacity-60" duration={40} />
+      <section className="relative overflow-hidden bg-transparent px-6 py-24 text-on-surface md:px-10 lg:px-14">
         <div className="relative z-10 mx-auto max-w-7xl">
           <div className="mb-16 max-w-3xl space-y-5">
             <ScrollReveal yOffset={10}>
@@ -253,7 +245,7 @@ export default function HomeExperience() {
       </section>
 
       {/* Roadmap Section (Horizontal Scroll) */}
-      <section className="relative overflow-hidden bg-[linear-gradient(180deg,#000000_0%,#0d0d0d_50%,#000000_100%)] px-4 py-24 text-on-surface sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden bg-transparent px-4 py-24 text-on-surface sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="mb-16">
             <ScrollReveal className="max-w-3xl space-y-6">
@@ -308,8 +300,7 @@ export default function HomeExperience() {
 
       {/* Philosophy Section */}
 
-      <section className="relative overflow-hidden bg-black px-6 py-24 text-on-surface md:px-10 lg:px-14">
-        <GradientDots className="opacity-60" duration={45} />
+      <section className="relative overflow-hidden bg-transparent px-6 py-24 text-on-surface md:px-10 lg:px-14">
         <div className="relative z-10 mx-auto max-w-7xl">
           <div className="mb-14 max-w-2xl space-y-5">
             <ScrollReveal yOffset={10}>

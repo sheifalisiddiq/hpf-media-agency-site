@@ -5,7 +5,6 @@ import Icon from "@/components/Icon";
 import ScrollReveal from "@/components/ScrollReveal";
 import StaggerText from "@/components/StaggerText";
 import Parallax from "@/components/Parallax";
-import { DottedSurface } from "@/components/ui/dotted-surface";
 
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -43,10 +42,9 @@ export default function Contact() {
 
   return (
     <>
-      <section className="min-h-screen cinematic-bg flex items-center justify-center py-20 px-4 md:px-12 overflow-hidden relative text-white bg-black">
+      <section className="min-h-screen flex items-center justify-center py-20 px-4 md:px-12 overflow-hidden relative text-white bg-transparent">
         {/* Decorative background element */}
-        <DottedSurface className="absolute inset-0 z-0 opacity-15 mix-blend-screen" />
-        <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20 z-0 text-white">
+        <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-10 z-0 text-white">
           <Parallax speed={0.8} className="absolute -top-24 -left-24 w-96 h-96 bg-primary-container rounded-full blur-[160px]" />
         </div>
         

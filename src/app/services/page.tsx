@@ -3,14 +3,12 @@ import Icon from "@/components/Icon";
 import ScrollReveal, { RevealItem } from "@/components/ScrollReveal";
 import StaggerText from "@/components/StaggerText";
 import Parallax from "@/components/Parallax";
-import { DottedSurface } from "@/components/ui/dotted-surface";
-import { GradientDots } from "@/components/ui/gradient-dots";
+
 
 export default function Services() {
   return (
     <>
-      <section className="relative min-h-[921px] flex flex-col justify-center items-center text-center px-4 pt-20 red-gradient-bg bg-black text-on-surface overflow-hidden">
-        <DottedSurface className="absolute inset-0 z-0 opacity-15" />
+      <section className="relative min-h-[921px] flex flex-col justify-center items-center text-center px-4 pt-20 bg-transparent text-on-surface overflow-hidden">
         <ScrollReveal className="max-w-4xl mx-auto z-10">
           <ScrollReveal yOffset={10} delay={0.2}>
             <span className="text-sm uppercase tracking-[0.3em] text-primary mb-6 block font-medium">Dubai / Abu Dhabi / Global</span>
@@ -41,8 +39,7 @@ export default function Services() {
         </div>
       </section>
 
-      <section className="relative py-20 lg:py-24 px-6 md:px-8 mx-auto bg-black text-on-surface overflow-hidden">
-        <GradientDots className="opacity-60" duration={45} />
+      <section className="relative py-20 lg:py-24 px-6 md:px-8 mx-auto bg-transparent text-on-surface overflow-hidden">
         <div className="relative z-10 max-w-screen-2xl mx-auto">
           <ScrollReveal className="flex flex-col mb-12 lg:mb-16">
             <h2 className="text-3xl lg:text-4xl font-headline font-bold mb-4 uppercase tracking-tight">Services</h2>
@@ -115,8 +112,7 @@ export default function Services() {
         </div>
       </section>
 
-      <section className="relative py-24 px-8 mx-auto bg-black text-on-surface overflow-hidden border-t border-white/5">
-        <GradientDots className="opacity-60" duration={35} />
+      <section className="relative py-24 px-8 mx-auto bg-transparent text-on-surface overflow-hidden border-t border-white/5">
         <div className="relative z-10 max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <ScrollReveal>
             <h2 className="text-5xl font-headline font-bold mb-8 leading-tight uppercase tracking-tighter">The <span className="text-primary">HPF Edge</span></h2>
@@ -163,8 +159,8 @@ export default function Services() {
         </div>
       </section>
 
-      <section className="py-32 px-8 bg-black">
-        <ScrollReveal scale={0.97} rotateX={2} className="max-w-5xl mx-auto glass-card rounded-lg p-16 text-center relative overflow-hidden bg-black text-on-surface border border-white/5">
+      <section className="py-32 px-8 bg-transparent">
+        <ScrollReveal scale={0.97} rotateX={2} className="max-w-5xl mx-auto glass-card rounded-lg p-16 text-center relative overflow-hidden bg-transparent text-on-surface border border-white/5">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
           
           <StaggerText

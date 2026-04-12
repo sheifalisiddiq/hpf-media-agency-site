@@ -3,8 +3,6 @@ import Icon from "@/components/Icon";
 import ScrollReveal, { RevealItem } from "@/components/ScrollReveal";
 import StaggerText from "@/components/StaggerText";
 import Parallax from "@/components/Parallax";
-import { DottedSurface } from "@/components/ui/dotted-surface";
-import { GradientDots } from "@/components/ui/gradient-dots";
 import GlowingDivider from "@/components/GlowingDivider";
 
 const features = [
@@ -51,14 +49,12 @@ const faqs = [
 export default function About() {
   return (
     <>
-      <section className="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden bg-black text-on-surface">
+      <section className="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden bg-transparent text-on-surface">
         <div className="absolute inset-0 z-0 text-white">
-          <DottedSurface className="opacity-20 mix-blend-screen" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/60"></div>
           <Parallax speed={0.8} className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-red-600/10 blur-[150px] rounded-full"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-red-600/5 blur-[150px] rounded-full"></div>
           </Parallax>
-          <div className="absolute bottom-0 w-full h-[500px] bg-gradient-to-t from-red-900/20 to-transparent"></div>
         </div>
         
         <ScrollReveal className="relative z-10 text-center px-4 max-w-5xl mx-auto">
@@ -89,10 +85,9 @@ export default function About() {
       </section>
 
 
-      <section className="relative py-24 lg:py-32 bg-black overflow-hidden">
-        <GradientDots className="opacity-60" duration={35} />
-        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-red-600/5 blur-[120px] rounded-full pointer-events-none"></div>
-        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-red-900/5 blur-[120px] rounded-full pointer-events-none"></div>
+      <section className="relative py-24 lg:py-32 bg-transparent overflow-hidden">
+        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-red-600/[0.02] blur-[120px] rounded-full pointer-events-none"></div>
+        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-red-900/[0.02] blur-[120px] rounded-full pointer-events-none"></div>
 
         <div className="max-w-6xl mx-auto px-4 relative z-10">
           <ScrollReveal className="mb-16 lg:mb-20 text-center max-w-3xl mx-auto">
@@ -117,8 +112,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden py-32 bg-black border-t border-white/5 text-on-surface">
-        <GradientDots className="opacity-60" duration={50} />
+      <section className="relative overflow-hidden py-32 bg-transparent border-t border-white/5 text-on-surface">
         <div className="relative z-10 max-w-4xl mx-auto px-6">
           <ScrollReveal className="mb-16">
             <h2 className="text-4xl font-black tracking-tighter text-on-surface mb-4 font-headline">Frequently Asked Questions</h2>
