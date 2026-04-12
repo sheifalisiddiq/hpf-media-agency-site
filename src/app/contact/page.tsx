@@ -104,7 +104,23 @@ export default function Contact() {
                     </a>
                   </div>
                 </div>
+
+                <div className="flex items-start gap-4">
+                  <Icon name="whatsapp" className="h-6 w-6 text-primary" />
+                  <div>
+                    <h4 className="text-xs uppercase tracking-widest text-primary mb-1 font-bold">24/7 Support</h4>
+                    <a 
+                      href="https://wa.me/971509418430" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-white font-medium hover:text-primary transition-colors"
+                    >
+                      +971 50 941 8430
+                    </a>
+                  </div>
+                </div>
               </ScrollReveal>
+
 
             </div>
             

@@ -33,7 +33,17 @@ export default function Footer() {
               <Icon name="instagram" className="h-5 w-5" />
               <span className="text-[10px] font-bold uppercase tracking-widest">Instagram</span>
             </Link>
+            <Link 
+              href="https://wa.me/971509418430" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-2 text-white/50 hover:text-primary transition-colors duration-300"
+            >
+              <Icon name="whatsapp" className="h-5 w-5" />
+              <span className="text-[10px] font-bold uppercase tracking-widest">WhatsApp</span>
+            </Link>
           </div>
+
           <div className="flex gap-8 text-[10px] uppercase tracking-[0.2em] font-medium">
             <Link href="#" className="text-neutral-500 hover:text-primary transition-colors duration-300">
               Privacy Policy

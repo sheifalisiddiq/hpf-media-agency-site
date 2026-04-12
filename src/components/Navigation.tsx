@@ -78,7 +78,16 @@ export default function Navigation() {
             >
               <Icon name="instagram" className="h-5 w-5" />
             </Link>
+            <Link 
+              href="https://wa.me/971509418430" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex h-10 w-10 items-center justify-center rounded-full text-white/50 hover:bg-white/10 hover:text-white transition-all duration-300"
+            >
+              <Icon name="whatsapp" className="h-5 w-5" />
+            </Link>
           </div>
+
 
 
           <button
@@ -151,7 +160,18 @@ export default function Navigation() {
             <Icon name="instagram" className="h-5 w-5" />
             Instagram
           </Link>
+          <Link
+            href="https://wa.me/971509418430"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setIsOpen(false)}
+            className="flex items-center gap-3 rounded-[1.25rem] px-4 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white/72 transition-all duration-300 hover:bg-white/10 hover:text-white"
+          >
+            <Icon name="whatsapp" className="h-5 w-5" />
+            WhatsApp
+          </Link>
         </div>
+
 
       </div>
     </div>
