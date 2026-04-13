@@ -29,13 +29,13 @@ export const viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.hpf-media.com"),
   title: {
-    default: "HPF Media",
+    default: "HPF Media | Social Media Marketing Agency UAE",
     template: "%s | HPF Media",
   },
-  description: "Social media marketing, content creation, and branding agency in UAE.",
+  description: "HPF Media is a specialized social media marketing agency in UAE. We help brands grow through strategic Instagram and TikTok content production and organic strategy.",
   openGraph: {
-    title: "HPF Media",
-    description: "Social media marketing, content creation, and branding agency in UAE.",
+    title: "HPF Media | Social Media Marketing Agency UAE",
+    description: "HPF Media helps UAE business owners grow visibility, engagement, and inbound leads through strategic content.",
     url: "https://www.hpf-media.com",
     siteName: "HPF Media",
     images: [
@@ -51,8 +51,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "HPF Media",
-    description: "Social media marketing, content creation, and branding agency in UAE.",
+    title: "HPF Media | Social Media Marketing Agency UAE",
+    description: "Strategic social media growth and content production for UAE brands.",
     images: ["/logo.jpg"],
   },
   icons: {
@@ -60,6 +60,7 @@ export const metadata: Metadata = {
     apple: "/logo.jpg",
   },
 };
+
 
 export default function RootLayout({
   children,
