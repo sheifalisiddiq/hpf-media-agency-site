@@ -108,7 +108,7 @@ export default function WorkShowcase() {
                   src="/emirates_FC_logo.jpeg" 
                   alt="Emirates FC" 
                   fill 
-                  className="object-contain p-2 grayscale opacity-60 transition-all duration-500 group-hover:grayscale-0 group-hover:opacity-100"
+                  className="object-contain p-2 transition-all duration-500"
                 />
               </div>
               <div className="group relative h-16 w-32 md:h-20 md:w-40 overflow-hidden rounded-xl border border-white/10 bg-white/[0.02] p-4 transition-all hover:bg-white/[0.05] hover:border-white/20 shadow-lg">
@@ -116,9 +116,10 @@ export default function WorkShowcase() {
                   src="/Mecca_al_mukarramah_perfumes.jpeg" 
                   alt="Mecca Al Mukarramah Perfumes" 
                   fill 
-                  className="object-contain p-2 grayscale opacity-60 transition-all duration-500 group-hover:grayscale-0 group-hover:opacity-100"
+                  className="object-contain p-2 transition-all duration-500"
                 />
               </div>
+
             </div>
           </ScrollReveal>
         </div>
