@@ -5,6 +5,8 @@ import Icon from "@/components/Icon";
 import ScrollReveal from "@/components/ScrollReveal";
 import StaggerText from "@/components/StaggerText";
 import HorizontalScroll from "@/components/HorizontalScroll";
+import Image from "next/image";
+
 
 const workVideos = [
   { id: 1, src: "/work1.MOV" },
@@ -96,7 +98,31 @@ export default function WorkShowcase() {
               We design content engineered to hold attention. Watch how we scale reach and drive real engagement for UAE brands.
             </p>
           </ScrollReveal>
+
+          {/* Trusted Brands / Logo Grid */}
+          <ScrollReveal delay={0.4} className="mt-12">
+            <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-white/30 mb-6">Brands We've Worked With:</p>
+            <div className="flex flex-wrap items-center gap-6 md:gap-10">
+              <div className="group relative h-16 w-32 md:h-20 md:w-40 overflow-hidden rounded-xl border border-white/10 bg-white/[0.02] p-4 transition-all hover:bg-white/[0.05] hover:border-white/20 shadow-lg">
+                <Image 
+                  src="/emirates_FC_logo.jpeg" 
+                  alt="Emirates FC" 
+                  fill 
+                  className="object-contain p-2 grayscale opacity-60 transition-all duration-500 group-hover:grayscale-0 group-hover:opacity-100"
+                />
+              </div>
+              <div className="group relative h-16 w-32 md:h-20 md:w-40 overflow-hidden rounded-xl border border-white/10 bg-white/[0.02] p-4 transition-all hover:bg-white/[0.05] hover:border-white/20 shadow-lg">
+                <Image 
+                  src="/Mecca_al_mukarramah_perfumes.jpeg" 
+                  alt="Mecca Al Mukarramah Perfumes" 
+                  fill 
+                  className="object-contain p-2 grayscale opacity-60 transition-all duration-500 group-hover:grayscale-0 group-hover:opacity-100"
+                />
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
+
 
         <HorizontalScroll className="gap-6 pb-6">
           {workVideos.map((video) => (
