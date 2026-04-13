@@ -51,8 +51,9 @@ export default function Navigation() {
             </div>
             <span className="flex flex-col leading-none">
               <span className="text-[0.65rem] font-medium uppercase tracking-[0.34em] text-white/55">
-                Studio
+                Agency
               </span>
+
               <span className="text-base font-semibold tracking-[0.18em] text-white">
                 HPF Media
               </span>
