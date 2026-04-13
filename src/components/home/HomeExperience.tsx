@@ -265,6 +265,9 @@ export default function HomeExperience() {
 
         </div>
       </section>
+      
+      <WorkShowcase />
+
 
       {/* Roadmap Section (Horizontal Scroll) */}
       <section className="relative overflow-hidden bg-transparent px-4 py-24 text-on-surface sm:px-6 lg:px-8">
@@ -361,8 +364,8 @@ export default function HomeExperience() {
         </div>
       </section>
 
-      <WorkShowcase />
       <CTAForm />
     </>
   );
 }
+
