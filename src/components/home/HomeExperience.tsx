@@ -204,20 +204,41 @@ export default function HomeExperience() {
               <h3 className="text-3xl font-black uppercase tracking-[-0.05em] text-white font-headline">The Process</h3>
             </ScrollReveal>
             
-            <ScrollReveal isContainer staggerChildren={0.1} scale={0.98} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-              {executionSteps.map((step) => (
-                <RevealItem key={step.step} className="group relative rounded-2xl border border-white/5 bg-white/[0.02] p-8 transition-colors hover:border-primary/20 hover:bg-white/[0.04]">
-                  <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-lg bg-red-600/10 text-primary group-hover:bg-primary group-hover:text-black transition-colors duration-300">
-                    <Icon name={step.icon} className="h-5 w-5" />
-                  </div>
-                  <div className="space-y-2">
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-primary/60">Step {step.step}</p>
-                    <h4 className="text-xl font-black uppercase tracking-tight text-white font-headline">{step.label}</h4>
-                    <p className="text-sm text-on-surface-variant leading-relaxed">{step.desc}</p>
-                  </div>
-                </RevealItem>
-              ))}
-            </ScrollReveal>
+            <div className="relative">
+              {/* Horizontal line for desktop */}
+              <div className="absolute top-[40px] left-0 hidden h-[1px] w-full bg-gradient-to-r from-transparent via-white/10 to-transparent lg:block" />
+              
+              <ScrollReveal isContainer staggerChildren={0.15} scale={1} className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-5 lg:gap-4">
+                {executionSteps.map((step, idx) => (
+                  <RevealItem key={step.step} className="group relative flex flex-col items-center text-center">
+                    {/* Circle Node */}
+                    <div className="relative mb-8 flex h-20 w-20 items-center justify-center rounded-full border border-white/10 bg-[#0a0a0a] shadow-2xl transition-all duration-500 group-hover:border-primary/40 group-hover:shadow-[0_0_30px_rgba(255,84,73,0.15)]">
+                      {/* Outer Rings */}
+                      <div className="absolute inset-[-4px] rounded-full border border-white/5 opacity-50 transition-all duration-500 group-hover:opacity-100" />
+                      
+                      {/* Step Badge */}
+                      <div className="absolute -right-2 -top-2 flex h-7 w-7 items-center justify-center rounded-full bg-primary text-[10px] font-black text-black shadow-lg">
+                        {step.step}
+                      </div>
+
+                      <Icon name={step.icon} className="h-8 w-8 text-white/40 transition-colors duration-500 group-hover:text-primary" />
+                    </div>
+
+                    {/* Content */}
+                    <div className="max-w-[200px] space-y-3">
+                      <h4 className="text-lg font-black uppercase tracking-tight text-white font-headline leading-tight">
+                        {step.label}
+                      </h4>
+                      <div className="mx-auto h-[1px] w-8 bg-primary/30 transition-all duration-500 group-hover:w-16 group-hover:bg-primary" />
+                      <p className="text-sm text-on-surface-variant leading-relaxed">
+                        {step.desc}
+                      </p>
+                    </div>
+                  </RevealItem>
+                ))}
+              </ScrollReveal>
+            </div>
+
           </div>
 
           <ScrollReveal isContainer staggerChildren={0.15} scale={0.96} yOffset={30} className="grid gap-6 lg:grid-cols-12">
