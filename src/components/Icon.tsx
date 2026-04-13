@@ -25,7 +25,9 @@ type IconName =
   | "volume_off"
   | "volume_up"
   | "instagram"
+  | "verified"
   | "whatsapp";
+
 
 
 
@@ -259,6 +261,13 @@ const iconMap: Record<IconName, ReactElement> = {
       fill="currentColor"
     />
   ),
+  verified: (
+    <path
+      d="M23 12l-2.4-2.7 0.3-3.7-3.6-0.8-1.9-3.3L12 3 9.1 1.5 7.1 4.8l-3.6 0.8 0.3 3.7L1.5 12l2.4 2.7-0.3 3.7 3.6 0.8 1.9 3.3 2.9-1.5 2.9 1.5 1.9-3.3 3.6-0.8-0.3-3.7L23 12z M10 17l-4-4 1.4-1.4 2.6 2.6 6.6-6.6 1.4 1.4-8 8z"
+      fill="currentColor"
+    />
+  ),
+
 };
 
 
