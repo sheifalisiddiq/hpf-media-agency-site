@@ -55,21 +55,13 @@ export default function CTAForm() {
           <p className="max-w-xl text-lg leading-8 text-white/70">
             Stop posting content that no one sees. Join UAE brands scaling their impact through HPF Media and turn visibility into real business growth.
           </p>
-          <div className="flex items-center gap-6 pt-4">
-            <div className="flex -space-x-3">
-              {[1, 2, 3].map((i) => (
-                <div key={i} className="h-12 w-12 rounded-full border-2 border-black bg-white/10 overflow-hidden relative">
-                  <Image 
-                    src={`https://api.dicebear.com/7.x/notionists/svg?seed=${i + 22}`} 
-                    alt="Agency Client"
-                    fill
-                    className="object-cover translate-y-1" 
-                  />
-                </div>
-              ))}
+          <div className="flex items-center gap-3 pt-4">
+            <div className="flex items-center justify-center h-8 w-8 rounded-full bg-primary/10 text-primary">
+              <Icon name="verified" className="h-5 w-5" />
             </div>
-            <p className="text-sm font-bold uppercase tracking-widest text-primary">Trusted by 20+ UAE Brands</p>
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-primary/80">Trusted by 20+ UAE Brands</p>
           </div>
+
         </ScrollReveal>
 
         <ScrollReveal delay={0.2} className="relative">

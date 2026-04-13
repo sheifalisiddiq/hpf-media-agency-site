@@ -70,13 +70,8 @@ export default function Contact() {
               </ScrollReveal>
               
               <ScrollReveal delay={0.6} isContainer staggerChildren={0.1} className="space-y-6 pt-4">
-                <div className="flex items-start gap-4">
-                  <Icon name="location_on" className="h-6 w-6 text-primary" />
-                  <div>
-                    <h4 className="text-xs uppercase tracking-widest text-primary mb-1 font-bold">Headquarters</h4>
-                    <p className="text-white font-medium">Dubai Design District, Building 4<br />Dubai, United Arab Emirates</p>
-                  </div>
-                </div>
+                {/* Headquarters address removed per user request */}
+
                 
                 <div className="flex items-start gap-4">
                   <Icon name="mail" className="h-6 w-6 text-primary" />
