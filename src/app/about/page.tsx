@@ -156,10 +156,11 @@ export default function About() {
             <p className="text-on-surface-variant text-xl mb-12 max-w-2xl mx-auto font-light">If you want more visibility, stronger engagement, and content that actually supports sales, HPF Media is ready to help.</p>
           </ScrollReveal>
           <ScrollReveal delay={0.6} scale={0.8}>
-            <button className="bg-primary-container text-on-primary-container px-14 py-6 rounded-full text-xl font-bold tracking-tight hover:scale-110 active:scale-95 transition-all duration-300 shadow-[0_0_60px_rgba(255,84,73,0.5)]">
+            <a href="/contact" className="bg-primary-container text-on-primary-container px-14 py-6 rounded-full text-xl font-bold tracking-tight hover:scale-110 active:scale-95 transition-all duration-300 shadow-[0_0_60px_rgba(255,84,73,0.5)] inline-flex items-center justify-center">
               Book Your Strategy Call
-            </button>
+            </a>
           </ScrollReveal>
+
         </ScrollReveal>
       </section>
     </>
