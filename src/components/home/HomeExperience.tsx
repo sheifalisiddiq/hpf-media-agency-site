@@ -288,9 +288,10 @@ export default function HomeExperience() {
                     <h3 className="text-2xl font-black uppercase tracking-[-0.05em] text-white md:text-3xl font-headline">
                       {item.title}
                     </h3>
-                    <p className="text-sm leading-6 text-on-surface-variant line-clamp-3">
+                    <p className="text-sm leading-7 text-on-surface-variant">
                       {item.description}
                     </p>
+
                   </div>
                 </div>
               </RevealItem>
