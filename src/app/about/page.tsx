@@ -47,6 +47,29 @@ const faqs = [
   },
 ];
 
+const processSteps = [
+  {
+    num: "01",
+    title: "The Audit",
+    desc: "We identify exactly where your current content is failing and where you're losing leads.",
+  },
+  {
+    num: "02",
+    title: "The Blueprint",
+    desc: "A custom 90-day roadmap designed to push your business toward five to ten million organic views.",
+  },
+  {
+    num: "03",
+    title: "Velocity Production",
+    desc: "High-speed filming and editing cycles that keep your feed fresh, sharp, and high-performing.",
+  },
+  {
+    num: "04",
+    title: "Market Dominance",
+    desc: "Scaling winning content into a compounding lead generation engine for your brand.",
+  },
+];
+
 export default function About() {
   return (
     <>
@@ -102,6 +125,45 @@ export default function About() {
                 </div>
                 <h4 className="text-xl md:text-2xl font-semibold text-white mb-4 font-headline">{feature.title}</h4>
                 <p className="text-white/70 font-light leading-relaxed">{feature.desc}</p>
+              </RevealItem>
+            ))}
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Philosophy Section */}
+      <section className="relative overflow-hidden bg-transparent px-6 py-24 text-on-surface md:px-10 lg:px-14 border-t border-white/5">
+        <div className="relative z-10 mx-auto max-w-7xl">
+          <div className="mb-14 max-w-2xl space-y-5">
+            <ScrollReveal yOffset={10}>
+              <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary">
+                The Philosophy
+              </p>
+            </ScrollReveal>
+            <StaggerText
+              tag="h2"
+              text="No Generic Marketing."
+              className="text-4xl font-black uppercase tracking-[-0.06em] text-white md:text-6xl font-headline"
+            />
+          </div>
+
+          <ScrollReveal isContainer staggerChildren={0.1} scale={0.98} className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {processSteps.map((step) => (
+              <RevealItem
+                key={step.num}
+                className="rounded-[1.5rem] border border-white/10 bg-white/[0.02] p-8"
+              >
+                <div className="space-y-6">
+                  <p className="text-sm font-black tracking-[0.25em] text-primary">
+                    {step.num}
+                  </p>
+                  <h3 className="text-2xl font-black uppercase tracking-[-0.05em] text-white font-headline">
+                    {step.title}
+                  </h3>
+                  <p className="text-sm leading-7 text-on-surface-variant">
+                    {step.desc}
+                  </p>
+                </div>
               </RevealItem>
             ))}
           </ScrollReveal>
