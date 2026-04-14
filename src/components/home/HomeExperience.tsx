@@ -241,6 +241,13 @@ export default function HomeExperience() {
 
           </div>
 
+        </div>
+      </section>
+
+      <WorkShowcase />
+
+      <section className="relative overflow-hidden bg-transparent px-6 py-24 text-on-surface md:px-10 lg:px-14">
+        <div className="relative z-10 mx-auto max-w-7xl">
           <ScrollReveal isContainer staggerChildren={0.15} scale={0.96} yOffset={30} className="grid gap-6 lg:grid-cols-12">
             {services.map((service) => (
               <RevealItem
@@ -262,11 +269,6 @@ export default function HomeExperience() {
               </RevealItem>
             ))}
           </ScrollReveal>
-
-        </div>
-      </section>
-      
-      <WorkShowcase />
 
 
       {/* Roadmap Section (Horizontal Scroll) */}

@@ -103,7 +103,7 @@ export default function WorkShowcase() {
           <ScrollReveal delay={0.4} className="mt-12">
             <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-white/30 mb-6">Brands We've Worked With:</p>
             <div className="flex flex-wrap items-center gap-6 md:gap-10">
-              <div className="group relative h-16 w-32 md:h-20 md:w-40 overflow-hidden rounded-xl border border-white/10 bg-white/[0.02] p-4 transition-all hover:bg-white/[0.05] hover:border-white/20 shadow-lg">
+              <div className="group relative h-20 w-40 md:h-24 md:w-48 overflow-hidden rounded-xl border border-white/10 bg-white/[0.02] p-4 transition-all hover:bg-white/[0.05] hover:border-white/20 shadow-lg">
                 <Image 
                   src="/emirates_FC_logo.jpeg" 
                   alt="Emirates FC" 
@@ -111,7 +111,7 @@ export default function WorkShowcase() {
                   className="object-contain p-2 transition-all duration-500"
                 />
               </div>
-              <div className="group relative h-16 w-32 md:h-20 md:w-40 overflow-hidden rounded-xl border border-white/10 bg-white/[0.02] p-4 transition-all hover:bg-white/[0.05] hover:border-white/20 shadow-lg">
+              <div className="group relative h-20 w-40 md:h-24 md:w-48 overflow-hidden rounded-xl border border-white/10 bg-white/[0.02] p-4 transition-all hover:bg-white/[0.05] hover:border-white/20 shadow-lg">
                 <Image 
                   src="/Mecca_al_mukarramah_perfumes.jpeg" 
                   alt="Mecca Al Mukarramah Perfumes" 
