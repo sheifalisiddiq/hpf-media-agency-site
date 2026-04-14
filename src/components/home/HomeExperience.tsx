@@ -269,6 +269,8 @@ export default function HomeExperience() {
               </RevealItem>
             ))}
           </ScrollReveal>
+        </div>
+      </section>
 
 
       {/* Roadmap Section (Horizontal Scroll) */}
