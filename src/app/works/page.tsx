@@ -1,4 +1,3 @@
-// Portfolio page for HPF Media
 import { Metadata } from "next";
 import Icon from "@/components/Icon";
 import ScrollReveal, { RevealItem } from "@/components/ScrollReveal";
@@ -102,13 +101,13 @@ export default function Works() {
 
       <section className="relative py-20 lg:py-24 px-6 md:px-8 mx-auto bg-transparent text-on-surface overflow-hidden">
         <div className="relative z-10 max-w-screen-2xl mx-auto">
-          <ScrollReveal isContainer staggerChildren={0.2} scale={0.96} yOffset={30} className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+          <ScrollReveal isContainer staggerChildren={0.2} scale={0.96} yOffset={30} className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
             {videos.map((video, index) => (
               <RevealItem key={index} className="glass-card rounded-lg overflow-hidden group flex flex-col bg-black border border-white/5">
-                <div className="relative aspect-video overflow-hidden bg-neutral-900">
+                <div className="relative aspect-[9/16] overflow-hidden bg-neutral-900">
                   <video 
                     src={video.src} 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
                     loop
                     muted
                     playsInline
