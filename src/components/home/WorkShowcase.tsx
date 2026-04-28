@@ -59,7 +59,7 @@ const VideoCard = ({ src }: { src: string }) => {
   return (
     <div 
       ref={cardRef}
-      className="group relative flex w-[75vw] md:w-[45vw] lg:w-[25vw] aspect-[9/16] flex-col overflow-hidden rounded-2xl bg-[#0a0a0a] shadow-xl border border-white/10 transition-all duration-300 hover:border-white/20"
+      className="group relative flex w-[85vw] md:w-[60vw] lg:w-[40vw] aspect-video flex-col overflow-hidden rounded-2xl bg-[#0a0a0a] shadow-xl border border-white/10 transition-all duration-300 hover:border-white/20"
     >
       <video
         ref={videoRef}
