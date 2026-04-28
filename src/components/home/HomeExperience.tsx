@@ -13,10 +13,6 @@ const CTAForm = dynamic(() => import("./CTAForm"), {
   ssr: false
 });
 
-const WorkShowcase = dynamic(() => import("./WorkShowcase"), {
-  ssr: false
-});
-
 const services = [
   {
     icon: "insights" as const,
@@ -197,7 +193,20 @@ export default function HomeExperience() {
         </div>
       </section>
 
-      <WorkShowcase />
+      <section className="relative py-32 px-8 overflow-hidden bg-transparent border-y border-white/5">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,84,73,0.08),transparent_70%)] pointer-events-none" />
+        <div className="relative z-10 max-w-5xl mx-auto text-center">
+          <ScrollReveal>
+            <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary mb-6">Experience the Results</p>
+            <h2 className="text-4xl md:text-6xl font-black uppercase tracking-[-0.05em] text-white font-headline mb-8">Ready to see our <span className="text-primary">Impact?</span></h2>
+            <p className="text-neutral-400 text-lg md:text-xl max-w-2xl mx-auto mb-12">Watch our curated showcase of high-performance content that has scaled UAE brands across social platforms.</p>
+            <a href="/works" className="group relative inline-flex items-center gap-3 bg-white/[0.05] border border-white/10 px-10 py-5 rounded-full text-white font-bold uppercase tracking-widest hover:bg-primary hover:text-black hover:border-primary transition-all duration-500 overflow-hidden">
+              <span className="relative z-10">Explore Our Portfolio</span>
+              <Icon name="trending_flat" className="relative z-10 h-5 w-5 transition-transform group-hover:translate-x-2" />
+            </a>
+          </ScrollReveal>
+        </div>
+      </section>
 
       <section className="relative overflow-hidden bg-transparent px-6 py-24 text-on-surface md:px-10 lg:px-14">
         <div className="relative z-10 mx-auto max-w-7xl">

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import Icon from "@/components/Icon";
 import ScrollReveal, { RevealItem } from "@/components/ScrollReveal";
@@ -173,22 +174,47 @@ export default function Works() {
 
   return (
     <>
-      <section className="relative min-h-[60vh] flex flex-col justify-center items-center text-center px-4 pt-32 pb-20 bg-transparent text-on-surface overflow-hidden">
+      <section className="relative min-h-[70vh] flex flex-col justify-center items-center text-center px-4 pt-32 pb-20 bg-transparent text-on-surface overflow-hidden">
         <ScrollReveal className="max-w-4xl mx-auto z-10">
           <ScrollReveal yOffset={10} delay={0.2}>
-            <span className="text-sm uppercase tracking-[0.3em] text-primary mb-6 block font-medium">Portfolio / Showcase</span>
+            <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary mb-6">
+              Portfolio
+            </p>
           </ScrollReveal>
           
           <StaggerText
             tag="h1"
-            text="Our Works."
-            className="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter font-headline mb-8 leading-[0.95] text-on-surface"
+            text="Our Work."
+            className="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter font-headline mb-8 leading-[0.95] text-on-surface uppercase"
           />
           
           <ScrollReveal delay={0.4}>
-            <p className="text-neutral-400 max-w-2xl mx-auto leading-relaxed mb-10 text-lg">
-              Explore our recent projects and see how we help brands in the UAE dominate social media through premium video production.
+            <p className="max-w-2xl text-base leading-7 text-neutral-400 md:text-lg mx-auto mb-12">
+              We design content engineered to hold attention. Watch how we scale reach and drive real engagement for UAE brands.
             </p>
+          </ScrollReveal>
+
+          {/* Trusted Brands / Logo Grid moved from Home */}
+          <ScrollReveal delay={0.6} className="mt-12">
+            <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-white/30 mb-8">Brands We've Worked With:</p>
+            <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
+              <div className="group relative h-20 w-40 md:h-24 md:w-48 overflow-hidden rounded-xl border border-white/10 bg-white/[0.02] p-4 transition-all hover:bg-white/[0.05] hover:border-white/20 shadow-lg">
+                <Image 
+                  src="/emirates_FC_logo.jpeg" 
+                  alt="Emirates FC" 
+                  fill 
+                  className="object-contain p-2 transition-all duration-500"
+                />
+              </div>
+              <div className="group relative h-20 w-40 md:h-24 md:w-48 overflow-hidden rounded-xl border border-white/10 bg-white/[0.02] p-4 transition-all hover:bg-white/[0.05] hover:border-white/20 shadow-lg">
+                <Image 
+                  src="/Mecca_al_mukarramah_perfumes.jpeg" 
+                  alt="Mecca Al Mukarramah Perfumes" 
+                  fill 
+                  className="object-contain p-2 transition-all duration-500"
+                />
+              </div>
+            </div>
           </ScrollReveal>
         </ScrollReveal>
         
