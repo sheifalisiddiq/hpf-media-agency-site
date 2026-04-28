@@ -93,15 +93,15 @@ function WorkVideoCard({
 }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     if (videoRef.current) {
       if (isPlaying) {
-        videoRef.current.play().catch(() => {
-            // Autoplay might be blocked if not muted, but here it's triggered by state
-        });
+        videoRef.current.muted = false;
+        videoRef.current.play().catch(() => {});
       } else {
-        videoRef.current.pause();
+        videoRef.current.muted = true;
       }
     }
   }, [isPlaying]);
@@ -124,46 +124,44 @@ function WorkVideoCard({
   }, [isPlaying, onPause]);
 
   return (
-    <RevealItem className="glass-card rounded-lg overflow-hidden group flex flex-col bg-black border border-white/5 mx-auto w-full">
-      <div ref={containerRef} className="relative aspect-[9/16] md:h-[65vh] md:aspect-[9/16] mx-auto overflow-hidden bg-neutral-900 w-full flex items-center justify-center">
+    <RevealItem className="glass-card rounded-2xl overflow-hidden group flex flex-col bg-black border border-white/10 transition-all duration-500 hover:border-primary/30 shadow-2xl mx-auto w-full">
+      <div 
+        ref={containerRef} 
+        className="relative aspect-[9/16] md:h-[65vh] md:aspect-[9/16] mx-auto overflow-hidden bg-neutral-900 w-full flex items-center justify-center cursor-pointer"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        onClick={() => {
+          if (isPlaying) onPause();
+          else onPlay();
+        }}
+      >
         <video 
           ref={videoRef}
           src={video.src} 
-          className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
+          className={`w-full h-full object-contain transition-all duration-700 ${isHovered || isPlaying ? 'grayscale-0 scale-105' : 'grayscale'}`}
           loop
+          muted={!isPlaying}
+          autoPlay
           playsInline
-          controls
-          onPlay={() => {
-            if (!isPlaying) onPlay();
-          }}
-          onPause={() => {
-            // We only trigger parent pause if it was actually the one playing
-            if (isPlaying) onPause();
-          }}
           poster="/logo.jpg"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity pointer-events-none" />
-      </div>
-      
-      <div className="p-8 flex flex-col flex-grow">
-        <div className="flex items-center gap-2 mb-3">
-          <span className="text-primary text-xs font-bold uppercase tracking-widest">{video.category}</span>
-          <div className="h-[1px] w-8 bg-primary/30" />
-        </div>
-        <h3 className="text-2xl md:text-3xl font-headline font-bold mb-4 uppercase tracking-tight">{video.title}</h3>
-        <p className="text-neutral-400 text-lg mb-8 line-clamp-2">{video.description}</p>
+        <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 transition-opacity duration-500 ${isHovered || isPlaying ? 'opacity-30' : 'opacity-60'}`} />
         
-        <div className="mt-auto pt-6 border-t border-white/5 flex justify-between items-center">
-          <a 
-            href="https://wa.me/971509418430" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-white/70 hover:text-primary transition-colors flex items-center gap-2 text-sm font-bold uppercase tracking-widest"
-          >
-            Inquire About Similar <Icon name="trending_flat" className="h-4 w-4" />
-          </a>
-          <Icon name="videocam" className="h-6 w-6 text-primary/40" />
-        </div>
+        {/* Play indicator overlay */}
+        {!isPlaying && (
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div className="h-16 w-16 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-300 scale-90 group-hover:scale-100 shadow-2xl">
+               <Icon name="videocam" className="h-8 w-8" />
+            </div>
+          </div>
+        )}
+        
+        {/* Audio active indicator */}
+        {isPlaying && (
+          <div className="absolute bottom-6 right-6 h-10 w-10 rounded-full bg-primary flex items-center justify-center text-black shadow-lg animate-pulse z-10">
+            <Icon name="volume_up" className="h-5 w-5" />
+          </div>
+        )}
       </div>
     </RevealItem>
   );
