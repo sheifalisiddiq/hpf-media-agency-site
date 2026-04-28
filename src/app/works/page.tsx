@@ -1,3 +1,4 @@
+// Portfolio page for HPF Media
 import { Metadata } from "next";
 import Icon from "@/components/Icon";
 import ScrollReveal, { RevealItem } from "@/components/ScrollReveal";
