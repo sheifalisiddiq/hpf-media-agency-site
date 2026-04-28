@@ -198,8 +198,8 @@ export default function Works() {
       </section>
 
       <section className="relative py-20 lg:py-24 px-6 md:px-8 mx-auto bg-transparent text-on-surface overflow-hidden">
-        <div className="relative z-10 max-w-screen-2xl mx-auto">
-          <ScrollReveal isContainer staggerChildren={0.2} scale={0.96} yOffset={30} className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+        <div className="relative z-10 max-w-7xl mx-auto">
+          <ScrollReveal isContainer staggerChildren={0.2} scale={0.96} yOffset={30} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
             {videos.map((video) => (
               <WorkVideoCard 
                 key={video.id} 
