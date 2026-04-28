@@ -124,7 +124,7 @@ function WorkVideoCard({
 
   return (
     <RevealItem className="glass-card rounded-lg overflow-hidden group flex flex-col bg-black border border-white/5 mx-auto w-full">
-      <div ref={containerRef} className="relative h-[65vh] aspect-[9/16] mx-auto overflow-hidden bg-neutral-900 w-full flex items-center justify-center">
+      <div ref={containerRef} className="relative aspect-[9/16] md:h-[65vh] md:aspect-[9/16] mx-auto overflow-hidden bg-neutral-900 w-full flex items-center justify-center">
         <video 
           ref={videoRef}
           src={video.src} 
