@@ -1,70 +1,77 @@
-import { Metadata } from "next";
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import Icon from "@/components/Icon";
 import ScrollReveal, { RevealItem } from "@/components/ScrollReveal";
 import StaggerText from "@/components/StaggerText";
 import Parallax from "@/components/Parallax";
 
-export const metadata: Metadata = {
-  title: "Our Works",
-  description: "Explore HPF Media's portfolio of high-impact social media content and video production for UAE brands.",
-};
-
 const videos = [
   { 
+    id: "v1",
     src: "/IMG_2887.MOV", 
     title: "Cinematic Narrative", 
     category: "Video Production",
     description: "High-end visual storytelling tailored for social platforms."
   },
   { 
+    id: "v2",
     src: "/IMG_2889.MOV", 
     title: "Brand Strategy", 
     category: "Social Media Growth",
     description: "Strategic content designed to increase reach and engagement."
   },
   { 
+    id: "v3",
     src: "/IMG_2890.MOV", 
     title: "Personal Branding", 
     category: "Personal Brand",
     description: "Establishing authority through professional video content."
   },
   { 
+    id: "v4",
     src: "/IMG_2892.MOV", 
     title: "Digital Edge", 
     category: "Web & Strategy",
     description: "Turning viewers into customers with high-conversion visuals."
   },
   {
+    id: "v5",
     src: "/work1.MOV",
     title: "UAE Luxury Showcase",
     category: "Video Production",
     description: "Capturing the essence of luxury in the heart of the UAE."
   },
   {
+    id: "v6",
     src: "/work2.MOV",
     title: "Business Growth Reel",
     category: "Social Media Growth",
     description: "Dynamic reels designed for maximum impact and retention."
   },
   {
+    id: "v7",
     src: "/work3.MOV",
     title: "Event Highlights",
     category: "Video Production",
     description: "Professional event coverage with a cinematic touch."
   },
   {
+    id: "v8",
     src: "/work4.mp4",
     title: "Product Feature",
     category: "Brand Strategy",
     description: "Highlighting product features through engaging visual content."
   },
   {
+    id: "v9",
     src: "/work5.mp4",
     title: "Lifestyle Branding",
     category: "Personal Brand",
     description: "Building personal brands through lifestyle storytelling."
   },
   {
+    id: "v10",
     src: "/work6.MOV",
     title: "Corporate Vision",
     category: "Web & Strategy",
@@ -72,7 +79,98 @@ const videos = [
   }
 ];
 
+function WorkVideoCard({ 
+  video, 
+  isPlaying, 
+  onPlay, 
+  onPause 
+}: { 
+  video: typeof videos[0], 
+  isPlaying: boolean, 
+  onPlay: () => void,
+  onPause: () => void
+}) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.play().catch(() => {
+            // Autoplay might be blocked if not muted, but here it's triggered by state
+        });
+      } else {
+        videoRef.current.pause();
+      }
+    }
+  }, [isPlaying]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting && isPlaying) {
+          onPause();
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [isPlaying, onPause]);
+
+  return (
+    <RevealItem className="glass-card rounded-lg overflow-hidden group flex flex-col bg-black border border-white/5">
+      <div ref={containerRef} className="relative aspect-[9/16] overflow-hidden bg-neutral-900">
+        <video 
+          ref={videoRef}
+          src={video.src} 
+          className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
+          loop
+          playsInline
+          controls
+          onPlay={() => {
+            if (!isPlaying) onPlay();
+          }}
+          onPause={() => {
+            // We only trigger parent pause if it was actually the one playing
+            if (isPlaying) onPause();
+          }}
+          poster="/logo.jpg"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity pointer-events-none" />
+      </div>
+      
+      <div className="p-8 flex flex-col flex-grow">
+        <div className="flex items-center gap-2 mb-3">
+          <span className="text-primary text-xs font-bold uppercase tracking-widest">{video.category}</span>
+          <div className="h-[1px] w-8 bg-primary/30" />
+        </div>
+        <h3 className="text-2xl md:text-3xl font-headline font-bold mb-4 uppercase tracking-tight">{video.title}</h3>
+        <p className="text-neutral-400 text-lg mb-8 line-clamp-2">{video.description}</p>
+        
+        <div className="mt-auto pt-6 border-t border-white/5 flex justify-between items-center">
+          <a 
+            href="https://wa.me/971509418430" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-white/70 hover:text-primary transition-colors flex items-center gap-2 text-sm font-bold uppercase tracking-widest"
+          >
+            Inquire About Similar <Icon name="trending_flat" className="h-4 w-4" />
+          </a>
+          <Icon name="videocam" className="h-6 w-6 text-primary/40" />
+        </div>
+      </div>
+    </RevealItem>
+  );
+}
+
 export default function Works() {
+  const [playingVideoId, setPlayingVideoId] = useState<string | null>(null);
+
   return (
     <>
       <section className="relative min-h-[60vh] flex flex-col justify-center items-center text-center px-4 pt-32 pb-20 bg-transparent text-on-surface overflow-hidden">
@@ -102,42 +200,14 @@ export default function Works() {
       <section className="relative py-20 lg:py-24 px-6 md:px-8 mx-auto bg-transparent text-on-surface overflow-hidden">
         <div className="relative z-10 max-w-screen-2xl mx-auto">
           <ScrollReveal isContainer staggerChildren={0.2} scale={0.96} yOffset={30} className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-            {videos.map((video, index) => (
-              <RevealItem key={index} className="glass-card rounded-lg overflow-hidden group flex flex-col bg-black border border-white/5">
-                <div className="relative aspect-[9/16] overflow-hidden bg-neutral-900">
-                  <video 
-                    src={video.src} 
-                    className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
-                    loop
-                    muted
-                    playsInline
-                    controls
-                    poster="/logo.jpg"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity pointer-events-none" />
-                </div>
-                
-                <div className="p-8 flex flex-col flex-grow">
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="text-primary text-xs font-bold uppercase tracking-widest">{video.category}</span>
-                    <div className="h-[1px] w-8 bg-primary/30" />
-                  </div>
-                  <h3 className="text-2xl md:text-3xl font-headline font-bold mb-4 uppercase tracking-tight">{video.title}</h3>
-                  <p className="text-neutral-400 text-lg mb-8 line-clamp-2">{video.description}</p>
-                  
-                  <div className="mt-auto pt-6 border-t border-white/5 flex justify-between items-center">
-                    <a 
-                      href="https://wa.me/971509418430" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-white/70 hover:text-primary transition-colors flex items-center gap-2 text-sm font-bold uppercase tracking-widest"
-                    >
-                      Inquire About Similar <Icon name="trending_flat" className="h-4 w-4" />
-                    </a>
-                    <Icon name="videocam" className="h-6 w-6 text-primary/40" />
-                  </div>
-                </div>
-              </RevealItem>
+            {videos.map((video) => (
+              <WorkVideoCard 
+                key={video.id} 
+                video={video} 
+                isPlaying={playingVideoId === video.id}
+                onPlay={() => setPlayingVideoId(video.id)}
+                onPause={() => setPlayingVideoId(null)}
+              />
             ))}
           </ScrollReveal>
         </div>

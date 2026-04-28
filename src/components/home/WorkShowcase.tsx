@@ -42,10 +42,18 @@ const VideoCard = ({ src }: { src: string }) => {
         if (isTouch) {
           setIsActive(entry.isIntersecting);
         }
+
+        // Pause video when it leaves the viewport to save resources and stop audio
+        if (!entry.isIntersecting && videoRef.current) {
+          videoRef.current.pause();
+        } else if (entry.isIntersecting && videoRef.current) {
+          videoRef.current.play().catch(() => {
+            // Autoplay might be blocked if not muted
+          });
+        }
       },
       { 
-        threshold: 0.7, // Card must be 70% visible
-        rootMargin: "-10% 0px -10% 0px" // Focus on the center of the screen
+        threshold: 0.2, // Trigger earlier than 70% for pause
       }
     );
 
