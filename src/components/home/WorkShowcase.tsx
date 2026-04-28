@@ -15,6 +15,10 @@ const workVideos = [
   { id: 4, src: "/work4.mp4" },
   { id: 5, src: "/work5.mp4" },
   { id: 6, src: "/work6.MOV" },
+  { id: 7, src: "/IMG_2887.MOV" },
+  { id: 8, src: "/IMG_2889.MOV" },
+  { id: 9, src: "/IMG_2890.MOV" },
+  { id: 10, src: "/IMG_2892.MOV" },
 ];
 
 const VideoCard = ({ src }: { src: string }) => {
