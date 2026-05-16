@@ -124,7 +124,7 @@ function WorkVideoCard({
   }, [isPlaying, onPause]);
 
   return (
-    <RevealItem className="glass-card rounded-2xl overflow-hidden group flex flex-col bg-black border border-white/10 transition-all duration-500 hover:border-primary/30 shadow-2xl mx-auto w-full">
+    <RevealItem className="glass-card rounded-2xl overflow-hidden group flex flex-col bg-black border border-white/10 transition-[border-color] duration-300 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] hover:border-primary/30 shadow-2xl mx-auto w-full">
       <div 
         ref={containerRef} 
         className="relative aspect-[9/16] md:h-[65vh] md:aspect-[9/16] mx-auto overflow-hidden bg-neutral-900 w-full flex items-center justify-center cursor-pointer"
@@ -138,19 +138,19 @@ function WorkVideoCard({
         <video 
           ref={videoRef}
           src={video.src} 
-          className={`w-full h-full object-contain transition-all duration-700 ${isHovered || isPlaying ? 'grayscale-0 scale-105' : 'grayscale'}`}
+          className={`w-full h-full object-contain transition-[filter,transform] duration-500 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] ${isHovered || isPlaying ? 'grayscale-0 scale-105' : 'grayscale'}`}
           loop
           muted={!isPlaying}
           autoPlay
           playsInline
           poster="/logo.jpg"
         />
-        <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 transition-opacity duration-500 ${isHovered || isPlaying ? 'opacity-30' : 'opacity-60'}`} />
+        <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 transition-[opacity] duration-300 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] ${isHovered || isPlaying ? 'opacity-30' : 'opacity-60'}`} />
         
         {/* Play indicator overlay */}
         {!isPlaying && (
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div className="h-16 w-16 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-300 scale-90 group-hover:scale-100 shadow-2xl">
+            <div className="h-16 w-16 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-[opacity,transform] duration-200 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] scale-95 group-hover:scale-100 shadow-2xl">
                <Icon name="videocam" className="h-8 w-8" />
             </div>
           </div>
@@ -252,7 +252,7 @@ export default function Works() {
           </ScrollReveal>
           
           <ScrollReveal delay={0.6} yOffset={20} scale={0.9}>
-            <a href="/contact" className="bg-primary-container text-on-primary-container px-12 py-5 rounded font-black text-xl uppercase tracking-tighter hover:scale-105 active:scale-95 transition-all shadow-xl shadow-primary/20 inline-flex items-center justify-center">
+            <a href="/contact" className="bg-primary-container text-on-primary-container px-12 py-5 rounded font-black text-xl uppercase tracking-tighter hover:scale-[1.02] active:scale-[0.97] transition-[transform] duration-[160ms] [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] shadow-xl shadow-primary/20 inline-flex items-center justify-center">
               Start Your Project
             </a>
           </ScrollReveal>

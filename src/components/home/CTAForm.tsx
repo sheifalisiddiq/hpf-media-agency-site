@@ -136,10 +136,10 @@ export default function CTAForm() {
 
               {error && <p className="text-red-500 text-[10px] font-bold uppercase tracking-tight">{error}</p>}
 
-              <button 
-                type="submit" 
+              <button
+                type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-primary hover:bg-red-500 text-black font-black py-5 rounded-lg uppercase tracking-[0.2em] text-sm transition-all duration-300 disabled:opacity-50"
+                className="w-full bg-primary hover:bg-red-500 active:scale-[0.97] disabled:active:scale-100 text-black font-black py-5 rounded-lg uppercase tracking-[0.2em] text-sm transition-[background-color,transform] duration-[150ms] [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] disabled:opacity-50"
               >
                 {isSubmitting ? "Sending..." : "Book Strategy Call"}
               </button>

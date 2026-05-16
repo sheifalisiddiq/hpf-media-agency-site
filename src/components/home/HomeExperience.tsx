@@ -88,11 +88,11 @@ export default function HomeExperience() {
             </div>
 
             <ScrollReveal delay={0.6} yOffset={20} className="flex flex-col gap-4 sm:flex-row">
-              <a href="/contact" className="bg-primary px-8 py-4 text-sm font-black uppercase tracking-[0.24em] text-black transition-transform duration-300 hover:scale-[1.03] inline-flex items-center justify-center">
+              <a href="/contact" className="bg-primary px-8 py-4 text-sm font-black uppercase tracking-[0.24em] text-black transition-[transform] duration-[160ms] [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] hover:scale-[1.02] active:scale-[0.97] inline-flex items-center justify-center">
                 Book Strategy Call
               </a>
 
-              <a href="#our-work" className="border border-white/15 px-8 py-4 text-sm font-black uppercase tracking-[0.24em] text-white transition-colors duration-300 hover:bg-white/5 inline-flex items-center justify-center">
+              <a href="/works" className="border border-white/15 px-8 py-4 text-sm font-black uppercase tracking-[0.24em] text-white transition-[background-color,transform] duration-[160ms] [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] hover:bg-white/5 active:scale-[0.97] inline-flex items-center justify-center">
                 See Our Work
               </a>
             </ScrollReveal>
@@ -161,16 +161,16 @@ export default function HomeExperience() {
                 {executionSteps.map((step, idx) => (
                   <RevealItem key={step.step} className="group relative flex flex-col items-center text-center">
                     {/* Circle Node */}
-                    <div className="relative mb-8 flex h-20 w-20 items-center justify-center rounded-full border border-white/10 bg-[#0a0a0a] shadow-2xl transition-all duration-500 group-hover:border-primary/40 group-hover:shadow-[0_0_30px_rgba(255,84,73,0.15)]">
+                    <div className="relative mb-8 flex h-20 w-20 items-center justify-center rounded-full border border-white/10 bg-[#0a0a0a] shadow-2xl transition-[border-color,box-shadow] duration-300 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] group-hover:border-primary/40 group-hover:shadow-[0_0_30px_rgba(255,84,73,0.15)]">
                       {/* Outer Rings */}
-                      <div className="absolute inset-[-4px] rounded-full border border-white/5 opacity-50 transition-all duration-500 group-hover:opacity-100" />
+                      <div className="absolute inset-[-4px] rounded-full border border-white/5 opacity-50 transition-[opacity] duration-300 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] group-hover:opacity-100" />
                       
                       {/* Step Badge */}
                       <div className="absolute -right-2 -top-2 flex h-7 w-7 items-center justify-center rounded-full bg-primary text-[10px] font-black text-black shadow-lg">
                         {step.step}
                       </div>
 
-                      <Icon name={step.icon} className="h-8 w-8 text-white/40 transition-colors duration-500 group-hover:text-primary" />
+                      <Icon name={step.icon} className="h-8 w-8 text-white/40 transition-colors duration-200 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] group-hover:text-primary" />
                     </div>
 
                     {/* Content */}
@@ -178,7 +178,7 @@ export default function HomeExperience() {
                       <h4 className="text-lg font-black uppercase tracking-tight text-white font-headline leading-tight">
                         {step.label}
                       </h4>
-                      <div className="mx-auto h-[1px] w-8 bg-primary/30 transition-all duration-500 group-hover:w-16 group-hover:bg-primary" />
+                      <div className="mx-auto h-[1px] w-8 bg-primary/30 transition-[width,background-color] duration-300 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] group-hover:w-16 group-hover:bg-primary" />
                       <p className="text-sm text-on-surface-variant leading-relaxed">
                         {step.desc}
                       </p>
@@ -200,7 +200,7 @@ export default function HomeExperience() {
             <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary mb-6">Experience the Results</p>
             <h2 className="text-4xl md:text-6xl font-black uppercase tracking-[-0.05em] text-white font-headline mb-8">Ready to see our <span className="text-primary">Impact?</span></h2>
             <p className="text-neutral-400 text-lg md:text-xl max-w-2xl mx-auto mb-12">Watch our curated showcase of high-performance content that has scaled UAE brands across social platforms.</p>
-            <a href="/works" className="group relative inline-flex items-center gap-3 bg-white/[0.05] border border-white/10 px-10 py-5 rounded-full text-white font-bold uppercase tracking-widest hover:bg-primary hover:text-black hover:border-primary transition-all duration-500 overflow-hidden">
+            <a href="/works" className="group relative inline-flex items-center gap-3 bg-white/[0.05] border border-white/10 px-10 py-5 rounded-full text-white font-bold uppercase tracking-widest hover:bg-primary hover:text-black hover:border-primary transition-[background-color,border-color,color,transform] duration-300 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] active:scale-[0.97] overflow-hidden">
               <span className="relative z-10">Explore Our Portfolio</span>
               <Icon name="trending_flat" className="relative z-10 h-5 w-5 transition-transform group-hover:translate-x-2" />
             </a>
@@ -216,7 +216,7 @@ export default function HomeExperience() {
                 key={service.title}
                 className={`${service.span} group relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-8 md:p-10`}
               >
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(255,84,73,0.14),transparent_48%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(255,84,73,0.14),transparent_48%)] opacity-0 transition-[opacity] duration-300 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] group-hover:opacity-100" />
                 <div className="relative space-y-8">
                   <Icon name={service.icon} className="h-10 w-10 text-primary" />
                   <div className="space-y-4">
