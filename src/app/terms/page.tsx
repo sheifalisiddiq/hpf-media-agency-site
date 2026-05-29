@@ -1,6 +1,20 @@
 import React from "react";
+import type { Metadata } from "next";
 import ScrollReveal from "@/components/ScrollReveal";
 import StaggerText from "@/components/StaggerText";
+
+export const metadata: Metadata = {
+  title: "Terms of Service",
+  description:
+    "HPF Media's terms of service for social media marketing, short-form video production, and digital strategy services in the UAE.",
+  alternates: {
+    canonical: "https://www.hpf-media.com/terms",
+  },
+  robots: {
+    index: false,
+    follow: true,
+  },
+};
 
 export default function TermsOfService() {
   return (

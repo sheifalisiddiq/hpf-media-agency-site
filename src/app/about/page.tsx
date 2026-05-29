@@ -91,37 +91,6 @@ const values = [
   },
 ];
 
-const faqs = [
-  {
-    q: "How long does it take to see results from social media marketing?",
-    a: "Most HPF Media clients start seeing stronger reach, better engagement, and clearer content direction within the first 30 to 60 days. Significant follower growth and consistent inbound leads typically develop over 60 to 90 days. Sustainable growth comes from consistent execution, not a single viral post — and we build systems designed for long-term compounding results.",
-  },
-  {
-    q: "Who does HPF Media work with?",
-    a: "We work with UAE business owners, SMEs, and personal brands that want to grow through Instagram and TikTok. That includes service businesses, personal brands, real estate, hospitality, food and beverage, retail, e-commerce, and any high-value offer with a defined UAE target audience.",
-  },
-  {
-    q: "Is the founder involved in client work?",
-    a: "Yes. Bilal leads the strategic direction behind every HPF Media client engagement. The messaging, positioning, and content execution are all guided by his direct involvement to ensure strategies stay aligned with real business goals.",
-  },
-  {
-    q: "What makes HPF Media different from other social media agencies in UAE?",
-    a: "Our focus is exclusively on short-form video content and organic growth for UAE businesses. We are not a generalist digital marketing agency that does social media on the side. Every service we offer, every hire we make, and every strategy we build is built around one specific outcome: organic social media growth for businesses competing in the UAE market.",
-  },
-  {
-    q: "What does working with HPF Media look like day to day?",
-    a: "After onboarding and strategy alignment, we operate largely independently on your behalf. We handle content planning, scripting, production, editing, and posting. You review content before it goes live and stay informed through regular performance reports. Most clients describe working with HPF Media as having a full creative and strategy team without the overhead.",
-  },
-  {
-    q: "Do you only work with UAE-based businesses?",
-    a: "HPF Media's expertise and focus is the UAE market — Dubai and Abu Dhabi specifically. While our strategies are built around UAE consumer behaviour and the UAE competitive landscape, we have supported businesses headquartered in the UAE with content for both local and international audiences.",
-  },
-  {
-    q: "Can HPF Media help with both Instagram and TikTok?",
-    a: "Yes. Instagram and TikTok are the two platforms we specialise in. We build integrated strategies that work across both platforms, adapting content for each platform's specific format requirements, algorithm preferences, and audience expectations.",
-  },
-];
-
 const aboutSchema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -141,15 +110,6 @@ const aboutSchema = {
           { "@type": "ListItem", position: 2, name: "About", item: "https://www.hpf-media.com/about" },
         ],
       },
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.hpf-media.com/about#faq",
-      mainEntity: faqs.map((faq) => ({
-        "@type": "Question",
-        name: faq.q,
-        acceptedAnswer: { "@type": "Answer", text: faq.a },
-      })),
     },
     {
       "@type": "Person",
@@ -192,7 +152,7 @@ export default function About() {
 
           <StaggerText
             tag="h1"
-            text="Growth Through Content."
+            text="About HPF Media — UAE Social Media Agency"
             className="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter text-on-surface leading-[0.9] mb-8 text-glow font-headline"
           />
 
@@ -439,36 +399,6 @@ export default function About() {
                   <p className="font-bold text-white uppercase tracking-wide text-sm mb-2 group-hover:text-primary transition-colors">{link.label}</p>
                   <p className="text-on-surface-variant text-sm leading-6">{link.desc}</p>
                 </a>
-              </RevealItem>
-            ))}
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* ─── FAQ ─── */}
-      <section
-        aria-label="Frequently asked questions"
-        className="relative overflow-hidden py-24 bg-transparent border-t border-white/5 text-on-surface px-6 md:px-10 lg:px-14"
-      >
-        <div className="relative z-10 max-w-4xl mx-auto">
-          <ScrollReveal className="mb-16">
-            <h2 className="text-4xl font-black tracking-tighter text-on-surface mb-4 font-headline">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-on-surface-variant font-light text-lg max-w-2xl">
-              Straight answers for UAE business owners considering short-form content growth with HPF Media.
-            </p>
-          </ScrollReveal>
-          <ScrollReveal isContainer staggerChildren={0.1} yOffset={20} className="space-y-3">
-            {faqs.map((faq, i) => (
-              <RevealItem key={i}>
-                <details className="group rounded-lg border border-white/5 bg-neutral-950 p-6 hover:border-primary/30 transition-all">
-                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4">
-                    <h3 className="text-lg font-bold text-on-surface group-hover:text-primary transition-colors">{faq.q}</h3>
-                    <Icon name="expand_more" className="h-5 w-5 text-primary flex-shrink-0 transition-transform duration-300 group-open:rotate-180" />
-                  </summary>
-                  <div className="mt-4 text-on-surface-variant font-light leading-relaxed">{faq.a}</div>
-                </details>
               </RevealItem>
             ))}
           </ScrollReveal>

@@ -1,6 +1,20 @@
 import React from "react";
+import type { Metadata } from "next";
 import ScrollReveal from "@/components/ScrollReveal";
 import StaggerText from "@/components/StaggerText";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description:
+    "HPF Media's privacy policy. Learn how we collect, use, and protect your personal data in compliance with UAE regulations.",
+  alternates: {
+    canonical: "https://www.hpf-media.com/privacy",
+  },
+  robots: {
+    index: false,
+    follow: true,
+  },
+};
 
 export default function PrivacyPolicy() {
   return (

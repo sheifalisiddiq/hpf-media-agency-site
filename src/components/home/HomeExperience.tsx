@@ -14,56 +14,56 @@ const services = [
     icon: "trending_up" as const,
     title: "Instagram Marketing UAE",
     description:
-      "We build complete Instagram growth strategies for UAE businesses — from profile optimisation and content calendars to Reels production and audience targeting. Every strategy is designed for the UAE consumer, with content that resonates locally and spreads organically across Dubai and Abu Dhabi markets.",
+      "Complete Instagram strategies for UAE businesses — from profile optimisation to Reels production and audience targeting built for Dubai and Abu Dhabi markets.",
     span: "lg:col-span-6",
   },
   {
     icon: "music_note" as const,
     title: "TikTok Marketing Dubai",
     description:
-      "TikTok is the most powerful organic reach platform available to UAE businesses right now. We create TikTok content strategies built around trending formats, platform-native hooks, and the Dubai market's specific audience behaviour to drive real follower growth and measurable brand awareness.",
+      "TikTok content strategies built around trending formats and the Dubai market's audience behaviour to drive real follower growth.",
     span: "lg:col-span-6",
   },
   {
     icon: "insights" as const,
     title: "Viral Content Strategy",
     description:
-      "We build the blueprint for unavoidable reach. No generic templates — just high-impact content strategy tailored for UAE SMEs. Our viral content frameworks identify what your target audience wants to see before they know they want it, and engineer content that forces them to stop and watch.",
+      "High-impact content strategy for UAE SMEs — identifying what your audience wants before they know it, engineered to make them stop and watch.",
     span: "lg:col-span-7",
   },
   {
     icon: "movie_filter" as const,
     title: "Short-Form Video Production",
     description:
-      "Professional short-form video content designed for mobile screens and social feeds. We handle scripting, filming, and editing to produce high-retention videos that keep audiences watching and sharing. Production quality that matches and exceeds the standards of premium UAE brands.",
+      "Professional scripting, filming, and editing producing high-retention short-form videos that keep UAE audiences watching and sharing.",
     span: "lg:col-span-5",
   },
   {
     icon: "show_chart" as const,
     title: "Organic Social Media Growth",
     description:
-      "Sustainable organic growth through content consistency, smart posting schedules, and audience engagement strategies. We grow your following with real UAE followers who become real customers — no bots, no shortcuts, no grey-area tactics that risk your account.",
+      "Real UAE follower growth through content consistency and engagement strategies — no bots, no shortcuts, no grey-area tactics.",
     span: "lg:col-span-5",
   },
   {
     icon: "auto_awesome" as const,
     title: "Content Systems",
     description:
-      "We build repeatable content production systems so your brand never runs out of ideas or falls off the posting schedule. From content pillars and scripting templates to filming batches and distribution pipelines — every part of your content engine runs on a repeatable, scalable system.",
+      "Repeatable content production systems — content pillars, scripting templates, and distribution pipelines — so your brand stays consistently active.",
     span: "lg:col-span-7",
   },
   {
     icon: "videocam" as const,
     title: "High-Retention Video Editing",
     description:
-      "Retention is the metric that matters most on Instagram and TikTok. We edit short-form videos specifically for strong watch time, pacing, and hook-to-close flow. Our editing style is built for the UAE viewer — fast, engaging, visually premium, and optimised for platform algorithms.",
+      "Short-form video editing optimised for watch time, retention, and hook-to-close flow — visually premium and built for UAE platform algorithms.",
     span: "lg:col-span-7",
   },
   {
     icon: "send" as const,
     title: "Social Media Management UAE",
     description:
-      "Full-service social media management for UAE businesses that want to stay active and consistent without managing it themselves. We handle posting, scheduling, captions, hashtag strategy, and performance reporting across Instagram and TikTok so you can focus on running your business.",
+      "Full-service posting, scheduling, captions, hashtag strategy, and performance reporting across Instagram and TikTok — so you focus on your business.",
     span: "lg:col-span-5",
   },
 ];
@@ -174,26 +174,6 @@ const faqs = [
     q: "Why is TikTok important for businesses in Dubai and UAE?",
     a: "TikTok has one of the highest organic reach rates of any social platform, meaning your content can reach thousands of potential customers without paid promotion. In the UAE, TikTok's user base is growing rapidly across both Arabic and English-speaking audiences. Businesses investing in TikTok marketing now are building a significant competitive advantage in the UAE market.",
   },
-  {
-    q: "How often should UAE businesses post on Instagram and TikTok?",
-    a: "For meaningful organic growth on Instagram, we recommend 4 to 6 Reels per week plus daily Stories. On TikTok, a minimum of 5 to 7 posts per week is needed to consistently reach new audiences. The key is quality combined with consistency — HPF Media builds content systems that make this sustainable for UAE business owners.",
-  },
-  {
-    q: "What industries benefit most from short-form content in UAE?",
-    a: "Short-form video content drives results across virtually every industry in the UAE. The highest-performing sectors include real estate, hospitality, food and beverage, retail, professional services, fitness, beauty, and e-commerce. Any UAE business with a defined target audience can use short-form content to build authority and generate inbound leads.",
-  },
-  {
-    q: "How long does organic social media growth take?",
-    a: "Most HPF Media clients start seeing meaningful improvements in reach and engagement within the first 30 to 60 days. Significant follower growth and consistent inbound leads typically develop over 60 to 90 days of strategic, high-quality content publishing. Organic social media growth is a compounding strategy — the longer you invest in it, the stronger the returns become.",
-  },
-  {
-    q: "Do you create content in both Arabic and English?",
-    a: "Yes. HPF Media understands the UAE's bilingual content environment. We create strategies that work across both Arabic and English-speaking audiences depending on your target market. Dubai and Abu Dhabi businesses often need content that resonates with the UAE's multicultural consumer base, and our content strategies are built to reflect that reality.",
-  },
-  {
-    q: "Can HPF Media help if I already have social media accounts?",
-    a: "Absolutely. Many clients come to us with existing Instagram or TikTok accounts that are not growing or performing as expected. We start with a content audit, identify what is working and what is not, and build a new strategic direction. Whether you are starting from zero or have an established presence, HPF Media builds a content system that delivers results.",
-  },
 ];
 
 export default function HomeExperience() {
@@ -291,7 +271,7 @@ export default function HomeExperience() {
             />
             <ScrollReveal delay={0.3}>
               <p className="max-w-2xl text-lg text-on-surface-variant">
-                We work with UAE businesses, startups, and personal brands that are serious about growing through strategic content on Instagram and TikTok. If your business competes in the Dubai or UAE market, we can help you take attention back from the competition.
+                UAE businesses, startups, and personal brands serious about growing on Instagram and TikTok.
               </p>
             </ScrollReveal>
           </div>
@@ -329,11 +309,6 @@ export default function HomeExperience() {
               text="Social Media Services for UAE Brands."
               className="text-4xl font-black uppercase tracking-[-0.06em] text-white md:text-5xl font-headline"
             />
-            <ScrollReveal delay={0.3}>
-              <p className="max-w-2xl text-lg text-on-surface-variant">
-                From Instagram marketing and TikTok growth to full-service social media management — every HPF Media service is designed to drive measurable organic growth for UAE businesses.
-              </p>
-            </ScrollReveal>
           </div>
 
           <ScrollReveal isContainer staggerChildren={0.15} scale={0.96} yOffset={30} className="grid gap-6 lg:grid-cols-12">
@@ -392,11 +367,6 @@ export default function HomeExperience() {
               text="The Content Creation Process."
               className="text-4xl font-black uppercase tracking-[-0.05em] text-white font-headline md:text-5xl"
             />
-            <ScrollReveal delay={0.3} className="mt-4">
-              <p className="max-w-2xl text-lg text-on-surface-variant">
-                Every HPF Media engagement follows a proven 5-step process — from business analysis and audience research through to viral scripting, professional filming, and ongoing publishing optimisation.
-              </p>
-            </ScrollReveal>
           </div>
 
           <div className="relative">
@@ -441,11 +411,6 @@ export default function HomeExperience() {
               text="Why Short-Form Content Dominates."
               className="text-4xl font-black uppercase tracking-[-0.06em] text-white md:text-5xl font-headline"
             />
-            <ScrollReveal delay={0.3}>
-              <p className="max-w-2xl text-lg text-on-surface-variant">
-                Short-form video is not a trend — it is the most effective organic marketing format in history for UAE businesses. Here is why every serious brand in Dubai and Abu Dhabi is investing in it.
-              </p>
-            </ScrollReveal>
           </div>
 
           <ScrollReveal isContainer staggerChildren={0.15} scale={0.96} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
@@ -462,19 +427,6 @@ export default function HomeExperience() {
             ))}
           </ScrollReveal>
 
-          <ScrollReveal className="max-w-4xl mx-auto rounded-[1.5rem] border border-white/10 bg-white/[0.02] p-8 md:p-10">
-            <h3 className="text-2xl font-black uppercase tracking-tight text-white font-headline mb-6">
-              Short-Form Content Drives Inbound Leads
-            </h3>
-            <div className="grid md:grid-cols-2 gap-6 text-on-surface-variant text-base leading-7">
-              <p>
-                Unlike paid advertising that stops the moment you stop spending, organic short-form content builds a compounding asset. Every video you publish continues working for your brand — reaching new audiences, generating profile visits, and driving inbound enquiries long after it was posted.
-              </p>
-              <p>
-                For UAE businesses competing in Dubai's densely competitive market, consistent short-form content presence is the clearest signal of authority. Buyers research brands on Instagram and TikTok before making decisions. If your competitors are showing up and you are not, you are losing deals before the conversation starts.
-              </p>
-            </div>
-          </ScrollReveal>
         </div>
       </section>
 
@@ -483,24 +435,16 @@ export default function HomeExperience() {
         aria-label="UAE market expertise"
         className="relative overflow-hidden bg-transparent px-6 py-24 text-on-surface md:px-10 lg:px-14 border-t border-white/5"
       >
-        <div className="relative z-10 mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="relative z-10 mx-auto max-w-7xl">
           <ScrollReveal>
             <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary mb-4">UAE First</p>
             <h2 className="text-4xl font-black uppercase tracking-tighter text-white font-headline mb-8 md:text-5xl leading-[0.95]">
               We Know the <span className="text-primary">UAE Market.</span>
             </h2>
-            <div className="space-y-6 text-on-surface-variant text-base leading-7">
-              <p>
-                UAE consumer behaviour on social media is distinct from Western markets. Dubai's audience is multicultural, highly mobile, and bilingual — consuming content in both Arabic and English across multiple platforms simultaneously.
-              </p>
-              <p>
-                We have built strategies specifically for this environment. We understand what content resonates with UAE consumers, what posting cadences work in this timezone, and how to position your brand in a market where competition from local and international players is intense.
-              </p>
-              <p>
-                From the luxury real estate sector in Downtown Dubai to F&amp;B brands in Dubai Marina, from e-commerce SMEs in Abu Dhabi to professional service firms in DIFC — HPF Media has developed a playbook for UAE organic growth that consistently delivers results.
-              </p>
-            </div>
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+            <p className="max-w-2xl text-base leading-7 text-on-surface-variant mb-8">
+              UAE consumer behaviour on social media is distinct from Western markets. Dubai's audience is multicultural, highly mobile, and bilingual — consuming content in both Arabic and English across multiple platforms simultaneously.
+            </p>
+            <div className="flex flex-col gap-4 sm:flex-row">
               <a
                 href="/about"
                 aria-label="Learn more about HPF Media's approach"
@@ -517,20 +461,6 @@ export default function HomeExperience() {
               </a>
             </div>
           </ScrollReveal>
-
-          <ScrollReveal yOffset={30} className="grid grid-cols-2 gap-4">
-            {[
-              { label: "Dubai", detail: "Primary market — full-service social media marketing for Dubai businesses across all industries." },
-              { label: "Abu Dhabi", detail: "UAE capital market served with tailored content strategies for Abu Dhabi's distinct audience." },
-              { label: "Arabic + English", detail: "Bilingual content strategies designed for the UAE's multicultural consumer environment." },
-              { label: "UAE SMEs", detail: "Specifically built for small and medium enterprises competing in the UAE's high-growth digital market." },
-            ].map((item) => (
-              <div key={item.label} className="rounded-[1.25rem] border border-white/10 bg-white/[0.02] p-6">
-                <p className="text-lg font-black text-white font-headline mb-2">{item.label}</p>
-                <p className="text-sm leading-6 text-on-surface-variant">{item.detail}</p>
-              </div>
-            ))}
-          </ScrollReveal>
         </div>
       </section>
 
@@ -546,9 +476,6 @@ export default function HomeExperience() {
             <h2 className="text-4xl md:text-6xl font-black uppercase tracking-[-0.05em] text-white font-headline mb-6">
               Built to <span className="text-primary">Perform.</span>
             </h2>
-            <p className="text-neutral-400 text-lg max-w-2xl mx-auto">
-              HPF Media content systems are built around one metric: measurable growth for UAE businesses. Reach, engagement, and inbound leads — not vanity numbers.
-            </p>
           </ScrollReveal>
 
           <ScrollReveal isContainer staggerChildren={0.15} className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
@@ -572,32 +499,6 @@ export default function HomeExperience() {
               </p>
               <p className="text-primary text-sm font-bold uppercase tracking-widest">UAE Business Owner</p>
             </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* ─── Portfolio CTA ─── */}
-      <section
-        aria-label="Portfolio showcase"
-        className="relative py-32 px-8 overflow-hidden bg-transparent border-b border-white/5"
-      >
-        <div className="relative z-10 max-w-5xl mx-auto text-center">
-          <ScrollReveal>
-            <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary mb-6">See the Work</p>
-            <h2 className="text-4xl md:text-6xl font-black uppercase tracking-[-0.05em] text-white font-headline mb-8">
-              Ready to See Our <span className="text-primary">Impact?</span>
-            </h2>
-            <p className="text-neutral-400 text-lg md:text-xl max-w-2xl mx-auto mb-12">
-              Watch our curated showcase of high-performance short-form content that has scaled UAE brands across Instagram and TikTok.
-            </p>
-            <a
-              href="/works"
-              aria-label="Explore HPF Media portfolio"
-              className="group relative inline-flex items-center gap-3 bg-white/[0.05] border border-white/10 px-10 py-5 rounded-full text-white font-bold uppercase tracking-widest hover:bg-primary hover:text-black hover:border-primary transition-[background-color,border-color,color,transform] duration-300 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] active:scale-[0.97] overflow-hidden"
-            >
-              <span className="relative z-10">Explore Our Portfolio</span>
-              <Icon name="trending_flat" className="relative z-10 h-5 w-5 transition-transform group-hover:translate-x-2" />
-            </a>
           </ScrollReveal>
         </div>
       </section>

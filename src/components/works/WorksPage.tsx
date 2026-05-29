@@ -182,7 +182,7 @@ export default function WorksPage() {
 
           <StaggerText
             tag="h1"
-            text="Short-Form Content for UAE Brands."
+            text="Our Work — UAE Social Media Case Studies"
             className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tighter font-headline mb-8 leading-[0.95] text-on-surface uppercase"
           />
 

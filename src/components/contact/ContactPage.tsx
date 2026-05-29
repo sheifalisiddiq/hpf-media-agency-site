@@ -55,7 +55,7 @@ export default function ContactPage() {
               </ScrollReveal>
               <StaggerText
                 tag="h1"
-                text="Work With Us."
+                text="Contact HPF Media"
                 className="text-4xl md:text-7xl font-black tracking-tighter leading-none text-white font-headline uppercase"
               />
             </div>

@@ -66,7 +66,10 @@ const StaggerText = memo(function StaggerText({
       ref={containerRef as any}
       className={`${className} leading-tight`}
       style={{ willChange: "transform, opacity" }}
-    />
+      suppressHydrationWarning
+    >
+      {text}
+    </Tag>
   );
 });
 
