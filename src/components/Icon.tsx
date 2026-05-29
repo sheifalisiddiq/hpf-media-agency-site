@@ -26,7 +26,27 @@ type IconName =
   | "volume_up"
   | "instagram"
   | "verified"
-  | "whatsapp";
+  | "whatsapp"
+  | "trending_up"
+  | "music_note"
+  | "show_chart"
+  | "storefront"
+  | "restaurant"
+  | "home_work"
+  | "person"
+  | "local_mall"
+  | "fitness_center"
+  | "visibility"
+  | "thumb_up"
+  | "groups"
+  | "speed"
+  | "psychology"
+  | "handshake"
+  | "person_search"
+  | "rocket_launch"
+  | "play_circle"
+  | "calendar_month"
+  | "info";
 
 
 
@@ -267,7 +287,206 @@ const iconMap: Record<IconName, ReactElement> = {
       fill="currentColor"
     />
   ),
-
+  trending_up: (
+    <path
+      d="M4 17l5-5 4 4 6-7m0 0h-4m4 0v4"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    />
+  ),
+  music_note: (
+    <path
+      d="M9 18V6l12-2v12M9 18a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm12-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    />
+  ),
+  show_chart: (
+    <path
+      d="M3 17l4-5 4 3 4-6 4 4M3 20h18"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    />
+  ),
+  storefront: (
+    <path
+      d="M4 6h16v2H4zm0 4h16v2H4zm0 4h16v2H4zm0 4h16v2H4z"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    />
+  ),
+  restaurant: (
+    <path
+      d="M12 3v8m0 0a4 4 0 0 1-4 4H6v6m0-6a4 4 0 0 0-4-4V3m14 0v6a4 4 0 0 1-4 4m4 0v8"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    />
+  ),
+  home_work: (
+    <path
+      d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9zm6 13V12h6v10"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    />
+  ),
+  person: (
+    <path
+      d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-8 9a8 8 0 1 1 16 0H4Z"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    />
+  ),
+  local_mall: (
+    <path
+      d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zm0 0h12m-6 6a4 4 0 0 1-4-4m8 4a4 4 0 0 1-4-4"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    />
+  ),
+  fitness_center: (
+    <path
+      d="M6 4h2v16H6zm10 0h2v16h-2zM3 9h2v6H3zm16 0h2v6h-2zM8 11h8v2H8z"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    />
+  ),
+  visibility: (
+    <path
+      d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8Zm11 3a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    />
+  ),
+  thumb_up: (
+    <path
+      d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14Zm-7 11H5a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h2v11Z"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    />
+  ),
+  groups: (
+    <path
+      d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2m8-10a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm8 2a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm3 8v-2a4 4 0 0 0-3-3.87"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    />
+  ),
+  speed: (
+    <path
+      d="M12 2a10 10 0 0 1 7.07 17.07L12 12m-9.07 7.07A10 10 0 0 1 12 2m0 0v10"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    />
+  ),
+  psychology: (
+    <path
+      d="M12 2a8 8 0 0 1 6.93 12l-1.93 3H7l-1.93-3A8 8 0 0 1 12 2Zm0 14v4m-2-2h4m-4-8a2 2 0 1 1 4 0c0 1-.5 1.5-1 2l-1 1"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    />
+  ),
+  handshake: (
+    <path
+      d="m8 12 2 2 4-4M3 7l5-4 4 3 4-3 5 4M3 7v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    />
+  ),
+  person_search: (
+    <path
+      d="M11 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-7 9a8 8 0 0 1 12.7-6.47M17 17l2.5 2.5M15.5 17a3.5 3.5 0 1 1 4.95 4.95A3.5 3.5 0 0 1 15.5 17Z"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    />
+  ),
+  rocket_launch: (
+    <path
+      d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09Zm8.5-5L9.5 8C11 4 16 3 19 3c0 3-1 8-5 9.5Z"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    />
+  ),
+  play_circle: (
+    <path
+      d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Zm-3-7V9l7 3.5L9 15Z"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    />
+  ),
+  calendar_month: (
+    <path
+      d="M8 2v3M16 2v3M3 8h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm3 11h.01M12 15h.01M16 15h.01M8 19h.01M12 19h.01M16 19h.01"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    />
+  ),
+  info: (
+    <path
+      d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Zm0-7v-4m0-4h.01"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+    />
+  ),
 };
 
 
