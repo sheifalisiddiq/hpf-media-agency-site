@@ -8,6 +8,7 @@ import StaggerText from "@/components/StaggerText";
 import Parallax from "@/components/Parallax";
 
 const CTAForm = dynamic(() => import("./CTAForm"), { ssr: false });
+const WorkShowcase = dynamic(() => import("./WorkShowcase"), { ssr: false });
 
 const services = [
   {
@@ -160,6 +161,41 @@ export default function HomeExperience() {
         </div>
       </section>
 
+      {/* ─── Problem Statement ─── */}
+      <section
+        aria-label="The problem we solve"
+        className="relative overflow-hidden bg-transparent px-6 py-24 text-on-surface md:px-10 lg:px-14 border-t border-white/5"
+      >
+        <div className="relative z-10 mx-auto max-w-5xl">
+          <ScrollReveal yOffset={10} className="mb-10">
+            <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary mb-6">Sound Familiar?</p>
+            <h2 className="text-4xl font-black uppercase tracking-[-0.06em] text-white md:text-5xl font-headline leading-[0.95] mb-8">
+              You're Posting.<br />Nobody's Watching.
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal isContainer staggerChildren={0.12} className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { icon: "visibility" as const, title: "Invisible on Social", body: "You post regularly but the algorithm buries you. No reach, no traction, no new customers from your content." },
+              { icon: "groups" as const, title: "Competitors Are Winning", body: "Businesses with worse products are getting all the attention because they have a better content strategy." },
+              { icon: "bolt" as const, title: "Content With No ROI", body: "You're spending time and money on content that generates zero leads, zero enquiries, and zero sales." },
+            ].map((item) => (
+              <RevealItem key={item.title} className="rounded-[1.5rem] border border-white/10 bg-white/[0.02] p-8">
+                <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-lg bg-red-600/10 text-primary">
+                  <Icon name={item.icon} className="h-6 w-6" />
+                </div>
+                <h3 className="text-base font-black uppercase tracking-tight text-white mb-3 font-headline">{item.title}</h3>
+                <p className="text-sm leading-6 text-on-surface-variant">{item.body}</p>
+              </RevealItem>
+            ))}
+          </ScrollReveal>
+          <ScrollReveal delay={0.4} className="mt-12 max-w-2xl">
+            <p className="text-lg text-on-surface-variant leading-8">
+              HPF Media fixes this. We build a full content engine — strategy, scripting, editing, and posting cadence — built specifically for UAE businesses that want to dominate Instagram and TikTok through organic content.
+            </p>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* ─── Who We Help ─── */}
       <section
         aria-label="Who we help"
@@ -258,6 +294,44 @@ export default function HomeExperience() {
         </div>
       </section>
 
+      {/* ─── Process ─── */}
+      <section
+        aria-label="How we work"
+        className="relative overflow-hidden bg-transparent px-6 py-24 text-on-surface md:px-10 lg:px-14 border-t border-white/5"
+      >
+        <div className="relative z-10 mx-auto max-w-7xl">
+          <div className="mb-16 max-w-3xl space-y-5">
+            <ScrollReveal yOffset={10}>
+              <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary">How It Works</p>
+            </ScrollReveal>
+            <StaggerText
+              tag="h2"
+              text="From Zero to Viral. In 5 Steps."
+              className="text-4xl font-black uppercase tracking-[-0.06em] text-white md:text-5xl font-headline"
+            />
+          </div>
+          <div className="relative">
+            <div className="hidden lg:block absolute top-8 left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+            <ScrollReveal isContainer staggerChildren={0.12} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+              {[
+                { step: "01", icon: "search" as const, title: "Discovery", body: "We analyse your business, audience, and competitors to understand exactly what will make your content stand out." },
+                { step: "02", icon: "insights" as const, title: "Strategy", body: "Full content strategy — platform, format, posting cadence, messaging pillars, and content angles built for UAE audiences." },
+                { step: "03", icon: "description" as const, title: "Scripting", body: "We write scroll-stopping scripts using proven viral hooks and formats tested on UAE platforms." },
+                { step: "04", icon: "videocam" as const, title: "Production", body: "You record short clips following our scripts and direction. We handle everything else — editing, graphics, captions." },
+                { step: "05", icon: "rocket_launch" as const, title: "Delivery", body: "Content published on schedule. Monthly performance reporting. Strategy refined each cycle based on what's working." },
+              ].map((item) => (
+                <RevealItem key={item.step} className="relative rounded-[1.5rem] border border-white/10 bg-white/[0.02] p-8">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-primary/60 mb-4">{item.step}</p>
+                  <Icon name={item.icon} className="h-8 w-8 text-primary mb-5" />
+                  <h3 className="text-base font-black uppercase tracking-tight text-white mb-3 font-headline">{item.title}</h3>
+                  <p className="text-sm leading-6 text-on-surface-variant">{item.body}</p>
+                </RevealItem>
+              ))}
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
       {/* ─── Results / Social Proof ─── */}
       <section
         aria-label="Results and social proof"
@@ -295,6 +369,21 @@ export default function HomeExperience() {
             </div>
           </ScrollReveal>
         </div>
+      </section>
+
+      <WorkShowcase />
+
+      {/* ─── View All Work CTA ─── */}
+      <section className="py-12 px-6 bg-transparent text-center border-b border-white/5">
+        <ScrollReveal>
+          <a
+            href="/works"
+            aria-label="View the full HPF Media portfolio"
+            className="inline-flex items-center gap-3 border border-white/15 px-10 py-4 text-sm font-black uppercase tracking-[0.24em] text-white hover:bg-white/5 transition-colors duration-200"
+          >
+            View Full Portfolio <Icon name="trending_flat" className="h-4 w-4" />
+          </a>
+        </ScrollReveal>
       </section>
 
       <CTAForm />
