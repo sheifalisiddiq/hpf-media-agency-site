@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     template: "%s | HPF Media",
   },
   description:
-    "HPF Media is a social media marketing agency in UAE specialising in Instagram marketing, TikTok marketing, short-form video production, and organic social media growth for Dubai businesses and UAE SMEs.",
+    "HPF Media is a social media marketing agency in UAE. Instagram marketing, TikTok marketing, and short-form content for businesses across the UAE.",
   authors: [{ name: "HPF Media", url: "https://www.hpf-media.com" }],
   creator: "HPF Media",
   publisher: "HPF Media",
@@ -87,7 +87,7 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": ["Organization", "LocalBusiness"],
+      "@type": ["Organization", "LocalBusiness", "ProfessionalService"],
       "@id": "https://www.hpf-media.com/#organization",
       name: "HPF Media",
       alternateName: ["HPF Media Agency", "HPF Media UAE", "HPF Media Dubai"],
@@ -101,7 +101,7 @@ const organizationSchema = {
       },
       image: { "@id": "https://www.hpf-media.com/#logo" },
       description:
-        "HPF Media is a social media marketing agency in UAE specialising in Instagram marketing, TikTok marketing, short-form video production, and organic social media growth for Dubai businesses and UAE SMEs.",
+        "HPF Media is a social media marketing agency in UAE. Instagram marketing, TikTok marketing, and short-form content for businesses across the UAE.",
       email: "admin@hpf-media.com",
       telephone: "+971-50-941-8430",
       contactPoint: [
@@ -129,6 +129,10 @@ const organizationSchema = {
         { "@type": "City", name: "Dubai" },
         { "@type": "City", name: "Abu Dhabi" },
         { "@type": "City", name: "Sharjah" },
+        { "@type": "City", name: "Ajman" },
+        { "@type": "City", name: "Ras Al Khaimah" },
+        { "@type": "City", name: "Fujairah" },
+        { "@type": "City", name: "Umm Al Quwain" },
         { "@type": "Country", name: "United Arab Emirates" },
       ],
       sameAs: ["https://www.instagram.com/hpfmedia"],
@@ -155,7 +159,7 @@ const organizationSchema = {
               "@type": "Service",
               name: "Instagram Marketing UAE",
               description:
-                "Complete Instagram growth strategy, Reels production, and audience targeting for UAE businesses in Dubai and Abu Dhabi.",
+                "Complete Instagram growth strategy, Reels production, and audience targeting for UAE businesses.",
             },
           },
           {

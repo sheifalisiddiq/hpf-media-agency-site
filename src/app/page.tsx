@@ -5,7 +5,7 @@ import JsonLd from "@/components/JsonLd";
 export const metadata: Metadata = {
   title: "Social Media Marketing Agency in UAE | HPF Media",
   description:
-    "HPF Media is a social media marketing agency in UAE specialising in Instagram marketing, TikTok marketing, and short-form content creation for Dubai businesses and UAE SMEs. Book a strategy call.",
+    "HPF Media grows UAE businesses on Instagram and TikTok with short-form content. Social media marketing agency in Dubai. Book a free call.",
   alternates: {
     canonical: "https://www.hpf-media.com",
   },

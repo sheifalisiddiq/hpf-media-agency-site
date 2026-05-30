@@ -14,56 +14,56 @@ const services = [
     icon: "trending_up" as const,
     title: "Instagram Marketing UAE",
     description:
-      "Complete Instagram strategies for UAE businesses — from profile optimisation to Reels production and audience targeting built for Dubai and Abu Dhabi markets.",
+      "Full Instagram strategy for UAE businesses. Profile setup, Reels, and audience targeting.",
     span: "lg:col-span-6",
   },
   {
     icon: "music_note" as const,
     title: "TikTok Marketing Dubai",
     description:
-      "TikTok content strategies built around trending formats and the Dubai market's audience behaviour to drive real follower growth.",
+      "TikTok content built for UAE audience behaviour. Trending formats that drive real follower growth.",
     span: "lg:col-span-6",
   },
   {
     icon: "insights" as const,
     title: "Viral Content Strategy",
     description:
-      "High-impact content strategy for UAE SMEs — identifying what your audience wants before they know it, engineered to make them stop and watch.",
+      "Content strategy for UAE SMEs. We find what your audience wants — then make them stop and watch.",
     span: "lg:col-span-7",
   },
   {
     icon: "movie_filter" as const,
     title: "Short-Form Video Production",
     description:
-      "Professional scripting, filming, and editing producing high-retention short-form videos that keep UAE audiences watching and sharing.",
+      "Scripting, filming, and editing for UAE audiences. High-retention videos built to be shared.",
     span: "lg:col-span-5",
   },
   {
     icon: "show_chart" as const,
     title: "Organic Social Media Growth",
     description:
-      "Real UAE follower growth through content consistency and engagement strategies — no bots, no shortcuts, no grey-area tactics.",
+      "Real UAE follower growth through consistent content and engagement. No bots or shortcuts.",
     span: "lg:col-span-5",
   },
   {
     icon: "auto_awesome" as const,
     title: "Content Systems",
     description:
-      "Repeatable content production systems — content pillars, scripting templates, and distribution pipelines — so your brand stays consistently active.",
+      "Content pillars, scripting templates, and distribution pipelines. Your brand stays consistently active.",
     span: "lg:col-span-7",
   },
   {
     icon: "videocam" as const,
     title: "High-Retention Video Editing",
     description:
-      "Short-form video editing optimised for watch time, retention, and hook-to-close flow — visually premium and built for UAE platform algorithms.",
+      "Video editing built for UAE platform algorithms. Optimised for watch time and retention.",
     span: "lg:col-span-7",
   },
   {
     icon: "send" as const,
     title: "Social Media Management UAE",
     description:
-      "Full-service posting, scheduling, captions, hashtag strategy, and performance reporting across Instagram and TikTok — so you focus on your business.",
+      "Full-service posting, captions, hashtags, and reporting on Instagram and TikTok. You focus on business.",
     span: "lg:col-span-5",
   },
 ];
@@ -132,32 +132,32 @@ const clientTypes = [
   {
     icon: "storefront" as const,
     label: "UAE SMEs",
-    desc: "Small and medium businesses in Dubai and Abu Dhabi looking to build brand awareness and generate inbound leads through organic social content.",
+    desc: "Small and medium businesses across UAE. Brand awareness and leads through organic social content.",
   },
   {
     icon: "restaurant" as const,
     label: "F&B & Hospitality",
-    desc: "Restaurants, cafes, hotels, and hospitality brands needing consistent, appetite-driving content to stay visible in Dubai's competitive market.",
+    desc: "Restaurants, cafes, and hotels needing consistent content to stay visible across the UAE.",
   },
   {
     icon: "home_work" as const,
     label: "Real Estate",
-    desc: "Property developers, agencies, and brokers using short-form video to showcase listings and build authority in the UAE property market.",
+    desc: "Property developers and brokers using short-form video to showcase listings across the UAE.",
   },
   {
     icon: "person" as const,
     label: "Personal Brands",
-    desc: "Founders, consultants, and executives building their personal brand to become a recognized voice in their industry across the UAE.",
+    desc: "Founders and consultants building their personal brand in the UAE.",
   },
   {
     icon: "local_mall" as const,
     label: "Retail & E-commerce",
-    desc: "Product brands and online stores using organic video to drive product discovery, build trust, and convert social followers into buyers.",
+    desc: "Product brands using organic video to build trust and convert followers into buyers.",
   },
   {
     icon: "fitness_center" as const,
     label: "Health & Wellness",
-    desc: "Gyms, coaches, clinics, and wellness brands using short-form content to showcase expertise and attract health-conscious UAE consumers.",
+    desc: "Gyms, clinics, and wellness brands using short-form content to attract health-conscious UAE customers.",
   },
 ];
 
@@ -191,7 +191,7 @@ export default function HomeExperience() {
 
               <ScrollReveal delay={0.4} duration={1.2}>
                 <p className="max-w-xl text-base leading-7 text-on-surface-variant md:text-lg">
-                  We grow UAE businesses on Instagram and TikTok through strategic short-form content, viral scripting, and organic lead generation systems built for the Dubai and UAE market.
+                  We grow UAE businesses on Instagram and TikTok. Strategic short-form content. Organic reach built for the UAE market.
                 </p>
               </ScrollReveal>
             </div>
@@ -251,7 +251,7 @@ export default function HomeExperience() {
             </ScrollReveal>
             <StaggerText
               tag="h2"
-              text="Who HPF Media Works With."
+              text="UAE Businesses We Help Grow on Social Media."
               className="text-4xl font-black uppercase tracking-[-0.06em] text-white md:text-5xl font-headline"
             />
             <ScrollReveal delay={0.3}>
@@ -349,7 +349,7 @@ export default function HomeExperience() {
             </ScrollReveal>
             <StaggerText
               tag="h2"
-              text="The Content Creation Process."
+              text="How We Build Your UAE Content Strategy."
               className="text-4xl font-black uppercase tracking-[-0.05em] text-white font-headline md:text-5xl"
             />
           </div>
@@ -467,7 +467,7 @@ export default function HomeExperience() {
             {[
               { stat: "5M+", label: "Organic Views Delivered", detail: "Across UAE client campaigns on Instagram and TikTok" },
               { stat: "90 Days", label: "Average Result Timeline", detail: "From strategy kickoff to visible organic growth for most clients" },
-              { stat: "UAE-First", label: "Content Strategy", detail: "All strategies built specifically for the Dubai and UAE market — not adapted from generic global templates" },
+              { stat: "UAE-First", label: "Content Strategy", detail: "All strategies built specifically for the UAE market — not adapted from generic global templates" },
             ].map((item) => (
               <RevealItem key={item.label} className="rounded-[1.5rem] border border-white/10 bg-white/[0.02] p-8 text-center">
                 <p className="text-4xl font-black text-primary font-headline mb-2">{item.stat}</p>

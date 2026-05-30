@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About HPF Media — Social Media Marketing Agency Dubai UAE",
     description:
-      "Meet HPF Media — a Dubai-based social media agency built on strategic short-form content, UAE market expertise, and organic growth systems for businesses in Dubai and Abu Dhabi.",
+      "Meet HPF Media — a Dubai-based social media agency built on strategic short-form content, UAE market expertise, and organic growth systems for businesses across the UAE.",
     url: "https://www.hpf-media.com/about",
     type: "website",
   },
@@ -190,7 +190,7 @@ export default function About() {
           <ScrollReveal>
             <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary mb-4">The Mission</p>
             <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-white mb-8 uppercase font-headline">
-              Why HPF Media Exists.
+              Why HPF Media — UAE Social Media Marketing.
             </h2>
             <div className="space-y-5 text-on-surface-variant text-base leading-7">
               <p>
@@ -340,14 +340,14 @@ export default function About() {
           <ScrollReveal className="mb-12 max-w-3xl">
             <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary mb-4">Local Knowledge</p>
             <h2 className="text-4xl font-black tracking-tighter text-white mb-6 uppercase font-headline md:text-5xl">
-              UAE Market Understanding
+              Instagram &amp; TikTok Strategy for the UAE Market
             </h2>
           </ScrollReveal>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
             <ScrollReveal className="space-y-5 text-on-surface-variant text-base leading-7">
               <p>
-                Social media strategy in the UAE is not the same as social media strategy in the UK, US, or Australia. Dubai and Abu Dhabi consumers have distinct behaviours, platform preferences, content expectations, and purchasing decision patterns. A strategy built for a Western market will underperform here.
+                Social media strategy in the UAE is not the same as in the UK, US, or Australia. UAE consumers have distinct behaviours, platform preferences, and content expectations. A strategy built for a Western market will underperform here.
               </p>
               <p>
                 HPF Media's entire playbook is built around the UAE market. We understand the Arabic and English content split, the peak engagement windows in the UAE timezone, the industries and topics that resonate with Dubai audiences, and the competitive landscape that UAE businesses operate in.
