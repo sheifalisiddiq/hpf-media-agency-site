@@ -1,7 +1,7 @@
 import React from "react";
 import type { ReactElement, SVGProps } from "react";
 
-type IconName =
+export type IconName =
   | "architecture"
   | "movie_filter"
   | "diamond"

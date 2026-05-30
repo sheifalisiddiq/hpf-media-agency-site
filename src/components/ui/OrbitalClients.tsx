@@ -1,10 +1,10 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
-import Icon from "@/components/Icon";
+import Icon, { type IconName } from "@/components/Icon";
 
 interface OrbitalItem {
   id: number;
-  icon: string;
+  icon: IconName;
   label: string;
   desc: string;
 }
