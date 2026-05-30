@@ -182,7 +182,7 @@ export default function WorksPage() {
 
           <StaggerText
             tag="h1"
-            text="Our Work — UAE Social Media Case Studies"
+            text="Our Work"
             className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tighter font-headline mb-8 leading-[0.95] text-on-surface uppercase"
           />
 
@@ -242,41 +242,12 @@ export default function WorksPage() {
         </div>
       </section>
 
-      {/* ─── Content Context ─── */}
+      {/* ─── Internal Links ─── */}
       <section
         aria-label="About our work"
         className="relative py-16 px-6 md:px-10 lg:px-14 bg-transparent text-on-surface border-t border-white/5"
       >
         <div className="max-w-5xl mx-auto">
-          <ScrollReveal className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-12">
-            <div>
-              <h2 className="text-3xl font-black uppercase tracking-tight text-white font-headline mb-6">
-                How We Produce Content for UAE Brands
-              </h2>
-              <div className="space-y-4 text-neutral-400 text-base leading-7">
-                <p>
-                  Every video follows our full production process — business analysis, audience research, viral scripting, professional filming, and high-retention editing for Reels and TikTok.
-                </p>
-                <p>
-                  We produce content that performs because it's built on strategy, not guesswork. Platform-specific techniques consistently deliver above-average organic reach for our clients.
-                </p>
-              </div>
-            </div>
-            <div className="grid grid-cols-2 gap-4 h-fit">
-              {[
-                { label: "Strategy-Led", detail: "Every video starts with a clear strategic objective tied to your business goals." },
-                { label: "UAE-Optimised", detail: "Content produced for the specific preferences and behaviours of the UAE social media audience." },
-                { label: "Platform-Native", detail: "Edited for Instagram Reels and TikTok algorithm requirements — not adapted from other formats." },
-                { label: "Results-Focused", detail: "We measure success by organic reach, engagement, and inbound leads — not vanity metrics." },
-              ].map((item) => (
-                <div key={item.label} className="rounded-xl border border-white/10 bg-white/[0.02] p-5">
-                  <p className="text-sm font-bold text-primary uppercase tracking-wide mb-2">{item.label}</p>
-                  <p className="text-xs leading-5 text-neutral-500">{item.detail}</p>
-                </div>
-              ))}
-            </div>
-          </ScrollReveal>
-
           {/* Internal Links */}
           <ScrollReveal isContainer staggerChildren={0.1} className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {[
