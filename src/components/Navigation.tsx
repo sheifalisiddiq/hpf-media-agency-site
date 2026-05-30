@@ -10,7 +10,6 @@ import Icon from "./Icon";
 
 const links = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
   { name: "Services", href: "/services" },
   { name: "Our Works", href: "/works" },
   { name: "Contact", href: "/contact" },

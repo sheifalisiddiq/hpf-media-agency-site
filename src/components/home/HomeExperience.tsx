@@ -199,36 +199,23 @@ export default function HomeExperience() {
       {/* ─── Who We Help ─── */}
       <section
         aria-label="Who we help"
-        className="relative overflow-hidden bg-transparent px-6 py-24 text-on-surface md:px-10 lg:px-14 border-t border-white/5"
+        className="relative overflow-hidden bg-transparent px-6 py-14 text-on-surface md:px-10 lg:px-14 border-t border-white/5"
       >
         <div className="relative z-10 mx-auto max-w-7xl">
-          <div className="mb-16 max-w-3xl space-y-5">
-            <ScrollReveal yOffset={10}>
-              <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary">Built for UAE Businesses</p>
-            </ScrollReveal>
-            <StaggerText
-              tag="h2"
-              text="UAE Businesses We Help Grow on Social Media."
-              className="text-4xl font-black uppercase tracking-[-0.06em] text-white md:text-5xl font-headline"
-            />
-            <ScrollReveal delay={0.3}>
-              <p className="max-w-2xl text-lg text-on-surface-variant">
-                UAE businesses, startups, and personal brands serious about growing on Instagram and TikTok.
-              </p>
-            </ScrollReveal>
-          </div>
-
-          <ScrollReveal isContainer staggerChildren={0.1} scale={0.96} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <ScrollReveal yOffset={10} className="mb-8">
+            <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary mb-3">Built for UAE Businesses</p>
+            <h2 className="text-2xl font-black uppercase tracking-[-0.06em] text-white font-headline">Who We Work With</h2>
+          </ScrollReveal>
+          <ScrollReveal isContainer staggerChildren={0.07} scale={0.97} className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
             {clientTypes.map((type) => (
               <RevealItem
                 key={type.label}
-                className="group rounded-[1.5rem] border border-white/10 bg-white/[0.02] p-8 hover:border-primary/30 hover:bg-white/[0.04] transition-all duration-300"
+                className="group rounded-xl border border-white/10 bg-white/[0.02] p-4 hover:border-primary/30 hover:bg-white/[0.04] transition-all duration-200 text-center"
               >
-                <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-lg bg-red-600/10 text-primary group-hover:bg-primary group-hover:text-black transition-colors duration-300">
-                  <Icon name={type.icon} className="h-6 w-6" />
+                <div className="mb-3 mx-auto flex h-9 w-9 items-center justify-center rounded-lg bg-red-600/10 text-primary group-hover:bg-primary group-hover:text-black transition-colors duration-200">
+                  <Icon name={type.icon} className="h-5 w-5" />
                 </div>
-                <h3 className="text-lg font-black uppercase tracking-tight text-white mb-3 font-headline">{type.label}</h3>
-                <p className="text-sm leading-6 text-on-surface-variant">{type.desc}</p>
+                <h3 className="text-xs font-black uppercase tracking-tight text-white font-headline leading-tight">{type.label}</h3>
               </RevealItem>
             ))}
           </ScrollReveal>
@@ -239,56 +226,38 @@ export default function HomeExperience() {
       <section
         id="services"
         aria-label="Our services"
-        className="relative overflow-hidden bg-transparent px-6 py-24 text-on-surface md:px-10 lg:px-14 border-t border-white/5"
+        className="relative overflow-hidden bg-transparent px-6 py-14 text-on-surface md:px-10 lg:px-14 border-t border-white/5"
       >
         <div className="relative z-10 mx-auto max-w-7xl">
-          <div className="mb-16 max-w-3xl space-y-5">
-            <ScrollReveal yOffset={10}>
-              <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary">What We Do</p>
-            </ScrollReveal>
-            <StaggerText
-              tag="h2"
-              text="Social Media Services for UAE Brands."
-              className="text-4xl font-black uppercase tracking-[-0.06em] text-white md:text-5xl font-headline"
-            />
-          </div>
+          <ScrollReveal yOffset={10} className="mb-8">
+            <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary mb-3">What We Do</p>
+            <h2 className="text-2xl font-black uppercase tracking-[-0.06em] text-white font-headline">Social Media Services for UAE Brands</h2>
+          </ScrollReveal>
 
-          <ScrollReveal isContainer staggerChildren={0.15} scale={0.96} yOffset={30} className="grid gap-6 lg:grid-cols-12">
+          <ScrollReveal isContainer staggerChildren={0.08} scale={0.97} className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
             {services.map((service) => (
               <RevealItem
                 key={service.title}
-                className={`${service.span} group relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-8 md:p-10`}
+                className="group relative overflow-hidden rounded-xl border border-white/10 bg-white/[0.03] p-4 hover:border-primary/30 hover:bg-white/[0.05] transition-all duration-200"
               >
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(255,84,73,0.14),transparent_48%)] opacity-0 transition-[opacity] duration-300 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] group-hover:opacity-100" />
-                <div className="relative space-y-6">
-                  <Icon name={service.icon} className="h-10 w-10 text-primary" />
-                  <div className="space-y-4">
-                    <h3 className="text-2xl font-black uppercase tracking-[-0.05em] text-white font-headline">
-                      {service.title}
-                    </h3>
-                    <p className="max-w-lg text-base leading-7 text-on-surface-variant">
-                      {service.description}
-                    </p>
-                  </div>
-                  <a
-                    href="/services"
-                    aria-label={`Learn more about ${service.title}`}
-                    className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-primary group-hover:translate-x-2 transition-transform"
-                  >
-                    Learn More <Icon name="trending_flat" className="h-4 w-4" />
-                  </a>
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(255,84,73,0.1),transparent_60%)] opacity-0 transition-[opacity] duration-200 group-hover:opacity-100" />
+                <div className="relative">
+                  <Icon name={service.icon} className="h-7 w-7 text-primary mb-3" />
+                  <h3 className="text-xs font-black uppercase tracking-tight text-white font-headline leading-tight">
+                    {service.title}
+                  </h3>
                 </div>
               </RevealItem>
             ))}
           </ScrollReveal>
 
-          <ScrollReveal delay={0.4} className="mt-10 text-center">
+          <ScrollReveal delay={0.3} className="mt-6">
             <a
-              href="/services"
-              aria-label="View all HPF Media social media services"
+              href="/works"
+              aria-label="View HPF Media portfolio and work"
               className="inline-flex items-center gap-3 border border-white/15 px-8 py-4 text-sm font-black uppercase tracking-[0.24em] text-white hover:bg-white/5 transition-colors duration-200"
             >
-              View All Services <Icon name="trending_flat" className="h-4 w-4" />
+              See Our Work <Icon name="trending_flat" className="h-4 w-4" />
             </a>
           </ScrollReveal>
         </div>
@@ -297,38 +266,30 @@ export default function HomeExperience() {
       {/* ─── Process ─── */}
       <section
         aria-label="How we work"
-        className="relative overflow-hidden bg-transparent px-6 py-24 text-on-surface md:px-10 lg:px-14 border-t border-white/5"
+        className="relative overflow-hidden bg-transparent px-6 py-14 text-on-surface md:px-10 lg:px-14 border-t border-white/5"
       >
         <div className="relative z-10 mx-auto max-w-7xl">
-          <div className="mb-16 max-w-3xl space-y-5">
-            <ScrollReveal yOffset={10}>
-              <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary">How It Works</p>
-            </ScrollReveal>
-            <StaggerText
-              tag="h2"
-              text="From Zero to Viral. In 5 Steps."
-              className="text-4xl font-black uppercase tracking-[-0.06em] text-white md:text-5xl font-headline"
-            />
-          </div>
-          <div className="relative">
-            <div className="hidden lg:block absolute top-8 left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-            <ScrollReveal isContainer staggerChildren={0.12} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-              {[
-                { step: "01", icon: "search" as const, title: "Discovery", body: "We analyse your business, audience, and competitors to understand exactly what will make your content stand out." },
-                { step: "02", icon: "insights" as const, title: "Strategy", body: "Full content strategy — platform, format, posting cadence, messaging pillars, and content angles built for UAE audiences." },
-                { step: "03", icon: "description" as const, title: "Scripting", body: "We write scroll-stopping scripts using proven viral hooks and formats tested on UAE platforms." },
-                { step: "04", icon: "videocam" as const, title: "Production", body: "You record short clips following our scripts and direction. We handle everything else — editing, graphics, captions." },
-                { step: "05", icon: "rocket_launch" as const, title: "Delivery", body: "Content published on schedule. Monthly performance reporting. Strategy refined each cycle based on what's working." },
-              ].map((item) => (
-                <RevealItem key={item.step} className="relative rounded-[1.5rem] border border-white/10 bg-white/[0.02] p-8">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-primary/60 mb-4">{item.step}</p>
-                  <Icon name={item.icon} className="h-8 w-8 text-primary mb-5" />
-                  <h3 className="text-base font-black uppercase tracking-tight text-white mb-3 font-headline">{item.title}</h3>
-                  <p className="text-sm leading-6 text-on-surface-variant">{item.body}</p>
-                </RevealItem>
-              ))}
-            </ScrollReveal>
-          </div>
+          <ScrollReveal yOffset={10} className="mb-8">
+            <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary mb-3">How We Work</p>
+            <h2 className="text-2xl font-black uppercase tracking-[-0.06em] text-white font-headline">How We Build Your UAE Content Strategy</h2>
+          </ScrollReveal>
+          <ScrollReveal isContainer staggerChildren={0.08} className="grid grid-cols-1 sm:grid-cols-5 border border-white/10 rounded-2xl overflow-hidden">
+            {[
+              { num: "01", label: "Business Analysis" },
+              { num: "02", label: "Audience Research" },
+              { num: "03", label: "Viral Scripting" },
+              { num: "04", label: "Premium Filming" },
+              { num: "05", label: "Publish & Optimise" },
+            ].map((step) => (
+              <RevealItem
+                key={step.num}
+                className="p-6 border-b sm:border-b-0 sm:border-r border-white/10 last:border-0 bg-white/[0.02] hover:bg-white/[0.04] transition-colors duration-200"
+              >
+                <p className="text-sm font-black tracking-[0.25em] text-primary mb-3">{step.num}</p>
+                <h3 className="text-sm font-black uppercase tracking-tight text-white font-headline leading-tight">{step.label}</h3>
+              </RevealItem>
+            ))}
+          </ScrollReveal>
         </div>
       </section>
 
