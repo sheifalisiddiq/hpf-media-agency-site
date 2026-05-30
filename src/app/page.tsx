@@ -51,36 +51,6 @@ const homeSchema = {
         cssSelector: ["h1", "h2"],
       },
     },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.hpf-media.com/#faq",
-      mainEntity: [
-        {
-          "@type": "Question",
-          name: "What does a social media marketing agency do?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "A social media marketing agency manages your brand's presence on platforms like Instagram and TikTok. This includes content strategy, scripting, video production, editing, posting, and performance optimisation. HPF Media specifically focuses on short-form video content for UAE businesses, helping you build organic reach, engagement, and inbound leads without paid advertising.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How much does social media marketing cost in UAE?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Social media marketing packages in the UAE typically range from AED 3,000 to AED 20,000+ per month depending on scope, number of platforms, and content volume. HPF Media offers tailored packages designed for UAE SMEs and growing businesses. Book a strategy call to discuss your specific goals and receive an accurate quote.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Why is TikTok important for businesses in Dubai and UAE?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "TikTok has one of the highest organic reach rates of any social platform, meaning your content can reach thousands of potential customers without paid promotion. In the UAE, TikTok's user base is growing rapidly across both Arabic and English-speaking audiences. Businesses investing in TikTok marketing now are building a significant competitive advantage in the UAE market.",
-          },
-        },
-      ],
-    },
   ],
 };
 

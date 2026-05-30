@@ -5,6 +5,7 @@ import ScrollReveal, { RevealItem } from "@/components/ScrollReveal";
 import StaggerText from "@/components/StaggerText";
 import Parallax from "@/components/Parallax";
 import JsonLd from "@/components/JsonLd";
+import ServicesFaqAccordion from "@/components/ServicesFaqAccordion";
 
 export const metadata: Metadata = {
   title: "Social Media Marketing Services UAE — Instagram & TikTok Agency | HPF Media",
@@ -422,18 +423,8 @@ export default function Services() {
             </p>
           </ScrollReveal>
 
-          <ScrollReveal isContainer staggerChildren={0.08} yOffset={20} className="space-y-3">
-            {serviceFaqs.map((faq, i) => (
-              <RevealItem key={i}>
-                <details className="group rounded-lg border border-white/5 bg-neutral-950 p-6 hover:border-primary/30 transition-all">
-                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4">
-                    <h3 className="text-lg font-bold text-on-surface group-hover:text-primary transition-colors">{faq.q}</h3>
-                    <Icon name="expand_more" className="h-5 w-5 text-primary flex-shrink-0 transition-transform duration-300 group-open:rotate-180" />
-                  </summary>
-                  <div className="mt-4 text-on-surface-variant font-light leading-relaxed text-base">{faq.a}</div>
-                </details>
-              </RevealItem>
-            ))}
+          <ScrollReveal yOffset={20}>
+            <ServicesFaqAccordion faqs={serviceFaqs} />
           </ScrollReveal>
         </div>
       </section>

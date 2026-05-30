@@ -161,21 +161,6 @@ const clientTypes = [
   },
 ];
 
-const faqs = [
-  {
-    q: "What does a social media marketing agency do?",
-    a: "A social media marketing agency manages your brand's presence on platforms like Instagram and TikTok. This includes content strategy, scripting, video production, editing, posting, and performance optimisation. HPF Media specifically focuses on short-form video content for UAE businesses, helping you build organic reach, engagement, and inbound leads without paid advertising.",
-  },
-  {
-    q: "How much does social media marketing cost in UAE?",
-    a: "Social media marketing packages in the UAE typically range from AED 3,000 to AED 20,000+ per month depending on scope, number of platforms, and content volume. HPF Media offers tailored packages designed for UAE SMEs and growing businesses. Book a strategy call to discuss your specific goals and receive an accurate quote.",
-  },
-  {
-    q: "Why is TikTok important for businesses in Dubai and UAE?",
-    a: "TikTok has one of the highest organic reach rates of any social platform, meaning your content can reach thousands of potential customers without paid promotion. In the UAE, TikTok's user base is growing rapidly across both Arabic and English-speaking audiences. Businesses investing in TikTok marketing now are building a significant competitive advantage in the UAE market.",
-  },
-];
-
 export default function HomeExperience() {
   return (
     <>
@@ -442,7 +427,7 @@ export default function HomeExperience() {
               We Know the <span className="text-primary">UAE Market.</span>
             </h2>
             <p className="max-w-2xl text-base leading-7 text-on-surface-variant mb-8">
-              UAE consumer behaviour on social media is distinct from Western markets. Dubai's audience is multicultural, highly mobile, and bilingual — consuming content in both Arabic and English across multiple platforms simultaneously.
+              Dubai's audience is multicultural, bilingual, and among the most active on Instagram and TikTok globally. We build content for that market — not adapted from Western playbooks.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
               <a
@@ -499,41 +484,6 @@ export default function HomeExperience() {
               </p>
               <p className="text-primary text-sm font-bold uppercase tracking-widest">UAE Business Owner</p>
             </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* ─── FAQ ─── */}
-      <section
-        id="faq"
-        aria-label="Frequently asked questions"
-        className="relative overflow-hidden py-24 bg-transparent border-t border-white/5 text-on-surface px-6 md:px-10 lg:px-14"
-      >
-        <div className="relative z-10 max-w-4xl mx-auto">
-          <ScrollReveal className="mb-16">
-            <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary mb-4">Common Questions</p>
-            <h2 className="text-4xl font-black tracking-tighter text-on-surface mb-4 font-headline md:text-5xl">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-on-surface-variant font-light text-lg max-w-2xl">
-              Straight answers about social media marketing in UAE, TikTok for business, Instagram growth strategy, and working with HPF Media.
-            </p>
-          </ScrollReveal>
-
-          <ScrollReveal isContainer staggerChildren={0.08} yOffset={20} className="space-y-3">
-            {faqs.map((faq, i) => (
-              <RevealItem key={i}>
-                <details className="group rounded-lg border border-white/5 bg-neutral-950 p-6 hover:border-primary/30 transition-all">
-                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4">
-                    <h3 className="text-lg font-bold text-on-surface group-hover:text-primary transition-colors">{faq.q}</h3>
-                    <Icon name="expand_more" className="h-5 w-5 text-primary flex-shrink-0 transition-transform duration-300 group-open:rotate-180" />
-                  </summary>
-                  <div className="mt-4 text-on-surface-variant font-light leading-relaxed text-base">
-                    {faq.a}
-                  </div>
-                </details>
-              </RevealItem>
-            ))}
           </ScrollReveal>
         </div>
       </section>
