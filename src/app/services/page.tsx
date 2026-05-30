@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Icon from "@/components/Icon";
 import ScrollReveal, { RevealItem } from "@/components/ScrollReveal";
 import StaggerText from "@/components/StaggerText";
-import Parallax from "@/components/Parallax";
 import JsonLd from "@/components/JsonLd";
 import ServicesFaqAccordion from "@/components/ServicesFaqAccordion";
 
@@ -34,72 +32,36 @@ const serviceDetails = [
     icon: "trending_up" as const,
     title: "Instagram Marketing UAE",
     shortDesc: "Instagram growth strategy and Reels production for UAE businesses.",
-    fullDesc: [
-      "We manage your full Instagram presence — content calendar, Reels production, and audience targeting for the UAE market.",
-      "Content built for UAE audiences, optimised for reach and inbound leads.",
-    ],
-    results: "Consistent Reels reach growth, increased profile visits, stronger audience engagement",
-    span: "md:col-span-7",
   },
   {
     id: "viral-content-strategy",
     icon: "insights" as const,
     title: "Viral Content Strategy",
     shortDesc: "Content strategy built for organic reach in the UAE market.",
-    fullDesc: [
-      "We research your UAE audience and build a content roadmap — formats, topics, and hooks that drive real engagement.",
-      "Platform data and UAE-specific audience insights inform every decision.",
-    ],
-    results: "Structured content plan, consistent brand messaging, scalable content production",
-    span: "md:col-span-5",
   },
   {
     id: "short-form-video-production",
     icon: "movie_filter" as const,
     title: "Short-Form Video Production UAE",
     shortDesc: "Scripting, filming, and editing for UAE Instagram Reels.",
-    fullDesc: [
-      "Complete short-form video production — script to final edit, built for high retention on Instagram Reels.",
-      "Every video opens with a strong hook, holds attention, and ends with a clear next step.",
-    ],
-    results: "High-retention videos, consistent visual identity, content library for ongoing publishing",
-    span: "md:col-span-7",
   },
   {
     id: "organic-social-media-growth",
     icon: "show_chart" as const,
     title: "Organic Social Media Growth UAE",
     shortDesc: "Sustainable follower and engagement growth on Instagram for UAE businesses.",
-    fullDesc: [
-      "We build organic growth systems through consistent content, optimal posting frequency, and community engagement.",
-      "No bots. No shortcuts. Real UAE followers who convert.",
-    ],
-    results: "Real follower growth, improved engagement rate, growing inbound enquiries",
-    span: "md:col-span-6",
   },
   {
     id: "content-systems",
     icon: "auto_awesome" as const,
     title: "Content Systems",
     shortDesc: "Repeatable content production systems for UAE brands.",
-    fullDesc: [
-      "We build the pillars, templates, and workflows that let you publish consistently without burning out.",
-      "Batch filming schedules, content calendars, and approval workflows — designed around how your business runs.",
-    ],
-    results: "Sustainable content schedule, reduced production friction, consistent brand output",
-    span: "md:col-span-6",
   },
   {
     id: "social-media-management",
     icon: "send" as const,
     title: "Social Media Management UAE",
     shortDesc: "Full Instagram management — content, posting, and reporting for UAE businesses.",
-    fullDesc: [
-      "We take ownership of your Instagram — strategy, production, posting, and monthly performance reports.",
-      "You focus on your business. We build your digital presence.",
-    ],
-    results: "Fully managed social presence, regular performance reporting, consistent brand output",
-    span: "md:col-span-5",
   },
 ];
 
@@ -246,10 +208,7 @@ export default function Services() {
       >
         <div className="relative z-10 max-w-screen-xl mx-auto">
           <ScrollReveal className="flex flex-col mb-12 lg:mb-16">
-            <h2 className="text-3xl lg:text-4xl font-headline font-bold mb-4 uppercase tracking-tight">Instagram &amp; TikTok Services for UAE Brands</h2>
-            <p className="text-on-surface-variant text-lg max-w-2xl mb-4">
-              Every HPF Media service is built around one outcome: organic growth that turns into real revenue for UAE businesses.
-            </p>
+            <h2 className="text-3xl lg:text-4xl font-headline font-bold mb-6 uppercase tracking-tight">What We Do</h2>
             <div className="w-24 h-1 bg-red-600"></div>
           </ScrollReveal>
 
@@ -267,93 +226,11 @@ export default function Services() {
                 </div>
                 <div className="flex-grow">
                   <h3 className="text-2xl md:text-3xl font-headline font-bold mb-3 uppercase tracking-tight">{service.title}</h3>
-                  <p className="text-primary text-sm font-bold uppercase tracking-wider mb-5">{service.shortDesc}</p>
-                  <div className="space-y-4 text-neutral-400 text-base leading-7">
-                    {service.fullDesc.map((para, i) => (
-                      <p key={i}>{para}</p>
-                    ))}
-                  </div>
-                  <div className="mt-6 inline-flex items-center gap-2 text-sm text-white/50 bg-white/[0.03] border border-white/10 rounded-full px-4 py-2">
-                    <Icon name="check_circle" className="h-4 w-4 text-primary" />
-                    <span className="font-medium">{service.results}</span>
-                  </div>
+                  <p className="text-primary text-sm font-bold uppercase tracking-wider">{service.shortDesc}</p>
                 </div>
               </RevealItem>
             ))}
           </ScrollReveal>
-        </div>
-      </section>
-
-      {/* ─── The HPF Edge ─── */}
-      <section
-        aria-label="Why choose HPF Media"
-        className="relative py-24 px-8 mx-auto bg-transparent text-on-surface overflow-hidden border-t border-white/5"
-      >
-        <div className="relative z-10 max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          <ScrollReveal>
-            <h2 className="text-5xl font-headline font-bold mb-8 leading-tight uppercase tracking-tighter">
-              Why UAE Businesses Choose <span className="text-primary">HPF Media</span>
-            </h2>
-            <p className="text-on-surface-variant text-lg mb-8 leading-relaxed">
-              HPF Media focuses on short-form video performance for the UAE market. No generic social media management. Every strategy is built specifically for UAE businesses.
-            </p>
-            <div className="space-y-8">
-              {[
-                {
-                  icon: "pinch" as const,
-                  title: "UAE Market Expertise",
-                  desc: "Deep understanding of what UAE consumers want — bilingual content, culturally relevant topics, and platform-specific formats that resonate with the multicultural UAE audience.",
-                },
-                {
-                  icon: "bolt" as const,
-                  title: "Speed Without Compromise",
-                  desc: "We deliver high-quality short-form content quickly so UAE businesses start seeing organic growth in weeks, not months. Our production systems are built for velocity without sacrificing visual quality.",
-                },
-                {
-                  icon: "auto_awesome" as const,
-                  title: "Performance-First Standards",
-                  desc: "Every piece of content we produce is evaluated against one question: will this perform? Professional production, retention-focused editing, and strategic distribution combine to maximise every video's reach.",
-                },
-                {
-                  icon: "insights" as const,
-                  title: "Strategy Before Execution",
-                  desc: "We never produce content without a clear strategic foundation. Every video, caption, and posting decision is informed by audience data, platform research, and your business goals.",
-                },
-              ].map((edge, idx) => (
-                <div key={idx} className="flex gap-6">
-                  <div className="flex-shrink-0 w-12 h-12 bg-black border border-primary/20 flex items-center justify-center rounded-lg">
-                    <Icon name={edge.icon} className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-headline font-bold text-lg mb-2 uppercase tracking-wide">{edge.title}</h3>
-                    <p className="text-neutral-400 font-light leading-relaxed">{edge.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </ScrollReveal>
-
-          <Parallax speed={1.1} className="relative h-[600px] rounded-lg overflow-hidden glass-card p-4">
-            <ScrollReveal scale={1.1} rotateX={5} className="h-full w-full relative">
-              <Image
-                fill
-                className="object-cover rounded-lg opacity-80"
-                alt="Dubai skyline — HPF Media social media marketing agency serves Dubai and UAE businesses"
-                src="/services-hero.png"
-                sizes="(min-width: 768px) 50vw, 100vw"
-                quality={64}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
-              <div className="absolute bottom-10 left-10 right-10">
-                <ScrollReveal delay={0.6} yOffset={20} scale={0.8}>
-                  <div className="bg-[#0a0a0a] p-6 rounded-lg border border-primary/30 shadow-2xl">
-                    <p className="font-headline font-bold text-xl italic leading-relaxed">"They handle everything. I just focus on my business while the leads come in."</p>
-                    <p className="text-primary mt-2 text-sm font-bold uppercase tracking-widest">— UAE Business Owner</p>
-                  </div>
-                </ScrollReveal>
-              </div>
-            </ScrollReveal>
-          </Parallax>
         </div>
       </section>
 

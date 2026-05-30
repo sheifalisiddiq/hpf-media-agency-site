@@ -27,24 +27,6 @@ export const metadata: Metadata = {
   },
 };
 
-const pillars = [
-  {
-    icon: "architecture" as const,
-    title: "Strategy First",
-    desc: "We never produce content without a clear strategic foundation. Every post, script, and campaign is built around your specific business goals, audience, and the competitive landscape of the UAE market.",
-  },
-  {
-    icon: "movie_filter" as const,
-    title: "Attention Engineering",
-    desc: "From scripting to editing, we create short-form videos engineered to stop the scroll, hold attention, and guide viewers toward action. Content is won or lost in the first 3 seconds — we design for that reality.",
-  },
-  {
-    icon: "diamond" as const,
-    title: "Measurable Growth",
-    desc: "We prioritise actual reach, engagement, and inbound leads over vanity metrics. Every HPF Media engagement is tracked against real business outcomes — not follower counts and impressions.",
-  },
-];
-
 const processSteps = [
   {
     num: "01",
@@ -152,7 +134,7 @@ export default function About() {
 
           <StaggerText
             tag="h1"
-            text="About HPF Media — UAE Social Media Agency"
+            text="Built for UAE Business Owners."
             className="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter text-on-surface leading-[0.9] mb-8 text-glow font-headline"
           />
 
@@ -186,8 +168,8 @@ export default function About() {
         aria-label="Our mission and vision"
         className="relative py-24 lg:py-32 bg-transparent overflow-hidden border-t border-white/5 px-6 md:px-10 lg:px-14"
       >
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <ScrollReveal>
+        <div className="max-w-7xl mx-auto">
+          <ScrollReveal className="max-w-3xl">
             <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary mb-4">The Mission</p>
             <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-white mb-8 uppercase font-headline">
               Why HPF Media — UAE Social Media Marketing.
@@ -204,53 +186,36 @@ export default function About() {
               </p>
             </div>
           </ScrollReveal>
-
-          <ScrollReveal yOffset={30} className="grid grid-cols-2 gap-4">
-            {[
-              { label: "Dubai-Based", detail: "Founded and operating in Dubai, UAE. Deep understanding of the local market and consumer behaviour." },
-              { label: "Short-Form First", detail: "Our entire agency is built around short-form video content — the highest-performing format on Instagram and TikTok." },
-              { label: "UAE SME Focus", detail: "Our services, pricing, and strategies are built specifically for UAE small and medium businesses." },
-              { label: "Organic Only", detail: "We specialise in organic content growth — not paid advertising. Sustainable, compounding results without ongoing ad spend." },
-            ].map((item) => (
-              <div key={item.label} className="rounded-[1.25rem] border border-white/10 bg-white/[0.02] p-6">
-                <p className="text-lg font-black text-white font-headline mb-2">{item.label}</p>
-                <p className="text-sm leading-6 text-on-surface-variant">{item.detail}</p>
-              </div>
-            ))}
-          </ScrollReveal>
         </div>
       </section>
 
-      {/* ─── Core Pillars ─── */}
+      {/* ─── How We Work ─── */}
       <section
-        aria-label="Core pillars"
+        aria-label="How we work"
         className="relative py-24 lg:py-32 bg-transparent overflow-hidden border-t border-white/5 px-6 md:px-10 lg:px-14"
       >
-        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-red-600/[0.02] blur-[120px] rounded-full pointer-events-none"></div>
-        <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-red-900/[0.02] blur-[120px] rounded-full pointer-events-none"></div>
-
         <div className="max-w-6xl mx-auto relative z-10">
-          <ScrollReveal className="mb-16 text-center max-w-3xl mx-auto">
-            <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary mb-4">What We Stand For</p>
-            <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-white mb-6 uppercase font-headline">
-              Our Content Philosophy
+          <ScrollReveal className="mb-16 max-w-3xl">
+            <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary mb-4">How We Work</p>
+            <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-white uppercase font-headline">
+              How We Build Your UAE Content Strategy.
             </h2>
-            <p className="text-white/70 font-light text-lg">
-              Clear strategy, strong execution, and short-form content built to perform in the UAE market — these are the principles behind every HPF Media engagement.
-            </p>
           </ScrollReveal>
 
-          <ScrollReveal isContainer staggerChildren={0.15} scale={0.96} className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-            {pillars.map((pillar) => (
+          <ScrollReveal isContainer staggerChildren={0.1} className="grid grid-cols-1 sm:grid-cols-5 border border-white/10 rounded-2xl overflow-hidden">
+            {[
+              { num: "01", label: "Business Analysis" },
+              { num: "02", label: "Audience Research" },
+              { num: "03", label: "Viral Scripting" },
+              { num: "04", label: "Premium Filming" },
+              { num: "05", label: "Publish & Optimise" },
+            ].map((step) => (
               <RevealItem
-                key={pillar.title}
-                className="group relative p-8 md:p-10 bg-white/[0.03] backdrop-blur-xl rounded-2xl border border-white/10 transition-all duration-300 hover:bg-white/[0.06] hover:border-white/20 shadow-2xl"
+                key={step.num}
+                className="p-8 border-b sm:border-b-0 sm:border-r border-white/10 last:border-0 bg-white/[0.02] hover:bg-white/[0.04] transition-colors duration-200"
               >
-                <div className="mb-8 flex items-center justify-center w-12 h-12 rounded-lg bg-red-600/10 text-primary group-hover:bg-primary group-hover:text-black transition-colors duration-300">
-                  <Icon name={pillar.icon} className="h-7 w-7" />
-                </div>
-                <h3 className="text-xl md:text-2xl font-semibold text-white mb-4 font-headline">{pillar.title}</h3>
-                <p className="text-white/70 font-light leading-relaxed">{pillar.desc}</p>
+                <p className="text-sm font-black tracking-[0.25em] text-primary mb-4">{step.num}</p>
+                <h3 className="text-base font-black uppercase tracking-tight text-white font-headline leading-tight">{step.label}</h3>
               </RevealItem>
             ))}
           </ScrollReveal>
@@ -328,49 +293,6 @@ export default function About() {
               </RevealItem>
             ))}
           </ScrollReveal>
-        </div>
-      </section>
-
-      {/* ─── UAE Expertise ─── */}
-      <section
-        aria-label="UAE market expertise"
-        className="relative overflow-hidden bg-transparent px-6 py-24 text-on-surface md:px-10 lg:px-14 border-t border-white/5"
-      >
-        <div className="relative z-10 mx-auto max-w-7xl">
-          <ScrollReveal className="mb-12 max-w-3xl">
-            <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary mb-4">Local Knowledge</p>
-            <h2 className="text-4xl font-black tracking-tighter text-white mb-6 uppercase font-headline md:text-5xl">
-              Instagram &amp; TikTok Strategy for the UAE Market
-            </h2>
-          </ScrollReveal>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-            <ScrollReveal className="space-y-5 text-on-surface-variant text-base leading-7">
-              <p>
-                Social media strategy in the UAE is not the same as in the UK, US, or Australia. UAE consumers have distinct behaviours, platform preferences, and content expectations. A strategy built for a Western market will underperform here.
-              </p>
-              <p>
-                Our playbook is built around this market specifically. We understand the Arabic/English content split, peak engagement windows, what resonates with Dubai audiences, and the competitive landscape here.
-              </p>
-              <p>
-                The UAE has among the world's highest social media penetration rates, with Dubai regularly ranking among the most active cities. For businesses willing to invest in strategic content, the organic reach potential here exceeds most global markets.
-              </p>
-            </ScrollReveal>
-
-            <ScrollReveal yOffset={30} className="grid grid-cols-2 gap-4 h-fit">
-              {[
-                { label: "High Social Media Penetration", detail: "UAE has among the world's highest rates of social media usage, creating significant organic reach opportunities for local businesses." },
-                { label: "Bilingual Content Market", detail: "Effective UAE content strategy accounts for both Arabic and English-speaking audiences — often within the same campaign." },
-                { label: "Mobile-First Audience", detail: "UAE consumers are among the world's most mobile-first — short-form vertical video is the dominant content format." },
-                { label: "Premium Brand Expectations", detail: "Dubai consumers expect premium production quality from brands they trust — low-quality content actively damages brand credibility in this market." },
-              ].map((item) => (
-                <div key={item.label} className="rounded-[1.25rem] border border-white/10 bg-white/[0.02] p-6">
-                  <p className="text-sm font-bold text-primary uppercase tracking-wide mb-2">{item.label}</p>
-                  <p className="text-xs leading-5 text-on-surface-variant">{item.detail}</p>
-                </div>
-              ))}
-            </ScrollReveal>
-          </div>
         </div>
       </section>
 

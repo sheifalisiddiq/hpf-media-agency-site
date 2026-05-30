@@ -48,38 +48,6 @@ const services = [
   },
 ];
 
-const executionSteps = [
-  {
-    icon: "search" as const,
-    step: "01",
-    label: "Business Analysis",
-    desc: "Deep-dive into your offer, audience, and competitive landscape in the UAE market to identify the highest-leverage content opportunities.",
-  },
-  {
-    icon: "person_search" as const,
-    step: "02",
-    label: "Audience Research",
-    desc: "Identify exactly who your UAE buyers are, what platforms they use, and what content makes them stop scrolling and take action.",
-  },
-  {
-    icon: "description" as const,
-    step: "03",
-    label: "Viral Scripting",
-    desc: "We write scripts engineered to hook viewers in the first 3 seconds, hold their attention, and guide them to take the next step.",
-  },
-  {
-    icon: "videocam" as const,
-    step: "04",
-    label: "Premium Filming",
-    desc: "High-quality production built for mobile-first audiences and social platform formats — shot and framed for maximum visual impact.",
-  },
-  {
-    icon: "send" as const,
-    step: "05",
-    label: "Publish & Optimise",
-    desc: "Strategic content distribution with optimal timing, hashtag research, captions, and ongoing performance tracking to maximise reach.",
-  },
-];
 
 const clientTypes = [
   {
@@ -286,83 +254,6 @@ export default function HomeExperience() {
             >
               View All Services <Icon name="trending_flat" className="h-4 w-4" />
             </a>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* ─── Process ─── */}
-      <section
-        aria-label="Our process"
-        className="relative overflow-hidden bg-transparent px-6 py-24 text-on-surface md:px-10 lg:px-14 border-t border-white/5"
-      >
-        <div className="relative z-10 mx-auto max-w-7xl">
-          <div className="mb-16 border-l border-primary pl-6">
-            <ScrollReveal yOffset={10}>
-              <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary mb-2">How We Work</p>
-            </ScrollReveal>
-            <StaggerText
-              tag="h2"
-              text="How We Build Your UAE Content Strategy."
-              className="text-4xl font-black uppercase tracking-[-0.05em] text-white font-headline md:text-5xl"
-            />
-          </div>
-
-          <div className="relative">
-            <div className="absolute top-[40px] left-0 hidden h-[1px] w-full bg-gradient-to-r from-transparent via-white/10 to-transparent lg:block" />
-            <ScrollReveal isContainer staggerChildren={0.15} scale={1} className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-5 lg:gap-4">
-              {executionSteps.map((step) => (
-                <RevealItem key={step.step} className="group relative flex flex-col items-center text-center">
-                  <div className="relative mb-8 flex h-20 w-20 items-center justify-center rounded-full border border-white/10 bg-[#0a0a0a] shadow-2xl transition-[border-color,box-shadow] duration-300 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] group-hover:border-primary/40 group-hover:shadow-[0_0_30px_rgba(255,84,73,0.15)]">
-                    <div className="absolute inset-[-4px] rounded-full border border-white/5 opacity-50 transition-[opacity] duration-300 group-hover:opacity-100" />
-                    <div className="absolute -right-2 -top-2 flex h-7 w-7 items-center justify-center rounded-full bg-primary text-[10px] font-black text-black shadow-lg">
-                      {step.step}
-                    </div>
-                    <Icon name={step.icon} className="h-8 w-8 text-white/40 transition-colors duration-200 group-hover:text-primary" />
-                  </div>
-                  <div className="max-w-[200px] space-y-3">
-                    <h3 className="text-lg font-black uppercase tracking-tight text-white font-headline leading-tight">
-                      {step.label}
-                    </h3>
-                    <div className="mx-auto h-[1px] w-8 bg-primary/30 transition-[width,background-color] duration-300 group-hover:w-16 group-hover:bg-primary" />
-                    <p className="text-sm text-on-surface-variant leading-relaxed">{step.desc}</p>
-                  </div>
-                </RevealItem>
-              ))}
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── UAE Market Expertise ─── */}
-      <section
-        aria-label="UAE market expertise"
-        className="relative overflow-hidden bg-transparent px-6 py-24 text-on-surface md:px-10 lg:px-14 border-t border-white/5"
-      >
-        <div className="relative z-10 mx-auto max-w-7xl">
-          <ScrollReveal>
-            <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary mb-4">UAE First</p>
-            <h2 className="text-4xl font-black uppercase tracking-tighter text-white font-headline mb-8 md:text-5xl leading-[0.95]">
-              We Know the <span className="text-primary">UAE Market.</span>
-            </h2>
-            <p className="max-w-2xl text-base leading-7 text-on-surface-variant mb-8">
-              Dubai's audience is multicultural, bilingual, and among the most active on Instagram and TikTok globally. We build content for that market — not adapted from Western playbooks.
-            </p>
-            <div className="flex flex-col gap-4 sm:flex-row">
-              <a
-                href="/about"
-                aria-label="Learn more about HPF Media's approach"
-                className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-primary hover:translate-x-1 transition-transform"
-              >
-                Our Story <Icon name="trending_flat" className="h-4 w-4" />
-              </a>
-              <a
-                href="/contact"
-                aria-label="Book a strategy call with HPF Media"
-                className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-white/60 hover:text-white transition-colors"
-              >
-                Book a Call <Icon name="trending_flat" className="h-4 w-4" />
-              </a>
-            </div>
           </ScrollReveal>
         </div>
       </section>
