@@ -6,6 +6,7 @@ import Icon from "@/components/Icon";
 import ScrollReveal, { RevealItem } from "@/components/ScrollReveal";
 import StaggerText from "@/components/StaggerText";
 import Parallax from "@/components/Parallax";
+import OrbitalClients from "@/components/ui/OrbitalClients";
 
 const CTAForm = dynamic(() => import("./CTAForm"), { ssr: false });
 
@@ -205,18 +206,15 @@ export default function HomeExperience() {
             <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary mb-3">Built for UAE Businesses</p>
             <h2 className="text-2xl font-black uppercase tracking-[-0.06em] text-white font-headline">Who We Work With</h2>
           </ScrollReveal>
-          <ScrollReveal isContainer staggerChildren={0.07} scale={0.97} className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-            {clientTypes.map((type) => (
-              <RevealItem
-                key={type.label}
-                className="group rounded-xl border border-white/10 bg-white/[0.02] p-4 hover:border-primary/30 hover:bg-white/[0.04] transition-all duration-200 text-center"
-              >
-                <div className="mb-3 mx-auto flex h-9 w-9 items-center justify-center rounded-lg bg-red-600/10 text-primary group-hover:bg-primary group-hover:text-black transition-colors duration-200">
-                  <Icon name={type.icon} className="h-5 w-5" />
-                </div>
-                <h3 className="text-xs font-black uppercase tracking-tight text-white font-headline leading-tight">{type.label}</h3>
-              </RevealItem>
-            ))}
+          <ScrollReveal yOffset={20} delay={0.1}>
+            <OrbitalClients
+              items={clientTypes.map((t, i) => ({
+                id: i + 1,
+                icon: t.icon,
+                label: t.label,
+                desc: t.desc,
+              }))}
+            />
           </ScrollReveal>
         </div>
       </section>
