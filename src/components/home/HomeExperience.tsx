@@ -185,14 +185,14 @@ export default function HomeExperience() {
 
               <StaggerText
                 tag="h1"
-                text="Social Media Marketing Agency in UAE"
+                text="Content That Works."
                 className="max-w-4xl text-4xl font-black uppercase leading-[0.9] tracking-[-0.06em] text-white sm:text-5xl md:text-6xl lg:text-7xl font-headline"
               />
 
               <ScrollReveal delay={0.4} duration={1.2}>
-                <p className="max-w-xl text-base leading-7 text-on-surface-variant md:text-lg">
-                  We grow UAE businesses on Instagram and TikTok. Strategic short-form content. Organic reach built for the UAE market.
-                </p>
+                <h2 className="max-w-xl text-base leading-7 text-on-surface-variant md:text-lg font-normal">
+                  Social media marketing for UAE businesses on Instagram and TikTok.
+                </h2>
               </ScrollReveal>
             </div>
 

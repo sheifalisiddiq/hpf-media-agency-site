@@ -3,23 +3,23 @@ import WorksPage from "@/components/works/WorksPage";
 import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Short-Form Video Portfolio UAE — Instagram & TikTok Content | HPF Media",
+  title: "UAE Social Media Portfolio",
   description:
-    "See how HPF Media has helped UAE brands scale organic reach and engagement with high-performance short-form video content on Instagram and TikTok. Watch our UAE social media marketing portfolio.",
+    "Watch how HPF Media grows UAE brands on Instagram and TikTok. Short-form video results you can see.",
   alternates: {
     canonical: "https://www.hpf-media.com/works",
   },
   openGraph: {
-    title: "Short-Form Video Portfolio UAE — Instagram & TikTok Content | HPF Media",
+    title: "UAE Social Media Portfolio | HPF Media",
     description:
-      "High-performance short-form video content produced by HPF Media for UAE brands. Watch how we grow Instagram and TikTok reach for Dubai businesses.",
+      "Watch how HPF Media grows UAE brands on Instagram and TikTok. Short-form video results you can see.",
     url: "https://www.hpf-media.com/works",
     type: "website",
   },
   twitter: {
-    title: "Short-Form Video Portfolio UAE | HPF Media",
+    title: "UAE Social Media Portfolio | HPF Media",
     description:
-      "High-performance short-form video content for UAE brands on Instagram and TikTok. Watch HPF Media's portfolio.",
+      "Watch how HPF Media grows UAE brands on Instagram and TikTok. Short-form video results you can see.",
   },
 };
 

@@ -7,23 +7,23 @@ import Parallax from "@/components/Parallax";
 import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "About HPF Media — Social Media Marketing Agency Dubai UAE",
+  title: { absolute: "About HPF Media | Social Media Agency UAE" },
   description:
-    "HPF Media is a Dubai-based social media marketing agency specialising in Instagram and TikTok growth for UAE businesses. Learn about our founder, philosophy, creative process, and UAE market expertise.",
+    "Meet HPF Media — a Dubai-based social media agency. We build Instagram and TikTok content systems for UAE businesses.",
   alternates: {
     canonical: "https://www.hpf-media.com/about",
   },
   openGraph: {
-    title: "About HPF Media — Social Media Marketing Agency Dubai UAE",
+    title: "About HPF Media | Social Media Agency UAE",
     description:
-      "Meet HPF Media — a Dubai-based social media agency built on strategic short-form content, UAE market expertise, and organic growth systems for businesses across the UAE.",
+      "Meet HPF Media — a Dubai-based social media agency. We build Instagram and TikTok content systems for UAE businesses.",
     url: "https://www.hpf-media.com/about",
     type: "website",
   },
   twitter: {
-    title: "About HPF Media — Social Media Marketing Agency Dubai UAE",
+    title: "About HPF Media | Social Media Agency UAE",
     description:
-      "Dubai-based social media marketing agency. Strategic short-form content, UAE market expertise, and organic growth systems for UAE businesses.",
+      "Meet HPF Media — a Dubai-based social media agency. We build Instagram and TikTok content systems for UAE businesses.",
   },
 };
 
@@ -158,7 +158,7 @@ export default function About() {
 
           <ScrollReveal delay={0.4}>
             <p className="text-on-surface-variant text-lg md:text-xl max-w-3xl mx-auto font-light leading-relaxed mb-8">
-              HPF Media is a Dubai-based social media marketing agency that helps UAE business owners grow visibility, engagement, and inbound leads through strategic Instagram and TikTok content — built specifically for the UAE market.
+              We help UAE businesses grow on Instagram and TikTok through strategic short-form content — organic results, no ad spend required.
             </p>
           </ScrollReveal>
 
@@ -194,13 +194,13 @@ export default function About() {
             </h2>
             <div className="space-y-5 text-on-surface-variant text-base leading-7">
               <p>
-                HPF Media was built because most UAE businesses are losing to competitors who understand social media better — not because those competitors have better products or services, but because they are more visible, more consistent, and more trusted in the digital space.
+                Most UAE businesses lose to competitors not because of worse products — but because those competitors are more visible, consistent, and trusted online.
               </p>
               <p>
-                The founder, Bilal, started HPF Media with a clear vision: to give UAE small and medium businesses access to the same quality of strategic short-form content that large brands use to dominate social platforms. High-quality Instagram and TikTok content should not be the exclusive domain of companies with massive marketing budgets.
+                Bilal founded the agency to give local SMEs the same content quality large brands use to dominate social platforms. High-performance short-form video shouldn't require a massive budget.
               </p>
               <p>
-                Today, HPF Media works with UAE businesses across real estate, hospitality, retail, professional services, and personal brands — helping them build genuine authority and inbound lead generation through organic social media content. Every strategy we build is grounded in the specific realities of the UAE digital market.
+                We work with businesses across real estate, hospitality, retail, and professional services — building genuine authority and inbound leads through organic content.
               </p>
             </div>
           </ScrollReveal>
@@ -350,10 +350,10 @@ export default function About() {
                 Social media strategy in the UAE is not the same as in the UK, US, or Australia. UAE consumers have distinct behaviours, platform preferences, and content expectations. A strategy built for a Western market will underperform here.
               </p>
               <p>
-                HPF Media's entire playbook is built around the UAE market. We understand the Arabic and English content split, the peak engagement windows in the UAE timezone, the industries and topics that resonate with Dubai audiences, and the competitive landscape that UAE businesses operate in.
+                Our playbook is built around this market specifically. We understand the Arabic/English content split, peak engagement windows, what resonates with Dubai audiences, and the competitive landscape here.
               </p>
               <p>
-                We also understand the opportunities. The UAE has one of the highest social media penetration rates in the world, with Dubai regularly ranking among the most social-media-active cities globally. For UAE businesses willing to invest in strategic content, the organic reach potential is significantly higher than most global markets.
+                The UAE has among the world's highest social media penetration rates, with Dubai regularly ranking among the most active cities. For businesses willing to invest in strategic content, the organic reach potential here exceeds most global markets.
               </p>
             </ScrollReveal>
 

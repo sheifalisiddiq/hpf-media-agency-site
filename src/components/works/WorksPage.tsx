@@ -188,13 +188,13 @@ export default function WorksPage() {
 
           <ScrollReveal delay={0.4}>
             <p className="max-w-2xl text-base leading-7 text-neutral-400 md:text-lg mx-auto mb-6">
-              Every video in this portfolio was produced by HPF Media for UAE businesses competing on Instagram and TikTok. We design short-form content engineered to hold attention, grow organic reach, and generate inbound leads for Dubai and UAE brands.
+              Every video here was made for real businesses — engineered to hold attention, grow organic reach, and generate inbound leads. No filler. Content built to perform.
             </p>
           </ScrollReveal>
 
           <ScrollReveal delay={0.5}>
             <p className="max-w-2xl text-sm leading-6 text-neutral-500 mx-auto mb-12">
-              Our portfolio spans industries including real estate, luxury, hospitality, personal branding, and retail — all produced with the high production standards the UAE market demands.
+              We work across real estate, luxury, hospitality, personal branding, and retail — all held to the same high production standard.
             </p>
           </ScrollReveal>
 
@@ -255,10 +255,10 @@ export default function WorksPage() {
               </h2>
               <div className="space-y-4 text-neutral-400 text-base leading-7">
                 <p>
-                  Every video in this portfolio follows HPF Media's full production process — starting with business analysis and audience research, moving through viral scripting and professional filming, and finishing with high-retention editing optimised for Instagram Reels and TikTok distribution.
+                  Every video follows our full production process — business analysis, audience research, viral scripting, professional filming, and high-retention editing for Reels and TikTok.
                 </p>
                 <p>
-                  We produce short-form video content that performs because it is built on strategy, not guesswork. Our approach combines deep knowledge of the UAE market with platform-specific production techniques that consistently generate above-average organic reach and engagement for Dubai and UAE businesses.
+                  We produce content that performs because it's built on strategy, not guesswork. Platform-specific techniques consistently deliver above-average organic reach for our clients.
                 </p>
               </div>
             </div>
@@ -311,7 +311,7 @@ export default function WorksPage() {
 
           <ScrollReveal delay={0.4}>
             <p className="text-neutral-400 text-xl mb-12 max-w-2xl mx-auto font-light">
-              Transform your UAE brand&apos;s social media presence with high-performance short-form video content that drives organic reach and real inbound leads.
+              Build a social media presence that drives organic reach, real engagement, and inbound leads.
             </p>
           </ScrollReveal>
 

@@ -8,23 +8,23 @@ import JsonLd from "@/components/JsonLd";
 import ServicesFaqAccordion from "@/components/ServicesFaqAccordion";
 
 export const metadata: Metadata = {
-  title: "Social Media Marketing Services UAE — Instagram & TikTok Agency | HPF Media",
+  title: "Social Media Services UAE",
   description:
-    "HPF Media offers social media marketing services across UAE: Instagram marketing, TikTok marketing, short-form video production, and organic content strategy for UAE businesses.",
+    "HPF Media offers Instagram marketing, TikTok growth, and short-form video for UAE businesses.",
   alternates: {
     canonical: "https://www.hpf-media.com/services",
   },
   openGraph: {
-    title: "Social Media Marketing Services UAE — Instagram & TikTok Agency | HPF Media",
+    title: "Social Media Services UAE | HPF Media",
     description:
-      "Instagram marketing, TikTok growth, short-form video production, and social media management for UAE businesses and Dubai SMEs. Strategy-first organic content that drives real results.",
+      "HPF Media offers Instagram marketing, TikTok growth, and short-form video for UAE businesses.",
     url: "https://www.hpf-media.com/services",
     type: "website",
   },
   twitter: {
-    title: "Social Media Marketing Services UAE | HPF Media",
+    title: "Social Media Services UAE | HPF Media",
     description:
-      "Instagram marketing, TikTok growth, short-form video production, and social media management for UAE businesses.",
+      "HPF Media offers Instagram marketing, TikTok growth, and short-form video for UAE businesses.",
   },
 };
 
@@ -35,7 +35,7 @@ const serviceDetails = [
     title: "Instagram Marketing UAE",
     shortDesc: "Complete Instagram growth strategy, Reels production, and audience targeting for UAE businesses.",
     fullDesc: [
-      "Instagram is the leading platform for UAE businesses. HPF Media handles your full Instagram presence — profile, content calendar, Reels, and audience targeting.",
+      "Instagram is the leading platform for UAE businesses. We handle your full presence — profile, content calendar, Reels, and audience targeting.",
       "We create content for the UAE market. English and Arabic-speaking audience, UAE timezone posting, and content built to drive profile visits, follows, and inbound leads.",
     ],
     results: "Consistent Reels reach growth, increased profile visits, stronger audience engagement",
@@ -47,7 +47,7 @@ const serviceDetails = [
     title: "TikTok Marketing Dubai",
     shortDesc: "TikTok content strategy, viral hooks, and organic reach growth for Dubai and UAE brands.",
     fullDesc: [
-      "TikTok gives UAE businesses the highest organic reach available today. Quality content beats follower count — one well-produced video can reach thousands of new customers. HPF Media builds TikTok strategies using native formats, trending audio, and UAE-relevant content.",
+      "TikTok gives UAE businesses the highest organic reach available today. Quality content beats follower count — one well-produced video can reach thousands of new customers. We build strategies using native formats, trending audio, and locally-relevant content.",
       "We handle TikTok account setup, strategy, scripting, filming, and editing. Content that feels native to the platform — and clearly communicates your brand to the UAE audience.",
     ],
     results: "Expanded organic reach, new audience segments, stronger brand awareness in UAE market",
@@ -59,7 +59,7 @@ const serviceDetails = [
     title: "Viral Content Strategy",
     shortDesc: "Data-informed content strategy built for maximum organic reach and engagement in the UAE market.",
     fullDesc: [
-      "Most UAE businesses post reactively. No plan. No system. HPF Media builds forward-looking strategies from audience research and platform data specific to the UAE market.",
+      "Most UAE businesses post reactively. No plan. No system. We build forward-looking strategies from audience research and platform data specific to the local market.",
       "We identify the formats, topics, and hooks that resonate with your UAE audience. Then we build a 90-day roadmap — educational, entertainment, and conversion content in the right balance.",
     ],
     results: "Structured 90-day content plan, consistent brand messaging, scalable content production",
@@ -83,7 +83,7 @@ const serviceDetails = [
     title: "Organic Social Media Growth UAE",
     shortDesc: "Sustainable follower growth and audience building on Instagram and TikTok for UAE businesses.",
     fullDesc: [
-      "Building a real, engaged audience without paid ads is one of the best investments a UAE business can make. HPF Media builds organic growth systems that increase followers, improve engagement, and expand reach over time.",
+      "Building a real, engaged audience without paid ads is one of the best investments a UAE business can make. We build organic growth systems that increase followers, improve engagement, and expand reach over time.",
       "We combine content strategy, optimal posting frequency, hashtag research, and engagement tactics. No bots. No shortcuts. Real UAE followers who become customers.",
     ],
     results: "Real follower growth, improved engagement rate, growing inbound enquiries",
@@ -95,7 +95,7 @@ const serviceDetails = [
     title: "Content Systems",
     shortDesc: "Repeatable, scalable content production systems that keep your UAE brand consistently active.",
     fullDesc: [
-      "Consistency is the hardest part of social media. Posting regularly while running a business is hard without a system. HPF Media builds repeatable production processes, content pillars, and distribution pipelines.",
+      "Consistency is the hardest part of social media. Posting regularly while running a business is hard without a system. We build repeatable production processes, content pillars, and distribution pipelines.",
       "Your system is built around your brand voice and resources. Content calendars, scripting templates, batch filming schedules, and approval workflows — designed to fit how your UAE business already runs.",
     ],
     results: "Sustainable content schedule, reduced production friction, consistent brand output",
@@ -107,8 +107,8 @@ const serviceDetails = [
     title: "High-Retention Video Editing",
     shortDesc: "Professional short-form video editing optimised for watch time, retention, and platform algorithms.",
     fullDesc: [
-      "Social media editing is different. It's about pace, retention, and visual storytelling in under 60 seconds. HPF Media specialises in high-retention editing for Instagram Reels and TikTok.",
-      "We edit for retention. Tight pacing, pattern interrupts, captions, music, and transitions that keep UAE viewers watching. More watch time means more reach on Instagram and TikTok.",
+      "Social media editing is different. It's about pace, retention, and visual storytelling in under 60 seconds. We specialise in high-retention editing optimised for Reels and TikTok.",
+      "We edit for retention. Tight pacing, pattern interrupts, captions, music, and transitions that keep viewers watching. More watch time means more reach on both platforms.",
     ],
     results: "Higher watch time, better algorithm distribution, more consistent content quality",
     span: "md:col-span-7",
@@ -119,7 +119,7 @@ const serviceDetails = [
     title: "Social Media Management UAE",
     shortDesc: "Full-service Instagram and TikTok management for UAE businesses — posting, strategy, and reporting.",
     fullDesc: [
-      "HPF Media takes full ownership of your Instagram and TikTok. Content planning, production, posting, captions, hashtags, and monthly performance reporting — all handled.",
+      "We take full ownership of your Instagram and TikTok. Content planning, production, posting, captions, hashtags, and monthly performance reporting — all handled.",
       "You get regular reports — reach, engagement, follower growth, and leads from your content. You focus on running your business. We build your digital presence.",
     ],
     results: "Fully managed social presence, regular performance reporting, consistent brand output",
