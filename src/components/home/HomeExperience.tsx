@@ -13,58 +13,38 @@ const services = [
   {
     icon: "trending_up" as const,
     title: "Instagram Marketing UAE",
-    description:
-      "Full Instagram strategy for UAE businesses. Profile setup, Reels, and audience targeting.",
-    span: "lg:col-span-6",
-  },
-  {
-    icon: "music_note" as const,
-    title: "TikTok Marketing Dubai",
-    description:
-      "TikTok content built for UAE audience behaviour. Trending formats that drive real follower growth.",
-    span: "lg:col-span-6",
+    description: "Instagram Reels and growth strategy for UAE businesses.",
+    span: "lg:col-span-7",
   },
   {
     icon: "insights" as const,
     title: "Viral Content Strategy",
-    description:
-      "Content strategy for UAE SMEs. We find what your audience wants — then make them stop and watch.",
-    span: "lg:col-span-7",
+    description: "Content strategy built around what UAE audiences stop to watch.",
+    span: "lg:col-span-5",
   },
   {
     icon: "movie_filter" as const,
     title: "Short-Form Video Production",
-    description:
-      "Scripting, filming, and editing for UAE audiences. High-retention videos built to be shared.",
+    description: "End-to-end Reels production — scripted, filmed, and edited for UAE audiences.",
     span: "lg:col-span-5",
   },
   {
     icon: "show_chart" as const,
     title: "Organic Social Media Growth",
-    description:
-      "Real UAE follower growth through consistent content and engagement. No bots or shortcuts.",
-    span: "lg:col-span-5",
+    description: "Real follower growth through consistent content. No bots.",
+    span: "lg:col-span-7",
   },
   {
     icon: "auto_awesome" as const,
     title: "Content Systems",
-    description:
-      "Content pillars, scripting templates, and distribution pipelines. Your brand stays consistently active.",
-    span: "lg:col-span-7",
-  },
-  {
-    icon: "videocam" as const,
-    title: "High-Retention Video Editing",
-    description:
-      "Video editing built for UAE platform algorithms. Optimised for watch time and retention.",
-    span: "lg:col-span-7",
+    description: "Scalable content systems so your brand stays consistently active.",
+    span: "lg:col-span-6",
   },
   {
     icon: "send" as const,
     title: "Social Media Management UAE",
-    description:
-      "Full-service posting, captions, hashtags, and reporting on Instagram and TikTok. You focus on business.",
-    span: "lg:col-span-5",
+    description: "Full Instagram and TikTok management — posting, strategy, and monthly reporting.",
+    span: "lg:col-span-6",
   },
 ];
 
@@ -98,33 +78,6 @@ const executionSteps = [
     step: "05",
     label: "Publish & Optimise",
     desc: "Strategic content distribution with optimal timing, hashtag research, captions, and ongoing performance tracking to maximise reach.",
-  },
-];
-
-const whyShortForm = [
-  {
-    icon: "visibility" as const,
-    stat: "10x",
-    label: "Organic Reach",
-    desc: "Short-form video generates up to 10x more organic reach than static posts on the same platforms — without paid promotion.",
-  },
-  {
-    icon: "thumb_up" as const,
-    stat: "3x",
-    label: "Higher Engagement",
-    desc: "Reels and TikToks consistently outperform photos and carousels in engagement rate for business accounts across all industries.",
-  },
-  {
-    icon: "bolt" as const,
-    stat: "60s",
-    label: "Purchase Intent Window",
-    desc: "Consumers form purchase intent within 60 seconds of watching branded short-form video — the fastest conversion trigger in digital marketing.",
-  },
-  {
-    icon: "groups" as const,
-    stat: "2B+",
-    label: "Combined Platform Users",
-    desc: "TikTok and Instagram Reels together reach over 2 billion monthly active users. The UAE audience is among the most active globally on both platforms.",
   },
 ];
 
@@ -377,41 +330,6 @@ export default function HomeExperience() {
               ))}
             </ScrollReveal>
           </div>
-        </div>
-      </section>
-
-      {/* ─── Why Short-Form Content Works ─── */}
-      <section
-        aria-label="Why short-form content works"
-        className="relative overflow-hidden bg-transparent px-6 py-24 text-on-surface md:px-10 lg:px-14 border-t border-white/5"
-      >
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-red-600/[0.04] blur-[150px] rounded-full pointer-events-none" />
-        <div className="relative z-10 mx-auto max-w-7xl">
-          <div className="mb-16 max-w-3xl space-y-5">
-            <ScrollReveal yOffset={10}>
-              <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary">The Science</p>
-            </ScrollReveal>
-            <StaggerText
-              tag="h2"
-              text="Why Short-Form Content Dominates."
-              className="text-4xl font-black uppercase tracking-[-0.06em] text-white md:text-5xl font-headline"
-            />
-          </div>
-
-          <ScrollReveal isContainer staggerChildren={0.15} scale={0.96} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            {whyShortForm.map((item) => (
-              <RevealItem
-                key={item.label}
-                className="rounded-[1.5rem] border border-white/10 bg-white/[0.02] p-8 text-center"
-              >
-                <Icon name={item.icon} className="h-8 w-8 text-primary mx-auto mb-4" />
-                <p className="text-4xl font-black text-white font-headline mb-2">{item.stat}</p>
-                <p className="text-sm font-bold uppercase tracking-wider text-primary mb-3">{item.label}</p>
-                <p className="text-sm leading-6 text-on-surface-variant">{item.desc}</p>
-              </RevealItem>
-            ))}
-          </ScrollReveal>
-
         </div>
       </section>
 

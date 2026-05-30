@@ -124,10 +124,18 @@ export default function WorkShowcase() {
                 />
               </div>
               <div className="group relative h-20 w-40 md:h-24 md:w-48 overflow-hidden rounded-xl border border-white/10 bg-white/[0.02] p-4 transition-all hover:bg-white/[0.05] hover:border-white/20 shadow-lg">
-                <Image 
-                  src="/Mecca_al_mukarramah_perfumes.jpeg" 
-                  alt="Mecca Al Mukarramah Perfumes" 
-                  fill 
+                <Image
+                  src="/Mecca_al_mukarramah_perfumes.jpeg"
+                  alt="Mecca Al Mukarramah Perfumes"
+                  fill
+                  className="object-contain p-2 transition-all duration-500"
+                />
+              </div>
+              <div className="group relative h-20 w-40 md:h-24 md:w-48 overflow-hidden rounded-xl border border-white/10 bg-white/[0.02] p-4 transition-all hover:bg-white/[0.05] hover:border-white/20 shadow-lg">
+                <Image
+                  src="/talal_market_logo.png"
+                  alt="Talal Market"
+                  fill
                   className="object-contain p-2 transition-all duration-500"
                 />
               </div>

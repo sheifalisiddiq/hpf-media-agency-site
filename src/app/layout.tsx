@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import VisualBackground from "@/components/VisualBackground";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 import JsonLd from "@/components/JsonLd";
+import LoadingScreen from "@/components/LoadingScreen";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -139,7 +140,6 @@ const organizationSchema = {
       knowsAbout: [
         "Social Media Marketing UAE",
         "Instagram Marketing Strategy",
-        "TikTok Marketing Dubai",
         "Short-Form Video Production",
         "Organic Social Media Growth",
         "Content Strategy UAE",
@@ -160,15 +160,6 @@ const organizationSchema = {
               name: "Instagram Marketing UAE",
               description:
                 "Complete Instagram growth strategy, Reels production, and audience targeting for UAE businesses.",
-            },
-          },
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              name: "TikTok Marketing Dubai",
-              description:
-                "TikTok content strategy, viral hooks, and organic reach growth for Dubai and UAE brands.",
             },
           },
           {
@@ -216,15 +207,6 @@ const organizationSchema = {
                 "Repeatable, scalable short-form content production systems for UAE businesses that keep brands consistently active.",
             },
           },
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              name: "High-Retention Video Editing",
-              description:
-                "Professional short-form video editing optimised for watch time, retention rate, and Instagram and TikTok algorithm distribution.",
-            },
-          },
         ],
       },
     },
@@ -257,6 +239,7 @@ export default function RootLayout({
   return (
     <html lang="en-AE" className={htmlClassName} suppressHydrationWarning>
       <body className={bodyClassName}>
+        <LoadingScreen />
         <JsonLd data={organizationSchema} />
         <VisualBackground />
         <CursorTrail />
