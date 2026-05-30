@@ -8,7 +8,6 @@ import StaggerText from "@/components/StaggerText";
 import Parallax from "@/components/Parallax";
 
 const CTAForm = dynamic(() => import("./CTAForm"), { ssr: false });
-const WorkShowcase = dynamic(() => import("./WorkShowcase"), { ssr: false });
 
 const services = [
   {
@@ -330,21 +329,6 @@ export default function HomeExperience() {
             </div>
           </ScrollReveal>
         </div>
-      </section>
-
-      <WorkShowcase />
-
-      {/* ─── View All Work CTA ─── */}
-      <section className="py-12 px-6 bg-transparent text-center border-b border-white/5">
-        <ScrollReveal>
-          <a
-            href="/works"
-            aria-label="View the full HPF Media portfolio"
-            className="inline-flex items-center gap-3 border border-white/15 px-10 py-4 text-sm font-black uppercase tracking-[0.24em] text-white hover:bg-white/5 transition-colors duration-200"
-          >
-            View Full Portfolio <Icon name="trending_flat" className="h-4 w-4" />
-          </a>
-        </ScrollReveal>
       </section>
 
       <CTAForm />
