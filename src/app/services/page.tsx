@@ -4,6 +4,7 @@ import ScrollReveal, { RevealItem } from "@/components/ScrollReveal";
 import StaggerText from "@/components/StaggerText";
 import JsonLd from "@/components/JsonLd";
 import ServicesFaqAccordion from "@/components/ServicesFaqAccordion";
+import Parallax from "@/components/Parallax";
 
 export const metadata: Metadata = {
   title: "Social Media Services UAE",
