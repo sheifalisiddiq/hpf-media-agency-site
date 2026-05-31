@@ -162,13 +162,13 @@ export default function Services() {
         <ScrollReveal className="max-w-5xl mx-auto z-10">
           <ScrollReveal yOffset={10} delay={0.2}>
             <span className="text-sm uppercase tracking-[0.3em] text-primary mb-6 block font-medium">
-              Social Media Agency — Across the UAE
+              Content That Converts · Built for UAE Brands
             </span>
           </ScrollReveal>
 
           <StaggerText
             tag="h1"
-            text="Social Media Marketing Services in UAE"
+            text="We Build Content Systems That Drive Revenue"
             className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tighter font-headline mb-8 leading-[0.95] text-on-surface"
           />
 
