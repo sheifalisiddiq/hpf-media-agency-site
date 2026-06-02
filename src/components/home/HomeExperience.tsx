@@ -15,37 +15,31 @@ const services = [
     icon: "trending_up" as const,
     title: "Instagram Marketing UAE",
     description: "Instagram Reels and growth strategy for UAE businesses.",
-    span: "lg:col-span-7",
   },
   {
     icon: "insights" as const,
     title: "Viral Content Strategy",
     description: "Content strategy built around what UAE audiences stop to watch.",
-    span: "lg:col-span-5",
-  },
-  {
-    icon: "movie_filter" as const,
-    title: "Short-Form Video Production",
-    description: "End-to-end Reels production — scripted, filmed, and edited for UAE audiences.",
-    span: "lg:col-span-5",
   },
   {
     icon: "show_chart" as const,
     title: "Organic Social Media Growth",
     description: "Real follower growth through consistent content. No bots.",
-    span: "lg:col-span-7",
-  },
-  {
-    icon: "auto_awesome" as const,
-    title: "Content Systems",
-    description: "Scalable content systems so your brand stays consistently active.",
-    span: "lg:col-span-6",
   },
   {
     icon: "send" as const,
     title: "Social Media Management UAE",
     description: "Full Instagram and TikTok management — posting, strategy, and monthly reporting.",
-    span: "lg:col-span-6",
+  },
+  {
+    icon: "language" as const,
+    title: "Web Development",
+    description: "Custom websites and landing pages built to convert UAE visitors into customers.",
+  },
+  {
+    icon: "psychology" as const,
+    title: "AI Automation",
+    description: "Automate repetitive business tasks using AI — save time, cut costs, scale faster.",
   },
 ];
 
@@ -233,18 +227,28 @@ export default function HomeExperience() {
 
           <ScrollReveal isContainer staggerChildren={0.08} scale={0.97} className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
             {services.map((service) => (
-              <RevealItem
+              <a
                 key={service.title}
-                className="group relative overflow-hidden rounded-xl border border-white/10 bg-white/[0.03] p-4 hover:border-primary/30 hover:bg-white/[0.05] transition-all duration-200"
+                href={`https://wa.me/971509418430?text=${encodeURIComponent(`Hi, I wanted more info on ${service.title}`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group"
               >
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(255,84,73,0.1),transparent_60%)] opacity-0 transition-[opacity] duration-200 group-hover:opacity-100" />
-                <div className="relative">
-                  <Icon name={service.icon} className="h-7 w-7 text-primary mb-3" />
-                  <h3 className="text-xs font-black uppercase tracking-tight text-white font-headline leading-tight">
-                    {service.title}
-                  </h3>
-                </div>
-              </RevealItem>
+                <RevealItem
+                  className="relative overflow-hidden rounded-xl border border-white/10 bg-white/[0.03] p-4 group-hover:border-primary/30 group-hover:bg-white/[0.05] transition-all duration-200 h-full"
+                >
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(255,84,73,0.1),transparent_60%)] opacity-0 transition-[opacity] duration-200 group-hover:opacity-100" />
+                  <div className="relative">
+                    <Icon name={service.icon} className="h-7 w-7 text-primary mb-3" />
+                    <h3 className="text-xs font-black uppercase tracking-tight text-white font-headline leading-tight mb-2">
+                      {service.title}
+                    </h3>
+                    <p className="text-[10px] leading-4 text-white/50 overflow-hidden max-h-0 opacity-0 group-hover:max-h-16 group-hover:opacity-100 transition-all duration-200">
+                      {service.description}
+                    </p>
+                  </div>
+                </RevealItem>
+              </a>
             ))}
           </ScrollReveal>
 
