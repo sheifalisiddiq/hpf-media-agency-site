@@ -41,28 +41,28 @@ const serviceDetails = [
     shortDesc: "Content strategy built for organic reach in the UAE market.",
   },
   {
-    id: "short-form-video-production",
-    icon: "movie_filter" as const,
-    title: "Short-Form Video Production UAE",
-    shortDesc: "Scripting, filming, and editing for UAE Instagram Reels.",
-  },
-  {
     id: "organic-social-media-growth",
     icon: "show_chart" as const,
     title: "Organic Social Media Growth UAE",
     shortDesc: "Sustainable follower and engagement growth on Instagram for UAE businesses.",
   },
   {
-    id: "content-systems",
-    icon: "auto_awesome" as const,
-    title: "Content Systems",
-    shortDesc: "Repeatable content production systems for UAE brands.",
-  },
-  {
     id: "social-media-management",
     icon: "send" as const,
     title: "Social Media Management UAE",
     shortDesc: "Full Instagram management — content, posting, and reporting for UAE businesses.",
+  },
+  {
+    id: "web-development",
+    icon: "language" as const,
+    title: "Web Development",
+    shortDesc: "Custom websites and landing pages built to convert UAE visitors into customers.",
+  },
+  {
+    id: "ai-automation",
+    icon: "psychology" as const,
+    title: "AI Automation",
+    shortDesc: "Automate repetitive business tasks using AI — save time, cut costs, scale faster.",
   },
 ];
 
@@ -210,26 +210,34 @@ export default function Services() {
         <div className="relative z-10 max-w-screen-xl mx-auto">
           <ScrollReveal className="flex flex-col mb-12 lg:mb-16">
             <h2 className="text-3xl lg:text-4xl font-headline font-bold mb-6 uppercase tracking-tight">What We Do</h2>
-            <div className="w-24 h-1 bg-red-600"></div>
+            <div className="w-24 h-1 bg-red-600 mb-4"></div>
+            <p className="text-on-surface-variant text-sm">All content produced is 100% halal — music-free, family-safe, and UAE-values aligned.</p>
           </ScrollReveal>
 
           <ScrollReveal isContainer staggerChildren={0.12} scale={0.96} yOffset={30} className="space-y-6">
             {serviceDetails.map((service) => (
-              <RevealItem
+              <a
                 key={service.id}
-                className="glass-card rounded-xl p-8 md:p-10 flex flex-col md:flex-row gap-8 overflow-hidden relative group bg-black border border-white/10 hover:border-primary/20 transition-all duration-300"
+                href={`https://wa.me/971509418430?text=${encodeURIComponent(`Hi, I wanted more info on ${service.title}`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block"
               >
-                <span id={service.id} className="sr-only" />
-                <div className="flex-shrink-0">
-                  <div className="w-14 h-14 rounded-xl bg-red-600/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-black transition-colors duration-300">
-                    <Icon name={service.icon} className="h-7 w-7" />
+                <RevealItem
+                  className="glass-card rounded-xl p-8 md:p-10 flex flex-col md:flex-row gap-8 overflow-hidden relative bg-black border border-white/10 group-hover:border-primary/20 transition-all duration-300 cursor-pointer"
+                >
+                  <span id={service.id} className="sr-only" />
+                  <div className="flex-shrink-0">
+                    <div className="w-14 h-14 rounded-xl bg-red-600/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-black transition-colors duration-300">
+                      <Icon name={service.icon} className="h-7 w-7" />
+                    </div>
                   </div>
-                </div>
-                <div className="flex-grow">
-                  <h3 className="text-2xl md:text-3xl font-headline font-bold mb-3 uppercase tracking-tight">{service.title}</h3>
-                  <p className="text-primary text-sm font-bold uppercase tracking-wider">{service.shortDesc}</p>
-                </div>
-              </RevealItem>
+                  <div className="flex-grow">
+                    <h3 className="text-2xl md:text-3xl font-headline font-bold mb-3 uppercase tracking-tight">{service.title}</h3>
+                    <p className="text-primary text-sm font-bold uppercase tracking-wider overflow-hidden max-h-0 opacity-0 group-hover:max-h-20 group-hover:opacity-100 transition-all duration-300">{service.shortDesc}</p>
+                  </div>
+                </RevealItem>
+              </a>
             ))}
           </ScrollReveal>
         </div>

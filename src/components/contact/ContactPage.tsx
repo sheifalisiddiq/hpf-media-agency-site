@@ -151,57 +151,21 @@ export default function ContactPage() {
                     </label>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div className="relative">
-                      <input
-                        type="text"
-                        id="domain"
-                        name="domain"
-                        placeholder=" "
-                        className="w-full bg-black border-0 border-b border-white/10 py-4 px-0 text-white focus:ring-0 focus:border-primary transition-all duration-300 peer"
-                      />
-                      <label
-                        htmlFor="domain"
-                        className="absolute left-0 top-4 text-white/50 text-sm uppercase tracking-wider transition-all duration-300 pointer-events-none peer-focus:text-primary peer-focus:-translate-y-6 peer-focus:scale-90 font-bold"
-                      >
-                        Company Domain
-                      </label>
-                    </div>
-
-                    <div className="relative">
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        required
-                        placeholder=" "
-                        className="w-full bg-black border-0 border-b border-white/10 py-4 px-0 text-white focus:ring-0 focus:border-primary transition-all duration-300 peer"
-                      />
-                      <label
-                        htmlFor="email"
-                        className="absolute left-0 top-4 text-white/50 text-sm uppercase tracking-wider transition-all duration-300 pointer-events-none peer-focus:text-primary peer-focus:-translate-y-6 peer-focus:scale-90 font-bold"
-                      >
-                        Corporate Email
-                      </label>
-                    </div>
-                  </div>
-
                   <div className="relative">
-                    <select
-                      id="revenue"
-                      name="revenue"
-                      defaultValue=""
-                      className="w-full bg-black border-0 border-b border-white/10 py-4 px-0 text-white/70 focus:ring-0 focus:border-primary transition-all duration-300 appearance-none font-bold text-sm uppercase"
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      placeholder=" "
+                      className="w-full bg-black border-0 border-b border-white/10 py-4 px-0 text-white focus:ring-0 focus:border-primary transition-all duration-300 peer"
+                    />
+                    <label
+                      htmlFor="email"
+                      className="absolute left-0 top-4 text-white/50 text-sm uppercase tracking-wider transition-all duration-300 pointer-events-none peer-focus:text-primary peer-focus:-translate-y-6 peer-focus:scale-90 font-bold"
                     >
-                      <option value="" disabled>Annual Revenue Range</option>
-                      <option value="1-5m">$1M - $5M</option>
-                      <option value="5-20m">$5M - $20M</option>
-                      <option value="20-50m">$20M - $50M</option>
-                      <option value="50m+">$50M+</option>
-                    </select>
-                    <div className="absolute right-0 top-4 pointer-events-none">
-                      <Icon name="expand_more" className="h-5 w-5 text-white/30" />
-                    </div>
+                      Corporate Email
+                    </label>
                   </div>
 
                   <div className="relative">

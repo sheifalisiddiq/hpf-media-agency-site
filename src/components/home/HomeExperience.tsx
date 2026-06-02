@@ -304,11 +304,12 @@ export default function HomeExperience() {
             </h2>
           </ScrollReveal>
 
-          <ScrollReveal isContainer staggerChildren={0.15} className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+          <ScrollReveal isContainer staggerChildren={0.15} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {[
               { stat: "5M+", label: "Organic Views Delivered", detail: "Across UAE client campaigns on Instagram and TikTok" },
               { stat: "90 Days", label: "Average Result Timeline", detail: "From strategy kickoff to visible organic growth for most clients" },
               { stat: "UAE-First", label: "Content Strategy", detail: "All strategies built specifically for the UAE market — not adapted from generic global templates" },
+              { stat: "100%", label: "Halal Content", detail: "Every campaign we run is fully halal — music-free options, family-safe, and UAE-values aligned." },
             ].map((item) => (
               <RevealItem key={item.label} className="rounded-[1.5rem] border border-white/10 bg-white/[0.02] p-8 text-center">
                 <p className="text-4xl font-black text-primary font-headline mb-2">{item.stat}</p>
