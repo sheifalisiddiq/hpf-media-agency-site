@@ -9,16 +9,16 @@ import Image from "next/image";
 
 
 const workVideos = [
-  { id: 1, src: "/work1.MOV" },
-  { id: 2, src: "/work2.MOV" },
-  { id: 3, src: "/work3.MOV" },
+  { id: 1, src: "/work1.mp4" },
+  { id: 2, src: "/work2.mp4" },
+  { id: 3, src: "/work3.mp4" },
   { id: 4, src: "/work4.mp4" },
   { id: 5, src: "/work5.mp4" },
-  { id: 6, src: "/work6.MOV" },
-  { id: 7, src: "/IMG_2887.MOV" },
-  { id: 8, src: "/IMG_2889.MOV" },
-  { id: 9, src: "/IMG_2890.MOV" },
-  { id: 10, src: "/IMG_2892.MOV" },
+  { id: 6, src: "/work6.mp4" },
+  { id: 7, src: "/IMG_2887.mp4" },
+  { id: 8, src: "/IMG_2889.mp4" },
+  { id: 9, src: "/IMG_2890.mp4" },
+  { id: 10, src: "/IMG_2892.mp4" },
 ];
 
 const VideoCard = ({ src }: { src: string }) => {

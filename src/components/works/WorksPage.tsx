@@ -10,49 +10,49 @@ import Parallax from "@/components/Parallax";
 const videos = [
   {
     id: "v1",
-    src: "/IMG_2887.MOV",
+    src: "/IMG_2887.mp4",
     title: "Cinematic Narrative",
     category: "Video Production",
     description: "High-end visual storytelling tailored for social platforms."
   },
   {
     id: "v2",
-    src: "/IMG_2889.MOV",
+    src: "/IMG_2889.mp4",
     title: "Brand Strategy",
     category: "Social Media Growth",
     description: "Strategic content designed to increase reach and engagement."
   },
   {
     id: "v3",
-    src: "/IMG_2890.MOV",
+    src: "/IMG_2890.mp4",
     title: "Personal Branding",
     category: "Personal Brand",
     description: "Establishing authority through professional video content."
   },
   {
     id: "v4",
-    src: "/IMG_2892.MOV",
+    src: "/IMG_2892.mp4",
     title: "Digital Edge",
     category: "Web & Strategy",
     description: "Turning viewers into customers with high-conversion visuals."
   },
   {
     id: "v5",
-    src: "/work1.MOV",
+    src: "/work1.mp4",
     title: "UAE Luxury Showcase",
     category: "Video Production",
     description: "Capturing the essence of luxury in the heart of the UAE."
   },
   {
     id: "v6",
-    src: "/work2.MOV",
+    src: "/work2.mp4",
     title: "Business Growth Reel",
     category: "Social Media Growth",
     description: "Dynamic reels designed for maximum impact and retention."
   },
   {
     id: "v7",
-    src: "/work3.MOV",
+    src: "/work3.mp4",
     title: "Event Highlights",
     category: "Video Production",
     description: "Professional event coverage with a cinematic touch."
@@ -73,7 +73,7 @@ const videos = [
   },
   {
     id: "v10",
-    src: "/work6.MOV",
+    src: "/work6.mp4",
     title: "Corporate Vision",
     category: "Web & Strategy",
     description: "Defining corporate identity through high-quality video production."
