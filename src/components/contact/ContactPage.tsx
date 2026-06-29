@@ -98,12 +98,12 @@ export default function ContactPage() {
                   <div>
                     <p className="text-xs uppercase tracking-widest text-primary mb-1 font-bold">24/7 Support</p>
                     <a
-                      href="https://wa.me/971509418430"
+                      href="https://wa.me/971555214667"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-white font-medium hover:text-primary transition-colors"
                     >
-                      +971 50 941 8430
+                      +971 55 521 4667
                     </a>
                   </div>
                 </div>

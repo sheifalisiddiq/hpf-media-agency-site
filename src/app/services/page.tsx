@@ -218,7 +218,7 @@ export default function Services() {
             {serviceDetails.map((service) => (
               <a
                 key={service.id}
-                href={`https://wa.me/971509418430?text=${encodeURIComponent(`Hi, I wanted more info on ${service.title}`)}`}
+                href={`https://wa.me/971555214667?text=${encodeURIComponent(`Hi, I wanted more info on ${service.title}`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group block"

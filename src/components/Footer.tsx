@@ -35,7 +35,7 @@ export default function Footer() {
               <span className="text-[10px] font-bold uppercase tracking-widest">Instagram</span>
             </Link>
             <Link 
-              href="https://wa.me/971509418430" 
+              href="https://wa.me/971555214667" 
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center gap-2 text-white/50 hover:text-primary transition-colors duration-300"

@@ -80,7 +80,7 @@ export default function Navigation() {
               <Icon name="instagram" className="h-5 w-5" />
             </Link>
             <Link 
-              href="https://wa.me/971509418430" 
+              href="https://wa.me/971555214667" 
               target="_blank"
               rel="noopener noreferrer"
               className="group flex h-10 w-10 items-center justify-center rounded-full text-white/50 hover:bg-white/10 hover:text-white transition-all duration-300"
@@ -162,7 +162,7 @@ export default function Navigation() {
             Instagram
           </Link>
           <Link
-            href="https://wa.me/971509418430"
+            href="https://wa.me/971555214667"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setIsOpen(false)}

@@ -104,11 +104,11 @@ const organizationSchema = {
       description:
         "HPF Media is a social media marketing agency in UAE. Instagram marketing, TikTok marketing, and short-form content for businesses across the UAE.",
       email: "admin@hpf-media.com",
-      telephone: "+971-50-941-8430",
+      telephone: "+971-55-521-4667",
       contactPoint: [
         {
           "@type": "ContactPoint",
-          telephone: "+971-50-941-8430",
+          telephone: "+971-55-521-4667",
           contactType: "customer service",
           availableLanguage: ["English", "Arabic"],
           areaServed: "AE",
