@@ -2,6 +2,7 @@ import React from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 import CursorTrail from "@/components/CursorTrail";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -250,6 +251,7 @@ export default function RootLayout({
           </main>
         </SmoothScrollProvider>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
