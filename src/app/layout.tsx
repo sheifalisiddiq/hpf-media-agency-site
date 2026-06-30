@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import CursorTrail from "@/components/CursorTrail";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -252,6 +253,7 @@ export default function RootLayout({
         </SmoothScrollProvider>
         <Footer />
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
