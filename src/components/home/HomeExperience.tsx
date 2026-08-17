@@ -334,6 +334,30 @@ export default function HomeExperience() {
         </div>
       </section>
 
+      {/* ─── Case Studies CTA ─── */}
+      <section
+        aria-label="Case studies"
+        className="relative overflow-hidden bg-transparent px-6 py-16 text-center text-on-surface md:px-10 lg:px-14 border-t border-white/5"
+      >
+        <ScrollReveal className="mx-auto max-w-2xl">
+          <h2 className="text-2xl font-black uppercase tracking-[-0.04em] text-white font-headline mb-4">
+            Want Proof It Works?
+          </h2>
+          <p className="text-on-surface-variant mb-8">
+            See the full breakdown of results we've delivered for UAE brands.
+          </p>
+          <a
+            href="/HPF-Media-Case-Studies.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View HPF Media case studies PDF"
+            className="bg-primary px-8 py-4 text-sm font-black uppercase tracking-[0.24em] text-black transition-[transform] duration-[160ms] hover:scale-[1.02] active:scale-[0.97] inline-flex items-center justify-center"
+          >
+            View Case Studies
+          </a>
+        </ScrollReveal>
+      </section>
+
       <CTAForm />
     </>
   );

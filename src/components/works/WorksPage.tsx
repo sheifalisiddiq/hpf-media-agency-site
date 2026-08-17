@@ -205,6 +205,24 @@ export default function WorksPage() {
         </div>
       </section>
 
+      {/* ─── Case Study CTA ─── */}
+      <section className="relative py-16 px-6 md:px-10 lg:px-14 bg-transparent text-on-surface text-center border-t border-white/5">
+        <ScrollReveal className="max-w-2xl mx-auto">
+          <h2 className="text-2xl font-black uppercase tracking-[-0.04em] text-white font-headline mb-4">
+            See How We Delivered Results
+          </h2>
+          <a
+            href="/HPF-Media-Case-Studies.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View HPF Media case study PDF"
+            className="border border-white/15 px-8 py-4 text-sm font-black uppercase tracking-[0.24em] text-white hover:bg-white/5 transition-colors duration-200 inline-flex items-center justify-center"
+          >
+            View Case Study
+          </a>
+        </ScrollReveal>
+      </section>
+
       <section className="py-32 px-8 bg-transparent">
         <ScrollReveal scale={0.97} rotateX={2} className="max-w-5xl mx-auto glass-card rounded-lg p-16 text-center relative overflow-hidden bg-transparent text-on-surface border border-white/5">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
