@@ -6,6 +6,7 @@ import Icon from "@/components/Icon";
 import ScrollReveal, { RevealItem } from "@/components/ScrollReveal";
 import StaggerText from "@/components/StaggerText";
 import Parallax from "@/components/Parallax";
+import WorkShowcase from "@/components/home/WorkShowcase";
 
 const videos: {
   id: string;
@@ -161,21 +162,7 @@ export default function WorksPage() {
         </div>
       </section>
 
-      <section className="relative py-20 lg:py-24 px-6 md:px-8 mx-auto bg-transparent text-on-surface overflow-hidden">
-        <div className="relative z-10 max-w-7xl mx-auto">
-          <ScrollReveal isContainer staggerChildren={0.2} scale={0.96} yOffset={30} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-            {videos.map((video) => (
-              <WorkVideoCard
-                key={video.id}
-                video={video}
-                isPlaying={playingVideoId === video.id}
-                onPlay={() => setPlayingVideoId(video.id)}
-                onPause={() => setPlayingVideoId(null)}
-              />
-            ))}
-          </ScrollReveal>
-        </div>
-      </section>
+      <WorkShowcase />
 
       {/* ─── Internal Links ─── */}
       <section
