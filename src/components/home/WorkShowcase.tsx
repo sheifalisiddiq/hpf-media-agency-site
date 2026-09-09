@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Icon from "@/components/Icon";
 import ScrollReveal from "@/components/ScrollReveal";
 
@@ -139,7 +138,6 @@ function SocialReelCard({
 export default function WorkShowcase() {
   const [activeReelId, setActiveReelId] = useState<string | null>(null);
   const loopingReels = [...socialReels, ...socialReels];
-  const logos = [["/emirates_FC_logo.jpeg", "Emirates FC"], ["/Mecca_al_mukarramah_perfumes.jpeg", "Mecca Al Mukarramah Perfumes"], ["/talal_market_logo.png", "Talal Market"]] as const;
 
   return (
     <section id="our-work" className="relative overflow-hidden border-y border-white/5 bg-black py-24 text-on-surface">
@@ -148,7 +146,6 @@ export default function WorkShowcase() {
           <ScrollReveal className="max-w-3xl space-y-6"><p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary">Portfolio</p><h2 className="text-4xl font-black uppercase tracking-[-0.05em] text-white md:text-6xl font-headline">Content that gets seen.</h2><p className="max-w-2xl text-base leading-7 text-on-surface-variant md:text-lg">A live stream of the short-form content we produce for UAE brands. Open any reel to see its current views and engagement on the original platform.</p></ScrollReveal>
           <ScrollReveal delay={0.2} className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.2em] text-white/45"><span className="h-2 w-2 animate-pulse rounded-full bg-primary" />Hover to pause</ScrollReveal>
         </div>
-        <ScrollReveal delay={0.15} className="mb-14"><p className="mb-6 text-[10px] font-bold uppercase tracking-[0.25em] text-white/30">Brands we&apos;ve worked with</p><div className="flex flex-wrap items-center gap-6 md:gap-10">{logos.map(([src, alt]) => <div key={src} className="relative h-20 w-40 overflow-hidden rounded-xl border border-white/10 bg-white/[0.02] p-4 shadow-lg transition-colors hover:border-white/20 hover:bg-white/[0.05] md:h-24 md:w-48"><Image src={src} alt={alt} fill className="object-contain p-2" /></div>)}</div></ScrollReveal>
       </div>
       <div className="social-reel-marquee group/marquee overflow-hidden" aria-label="HPF Media social video portfolio"><div className="social-reel-track flex w-max gap-5 px-4 sm:gap-6 sm:px-6 lg:px-8">{loopingReels.map((reel, index) => <div key={`${reel.id}-${index}`} aria-hidden={index >= socialReels.length || undefined}><SocialReelCard reel={reel} isActive={activeReelId === reel.id} onPlay={() => setActiveReelId(activeReelId === reel.id ? null : reel.id)} /></div>)}</div></div>
       <style jsx>{`

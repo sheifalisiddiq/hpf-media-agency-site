@@ -16,6 +16,17 @@ const videos: {
   description: string;
 }[] = [];
 
+const brandLogos: [src: string, name: string][] = [
+  ["/emirates_FC_logo.jpeg", "Emirates FC"],
+  ["/Mecca_al_mukarramah_perfumes.jpeg", "Mecca Al Mukarramah Perfumes"],
+  ["/mr_glass_logo.jpeg", "Mr Glass"],
+  ["/bunzai_burgers.jpeg", "Bunzai Burgers"],
+  ["/beston_woods.jpeg", "Beston Wood"],
+  ["/play_and_sip.jpeg", "Play & Sip"],
+  ["/windmaster_logo.jpeg", "Windmaster"],
+  ["/cvrd_logo.jpeg", "CVRD"],
+];
+
 function WorkVideoCard({
   video,
   isPlaying,
@@ -136,22 +147,22 @@ export default function WorksPage() {
 
           <ScrollReveal delay={0.6} className="mt-12">
             <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-white/30 mb-8">Brands We've Worked With:</p>
-            <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
-              <div className="group relative h-20 w-40 md:h-24 md:w-48 overflow-hidden rounded-xl border border-white/10 bg-white/[0.02] p-4 transition-all hover:bg-white/[0.05] hover:border-white/20 shadow-lg">
-                <Image
-                  src="/emirates_FC_logo.jpeg"
-                  alt="Emirates FC — social media client of HPF Media"
-                  fill
-                  className="object-contain p-2 transition-all duration-500"
-                />
-              </div>
-              <div className="group relative h-20 w-40 md:h-24 md:w-48 overflow-hidden rounded-xl border border-white/10 bg-white/[0.02] p-4 transition-all hover:bg-white/[0.05] hover:border-white/20 shadow-lg">
-                <Image
-                  src="/Mecca_al_mukarramah_perfumes.jpeg"
-                  alt="Mecca Al Mukarramah Perfumes — social media client of HPF Media"
-                  fill
-                  className="object-contain p-2 transition-all duration-500"
-                />
+            <div className="logo-marquee group relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
+              <div className="logo-marquee-track flex w-max items-center">
+                {[...brandLogos, ...brandLogos].map(([src, name], i) => (
+                  <div
+                    key={`${src}-${i}`}
+                    aria-hidden={i >= brandLogos.length || undefined}
+                    className="relative mr-6 md:mr-10 h-20 w-40 md:h-24 md:w-48 shrink-0 opacity-80 transition-opacity hover:opacity-100"
+                  >
+                    <Image
+                      src={src}
+                      alt={`${name} — social media client of HPF Media`}
+                      fill
+                      className="object-contain p-2 transition-all duration-500"
+                    />
+                  </div>
+                ))}
               </div>
             </div>
           </ScrollReveal>
@@ -237,6 +248,30 @@ export default function WorksPage() {
           </ScrollReveal>
         </ScrollReveal>
       </section>
+
+      <style jsx>{`
+        .logo-marquee-track {
+          animation: logo-marquee-drift 32s linear infinite;
+          will-change: transform;
+        }
+        .logo-marquee:hover .logo-marquee-track,
+        .logo-marquee:focus-within .logo-marquee-track {
+          animation-play-state: paused;
+        }
+        @keyframes logo-marquee-drift {
+          from { transform: translate3d(0, 0, 0); }
+          to { transform: translate3d(-50%, 0, 0); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .logo-marquee { mask-image: none; }
+          .logo-marquee-track {
+            animation: none;
+            flex-wrap: wrap;
+            justify-content: center;
+            row-gap: 1.5rem;
+          }
+        }
+      `}</style>
     </>
   );
 }
