@@ -17,14 +17,6 @@ type SocialReel = {
 
 const socialReels: SocialReel[] = [
   {
-    id: "DbGmkN1uJY9",
-    platform: "Instagram",
-    sourceUrl: "https://www.instagram.com/reel/DbGmkN1uJY9/?igsi=MXQwaWtsMWR2NWRscQ==",
-    embedUrl: "https://www.instagram.com/reel/DbGmkN1uJY9/embed/",
-    title: "Instagram reel, HPF Media client work",
-    views: "550k+",
-  },
-  {
     id: "DbLzGuetoPZ",
     platform: "Instagram",
     sourceUrl: "https://www.instagram.com/reel/DbLzGuetoPZ/?igsi=MThqdWlyZGRheml4OA==",
