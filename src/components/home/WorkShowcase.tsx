@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Icon from "@/components/Icon";
 import ScrollReveal from "@/components/ScrollReveal";
 
@@ -9,6 +9,8 @@ type SocialReel = {
   platform: "Instagram" | "TikTok";
   sourceUrl: string;
   embedUrl?: string;
+  videoSrc?: string;
+  poster?: string;
   title: string;
   views: string;
 };
@@ -58,10 +60,89 @@ const socialReels: SocialReel[] = [
     id: "7650522024233667847",
     platform: "TikTok",
     sourceUrl: "https://www.tiktok.com/@windmaster.ae/video/7650522024233667847",
+    videoSrc: "/tiktok-windmaster.mp4",
+    poster: "/tiktok-windmaster.jpg",
     title: "TikTok video, HPF Media client work",
     views: "1.2M+",
   },
 ];
+
+function ReelVideo({
+  reel,
+  isActive,
+  onToggleOff,
+}: {
+  reel: SocialReel;
+  isActive: boolean;
+  onToggleOff: () => void;
+}) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (isActive) {
+      video.muted = false;
+      video.play().catch(() => {});
+    } else {
+      video.pause();
+      video.currentTime = 0;
+      video.muted = true;
+    }
+  }, [isActive]);
+
+  useEffect(() => {
+    if (!isActive) return;
+    const video = videoRef.current;
+    if (!video) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) onToggleOff();
+      },
+      { threshold: 0.2 }
+    );
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, [isActive, onToggleOff]);
+
+  return (
+    <>
+      <video
+        ref={videoRef}
+        src={reel.videoSrc}
+        poster={reel.poster}
+        title={reel.title}
+        loop
+        playsInline
+        preload="none"
+        muted={!isActive}
+        className="absolute inset-0 h-full w-full object-cover"
+      />
+
+      {!isActive && (
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div className="flex h-14 w-14 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-md border border-white/25 shadow-2xl transition-transform duration-200 group-hover:scale-110">
+            <Icon name="play_circle" className="h-8 w-8" />
+          </div>
+        </div>
+      )}
+
+      {/* Bottom scrim so the view count stays legible over the video */}
+      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/85 via-black/40 to-transparent pointer-events-none z-10" />
+
+      {reel.views && (
+        <div className="absolute bottom-2.5 left-3 z-20 flex items-baseline gap-1 pointer-events-none drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+          <span className="text-xl sm:text-2xl font-black tracking-tight text-white font-headline">
+            {reel.views}
+          </span>
+          <span className="text-[9px] sm:text-[10px] font-extrabold uppercase tracking-widest text-neutral-300">
+            VIEWS
+          </span>
+        </div>
+      )}
+    </>
+  );
+}
 
 function SocialReelCard({
   reel,
@@ -73,7 +154,7 @@ function SocialReelCard({
   onPlay: () => void;
 }) {
   const handleClick = () => {
-    if (!reel.embedUrl && reel.sourceUrl) {
+    if (!reel.embedUrl && !reel.videoSrc && reel.sourceUrl) {
       window.open(reel.sourceUrl, "_blank", "noopener,noreferrer");
     } else {
       onPlay();
@@ -86,7 +167,9 @@ function SocialReelCard({
       className="group relative block w-[17.5rem] shrink-0 cursor-pointer overflow-hidden rounded-[1.35rem] border border-white/10 bg-[#090909] shadow-[0_22px_55px_rgba(0,0,0,0.38)] sm:w-[19rem]"
     >
       <div className="relative aspect-[9/13] overflow-hidden bg-[#090909]">
-        {reel.embedUrl ? (
+        {reel.videoSrc ? (
+          <ReelVideo reel={reel} isActive={isActive} onToggleOff={onPlay} />
+        ) : reel.embedUrl ? (
           <>
             <iframe
               key={isActive ? "active" : "inactive"}
@@ -107,7 +190,7 @@ function SocialReelCard({
             <div className="absolute top-0 left-0 right-0 h-4 bg-[#090909] pointer-events-none z-10" />
             {/* Bottom dark mask to cover iframe footer */}
             <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-[#090909] via-[#090909]/80 to-transparent pointer-events-none z-10" />
-            
+
             {/* View count badge */}
             {reel.views && (
               <div className="absolute bottom-2.5 left-3 z-20 flex items-baseline gap-1 pointer-events-none drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
@@ -122,7 +205,7 @@ function SocialReelCard({
           </>
         ) : (
           <div className="relative flex h-full flex-col justify-between overflow-hidden bg-[radial-gradient(circle_at_75%_15%,rgba(255,84,73,0.28),transparent_34%),linear-gradient(145deg,#202020_0%,#080808_55%,#131313_100%)] p-6">
-            <span className="text-[11px] font-black uppercase tracking-[0.32em] text-white/55">TikTok</span>
+            <span className="text-[11px] font-black uppercase tracking-[0.32em] text-white/55">{reel.platform}</span>
             <div><Icon name="play_circle" className="mb-4 h-12 w-12 text-primary" /><p className="text-xl font-black uppercase leading-[0.92] tracking-[-0.055em] text-white">Watch the<br />full reel.</p></div>
             <div className="flex items-baseline justify-between pt-4 border-t border-white/15">
               <span className="text-2xl font-black tracking-tight text-white font-headline">{reel.views}</span>
@@ -147,14 +230,21 @@ export default function WorkShowcase() {
           <ScrollReveal delay={0.2} className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.2em] text-white/45"><span className="h-2 w-2 animate-pulse rounded-full bg-primary" />Hover to pause</ScrollReveal>
         </div>
       </div>
-      <div className="social-reel-marquee group/marquee overflow-hidden" aria-label="HPF Media social video portfolio"><div className="social-reel-track flex w-max gap-5 px-4 sm:gap-6 sm:px-6 lg:px-8">{loopingReels.map((reel, index) => <div key={`${reel.id}-${index}`} aria-hidden={index >= socialReels.length || undefined}><SocialReelCard reel={reel} isActive={activeReelId === reel.id} onPlay={() => setActiveReelId(activeReelId === reel.id ? null : reel.id)} /></div>)}</div></div>
+      <div className="social-reel-marquee group/marquee overflow-hidden" aria-label="HPF Media social video portfolio"><div className="social-reel-track flex w-max gap-5 px-4 sm:gap-6 sm:px-6 lg:px-8">{loopingReels.map((reel, index) => {
+        const cardKey = `${reel.id}-${index}`;
+        return (
+          <div key={cardKey} aria-hidden={index >= socialReels.length || undefined}>
+            <SocialReelCard reel={reel} isActive={activeReelId === cardKey} onPlay={() => setActiveReelId(activeReelId === cardKey ? null : cardKey)} />
+          </div>
+        );
+      })}</div></div>
       <style jsx>{`
         .social-reel-track { animation: social-reel-drift 45s linear infinite; will-change: transform; }
         .social-reel-marquee:hover .social-reel-track, .social-reel-marquee:focus-within .social-reel-track { animation-play-state: paused; }
         .social-reel-embed { top: -22%; left: -17.5%; width: 135%; height: 170%; pointer-events: none; overflow: hidden; scrollbar-width: none; -ms-overflow-style: none; }
         .social-reel-embed::-webkit-scrollbar { display: none; }
         @keyframes social-reel-drift { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(-50%, 0, 0); } }
-        @media (max-width: 768px), (prefers-reduced-motion: reduce) { .social-reel-marquee { overflow-x: auto; scrollbar-width: none; } .social-reel-marquee::-webkit-scrollbar { display: none; } .social-reel-track { animation: none; } .social-reel-track > div:nth-child(n + 6) { display: none; } }
+        @media (max-width: 768px), (prefers-reduced-motion: reduce) { .social-reel-marquee { overflow-x: auto; scrollbar-width: none; } .social-reel-marquee::-webkit-scrollbar { display: none; } .social-reel-track { animation: none; } .social-reel-track > div:nth-child(n + 7) { display: none; } }
       `}</style>
     </section>
   );
