@@ -55,7 +55,7 @@ const socialReels: SocialReel[] = [
     videoSrc: "/tiktok-windmaster.mp4",
     poster: "/tiktok-windmaster.jpg",
     title: "TikTok video, HPF Media client work",
-    views: "1.2M+",
+    views: "101k+",
   },
 ];
 
