@@ -32,7 +32,7 @@ export default function ContactForm() {
 
   if (success) {
     return (
-      <div className="border border-line p-10 md:p-14">
+      <div className="glass p-10 md:p-14">
         <span className="crimson-bar" />
         <p className="t-h2 mt-6 text-bone">Message received.</p>
         <p className="t-lead mt-4">We&apos;ll reply within one working day, honestly and without a sales script.</p>
@@ -44,7 +44,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="space-y-2">
+    <form onSubmit={onSubmit} className="space-y-4">
       <label className="block">
         <span className="sr-only">Full name</span>
         <input name="fullname" required placeholder="Full name *" className="field" autoComplete="name" />
@@ -85,7 +85,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={submitting}
-          className="inline-flex items-center gap-3 rounded-full bg-crimson px-8 py-4 text-bone transition-colors hover:bg-crimson-bright disabled:opacity-60"
+          className="inline-flex items-center gap-3 bg-crimson-bright px-8 py-4 text-sm font-black uppercase tracking-[0.2em] text-black transition-colors hover:bg-white disabled:opacity-60"
         >
           {submitting ? "Sending…" : "Send message →"}
         </button>

@@ -61,7 +61,7 @@ export default function ContactPage() {
           <Reveal delay={0.3}>
             <Link
               href="/clarity-check"
-              className="group mb-14 flex items-center justify-between gap-6 border border-crimson/40 bg-crimson/[0.08] p-6 transition-colors hover:bg-crimson/20 md:p-8"
+              className="group mb-14 flex items-center justify-between gap-6 rounded-[1.5rem] border border-crimson/40 bg-crimson/[0.08] p-6 backdrop-blur-xl transition-colors hover:bg-crimson/20 md:p-8"
             >
               <div>
                 <p className="t-label mb-2 text-crimson-bright">Not ready to talk yet?</p>

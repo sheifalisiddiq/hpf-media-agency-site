@@ -31,7 +31,7 @@ export default function CursorTrail() {
     if (!ctx) return;
 
     const TRAIL_LENGTH = 14;
-    const ACCENT = "200, 16, 46";
+    const ACCENT = "255, 84, 73";
     const target: Point = { x: -100, y: -100 };
     const ringPos: Point = { x: -100, y: -100 };
     const points: Point[] = Array.from({ length: TRAIL_LENGTH }, () => ({ x: -100, y: -100 }));
@@ -153,10 +153,10 @@ export default function CursorTrail() {
           border-radius: 9999px; border: 1px solid rgb(242 239 234 / .35); display: flex; align-items: center; justify-content: center;
           transition: width .45s cubic-bezier(.16,1,.3,1), height .45s cubic-bezier(.16,1,.3,1), margin .45s cubic-bezier(.16,1,.3,1),
             background-color .3s ease, border-color .3s ease; }
-        .hpf-ring[data-mode="link"] .hpf-ring__dot { width: 58px; height: 58px; margin: -29px 0 0 -29px; border-color: rgb(200 16 46 / .8); }
+        .hpf-ring[data-mode="link"] .hpf-ring__dot { width: 58px; height: 58px; margin: -29px 0 0 -29px; border-color: rgb(255 84 73 / .8); }
         .hpf-ring[data-mode="play"] .hpf-ring__dot, .hpf-ring[data-mode="drag"] .hpf-ring__dot {
           width: 84px; height: 84px; margin: -42px 0 0 -42px; background: var(--color-crimson); border-color: transparent; }
-        .hpf-ring__label { font-family: var(--font-mono); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--color-bone); }
+        .hpf-ring__label { font-family: var(--font-sans); font-weight: 700; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--color-bone); }
       `}</style>
       <canvas ref={canvasRef} aria-hidden className="pointer-events-none fixed inset-0 z-[9996]" />
       <div ref={ringRef} className="hpf-ring" aria-hidden data-mode="default">

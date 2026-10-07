@@ -57,7 +57,7 @@ export default function Hero() {
       {/* soft crimson bloom */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-[20vw] top-[10vh] h-[70vmax] w-[70vmax] rounded-full bg-[radial-gradient(circle,rgba(200,16,46,0.16),transparent_62%)]"
+        className="pointer-events-none absolute -right-[20vw] top-[10vh] h-[70vmax] w-[70vmax] rounded-full bg-[radial-gradient(circle,rgba(255,84,73,0.16),transparent_62%)]"
       />
 
       <div className="wrap relative">
@@ -71,7 +71,7 @@ export default function Hero() {
         <h1 className="t-display text-bone" aria-label="Marketing without compromise.">
           {lines.map((line, i) => (
             <span key={line} aria-hidden className={`hero-line-${i} block overflow-hidden pb-[0.06em]`}>
-              <span className={`hero-line-inner inline-block ${i === 1 ? "italic text-bone/80 md:pl-[12vw]" : ""} ${i === 2 ? "md:pl-[4vw]" : ""}`}>
+              <span className={`hero-line-inner inline-block ${i === 1 ? "text-bone/60 md:pl-[8vw]" : ""} ${i === 2 ? "md:pl-[4vw]" : ""}`}>
                 {i === 2 ? (
                   <>
                     compromise<span className="text-crimson">.</span>
@@ -127,7 +127,7 @@ export default function Hero() {
       <div className="hero-fade relative mt-16 border-y border-line py-5">
         <Marquee duration={30} trackClassName="gap-12 pr-12" label="HPF values">
           {[...valueNames, ...valueNames].map((v, i) => (
-            <span key={i} className="flex items-center gap-12 font-display text-3xl italic text-bone/70 md:text-4xl">
+            <span key={i} className="flex items-center gap-12 font-display text-3xl text-bone/70 md:text-4xl">
               {v}
               <span className="h-1.5 w-1.5 rounded-full bg-crimson" aria-hidden />
             </span>

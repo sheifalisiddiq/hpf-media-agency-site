@@ -16,7 +16,7 @@ export default function DecisionFilter() {
   const set = (i: number, a: Answer) => setAnswers((prev) => prev.map((p, j) => (j === i ? (p === a ? null : a) : p)));
 
   return (
-    <div className="border border-line">
+    <div className="glass overflow-hidden">
       <div className="flex items-center justify-between border-b border-line px-5 py-4 md:px-8">
         <p className="t-label text-mute">Try the filter on a decision</p>
         <button
@@ -48,7 +48,7 @@ export default function DecisionFilter() {
                     answers[i] === a
                       ? a === "yes"
                         ? "border-bone bg-bone text-ink"
-                        : "border-crimson bg-crimson text-bone"
+                        : "border-crimson-bright bg-crimson-bright text-black"
                       : "border-line text-bone/70 hover:border-bone/40"
                   )}
                 >
@@ -63,7 +63,7 @@ export default function DecisionFilter() {
         aria-live="polite"
         className={cn(
           "px-5 py-8 transition-colors duration-500 md:px-8",
-          anyNo ? "bg-crimson text-bone" : allYes ? "bg-bone text-ink" : "bg-transparent text-bone"
+          anyNo ? "bg-crimson-bright text-black" : allYes ? "bg-bone text-ink" : "bg-transparent text-bone"
         )}
       >
         <p className="font-display text-3xl md:text-4xl">

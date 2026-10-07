@@ -56,7 +56,7 @@ export async function POST(request: Request) {
     subject: `Clarity Check: ${company} scored ${result.score} (${result.band.label})`,
     html: `
       <div style="font-family:sans-serif;max-width:640px;margin:0 auto;padding:20px">
-        <h2 style="color:#c8102e;margin:0 0 4px">New Clarity Check lead</h2>
+        <h2 style="color:#ff5449;margin:0 0 4px">New Clarity Check lead</h2>
         <p style="margin:0 0 16px;color:#666">Gap score <strong>${result.score}/100</strong>, ${escape(result.band.label)}</p>
         <p><strong>Name:</strong> ${escape(name)}<br/>
         <strong>Email:</strong> ${escape(email)}<br/>

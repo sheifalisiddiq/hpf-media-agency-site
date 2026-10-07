@@ -10,9 +10,9 @@ export const site = {
 };
 
 export const navLinks = [
-  { name: "Method", href: "/method" },
-  { name: "Works", href: "/works" },
   { name: "About", href: "/about" },
+  { name: "Method", href: "/method" },
+  { name: "Our Works", href: "/works" },
   { name: "Contact", href: "/contact" },
 ];
 

@@ -95,7 +95,7 @@ export default function AboutPage() {
 
       <section aria-label="Vision and mission" className="relative">
         {chapters.map((c) => (
-          <article key={c.name} className="sticky top-0 flex min-h-[100svh] items-center border-t border-line bg-ink py-24">
+          <article key={c.name} className="flex items-center border-t border-line py-24 md:py-32">
             <div className="wrap grid gap-12 lg:grid-cols-12">
               <div className="lg:col-span-4">
                 <p className="t-label flex items-center gap-4 text-mute">
@@ -121,7 +121,7 @@ export default function AboutPage() {
         ))}
       </section>
 
-      <section aria-label="Core values" className="relative z-10 border-t border-line bg-ink py-24 md:py-36">
+      <section aria-label="Core values" className="relative z-10 border-t border-line py-24 md:py-36">
         <div className="wrap">
           <SectionLabel index="Part 04">Core values</SectionLabel>
           <RevealText as="h2" className="t-h1 mt-6 max-w-4xl text-bone">
@@ -135,7 +135,7 @@ export default function AboutPage() {
             {values.map((v) => (
               <div key={v.name} className="group grid gap-4 border-b border-line py-8 md:grid-cols-12 md:items-baseline">
                 <span className="t-label text-crimson-bright md:col-span-1">{v.index}</span>
-                <h3 className="font-display text-5xl text-bone transition-[color,transform] duration-500 group-hover:translate-x-3 group-hover:text-crimson-bright md:col-span-4 md:text-6xl">
+                <h3 className="font-display text-4xl text-bone transition-[color,transform] sm:text-5xl duration-500 group-hover:translate-x-3 group-hover:text-crimson-bright md:col-span-4 md:text-6xl">
                   {v.name}
                 </h3>
                 <p className="text-lg leading-relaxed text-bone/70 md:col-span-6 md:col-start-7">{v.body}</p>
@@ -157,7 +157,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section aria-label="The HPF Standard" className="relative z-10 border-t border-line bg-ink py-24 md:py-36">
+      <section aria-label="The HPF Standard" className="relative z-10 border-t border-line py-24 md:py-36">
         <div className="wrap">
           <SectionLabel index="Part 06">The HPF Standard</SectionLabel>
           <RevealText as="h2" className="t-h1 mt-6 max-w-4xl text-bone">
@@ -172,7 +172,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section aria-label="Who we work with" className="relative z-10 border-t border-line bg-ink py-24 md:py-36">
+      <section aria-label="Who we work with" className="relative z-10 border-t border-line py-24 md:py-36">
         <div className="wrap grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <SectionLabel>Who we work with</SectionLabel>
@@ -201,10 +201,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section aria-label="Our ambition" className="relative z-10 overflow-hidden border-t border-line bg-ink py-24 md:py-36">
+      <section aria-label="Our ambition" className="relative z-10 overflow-hidden border-t border-line py-24 md:py-36">
         <div
           aria-hidden
-          className="pointer-events-none absolute -right-[10vw] bottom-0 h-[50vmax] w-[50vmax] rounded-full bg-[radial-gradient(circle,rgba(200,16,46,0.18),transparent_60%)]"
+          className="pointer-events-none absolute -right-[10vw] bottom-0 h-[50vmax] w-[50vmax] rounded-full bg-[radial-gradient(circle,rgba(255,84,73,0.18),transparent_60%)]"
         />
         <div className="wrap relative">
           <SectionLabel index="Part 05">Our ambition</SectionLabel>
@@ -227,7 +227,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section aria-label="The HPF person" className="relative z-10 border-t border-line bg-ink py-24 md:py-36">
+      <section aria-label="The HPF person" className="relative z-10 border-t border-line py-24 md:py-36">
         <div className="wrap">
           <SectionLabel index="Part 07">The HPF person</SectionLabel>
           <RevealText as="h2" className="t-h2 mt-6 max-w-4xl text-bone">
@@ -264,7 +264,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section aria-label="Our commitment" className="relative z-10 border-t border-line bg-ink py-24 md:py-36">
+      <section aria-label="Our commitment" className="relative z-10 border-t border-line py-24 md:py-36">
         <div className="wrap max-w-5xl text-center">
           <p className="t-label mb-8 text-crimson-bright">Our commitment</p>
           {commitment.map((p, i) => (
@@ -272,7 +272,7 @@ export default function AboutPage() {
               {p}
             </RevealText>
           ))}
-          <p className="mt-12 font-display text-3xl italic text-bone">HPF</p>
+          <p className="mt-12 font-display text-3xl text-bone/70">HPF</p>
         </div>
       </section>
 

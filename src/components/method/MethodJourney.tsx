@@ -84,7 +84,7 @@ export default function MethodJourney() {
                   <RevealText as="h2" className="t-h1 text-bone">
                     {s.name}
                   </RevealText>
-                  <RevealText as="p" className="mt-6 font-display text-2xl italic leading-snug text-bone/75 md:text-3xl">
+                  <RevealText as="p" className="mt-6 font-display text-2xl leading-snug text-bone/75 md:text-3xl">
                     {s.tagline}
                   </RevealText>
                   <Reveal className="mt-8">
@@ -146,7 +146,7 @@ export default function MethodJourney() {
                               n += 1;
                               return (
                                 <li key={step} className="flex gap-4 text-[0.95rem] leading-relaxed text-bone/75">
-                                  <span className="font-mono text-xs leading-7 text-crimson-bright">{String(n).padStart(2, "0")}</span>
+                                  <span className="text-xs leading-7 text-crimson-bright">{String(n).padStart(2, "0")}</span>
                                   <span>{step}</span>
                                 </li>
                               );
@@ -168,7 +168,7 @@ export default function MethodJourney() {
               )}
 
               {s.handoff && (
-                <Reveal className="mt-14 flex gap-5 border-l-2 border-crimson bg-ink-2/70 p-6 md:p-8">
+                <Reveal className="mt-14 flex gap-5 glass border-l-2 !border-l-crimson p-6 md:p-8">
                   <div>
                     <p className="t-label mb-3 text-crimson-bright">
                       {i < stages.length - 1 ? `Handoff to ${stages[i + 1].name}` : "On pricing"}

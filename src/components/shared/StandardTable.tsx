@@ -41,7 +41,7 @@ export default function StandardTable() {
         {standard.map((row, i) => (
           <li key={i} className="std-row grid grid-cols-1 gap-3 border-b border-line py-6 md:grid-cols-2 md:gap-0 md:py-8">
             <div className="std-never relative flex gap-4 pr-6 text-bone/55 md:pr-12">
-              <span className="mt-1 font-mono text-xs text-mute">×</span>
+              <span className="mt-1 text-xs text-mute">×</span>
               <p className="relative text-base leading-relaxed md:text-lg">
                 {row.never}
                 <span
@@ -51,7 +51,7 @@ export default function StandardTable() {
               </p>
             </div>
             <div className="std-always flex gap-4 md:pl-12">
-              <span className="mt-1 font-mono text-xs text-crimson-bright">✓</span>
+              <span className="mt-1 text-xs text-crimson-bright">✓</span>
               <p className="text-base leading-relaxed text-bone md:text-lg">{row.always}</p>
             </div>
           </li>

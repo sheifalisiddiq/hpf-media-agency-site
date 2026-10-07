@@ -38,14 +38,14 @@ export async function POST(request: Request) {
       subject: `New enquiry: ${fullname}`,
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #eee; border-radius: 10px;">
-          <h2 style="color: #c8102e; text-transform: uppercase;">New enquiry</h2>
+          <h2 style="color: #ff5449; text-transform: uppercase;">New enquiry</h2>
           <hr />
           <p><strong>Full Name:</strong> ${esc(fullname)}</p>
           <p><strong>Corporate Email:</strong> ${esc(email)}</p>
           <p><strong>Company Domain:</strong> ${esc(domain) || "N/A"}</p>
           <p><strong>Annual Revenue:</strong> ${esc(revenue) || "N/A"}</p>
           <p><strong>Stage of interest:</strong> ${esc(stage) || "N/A"}</p>
-          <div style="margin-top: 20px; padding: 15px; background-color: #f9f9f9; border-left: 4px solid #c8102e;">
+          <div style="margin-top: 20px; padding: 15px; background-color: #f9f9f9; border-left: 4px solid #ff5449;">
             <p><strong>Growth Objectives:</strong></p>
             <p>${esc(objectives)}</p>
           </div>

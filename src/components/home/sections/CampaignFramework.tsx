@@ -71,7 +71,7 @@ export default function CampaignFramework() {
             own message, its own content direction, and its own KPI, set before anything goes live.
           </p>
 
-          <div className="mt-10 border border-line bg-ink-2/60 p-6" aria-live="polite">
+          <div className="glass mt-10 p-6" aria-live="polite">
             <p className="t-label mb-4 text-mute">Selected cell</p>
             <dl className="grid grid-cols-3 gap-4">
               {[
@@ -121,7 +121,7 @@ export default function CampaignFramework() {
                           className={cn(
                             "border transition-[background-color,border-color] duration-300",
                             on
-                              ? "border-crimson-bright bg-crimson shadow-[0_0_40px_rgba(200,16,46,0.6)]"
+                              ? "border-crimson-bright bg-crimson shadow-[0_0_40px_rgba(255,84,73,0.6)]"
                               : lit
                                 ? "border-bone/25 bg-bone/[0.07] hover:bg-crimson/60"
                                 : "border-bone/10 bg-ink-2/70 hover:bg-crimson/60"

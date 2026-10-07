@@ -33,8 +33,8 @@ export default function MethodTrack() {
           },
         });
 
-        gsap.utils.toArray<HTMLElement>(".mt-panel").forEach((panel) => {
-          gsap.from(panel.querySelectorAll(".mt-in"), {
+        gsap.utils.toArray<HTMLElement>(".mt-panel").forEach((panel, panelIndex) => {
+          if (panelIndex > 0) gsap.from(panel.querySelectorAll(".mt-in"), {
             y: 60,
             autoAlpha: 0,
             stagger: 0.08,
@@ -96,8 +96,8 @@ export default function MethodTrack() {
             <article
               key={stage.id}
               className={cn(
-                "mt-panel relative flex flex-col justify-between overflow-hidden border border-line p-7 md:p-10 lg:h-[58vh] lg:w-[min(78vw,1100px)] lg:border-y-0 lg:border-l lg:border-r-0 lg:px-14 lg:py-4",
-                i === 0 ? "bg-crimson/[0.07]" : "bg-transparent"
+                "mt-panel glass relative flex flex-col justify-between overflow-hidden p-7 md:p-10 lg:mr-6 lg:h-[58vh] lg:w-[min(78vw,1100px)] lg:px-14 lg:py-8",
+                i === 0 && "border-crimson/30 bg-crimson/[0.07]"
               )}
             >
               <span
@@ -114,7 +114,7 @@ export default function MethodTrack() {
                   <span className="t-label text-mute">{stage.duration}</span>
                 </div>
                 <h3 className="mt-in font-display text-6xl leading-[0.9] tracking-tight text-bone md:text-8xl">{stage.name}</h3>
-                <p className="mt-in mt-5 max-w-xl font-display text-2xl italic leading-snug text-bone/75 md:text-3xl">
+                <p className="mt-in mt-5 max-w-xl font-display text-2xl leading-snug text-bone/75 md:text-3xl">
                   {stage.tagline}
                 </p>
               </div>

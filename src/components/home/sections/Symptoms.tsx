@@ -35,7 +35,7 @@ export default function Symptoms() {
               { yPercent: 0, autoAlpha: 1, duration: 0.6, ease: "expo.out" },
               at + 0.3
             )
-            .to(row.querySelector(".sym-dot"), { backgroundColor: "#c8102e", scale: 1.6, duration: 0.3 }, at + 0.3);
+            .to(row.querySelector(".sym-dot"), { backgroundColor: "#ff5449", scale: 1.6, duration: 0.3 }, at + 0.3);
         });
         tl.to(".sym-progress", { scaleX: 1, ease: "none", duration: tl.duration() }, 0);
       });

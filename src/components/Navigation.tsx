@@ -1,148 +1,173 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
-import { cn } from "@/lib/utils";
-import { navLinks, site, valueNames } from "@/content/site";
-import { useLenis } from "./SmoothScrollProvider";
+import { useState } from "react";
+import Icon from "./Icon";
+import { navLinks, site } from "@/content/site";
+
+const links = [{ name: "Home", href: "/" }, ...navLinks];
+
+function getLinkClasses(isActive: boolean) {
+  return [
+    "rounded-full px-4 py-2 text-sm font-semibold tracking-[0.18em] uppercase transition-all duration-300",
+    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-black/60",
+    isActive
+      ? "bg-white/14 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.14)]"
+      : "text-white/70 hover:text-white hover:bg-white/8",
+  ].join(" ");
+}
 
 export default function Navigation() {
   const pathname = usePathname();
-  const lenis = useLenis();
-  const [open, setOpen] = useState(false);
-  const [hidden, setHidden] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const lastY = useRef(0);
-
+  const [isOpen, setIsOpen] = useState(false);
   const [prevPath, setPrevPath] = useState(pathname);
   if (prevPath !== pathname) {
     setPrevPath(pathname);
-    setOpen(false);
+    setIsOpen(false);
   }
 
-  useEffect(() => {
-    const onScroll = () => {
-      const y = window.scrollY;
-      setScrolled(y > 40);
-      setHidden(y > 240 && y > lastY.current + 4 ? true : y < lastY.current - 4 ? false : hidden);
-      lastY.current = y;
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [hidden]);
-
-  useEffect(() => {
-    if (open) lenis?.stop();
-    else lenis?.start();
-    document.body.style.overflow = open ? "hidden" : "";
-  }, [open, lenis]);
-
-  const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
+  const isActive = (href: string) => (href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`));
 
   return (
-    <>
-      <header
-        className={cn(
-          "fixed inset-x-0 top-0 z-50 transition-[transform,background-color,border-color] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
-          hidden && !open ? "-translate-y-full" : "translate-y-0",
-          scrolled && !open ? "border-b border-line bg-ink/75 backdrop-blur-xl" : "border-b border-transparent"
-        )}
+    <div className="pointer-events-none fixed left-1/2 top-4 z-50 w-full max-w-6xl -translate-x-1/2 px-4">
+      <nav
+        aria-label="Main"
+        className="pointer-events-auto rounded-full border border-white/20 bg-black/30 shadow-[0_18px_55px_rgba(0,0,0,0.35)] backdrop-blur-xl"
       >
-        <nav className="wrap flex h-16 items-center justify-between md:h-20" aria-label="Main">
-          <Link href="/" className="group flex items-center gap-3" aria-label="HPF Media home">
-            <span className="h-1.5 w-6 bg-crimson transition-[width] duration-500 group-hover:w-9" />
-            <span className="font-display text-2xl leading-none tracking-tight text-bone md:text-[1.7rem]">
-              HPF <span className="text-mute">Media</span>
+        <div className="flex items-center justify-between px-6 py-3">
+          <Link
+            href="/"
+            className="group flex min-h-12 items-center gap-3 rounded-full pr-4 text-white transition-opacity duration-300 hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-black/60"
+          >
+            <div className="relative h-10 w-10 overflow-hidden rounded-full border border-white/15 bg-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.18)]">
+              <Image src="/logo.jpg" alt="HPF Media Logo" fill sizes="40px" className="object-cover" priority />
+            </div>
+            <span className="flex flex-col leading-none">
+              <span className="text-[0.65rem] font-medium uppercase tracking-[0.34em] text-white/55">Agency</span>
+              <span className="text-base font-semibold tracking-[0.18em] text-white">HPF Media</span>
             </span>
           </Link>
 
-          <ul className="hidden items-center gap-1 md:flex">
-            {navLinks.map((l) => (
-              <li key={l.href}>
-                <Link
-                  href={l.href}
-                  className={cn(
-                    "group relative px-4 py-2 text-sm tracking-tight transition-colors",
-                    isActive(l.href) ? "text-bone" : "text-bone/60 hover:text-bone"
-                  )}
-                >
-                  {l.name}
-                  <span
-                    className={cn(
-                      "absolute inset-x-4 -bottom-0.5 h-px origin-left bg-crimson transition-transform duration-500",
-                      isActive(l.href) ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
-                    )}
-                  />
-                </Link>
-              </li>
+          <div className="hidden items-center gap-1 xl:flex">
+            {links.map((link) => (
+              <Link key={link.href} href={link.href} className={getLinkClasses(isActive(link.href))}>
+                {link.name}
+              </Link>
             ))}
-          </ul>
-
-          <div className="flex items-center gap-3">
+            <div className="mx-2 h-4 w-[1px] bg-white/10" />
+            <Link
+              href={site.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="HPF Media on Instagram"
+              className="group flex h-10 w-10 items-center justify-center rounded-full text-white/50 transition-all duration-300 hover:bg-white/10 hover:text-white"
+            >
+              <Icon name="instagram" className="h-5 w-5" />
+            </Link>
+            <Link
+              href={site.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="HPF Media on WhatsApp"
+              className="group flex h-10 w-10 items-center justify-center rounded-full text-white/50 transition-all duration-300 hover:bg-white/10 hover:text-white"
+            >
+              <Icon name="whatsapp" className="h-5 w-5" />
+            </Link>
             <Link
               href="/clarity-check"
-              className="hidden rounded-full bg-crimson px-5 py-2.5 text-sm font-medium text-bone transition-colors hover:bg-crimson-bright sm:inline-flex"
+              className="ml-2 rounded-full bg-primary px-5 py-2.5 text-xs font-black uppercase tracking-[0.16em] text-black transition-colors duration-300 hover:bg-white"
             >
               Free Clarity Check
             </Link>
-            <button
-              type="button"
-              onClick={() => setOpen((o) => !o)}
-              aria-expanded={open}
-              aria-controls="mobile-menu"
-              aria-label={open ? "Close menu" : "Open menu"}
-              className="relative flex h-11 w-11 items-center justify-center rounded-full border border-line md:hidden"
-            >
-              <span className={cn("absolute h-px w-5 bg-bone transition-transform duration-500", open ? "rotate-45" : "-translate-y-[4px]")} />
-              <span className={cn("absolute h-px w-5 bg-bone transition-transform duration-500", open ? "-rotate-45" : "translate-y-[4px]")} />
-            </button>
           </div>
-        </nav>
-      </header>
+
+          <button
+            type="button"
+            aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={isOpen}
+            aria-controls="mobile-navigation"
+            onClick={() => setIsOpen((open) => !open)}
+            className="flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white transition-colors duration-300 hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-black/60 xl:hidden"
+          >
+            <span className="sr-only">Toggle navigation</span>
+            <span className="relative h-4 w-5">
+              <span
+                className={`absolute left-0 top-0 h-0.5 w-5 rounded-full bg-current transition-all duration-300 ${
+                  isOpen ? "top-[7px] rotate-45" : ""
+                }`}
+              />
+              <span
+                className={`absolute left-0 top-[7px] h-0.5 w-5 rounded-full bg-current transition-all duration-300 ${
+                  isOpen ? "opacity-0" : "opacity-100"
+                }`}
+              />
+              <span
+                className={`absolute left-0 top-[14px] h-0.5 w-5 rounded-full bg-current transition-all duration-300 ${
+                  isOpen ? "top-[7px] -rotate-45" : ""
+                }`}
+              />
+            </span>
+          </button>
+        </div>
+      </nav>
 
       <div
-        id="mobile-menu"
-        className={cn(
-          "fixed inset-0 z-40 flex flex-col bg-ink px-[var(--gutter)] pb-10 pt-28 transition-[clip-path] duration-700 ease-[cubic-bezier(0.77,0,0.175,1)] md:hidden",
-          open ? "[clip-path:inset(0_0_0_0)]" : "pointer-events-none [clip-path:inset(0_0_100%_0)]"
-        )}
-        aria-hidden={!open}
+        id="mobile-navigation"
+        className={`pointer-events-auto mt-3 overflow-hidden rounded-[2rem] border border-white/20 bg-black/40 p-3 shadow-[0_20px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl transition-all duration-200 xl:hidden ${
+          isOpen ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-2 opacity-0"
+        }`}
       >
-        <ul className="flex flex-col gap-2">
-          {[{ name: "Home", href: "/" }, ...navLinks, { name: "Clarity Check", href: "/clarity-check" }].map((l, i) => (
-            <li key={l.href} className="overflow-hidden">
-              <Link
-                href={l.href}
-                tabIndex={open ? 0 : -1}
-                className={cn(
-                  "flex items-baseline gap-4 font-display text-[3.2rem] leading-[1.05] transition-[transform,color] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]",
-                  open ? "translate-y-0" : "translate-y-full",
-                  isActive(l.href) && l.href !== "/" ? "text-crimson" : "text-bone"
-                )}
-                style={{ transitionDelay: open ? `${120 + i * 60}ms` : "0ms" }}
-              >
-                <span className="t-label text-mute">0{i + 1}</span>
-                {l.name}
-              </Link>
-            </li>
+        <div className="flex flex-col gap-1">
+          {links.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              tabIndex={isOpen ? 0 : -1}
+              onClick={() => setIsOpen(false)}
+              className={[
+                "rounded-[1.25rem] px-4 py-3 text-sm font-semibold uppercase tracking-[0.18em] transition-all duration-300",
+                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-black/60",
+                isActive(link.href) ? "bg-white/14 text-white" : "text-white/72 hover:bg-white/10 hover:text-white",
+              ].join(" ")}
+            >
+              {link.name}
+            </Link>
           ))}
-        </ul>
-        <div className="mt-auto space-y-4 border-t border-line pt-6">
-          <div className="flex gap-6 text-sm text-bone/70">
-            <a href={site.whatsapp} target="_blank" rel="noopener noreferrer" tabIndex={open ? 0 : -1}>
-              WhatsApp
-            </a>
-            <a href={site.instagram} target="_blank" rel="noopener noreferrer" tabIndex={open ? 0 : -1}>
-              Instagram
-            </a>
-            <a href={`mailto:${site.email}`} tabIndex={open ? 0 : -1}>
-              Email
-            </a>
-          </div>
-          <p className="t-label text-mute">{valueNames.join(" · ")}</p>
+          <Link
+            href="/clarity-check"
+            tabIndex={isOpen ? 0 : -1}
+            onClick={() => setIsOpen(false)}
+            className="mt-1 rounded-[1.25rem] bg-primary px-4 py-3 text-center text-sm font-black uppercase tracking-[0.18em] text-black"
+          >
+            Free Clarity Check
+          </Link>
+          <div className="my-2 h-[1px] w-full bg-white/10" />
+          <Link
+            href={site.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            tabIndex={isOpen ? 0 : -1}
+            onClick={() => setIsOpen(false)}
+            className="flex items-center gap-3 rounded-[1.25rem] px-4 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white/72 transition-all duration-300 hover:bg-white/10 hover:text-white"
+          >
+            <Icon name="instagram" className="h-5 w-5" />
+            Instagram
+          </Link>
+          <Link
+            href={site.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            tabIndex={isOpen ? 0 : -1}
+            onClick={() => setIsOpen(false)}
+            className="flex items-center gap-3 rounded-[1.25rem] px-4 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white/72 transition-all duration-300 hover:bg-white/10 hover:text-white"
+          >
+            <Icon name="whatsapp" className="h-5 w-5" />
+            WhatsApp
+          </Link>
         </div>
       </div>
-    </>
+    </div>
   );
 }

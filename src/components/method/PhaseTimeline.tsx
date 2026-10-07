@@ -29,11 +29,11 @@ export default function PhaseTimeline({ stage }: { stage: Stage }) {
   );
 
   return (
-    <div ref={ref} className="border border-line p-5 md:p-7">
+    <div ref={ref} className="glass overflow-hidden p-5 md:p-7">
       <div className="mb-4 grid text-mute" style={{ gridTemplateColumns: `9rem repeat(${weeks}, 1fr)` }}>
         <span className="t-label">Phase</span>
         {Array.from({ length: weeks }, (_, w) => (
-          <span key={w} className="t-label border-l border-line pl-2">
+          <span key={w} className="t-label min-w-0 truncate border-l border-line pl-2 text-[0.55rem] tracking-[0.12em] sm:text-[0.68rem] sm:tracking-[0.32em]">
             {isRetainer ? (w === 0 ? "Wk 1" : `Cycle ${w}`) : `Wk ${w + 1}`}
           </span>
         ))}

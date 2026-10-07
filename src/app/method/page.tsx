@@ -60,14 +60,14 @@ export default function MethodPage() {
       <section aria-label="Introduction" className="relative overflow-hidden pb-20 pt-36 md:pb-28 md:pt-48">
         <div
           aria-hidden
-          className="pointer-events-none absolute -left-[15vw] top-0 h-[60vmax] w-[60vmax] rounded-full bg-[radial-gradient(circle,rgba(200,16,46,0.14),transparent_60%)]"
+          className="pointer-events-none absolute -left-[15vw] top-0 h-[60vmax] w-[60vmax] rounded-full bg-[radial-gradient(circle,rgba(255,84,73,0.14),transparent_60%)]"
         />
         <div className="wrap relative">
           <SectionLabel>The HPF Method</SectionLabel>
           <RevealText as="h1" trigger="load" delay={0.2} className="t-display mt-8 max-w-6xl text-bone">
             One method. Four steps.
           </RevealText>
-          <RevealText as="p" trigger="load" delay={0.5} className="t-h2 mt-2 italic text-bone/55">
+          <RevealText as="p" trigger="load" delay={0.5} className="t-h2 mt-2 text-bone/45">
             Each one earns the next.
           </RevealText>
           <div className="mt-14 grid gap-10 md:grid-cols-12">
@@ -90,9 +90,9 @@ export default function MethodPage() {
           <RevealText as="h2" className="t-h2 mt-6 max-w-3xl text-bone">
             Execution, scoped by your Playbook.
           </RevealText>
-          <Reveal stagger={0.1} className="mt-14 grid gap-px bg-line sm:grid-cols-2 lg:grid-cols-4">
+          <Reveal stagger={0.1} className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {launchxCapabilities.map((c, i) => (
-              <div key={c.name} className="group relative bg-ink p-8 transition-colors duration-500 hover:bg-ink-2">
+              <div key={c.name} className="group glass relative !rounded-none p-8 transition-colors duration-500 hover:bg-white/[0.06]">
                 <span className="t-label text-crimson-bright">0{i + 1}</span>
                 <h3 className="t-h3 mt-10 text-bone">{c.name}</h3>
                 <p className="mt-4 text-bone/65">{c.detail}</p>

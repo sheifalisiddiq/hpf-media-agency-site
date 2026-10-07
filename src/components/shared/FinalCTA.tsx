@@ -14,7 +14,7 @@ export default function FinalCTA({
     <section aria-label="Start your Clarity Check" className="relative overflow-hidden border-t border-line py-28 md:py-44">
       <div
         aria-hidden
-        className="pointer-events-none absolute left-1/2 top-1/2 h-[60vmax] w-[60vmax] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(200,16,46,0.22),transparent_60%)] blur-2xl"
+        className="pointer-events-none absolute left-1/2 top-1/2 h-[60vmax] w-[60vmax] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,84,73,0.22),transparent_60%)] blur-2xl"
       />
       <div className="wrap relative text-center">
         <span className="crimson-bar" />

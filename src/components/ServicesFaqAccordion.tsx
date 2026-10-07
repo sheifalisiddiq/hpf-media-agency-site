@@ -42,10 +42,10 @@ export default function ServicesFaqAccordion({ faqs }: { faqs: FaqItem[] }) {
                   aria-hidden
                   className={cn(
                     "relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full border transition-colors duration-300",
-                    isOpen ? "border-crimson bg-crimson" : "border-line"
+                    isOpen ? "border-crimson-bright bg-crimson-bright" : "border-line"
                   )}
                 >
-                  <span className="absolute h-px w-3.5 bg-bone" />
+                  <span className={cn("absolute h-px w-3.5", isOpen ? "bg-black" : "bg-bone")} />
                   <span
                     className={cn(
                       "absolute h-3.5 w-px bg-bone transition-transform duration-500",

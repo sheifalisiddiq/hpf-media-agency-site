@@ -38,7 +38,7 @@ function ScoreDial({ score, band }: { score: number; band: string }) {
           cy="100"
           r={r}
           fill="none"
-          stroke="#c8102e"
+          stroke="#ff5449"
           strokeWidth="6"
           strokeLinecap="butt"
           strokeDasharray={c}
@@ -153,7 +153,7 @@ export default function ClarityCheck() {
                 <span className="h-1 w-8 bg-crimson" /> Stage 00 · Free
               </p>
               <h1 className="t-display mt-8 text-bone">
-                Clarity <span className="italic text-bone/70">Check</span>
+                Clarity <span className="text-bone/60">Check</span>
                 <span className="text-crimson">.</span>
               </h1>
               <p className="t-h3 mt-8 max-w-2xl text-bone/80">10 questions. 4 minutes. No sales call required.</p>
@@ -167,7 +167,7 @@ export default function ClarityCheck() {
                   setStep("quiz");
                   setIndex(0);
                 }}
-                className="group mt-12 inline-flex items-center gap-4 rounded-full bg-crimson px-9 py-5 text-lg text-bone transition-colors hover:bg-crimson-bright"
+                className="group mt-12 inline-flex items-center gap-4 bg-crimson-bright px-9 py-5 text-sm font-black uppercase tracking-[0.24em] text-black transition-colors hover:bg-white"
               >
                 Begin <span className="transition-transform group-hover:translate-x-1">→</span>
               </button>
@@ -235,14 +235,14 @@ export default function ClarityCheck() {
                           onClick={() => choose(oi)}
                           aria-pressed={selected}
                           className={cn(
-                            "group flex w-full items-center gap-5 border px-5 py-5 text-left transition-colors duration-300",
-                            selected ? "border-crimson bg-crimson/15" : "border-line hover:border-bone/40 hover:bg-ink-2"
+                            "group flex w-full items-center gap-5 rounded-2xl border px-5 py-5 text-left backdrop-blur-xl transition-colors duration-300",
+                            selected ? "border-crimson bg-crimson/15" : "border-line bg-white/[0.03] hover:border-white/30 hover:bg-white/[0.06]"
                           )}
                         >
                           <span
                             className={cn(
-                              "flex h-8 w-8 shrink-0 items-center justify-center border font-mono text-xs",
-                              selected ? "border-crimson bg-crimson text-bone" : "border-line text-mute group-hover:text-bone"
+                              "flex h-8 w-8 shrink-0 items-center justify-center border text-xs",
+                              selected ? "border-crimson-bright bg-crimson-bright text-black" : "border-line text-mute group-hover:text-bone"
                             )}
                           >
                             {oi + 1}
@@ -295,7 +295,7 @@ export default function ClarityCheck() {
                     next step. We&apos;ll also send a copy to our strategy team so we can follow up, once.
                   </p>
                 </div>
-                <form onSubmit={submit} className="space-y-2 lg:col-span-6 lg:col-start-7" noValidate={false}>
+                <form onSubmit={submit} className="space-y-4 lg:col-span-6 lg:col-start-7" noValidate={false}>
                   <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden />
                   <label className="block">
                     <span className="sr-only">Full name</span>
@@ -318,7 +318,7 @@ export default function ClarityCheck() {
                     <button
                       type="submit"
                       disabled={submitting}
-                      className="inline-flex items-center justify-center gap-3 rounded-full bg-crimson px-8 py-4 text-bone transition-colors hover:bg-crimson-bright disabled:opacity-60"
+                      className="inline-flex items-center justify-center gap-3 bg-crimson-bright px-8 py-4 text-sm font-black uppercase tracking-[0.2em] text-black transition-colors hover:bg-white disabled:opacity-60"
                     >
                       {submitting ? "Preparing your breakdown…" : "Show my full breakdown →"}
                     </button>
@@ -357,7 +357,7 @@ export default function ClarityCheck() {
                               transition={{ duration: 1.2, ease, delay: 0.3 + i * 0.1 }}
                             />
                           </div>
-                          <span className="font-mono text-sm text-bone">{d.score}</span>
+                          <span className="text-sm text-bone">{d.score}</span>
                         </div>
                       </div>
                       <div className="lg:col-span-4 lg:col-start-6">
@@ -388,13 +388,13 @@ export default function ClarityCheck() {
                       )}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center rounded-full bg-crimson px-7 py-4 text-bone transition-colors hover:bg-crimson-bright"
+                      className="inline-flex items-center justify-center bg-crimson-bright px-7 py-4 text-sm font-black uppercase tracking-[0.2em] text-black transition-colors hover:bg-white"
                     >
                       Book a working session →
                     </a>
                     <Link
                       href="/method#identifier"
-                      className="inline-flex items-center justify-center rounded-full border border-bone/25 px-7 py-4 text-bone transition-colors hover:bg-bone hover:text-ink"
+                      className="inline-flex items-center justify-center border border-white/15 px-7 py-4 text-sm font-black uppercase tracking-[0.2em] text-bone transition-colors hover:bg-white/5"
                     >
                       See inside Identifier
                     </Link>

@@ -16,21 +16,21 @@ type MagneticButtonProps = {
 };
 
 const variants = {
-  crimson: "bg-crimson text-bone",
-  bone: "bg-bone text-ink",
-  ghost: "border border-bone/25 text-bone",
+  crimson: "bg-crimson-bright text-black",
+  bone: "bg-bone text-black",
+  ghost: "border border-white/15 text-bone",
 };
 
 const fills = {
-  crimson: "bg-bone",
-  bone: "bg-crimson",
-  ghost: "bg-bone",
+  crimson: "bg-white",
+  bone: "bg-crimson-bright",
+  ghost: "bg-white/10",
 };
 
 const hoverText = {
-  crimson: "group-hover:text-ink",
-  bone: "group-hover:text-bone",
-  ghost: "group-hover:text-ink",
+  crimson: "group-hover:text-black",
+  bone: "group-hover:text-black",
+  ghost: "group-hover:text-bone",
 };
 
 /** Primary CTA: a wipe fill on hover, and a gentle pull toward the pointer on fine-pointer devices. */
@@ -60,8 +60,8 @@ export default function MagneticButton({
   };
 
   const classes = cn(
-    "group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-full font-medium tracking-tight",
-    size === "lg" ? "px-9 py-5 text-base md:text-lg" : "px-6 py-3.5 text-sm",
+    "group relative inline-flex items-center justify-center gap-3 overflow-hidden font-black uppercase",
+    size === "lg" ? "px-8 py-4 text-sm tracking-[0.24em]" : "px-6 py-3.5 text-xs tracking-[0.22em]",
     variants[variant],
     className
   );
@@ -71,7 +71,7 @@ export default function MagneticButton({
       <span
         aria-hidden
         className={cn(
-          "absolute inset-0 origin-bottom scale-y-0 rounded-full transition-transform duration-500 ease-[cubic-bezier(0.77,0,0.175,1)] group-hover:scale-y-100",
+          "absolute inset-0 origin-bottom scale-y-0 transition-transform duration-500 ease-[cubic-bezier(0.77,0,0.175,1)] group-hover:scale-y-100",
           fills[variant]
         )}
       />

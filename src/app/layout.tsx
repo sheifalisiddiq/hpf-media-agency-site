@@ -1,6 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
-import { Instrument_Serif, Inter_Tight, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
@@ -15,30 +15,14 @@ import LoadingScreen from "@/components/LoadingScreen";
 import { LOADER_KEY } from "@/lib/intro";
 import { site } from "@/content/site";
 
-const display = Instrument_Serif({
-  variable: "--font-instrument-serif",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
-  display: "swap",
-});
-
-const sans = Inter_Tight({
-  variable: "--font-inter-tight",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  display: "swap",
-});
-
-const mono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-  weight: ["400", "500"],
   display: "swap",
 });
 
 export const viewport = {
-  themeColor: "#0a0a0a",
+  themeColor: "#000000",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -191,11 +175,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html
       lang="en-AE"
-      className={`${display.variable} ${sans.variable} ${mono.variable}`}
+      className={inter.variable}
       data-scroll-behavior="smooth"
       suppressHydrationWarning
     >
-      <body className="flex min-h-screen flex-col bg-ink font-sans text-bone">
+      <body className="flex min-h-screen flex-col bg-black font-sans text-bone antialiased selection:bg-primary-container selection:text-on-primary-container">
         <Script id="hpf-intro" strategy="beforeInteractive">
           {introScript}
         </Script>
