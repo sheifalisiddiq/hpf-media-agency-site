@@ -1,7 +1,5 @@
-export const LOADER_KEY = "hpf-intro-seen";
-
-/** Seconds the hero should wait so its entrance lands just as the intro curtain lifts. */
+/** Seconds the hero waits so its entrance lands as the preloader lifts. Short once the preloader has played. */
 export function introDelay() {
   if (typeof document === "undefined") return 0.2;
-  return document.documentElement.dataset.introSeen ? 0.15 : 1.55;
+  return document.documentElement.dataset.introSeen ? 0.15 : 1.9;
 }

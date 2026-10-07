@@ -2,7 +2,6 @@ import React from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import CursorTrail from "@/components/CursorTrail";
@@ -12,7 +11,6 @@ import VisualBackground from "@/components/VisualBackground";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 import JsonLd from "@/components/JsonLd";
 import LoadingScreen from "@/components/LoadingScreen";
-import { LOADER_KEY } from "@/lib/intro";
 import { site } from "@/content/site";
 
 const inter = Inter({
@@ -169,8 +167,6 @@ const organizationSchema = {
   ],
 };
 
-const introScript = `try{if(sessionStorage.getItem("${LOADER_KEY}"))document.documentElement.dataset.introSeen="1"}catch(e){}`;
-
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
@@ -180,9 +176,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       suppressHydrationWarning
     >
       <body className="flex min-h-screen flex-col bg-black font-sans text-bone antialiased selection:bg-primary-container selection:text-on-primary-container">
-        <Script id="hpf-intro" strategy="beforeInteractive">
-          {introScript}
-        </Script>
         <LoadingScreen />
         <JsonLd data={organizationSchema} />
         <VisualBackground />
