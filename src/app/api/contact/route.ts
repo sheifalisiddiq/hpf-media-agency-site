@@ -5,10 +5,13 @@ import { Resend } from 'resend';
 // Initialize Resend - handle missing key during build
 const resend = process.env.HPF_key ? new Resend(process.env.HPF_key) : null;
 
+const esc = (s: unknown) =>
+  String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
+
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { fullname, domain, email, revenue, objectives } = body;
+    const { fullname, domain, email, revenue, objectives, stage } = body;
 
     // Validate inputs
     if (!fullname || !email || !objectives) {
@@ -32,18 +35,19 @@ export async function POST(request: Request) {
       from: 'HPF Media <notifications@hpf-media.com>', // Using your verified domain for better deliverability
       to: 'admin@hpf-media.com',
       replyTo: email,
-      subject: `New Strategy Audit Request: ${fullname}`,
+      subject: `New enquiry: ${fullname}`,
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #eee; border-radius: 10px;">
-          <h2 style="color: #ff5449; text-transform: uppercase;">New Strategy Audit Request</h2>
+          <h2 style="color: #c8102e; text-transform: uppercase;">New enquiry</h2>
           <hr />
-          <p><strong>Full Name:</strong> ${fullname}</p>
-          <p><strong>Corporate Email:</strong> ${email}</p>
-          <p><strong>Company Domain:</strong> ${domain || 'N/A'}</p>
-          <p><strong>Annual Revenue:</strong> ${revenue || 'N/A'}</p>
-          <div style="margin-top: 20px; padding: 15px; background-color: #f9f9f9; border-left: 4px solid #ff5449;">
+          <p><strong>Full Name:</strong> ${esc(fullname)}</p>
+          <p><strong>Corporate Email:</strong> ${esc(email)}</p>
+          <p><strong>Company Domain:</strong> ${esc(domain) || "N/A"}</p>
+          <p><strong>Annual Revenue:</strong> ${esc(revenue) || "N/A"}</p>
+          <p><strong>Stage of interest:</strong> ${esc(stage) || "N/A"}</p>
+          <div style="margin-top: 20px; padding: 15px; background-color: #f9f9f9; border-left: 4px solid #c8102e;">
             <p><strong>Growth Objectives:</strong></p>
-            <p>${objectives}</p>
+            <p>${esc(objectives)}</p>
           </div>
         </div>
       `,

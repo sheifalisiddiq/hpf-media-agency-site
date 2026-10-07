@@ -2,62 +2,17 @@
 
 import { useEffect, useRef, useState } from "react";
 import Icon from "@/components/Icon";
-import ScrollReveal from "@/components/ScrollReveal";
+import { cn } from "@/lib/utils";
+import { socialReels, type SocialReel } from "@/content/works";
 
-type SocialReel = {
-  id: string;
-  platform: "Instagram" | "TikTok";
-  sourceUrl: string;
-  embedUrl?: string;
-  videoSrc?: string;
-  poster?: string;
-  title: string;
-  views: string;
-};
-
-const socialReels: SocialReel[] = [
-  {
-    id: "DbLzGuetoPZ",
-    platform: "Instagram",
-    sourceUrl: "https://www.instagram.com/reel/DbLzGuetoPZ/?igsi=MThqdWlyZGRheml4OA==",
-    embedUrl: "https://www.instagram.com/reel/DbLzGuetoPZ/embed/",
-    title: "Instagram reel, HPF Media client work",
-    views: "150k+",
-  },
-  {
-    id: "DbbI_WsNwIB",
-    platform: "Instagram",
-    sourceUrl: "https://www.instagram.com/reel/DbbI_WsNwIB/?igsi=NnFqeWs3b3ZyMTEx",
-    embedUrl: "https://www.instagram.com/reel/DbbI_WsNwIB/embed/",
-    title: "Instagram reel, HPF Media client work",
-    views: "560k+",
-  },
-  {
-    id: "Dblf-tyNzjv",
-    platform: "Instagram",
-    sourceUrl: "https://www.instagram.com/reel/Dblf-tyNzjv/?igsi=MXFxaXJub3dhNXRvaQ==",
-    embedUrl: "https://www.instagram.com/reel/Dblf-tyNzjv/embed/",
-    title: "Instagram reel, HPF Media client work",
-    views: "200k+",
-  },
-  {
-    id: "DcL5K-voLRp",
-    platform: "Instagram",
-    sourceUrl: "https://www.instagram.com/reel/DcL5K-voLRp/?igsi=aGR2YTduZGJpN2Rr",
-    embedUrl: "https://www.instagram.com/reel/DcL5K-voLRp/embed/",
-    title: "Instagram reel, HPF Media client work",
-    views: "11k+",
-  },
-  {
-    id: "7650522024233667847",
-    platform: "TikTok",
-    sourceUrl: "https://www.tiktok.com/@windmaster.ae/video/7650522024233667847",
-    videoSrc: "/tiktok-windmaster.mp4",
-    poster: "/tiktok-windmaster.jpg",
-    title: "TikTok video, HPF Media client work",
-    views: "101k+",
-  },
-];
+function ViewCount({ views }: { views: string }) {
+  return (
+    <div className="pointer-events-none absolute bottom-3 left-4 z-20 flex items-baseline gap-1.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+      <span className="font-display text-3xl leading-none text-bone">{views}</span>
+      <span className="t-label text-bone/70">views</span>
+    </div>
+  );
+}
 
 function ReelVideo({
   reel,
@@ -110,40 +65,29 @@ function ReelVideo({
         muted={!isActive}
         className="absolute inset-0 h-full w-full object-cover"
       />
-
       {!isActive && (
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className="flex h-14 w-14 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-md border border-white/25 shadow-2xl transition-transform duration-200 group-hover:scale-110">
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+          <div className="flex h-16 w-16 items-center justify-center rounded-full border border-bone/30 bg-ink/40 text-bone backdrop-blur-md transition-transform duration-300 group-hover:scale-110">
             <Icon name="play_circle" className="h-8 w-8" />
           </div>
         </div>
       )}
-
-      {/* Bottom scrim so the view count stays legible over the video */}
-      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/85 via-black/40 to-transparent pointer-events-none z-10" />
-
-      {reel.views && (
-        <div className="absolute bottom-2.5 left-3 z-20 flex items-baseline gap-1 pointer-events-none drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
-          <span className="text-xl sm:text-2xl font-black tracking-tight text-white font-headline">
-            {reel.views}
-          </span>
-          <span className="text-[9px] sm:text-[10px] font-extrabold uppercase tracking-widest text-neutral-300">
-            VIEWS
-          </span>
-        </div>
-      )}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-20 bg-gradient-to-t from-ink/90 via-ink/40 to-transparent" />
+      {reel.views && <ViewCount views={reel.views} />}
     </>
   );
 }
 
-function SocialReelCard({
+export function SocialReelCard({
   reel,
   isActive,
   onPlay,
+  className,
 }: {
   reel: SocialReel;
   isActive: boolean;
   onPlay: () => void;
+  className?: string;
 }) {
   const handleClick = () => {
     if (!reel.embedUrl && !reel.videoSrc && reel.sourceUrl) {
@@ -156,9 +100,14 @@ function SocialReelCard({
   return (
     <div
       onClick={handleClick}
-      className="group relative block w-[17.5rem] shrink-0 cursor-pointer overflow-hidden rounded-[1.35rem] border border-white/10 bg-[#090909] shadow-[0_22px_55px_rgba(0,0,0,0.38)] sm:w-[19rem]"
+      data-cursor={isActive ? undefined : "play"}
+      className={cn(
+        "group relative block w-[17.5rem] shrink-0 cursor-pointer overflow-hidden border border-line bg-ink-2 shadow-[0_30px_80px_rgba(0,0,0,0.5)] sm:w-[19rem]",
+        isActive && "border-crimson",
+        className
+      )}
     >
-      <div className="relative aspect-[9/13] overflow-hidden bg-[#090909]">
+      <div className="relative aspect-[9/13] overflow-hidden bg-ink-2">
         {reel.videoSrc ? (
           <ReelVideo reel={reel} isActive={isActive} onToggleOff={onPlay} />
         ) : reel.embedUrl ? (
@@ -177,67 +126,82 @@ function SocialReelCard({
                 pointerEvents: isActive ? "auto" : "none",
               }}
             />
-
-            {/* Top dark mask to cover iframe edge */}
-            <div className="absolute top-0 left-0 right-0 h-4 bg-[#090909] pointer-events-none z-10" />
-            {/* Bottom dark mask to cover iframe footer */}
-            <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-[#090909] via-[#090909]/80 to-transparent pointer-events-none z-10" />
-
-            {/* View count badge */}
-            {reel.views && (
-              <div className="absolute bottom-2.5 left-3 z-20 flex items-baseline gap-1 pointer-events-none drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
-                <span className="text-xl sm:text-2xl font-black tracking-tight text-white font-headline">
-                  {reel.views}
-                </span>
-                <span className="text-[9px] sm:text-[10px] font-extrabold uppercase tracking-widest text-neutral-300">
-                  VIEWS
-                </span>
-              </div>
-            )}
+            <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-4 bg-ink-2" />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-14 bg-gradient-to-t from-ink-2 via-ink-2/80 to-transparent" />
+            {reel.views && <ViewCount views={reel.views} />}
           </>
-        ) : (
-          <div className="relative flex h-full flex-col justify-between overflow-hidden bg-[radial-gradient(circle_at_75%_15%,rgba(255,84,73,0.28),transparent_34%),linear-gradient(145deg,#202020_0%,#080808_55%,#131313_100%)] p-6">
-            <span className="text-[11px] font-black uppercase tracking-[0.32em] text-white/55">{reel.platform}</span>
-            <div><Icon name="play_circle" className="mb-4 h-12 w-12 text-primary" /><p className="text-xl font-black uppercase leading-[0.92] tracking-[-0.055em] text-white">Watch the<br />full reel.</p></div>
-            <div className="flex items-baseline justify-between pt-4 border-t border-white/15">
-              <span className="text-2xl font-black tracking-tight text-white font-headline">{reel.views}</span>
-              <span className="text-[10px] font-extrabold uppercase tracking-widest text-neutral-300">VIEWS</span>
-            </div>
-          </div>
-        )}
+        ) : null}
+      </div>
+      <div className="flex items-center justify-between border-t border-line px-4 py-3">
+        <span className="t-label text-mute">{reel.platform}</span>
+        <a
+          href={reel.sourceUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={(e) => e.stopPropagation()}
+          className="t-label text-bone/70 transition-colors hover:text-crimson-bright"
+        >
+          Open ↗
+        </a>
       </div>
     </div>
   );
 }
 
+/** Drifting marquee of reels. Only one reel plays at a time. Native horizontal scroll on mobile. */
 export default function WorkShowcase() {
   const [activeReelId, setActiveReelId] = useState<string | null>(null);
   const loopingReels = [...socialReels, ...socialReels];
 
   return (
-    <section id="our-work" className="relative overflow-hidden border-y border-white/5 bg-black py-24 text-on-surface">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-14 flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
-          <ScrollReveal className="max-w-3xl space-y-6"><p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary">Portfolio</p><h2 className="text-4xl font-black uppercase tracking-[-0.05em] text-white md:text-6xl font-headline">Content that gets seen.</h2><p className="max-w-2xl text-base leading-7 text-on-surface-variant md:text-lg">A live stream of the short-form content we produce for UAE brands. Open any reel to see its current views and engagement on the original platform.</p></ScrollReveal>
-          <ScrollReveal delay={0.2} className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.2em] text-white/45"><span className="h-2 w-2 animate-pulse rounded-full bg-primary" />Hover to pause</ScrollReveal>
-        </div>
+    <div className="social-reel-marquee group/marquee overflow-hidden" aria-label="HPF Media social video portfolio">
+      <div className="social-reel-track flex w-max gap-5 px-[var(--gutter)] sm:gap-6">
+        {loopingReels.map((reel, index) => {
+          const cardKey = `${reel.id}-${index}`;
+          return (
+            <div key={cardKey} aria-hidden={index >= socialReels.length || undefined}>
+              <SocialReelCard
+                reel={reel}
+                isActive={activeReelId === cardKey}
+                onPlay={() => setActiveReelId(activeReelId === cardKey ? null : cardKey)}
+              />
+            </div>
+          );
+        })}
       </div>
-      <div className="social-reel-marquee group/marquee overflow-hidden" aria-label="HPF Media social video portfolio"><div className="social-reel-track flex w-max gap-5 px-4 sm:gap-6 sm:px-6 lg:px-8">{loopingReels.map((reel, index) => {
-        const cardKey = `${reel.id}-${index}`;
-        return (
-          <div key={cardKey} aria-hidden={index >= socialReels.length || undefined}>
-            <SocialReelCard reel={reel} isActive={activeReelId === cardKey} onPlay={() => setActiveReelId(activeReelId === cardKey ? null : cardKey)} />
-          </div>
-        );
-      })}</div></div>
       <style jsx>{`
-        .social-reel-track { animation: social-reel-drift 45s linear infinite; will-change: transform; }
-        .social-reel-marquee:hover .social-reel-track, .social-reel-marquee:focus-within .social-reel-track { animation-play-state: paused; }
-        .social-reel-embed { top: -22%; left: -17.5%; width: 135%; height: 170%; pointer-events: none; overflow: hidden; scrollbar-width: none; -ms-overflow-style: none; }
-        .social-reel-embed::-webkit-scrollbar { display: none; }
-        @keyframes social-reel-drift { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(-50%, 0, 0); } }
-        @media (max-width: 768px), (prefers-reduced-motion: reduce) { .social-reel-marquee { overflow-x: auto; scrollbar-width: none; } .social-reel-marquee::-webkit-scrollbar { display: none; } .social-reel-track { animation: none; } .social-reel-track > div:nth-child(n + 7) { display: none; } }
+        .social-reel-track {
+          animation: social-reel-drift 50s linear infinite;
+          will-change: transform;
+        }
+        .social-reel-marquee:hover .social-reel-track,
+        .social-reel-marquee:focus-within .social-reel-track {
+          animation-play-state: paused;
+        }
+        @keyframes social-reel-drift {
+          from {
+            transform: translate3d(0, 0, 0);
+          }
+          to {
+            transform: translate3d(-50%, 0, 0);
+          }
+        }
+        @media (max-width: 768px), (prefers-reduced-motion: reduce) {
+          .social-reel-marquee {
+            overflow-x: auto;
+            scrollbar-width: none;
+          }
+          .social-reel-marquee::-webkit-scrollbar {
+            display: none;
+          }
+          .social-reel-track {
+            animation: none;
+          }
+          .social-reel-track > div:nth-child(n + 6) {
+            display: none;
+          }
+        }
       `}</style>
-    </section>
+    </div>
   );
 }

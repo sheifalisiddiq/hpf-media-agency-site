@@ -1,98 +1,68 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import Image from "next/image";
+import { LOADER_KEY } from "@/lib/intro";
 
+/**
+ * First-visit intro. Shown once per browser session: an inline script in the root layout sets
+ * `data-intro-seen` on <html> before paint for returning visitors, and CSS hides the loader.
+ */
 export default function LoadingScreen() {
-  const loaderRef = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      const el = loaderRef.current;
-      if (!el) return;
-      el.style.opacity = "0";
-      el.style.visibility = "hidden";
-    }, 2200);
-    return () => clearTimeout(timer);
+    const el = ref.current;
+    if (!el) return;
+    if (document.documentElement.dataset.introSeen) {
+      el.remove();
+      return;
+    }
+    try {
+      sessionStorage.setItem(LOADER_KEY, "1");
+    } catch {}
+    const t = setTimeout(() => {
+      el.classList.add("is-done");
+      document.documentElement.dataset.introSeen = "1";
+    }, 1400);
+    const t2 = setTimeout(() => el.remove(), 2400);
+    return () => {
+      clearTimeout(t);
+      clearTimeout(t2);
+    };
   }, []);
 
   return (
-    <>
+    <div ref={ref} className="hpf-loader" aria-hidden>
       <style>{`
-        @keyframes hpf-fade-up {
-          from { opacity: 0; transform: translateY(12px); }
-          to   { opacity: 1; transform: translateY(0); }
+        html[data-intro-seen] .hpf-loader:not(.is-done) { display: none; }
+        .hpf-loader {
+          position: fixed; inset: 0; z-index: 9998; display: flex; align-items: center; justify-content: center;
+          background: var(--color-ink); transition: transform 0.95s cubic-bezier(0.77,0,0.175,1);
         }
-        @keyframes hpf-bar {
-          from { width: 0%; }
-          to   { width: 100%; }
-        }
+        .hpf-loader.is-done { transform: translateY(-100%); }
+        .hpf-loader__inner { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
+        .hpf-loader__bar { width: 52px; height: 6px; background: var(--color-crimson); transform-origin: left;
+          animation: hpf-bar 0.9s cubic-bezier(0.16,1,0.3,1) both; }
+        .hpf-loader__word { display: flex; overflow: hidden; font-family: var(--font-display);
+          font-size: clamp(5rem, 16vw, 11rem); line-height: 0.85; color: var(--color-bone); letter-spacing: -0.04em; }
+        .hpf-loader__word span { display: inline-block; animation: hpf-rise 1s cubic-bezier(0.16,1,0.3,1) both; }
+        .hpf-loader__word span:nth-child(2) { animation-delay: 0.08s; }
+        .hpf-loader__word span:nth-child(3) { animation-delay: 0.16s; }
+        .hpf-loader__meta { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase;
+          color: var(--color-mute); animation: hpf-fade 0.8s ease 0.45s both; }
+        @keyframes hpf-bar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+        @keyframes hpf-rise { from { transform: translateY(105%); } to { transform: translateY(0); } }
+        @keyframes hpf-fade { from { opacity: 0; } to { opacity: 1; } }
       `}</style>
-      <div
-        ref={loaderRef}
-        style={{
-          position: "fixed",
-          inset: 0,
-          background: "#000",
-          zIndex: 9999,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          flexDirection: "column",
-          gap: "28px",
-          transition: "opacity 0.8s cubic-bezier(0.16,1,0.3,1), visibility 0.8s",
-        }}
-      >
-        <div
-          style={{
-            opacity: 0,
-            animation: "hpf-fade-up 1s cubic-bezier(0.16,1,0.3,1) 0.1s forwards",
-          }}
-        >
-          <Image
-            src="/logo.jpg"
-            alt="HPF Media"
-            width={130}
-            height={65}
-            style={{ objectFit: "contain" }}
-            priority
-          />
+      <div className="hpf-loader__inner">
+        <div className="hpf-loader__bar" />
+        <div className="hpf-loader__word">
+          <span>H</span>
+          <span>P</span>
+          <span>F</span>
         </div>
-
-        <div
-          style={{
-            width: "260px",
-            height: "1px",
-            background: "rgba(255,84,73,0.18)",
-            position: "relative",
-            overflow: "hidden",
-          }}
-        >
-          <div
-            style={{
-              position: "absolute",
-              left: 0,
-              top: 0,
-              height: "100%",
-              background: "linear-gradient(90deg, #FF5449, #ff7b73)",
-              animation: "hpf-bar 1.8s cubic-bezier(0.16,1,0.3,1) forwards",
-            }}
-          />
-        </div>
-
-        <span
-          style={{
-            fontSize: "9px",
-            letterSpacing: "0.5em",
-            textTransform: "uppercase",
-            color: "rgba(255,255,255,0.35)",
-            opacity: 0,
-            animation: "hpf-fade-up 1s cubic-bezier(0.16,1,0.3,1) 0.4s forwards",
-          }}
-        >
-          UAE Social Media Agency
-        </span>
+        <div className="hpf-loader__meta">Truth · Dignity · Purity · Righteousness · Kindness</div>
       </div>
-    </>
+    </div>
   );
 }

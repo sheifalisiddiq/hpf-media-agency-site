@@ -1,277 +1,127 @@
-"use client";
-
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
-import Icon from "@/components/Icon";
-import ScrollReveal, { RevealItem } from "@/components/ScrollReveal";
-import StaggerText from "@/components/StaggerText";
-import Parallax from "@/components/Parallax";
+import RevealText from "@/components/motion/RevealText";
+import Reveal from "@/components/motion/Reveal";
+import Marquee from "@/components/motion/Marquee";
+import ParallaxLayer from "@/components/motion/ParallaxLayer";
+import MagneticButton from "@/components/motion/MagneticButton";
+import CountUp from "@/components/motion/CountUp";
+import SectionLabel from "@/components/shared/SectionLabel";
+import DocumentCover from "@/components/shared/DocumentCover";
+import FinalCTA from "@/components/shared/FinalCTA";
 import WorkShowcase from "@/components/home/WorkShowcase";
-
-const videos: {
-  id: string;
-  src: string;
-  title: string;
-  category: string;
-  description: string;
-}[] = [];
-
-const brandLogos: [src: string, name: string][] = [
-  ["/emirates_FC_logo.jpeg", "Emirates FC"],
-  ["/Mecca_al_mukarramah_perfumes.jpeg", "Mecca Al Mukarramah Perfumes"],
-  ["/mr_glass_logo.jpeg", "Mr Glass"],
-  ["/bunzai_burgers.jpeg", "Bunzai Burgers"],
-  ["/beston_woods.jpeg", "Beston Wood"],
-  ["/play_and_sip.jpeg", "Play & Sip"],
-  ["/windmaster_logo.jpeg", "Windmaster"],
-  ["/cvrd_logo.jpeg", "CVRD"],
-];
-
-function WorkVideoCard({
-  video,
-  isPlaying,
-  onPlay,
-  onPause
-}: {
-  video: typeof videos[0],
-  isPlaying: boolean,
-  onPlay: () => void,
-  onPause: () => void
-}) {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [isHovered, setIsHovered] = useState(false);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.muted = false;
-        videoRef.current.play().catch(() => {});
-      } else {
-        videoRef.current.muted = true;
-      }
-    }
-  }, [isPlaying]);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (!entry.isIntersecting && isPlaying) {
-          onPause();
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, [isPlaying, onPause]);
-
-  return (
-    <RevealItem className="glass-card rounded-2xl overflow-hidden group flex flex-col bg-black border border-white/10 transition-[border-color] duration-300 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] hover:border-primary/30 shadow-2xl mx-auto w-full">
-      <div
-        ref={containerRef}
-        className="relative aspect-[9/16] md:h-[65vh] md:aspect-[9/16] mx-auto overflow-hidden bg-neutral-900 w-full flex items-center justify-center cursor-pointer"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        onClick={() => {
-          if (isPlaying) onPause();
-          else onPlay();
-        }}
-      >
-        <video
-          ref={videoRef}
-          src={video.src}
-          className={`w-full h-full object-contain transition-[filter,transform] duration-500 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] ${isHovered || isPlaying ? 'grayscale-0 scale-105' : 'grayscale'}`}
-          loop
-          muted={!isPlaying}
-          autoPlay
-          playsInline
-          preload="none"
-          poster="/logo.jpg"
-          aria-label={`${video.title} — ${video.category} video by HPF Media`}
-        />
-        <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 transition-[opacity] duration-300 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] ${isHovered || isPlaying ? 'opacity-30' : 'opacity-60'}`} />
-
-        {!isPlaying && (
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div className="h-16 w-16 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-[opacity,transform] duration-200 [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] scale-95 group-hover:scale-100 shadow-2xl">
-               <Icon name="videocam" className="h-8 w-8" />
-            </div>
-          </div>
-        )}
-
-        {isPlaying && (
-          <div className="absolute bottom-6 right-6 h-10 w-10 rounded-full bg-primary flex items-center justify-center text-black shadow-lg animate-pulse z-10">
-            <Icon name="volume_up" className="h-5 w-5" />
-          </div>
-        )}
-      </div>
-    </RevealItem>
-  );
-}
+import { brandLogos, featuredViewTotal, socialReels } from "@/content/works";
 
 export default function WorksPage() {
-  const [playingVideoId, setPlayingVideoId] = useState<string | null>(null);
-
   return (
     <>
-      <section className="relative min-h-[70vh] flex flex-col justify-center items-center text-center px-4 pt-32 pb-20 bg-transparent text-on-surface overflow-hidden">
-        <ScrollReveal className="max-w-4xl mx-auto z-10">
-          <ScrollReveal yOffset={10} delay={0.2}>
-            <p className="text-[11px] font-bold uppercase tracking-[0.45em] text-primary mb-6">
-              Short-Form Video Portfolio — UAE
-            </p>
-          </ScrollReveal>
-
-          <StaggerText
-            tag="h1"
-            text="Our Work"
-            className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tighter font-headline mb-8 leading-[0.95] text-on-surface uppercase"
-          />
-
-          <ScrollReveal delay={0.4}>
-            <p className="max-w-2xl text-base leading-7 text-neutral-400 md:text-lg mx-auto mb-6">
-              Every video here was made for real businesses — engineered to hold attention, grow organic reach, and generate inbound leads. No filler. Content built to perform.
-            </p>
-          </ScrollReveal>
-
-          <ScrollReveal delay={0.5}>
-            <p className="max-w-2xl text-sm leading-6 text-neutral-500 mx-auto mb-12">
-              We work across real estate, luxury, hospitality, personal branding, and retail — all held to the same high production standard.
-            </p>
-          </ScrollReveal>
-
-          <ScrollReveal delay={0.6} className="mt-12">
-            <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-white/30 mb-8">Brands We've Worked With:</p>
-            <div className="logo-marquee group relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
-              <div className="logo-marquee-track flex w-max items-center">
-                {[...brandLogos, ...brandLogos].map(([src, name], i) => (
-                  <div
-                    key={`${src}-${i}`}
-                    aria-hidden={i >= brandLogos.length || undefined}
-                    className="relative mr-6 md:mr-10 h-20 w-40 md:h-24 md:w-48 shrink-0 opacity-80 transition-opacity hover:opacity-100"
-                  >
-                    <Image
-                      src={src}
-                      alt={`${name} — social media client of HPF Media`}
-                      fill
-                      className="object-contain p-2 transition-all duration-500"
-                    />
-                  </div>
-                ))}
+      <section aria-label="Introduction" className="relative overflow-hidden pb-16 pt-36 md:pt-48">
+        <div className="wrap">
+          <SectionLabel>Works</SectionLabel>
+          <RevealText as="h1" trigger="load" delay={0.2} className="t-display mt-8 max-w-[12ch] text-bone">
+            Proof, on the record.
+          </RevealText>
+          <div className="mt-14 grid gap-10 md:grid-cols-12 md:items-end">
+            <Reveal delay={0.5} className="md:col-span-6">
+              <p className="t-lead">
+                Work made for real businesses, measured on real numbers. Every view count below is the published figure on
+                the original post. Nothing rounded up, nothing borrowed.
+              </p>
+            </Reveal>
+            <Reveal delay={0.6} stagger={0.1} as="dl" className="grid grid-cols-3 gap-6 md:col-span-5 md:col-start-8">
+              <div>
+                <dt className="t-label mb-2 text-mute">Brands</dt>
+                <dd className="font-display text-5xl text-bone">
+                  <CountUp value={brandLogos.length} />
+                </dd>
               </div>
+              <div>
+                <dt className="t-label mb-2 text-mute">Featured reels</dt>
+                <dd className="font-display text-5xl text-bone">
+                  <CountUp value={socialReels.length} />
+                </dd>
+              </div>
+              <div>
+                <dt className="t-label mb-2 text-mute">Views</dt>
+                <dd className="font-display text-5xl text-crimson-bright">
+                  <CountUp value={featuredViewTotal} compact suffix="+" />
+                </dd>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      <section aria-label="Brands we've worked with" className="border-t border-line py-20 md:py-28">
+        <div className="wrap mb-12 flex items-end justify-between">
+          <p className="t-label text-mute">Brands we&apos;ve worked with</p>
+          <p className="t-label hidden text-mute md:block">Hover to pause</p>
+        </div>
+        <div className="wrap hidden gap-px bg-line md:grid md:grid-cols-4">
+          {brandLogos.map((logo) => (
+            <div key={logo.name} className="group relative flex aspect-[4/3] items-center justify-center bg-ink p-8">
+              <div className="relative h-full w-full overflow-hidden bg-bone transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]">
+                <Image src={logo.src} alt={`${logo.name} logo`} fill sizes="320px" className="object-contain p-5" />
+              </div>
+              <span className="t-label absolute bottom-3 left-4 text-mute opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                {logo.name}
+              </span>
             </div>
-          </ScrollReveal>
-        </ScrollReveal>
-
-        <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
-          <Parallax speed={0.8} className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-to-t from-red-600/20 to-transparent blur-3xl" />
+          ))}
         </div>
-      </section>
-
-      <WorkShowcase />
-
-      {/* ─── Internal Links ─── */}
-      <section
-        aria-label="About our work"
-        className="relative py-16 px-6 md:px-10 lg:px-14 bg-transparent text-on-surface border-t border-white/5"
-      >
-        <div className="max-w-5xl mx-auto">
-          {/* Internal Links */}
-          <ScrollReveal isContainer staggerChildren={0.1} className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {[
-              { href: "/services", label: "Our Services", desc: "See the full range of social media marketing services we offer UAE businesses.", icon: "rocket_launch" },
-              { href: "/about", label: "About HPF Media", desc: "Learn about our UAE market expertise, philosophy, and creative process.", icon: "info" },
-              { href: "/contact", label: "Start Your Project", desc: "Book a strategy call. Limited client spots available each month.", icon: "calendar_month" },
-            ].map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                aria-label={link.label}
-                className="block rounded-xl border border-white/10 bg-white/[0.02] p-6 hover:border-primary/30 hover:bg-white/[0.04] transition-all duration-300 group"
-              >
-                <Icon name={link.icon as any} className="h-6 w-6 text-primary mb-3" />
-                <p className="font-bold text-white uppercase tracking-wide text-sm mb-2 group-hover:text-primary transition-colors">{link.label}</p>
-                <p className="text-neutral-500 text-sm leading-6">{link.desc}</p>
-              </a>
+        <div className="md:hidden">
+          <Marquee duration={28} trackClassName="gap-4 pr-4" className="mask-fade-x">
+            {brandLogos.map((logo) => (
+              <div key={logo.name} className="relative h-20 w-40 shrink-0 overflow-hidden bg-bone">
+                <Image src={logo.src} alt={`${logo.name} logo`} fill sizes="160px" className="object-contain p-3" />
+              </div>
             ))}
-          </ScrollReveal>
+          </Marquee>
         </div>
       </section>
 
-      {/* ─── Case Study CTA ─── */}
-      <section className="relative py-16 px-6 md:px-10 lg:px-14 bg-transparent text-on-surface text-center border-t border-white/5">
-        <ScrollReveal className="max-w-2xl mx-auto">
-          <h2 className="text-2xl font-black uppercase tracking-[-0.04em] text-white font-headline mb-4">
-            See How We Delivered Results
-          </h2>
-          <a
-            href="/HPF-Media-Case-Studies.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="View HPF Media case study PDF"
-            className="border border-white/15 px-8 py-4 text-sm font-black uppercase tracking-[0.24em] text-white hover:bg-white/5 transition-colors duration-200 inline-flex items-center justify-center"
-          >
-            View Case Study
-          </a>
-        </ScrollReveal>
+      <section aria-label="Content portfolio" className="border-t border-line py-20 md:py-28">
+        <div className="wrap mb-14 grid gap-8 md:grid-cols-12 md:items-end">
+          <div className="md:col-span-7">
+            <SectionLabel>Content</SectionLabel>
+            <RevealText as="h2" className="t-h2 mt-6 text-bone">
+              Content the market actually watched.
+            </RevealText>
+          </div>
+          <p className="t-lead md:col-span-4 md:col-start-9">
+            Short-form content produced under LaunchX. Tap any reel to play it with sound. Only one plays at a time.
+          </p>
+        </div>
+        <WorkShowcase />
       </section>
 
-      <section className="py-32 px-8 bg-transparent">
-        <ScrollReveal scale={0.97} rotateX={2} className="max-w-5xl mx-auto glass-card rounded-lg p-16 text-center relative overflow-hidden bg-transparent text-on-surface border border-white/5">
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
-
-          <StaggerText
-            tag="h2"
-            text="Ready to Scale?"
-            className="text-5xl md:text-6xl font-headline font-bold mb-6 uppercase tracking-tighter"
-          />
-
-          <ScrollReveal delay={0.4}>
-            <p className="text-neutral-400 text-xl mb-12 max-w-2xl mx-auto font-light">
-              Build a social media presence that drives organic reach, real engagement, and inbound leads.
+      <section aria-label="Case studies" className="relative overflow-hidden border-t border-line py-24 md:py-36">
+        <div className="wrap grid gap-16 lg:grid-cols-12 lg:items-center">
+          <div className="lg:col-span-6">
+            <SectionLabel>Case studies</SectionLabel>
+            <RevealText as="h2" className="t-h1 mt-6 text-bone">
+              The full breakdown.
+            </RevealText>
+            <p className="t-lead mt-6 max-w-md">
+              Briefs, decisions and results from our client work, in one document.
             </p>
-          </ScrollReveal>
-
-          <ScrollReveal delay={0.6} yOffset={20} scale={0.9}>
-            <a
-              href="/contact"
-              aria-label="Book a strategy call with HPF Media"
-              className="bg-primary-container text-on-primary-container px-12 py-5 rounded font-black text-xl uppercase tracking-tighter hover:scale-[1.02] active:scale-[0.97] transition-[transform] duration-[160ms] [transition-timing-function:cubic-bezier(0.23,1,0.32,1)] shadow-xl shadow-primary/20 inline-flex items-center justify-center"
-            >
-              Start Your Project
-            </a>
-          </ScrollReveal>
-        </ScrollReveal>
+            <div className="mt-10">
+              <MagneticButton href="/HPF-Media-Case-Studies.pdf" external size="lg">
+                Open case studies (PDF)
+              </MagneticButton>
+            </div>
+          </div>
+          <div className="relative mx-auto h-[28rem] w-full max-w-md lg:col-span-5 lg:col-start-8">
+            <ParallaxLayer y={20} rotate={8} className="absolute left-0 top-6 w-[62%]">
+              <DocumentCover kicker="Results" title="Case Studies" meta="HPF Media" tone="bone" />
+            </ParallaxLayer>
+            <ParallaxLayer y={-24} rotate={-6} className="absolute right-0 top-0 w-[62%]">
+              <DocumentCover kicker="Client work" title="Proof, on the record." meta="2026" />
+            </ParallaxLayer>
+          </div>
+        </div>
       </section>
 
-      <style jsx>{`
-        .logo-marquee-track {
-          animation: logo-marquee-drift 32s linear infinite;
-          will-change: transform;
-        }
-        .logo-marquee:hover .logo-marquee-track,
-        .logo-marquee:focus-within .logo-marquee-track {
-          animation-play-state: paused;
-        }
-        @keyframes logo-marquee-drift {
-          from { transform: translate3d(0, 0, 0); }
-          to { transform: translate3d(-50%, 0, 0); }
-        }
-        @media (prefers-reduced-motion: reduce) {
-          .logo-marquee { mask-image: none; }
-          .logo-marquee-track {
-            animation: none;
-            flex-wrap: wrap;
-            justify-content: center;
-            row-gap: 1.5rem;
-          }
-        }
-      `}</style>
+      <FinalCTA title="Your brand could be next." />
     </>
   );
 }

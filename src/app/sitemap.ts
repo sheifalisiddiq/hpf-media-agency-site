@@ -11,7 +11,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${BASE}/services`,
+      url: `${BASE}/method`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${BASE}/clarity-check`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,

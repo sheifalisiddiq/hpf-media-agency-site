@@ -1,7 +1,8 @@
 import React from "react";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Instrument_Serif, Inter_Tight, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import CursorTrail from "@/components/CursorTrail";
@@ -11,101 +12,112 @@ import VisualBackground from "@/components/VisualBackground";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 import JsonLd from "@/components/JsonLd";
 import LoadingScreen from "@/components/LoadingScreen";
+import { LOADER_KEY } from "@/lib/intro";
+import { site } from "@/content/site";
 
-const inter = Inter({
-  variable: "--font-inter",
+const display = Instrument_Serif({
+  variable: "--font-instrument-serif",
   subsets: ["latin"],
-  weight: ["400", "700", "900"],
+  weight: "400",
+  style: ["normal", "italic"],
   display: "swap",
 });
 
-const htmlClassName = `${inter.variable} dark`;
-const bodyClassName =
-  "antialiased selection:bg-primary-container selection:text-on-primary-container bg-background text-on-background min-h-screen flex flex-col font-body";
+const sans = Inter_Tight({
+  variable: "--font-inter-tight",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  display: "swap",
+});
+
+const mono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  display: "swap",
+});
 
 export const viewport = {
-  themeColor: "#000000",
+  themeColor: "#0a0a0a",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
 };
 
+const description =
+  "HPF Media is a strategy-first, values-led marketing agency in Dubai. We diagnose what's actually broken, engineer your brand and campaign system, then execute content, paid media, SEO and social against agreed KPIs.";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.hpf-media.com"),
+  metadataBase: new URL(site.url),
   title: {
-    default: "Social Media Marketing Agency in UAE | HPF Media",
+    default: "HPF Media | Strategy-First Marketing Agency in Dubai, UAE",
     template: "%s | HPF Media",
   },
-  description:
-    "HPF Media is a social media marketing agency in UAE. Instagram marketing, TikTok marketing, and short-form content for businesses across the UAE.",
-  authors: [{ name: "HPF Media", url: "https://www.hpf-media.com" }],
+  description,
+  authors: [{ name: "HPF Media", url: site.url }],
   creator: "HPF Media",
   publisher: "HPF Media",
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
   },
-  alternates: {
-    canonical: "https://www.hpf-media.com",
-  },
+  alternates: { canonical: site.url },
   openGraph: {
-    title: "Social Media Marketing Agency in UAE | HPF Media",
-    description:
-      "HPF Media is a social media marketing agency in UAE specialising in Instagram marketing, TikTok marketing, and short-form content creation for Dubai businesses.",
-    url: "https://www.hpf-media.com",
+    title: "HPF Media | Strategy-First Marketing Agency in Dubai, UAE",
+    description,
+    url: site.url,
     siteName: "HPF Media",
-    images: [
-      {
-        url: "/logo.jpg",
-        width: 1200,
-        height: 630,
-        alt: "HPF Media — Social Media Marketing Agency UAE",
-      },
-    ],
+    images: [{ url: "/logo.jpg", width: 1200, height: 630, alt: "HPF Media, marketing agency in Dubai, UAE" }],
     locale: "en_AE",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Social Media Marketing Agency in UAE | HPF Media",
-    description: "Instagram marketing, TikTok marketing, and short-form content creation for UAE businesses. Strategy-first organic social media growth for Dubai SMEs.",
+    title: "HPF Media | Strategy-First Marketing Agency in Dubai, UAE",
+    description,
     images: ["/logo.jpg"],
     creator: "@hpfmedia",
     site: "@hpfmedia",
   },
-  icons: {
-    icon: "/logo.jpg",
-    apple: "/logo.jpg",
-  },
-  verification: {},
+  icons: { icon: "/logo.jpg", apple: "/logo.jpg" },
 };
+
+const offer = (name: string, desc: string, min?: number, max?: number) => ({
+  "@type": "Offer",
+  itemOffered: { "@type": "Service", name, description: desc },
+  ...(min !== undefined
+    ? {
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          priceCurrency: "AED",
+          minPrice: min,
+          ...(max !== undefined ? { maxPrice: max } : {}),
+        },
+      }
+    : {}),
+});
 
 const organizationSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": ["Organization", "LocalBusiness", "ProfessionalService"],
-      "@id": "https://www.hpf-media.com/#organization",
+      "@id": `${site.url}/#organization`,
       name: "HPF Media",
-      alternateName: ["HPF Media Agency", "HPF Media UAE", "HPF Media Dubai"],
-      url: "https://www.hpf-media.com",
+      alternateName: ["HPF Media Agency", "HPF Marketing Agency", "HPF Media Dubai"],
+      url: site.url,
       logo: {
         "@type": "ImageObject",
-        "@id": "https://www.hpf-media.com/#logo",
-        url: "https://www.hpf-media.com/logo.jpg",
-        contentUrl: "https://www.hpf-media.com/logo.jpg",
-        caption: "HPF Media — Social Media Marketing Agency UAE",
+        "@id": `${site.url}/#logo`,
+        url: `${site.url}/logo.jpg`,
+        contentUrl: `${site.url}/logo.jpg`,
+        caption: "HPF Media",
       },
-      image: { "@id": "https://www.hpf-media.com/#logo" },
-      description:
-        "HPF Media is a social media marketing agency in UAE. Instagram marketing, TikTok marketing, and short-form content for businesses across the UAE.",
-      email: "admin@hpf-media.com",
+      image: { "@id": `${site.url}/#logo` },
+      description,
+      slogan: "Marketing without compromise.",
+      email: site.email,
       telephone: "+971-55-521-4667",
       contactPoint: [
         {
@@ -115,143 +127,87 @@ const organizationSchema = {
           availableLanguage: ["English", "Arabic"],
           areaServed: "AE",
         },
-        {
-          "@type": "ContactPoint",
-          email: "admin@hpf-media.com",
-          contactType: "sales",
-          availableLanguage: "English",
-        },
+        { "@type": "ContactPoint", email: site.email, contactType: "sales", availableLanguage: "English" },
       ],
-      address: {
-        "@type": "PostalAddress",
-        addressCountry: "AE",
-        addressRegion: "Dubai",
-        addressLocality: "Dubai",
-      },
+      address: { "@type": "PostalAddress", addressCountry: "AE", addressRegion: "Dubai", addressLocality: "Dubai" },
       areaServed: [
-        { "@type": "City", name: "Dubai" },
-        { "@type": "City", name: "Abu Dhabi" },
-        { "@type": "City", name: "Sharjah" },
-        { "@type": "City", name: "Ajman" },
-        { "@type": "City", name: "Ras Al Khaimah" },
-        { "@type": "City", name: "Fujairah" },
-        { "@type": "City", name: "Umm Al Quwain" },
         { "@type": "Country", name: "United Arab Emirates" },
+        { "@type": "Place", name: "GCC" },
+        { "@type": "Place", name: "MENA" },
       ],
-      sameAs: ["https://www.instagram.com/hpfmedia"],
+      sameAs: [site.instagram],
       knowsAbout: [
-        "Social Media Marketing UAE",
-        "Instagram Marketing Strategy",
-        "Short-Form Video Production",
-        "Organic Social Media Growth",
-        "Content Strategy UAE",
-        "Personal Branding UAE",
-        "Social Media Management UAE",
-        "Viral Content Strategy",
-        "UAE Digital Marketing",
-        "Video Marketing UAE",
+        "Marketing Strategy",
+        "Marketing Gap Analysis",
+        "Brand Architecture",
+        "Messaging Strategy",
+        "Campaign Planning",
+        "OKRs and KPIs for Marketing",
+        "Content Production",
+        "Paid Media Management",
+        "Search Engine Optimization",
+        "Social Media Management",
+        "Ethical Marketing",
       ],
       hasOfferCatalog: {
         "@type": "OfferCatalog",
-        name: "Social Media Marketing Services UAE",
+        name: "HPF Method",
         itemListElement: [
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              name: "Instagram Marketing UAE",
-              description:
-                "Complete Instagram growth strategy, Reels production, and audience targeting for UAE businesses.",
-            },
-          },
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              name: "Short-Form Video Production UAE",
-              description:
-                "Professional end-to-end short-form video production for Instagram Reels and TikTok for UAE businesses.",
-            },
-          },
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              name: "Organic Social Media Growth UAE",
-              description:
-                "Sustainable follower growth and audience building on Instagram and TikTok for UAE businesses without paid advertising.",
-            },
-          },
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              name: "Social Media Management UAE",
-              description:
-                "Full-service Instagram and TikTok management for UAE businesses including posting, strategy, and performance reporting.",
-            },
-          },
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              name: "Viral Content Strategy",
-              description:
-                "Data-informed content strategy built for maximum organic reach and engagement in the UAE market.",
-            },
-          },
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              name: "Content Systems",
-              description:
-                "Repeatable, scalable short-form content production systems for UAE businesses that keep brands consistently active.",
-            },
-          },
+          { ...offer("Clarity Check", "Free online marketing diagnostic questionnaire with an instant gap score.", 0, 0) },
+          offer(
+            "Identifier",
+            "Root-cause marketing gap analysis, internal and external, with prioritized recommendations. 2–3 weeks.",
+            15000,
+            20000
+          ),
+          offer(
+            "BrandArch",
+            "Brand architecture and engineered campaign frameworks with OKRs and KPIs. 3–4 weeks.",
+            20000,
+            30000
+          ),
+          offer(
+            "LaunchX",
+            "Monthly execution retainer: content production, paid media, SEO and social media management, reported against agreed KPIs."
+          ),
         ],
       },
     },
     {
       "@type": "WebSite",
-      "@id": "https://www.hpf-media.com/#website",
-      url: "https://www.hpf-media.com",
+      "@id": `${site.url}/#website`,
+      url: site.url,
       name: "HPF Media",
-      description:
-        "Social media marketing agency UAE — Instagram and TikTok growth for UAE brands",
-      publisher: { "@id": "https://www.hpf-media.com/#organization" },
+      description,
+      publisher: { "@id": `${site.url}/#organization` },
       inLanguage: "en-AE",
-      potentialAction: {
-        "@type": "SearchAction",
-        target: {
-          "@type": "EntryPoint",
-          urlTemplate: "https://www.hpf-media.com/?s={search_term_string}",
-        },
-        "query-input": "required name=search_term_string",
-      },
     },
   ],
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+const introScript = `try{if(sessionStorage.getItem("${LOADER_KEY}"))document.documentElement.dataset.introSeen="1"}catch(e){}`;
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en-AE" className={htmlClassName} suppressHydrationWarning>
-      <body className={bodyClassName}>
+    <html
+      lang="en-AE"
+      className={`${display.variable} ${sans.variable} ${mono.variable}`}
+      data-scroll-behavior="smooth"
+      suppressHydrationWarning
+    >
+      <body className="flex min-h-screen flex-col bg-ink font-sans text-bone">
+        <Script id="hpf-intro" strategy="beforeInteractive">
+          {introScript}
+        </Script>
         <LoadingScreen />
         <JsonLd data={organizationSchema} />
         <VisualBackground />
         <CursorTrail />
-        <Navigation />
         <SmoothScrollProvider>
-          <main className="flex-grow">
-            {children}
-          </main>
+          <Navigation />
+          <main className="relative z-10 flex-grow">{children}</main>
+          <Footer />
         </SmoothScrollProvider>
-        <Footer />
         <Analytics />
         <SpeedInsights />
       </body>

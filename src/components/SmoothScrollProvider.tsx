@@ -1,54 +1,40 @@
 "use client";
 
-import React, { useEffect, ReactNode, createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
 import Lenis from "lenis";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-// Register ScrollTrigger plugin
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
+import { gsap, ScrollTrigger } from "@/lib/gsap";
 
 const LenisContext = createContext<Lenis | null>(null);
 
 export const useLenis = () => useContext(LenisContext);
 
 export default function SmoothScrollProvider({ children }: { children: ReactNode }) {
-  const [lenisInstance, setLenisInstance] = useState<Lenis | null>(null);
+  const [lenis, setLenis] = useState<Lenis | null>(null);
 
   useEffect(() => {
-    // Initializing Lenis for all devices (including mobile)
-    const lenis = new Lenis({
-      duration: 1.5, // Matched Kandurarally.com's premium weight
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // expoOut
-      touchMultiplier: 2,
-      infinite: false,
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const instance = new Lenis({
+      duration: 1.25,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      touchMultiplier: 1.6,
       smoothWheel: true,
     });
+    // Lenis is an external system; exposing the instance via context is the point of this effect.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setLenis(instance);
 
-    setLenisInstance(lenis);
-
-    // Syncing Lenis with ScrollTrigger
-    lenis.on("scroll", ScrollTrigger.update);
-
-    // Adding Lenis to GSAP ticker
-    gsap.ticker.add((time) => {
-      lenis.raf(time * 1000);
-    });
-
-    // Disabling GSAP ticker lag smoothing
+    instance.on("scroll", ScrollTrigger.update);
+    const tick = (time: number) => instance.raf(time * 1000);
+    gsap.ticker.add(tick);
     gsap.ticker.lagSmoothing(0);
 
-    // Cleanup
     return () => {
-      lenis.destroy();
+      gsap.ticker.remove(tick);
+      instance.destroy();
+      setLenis(null);
     };
   }, []);
 
-  return (
-    <LenisContext.Provider value={lenisInstance}>
-      {children}
-    </LenisContext.Provider>
-  );
+  return <LenisContext.Provider value={lenis}>{children}</LenisContext.Provider>;
 }
