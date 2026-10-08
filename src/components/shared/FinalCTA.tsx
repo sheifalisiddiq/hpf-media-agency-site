@@ -13,7 +13,7 @@ export default function FinalCTA({
   return (
     <section aria-label="Start your Clarity Check" className="relative overflow-hidden border-t border-line py-20 md:py-32">
       <div className="wrap">
-        <div className="relative overflow-hidden rounded-[2.5rem] border border-line bg-ink-2/60 p-10 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-xl md:p-20">
+        <div className="relative overflow-hidden rounded-[2.5rem] border border-crimson/25 bg-ink-2/60 p-10 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_0_40px_-12px_rgba(255,84,73,0.35)] backdrop-blur-xl md:p-20">
           <div
             aria-hidden
             className="pointer-events-none absolute left-1/2 top-0 h-[40vmax] w-[70vmax] -translate-x-1/2 -translate-y-2/3 rounded-full bg-[radial-gradient(circle,rgba(255,84,73,0.28),transparent_60%)] blur-2xl"

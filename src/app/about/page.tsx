@@ -200,14 +200,14 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section aria-label="Our ambition" className="relative z-10 overflow-hidden border-t border-line py-20 md:py-28">
+      <section aria-label="Our ambition" className="relative z-10 overflow-hidden border-t border-line py-12 md:py-16">
         <div
           aria-hidden
           className="pointer-events-none absolute -right-[10vw] bottom-0 h-[50vmax] w-[50vmax] rounded-full bg-[radial-gradient(circle,rgba(255,84,73,0.18),transparent_60%)]"
         />
         <div className="wrap relative">
           <SectionLabel index="Part 05">Our ambition</SectionLabel>
-          <div className="mt-12">
+          <div className="mt-8">
             <p className="t-label mb-4 text-mute">The 5-year milestone</p>
             <p className="font-display text-[clamp(4rem,14vw,10rem)] leading-[0.8] tracking-[-0.04em] text-bone">
               <CountUp value={ambition.milestone} />
