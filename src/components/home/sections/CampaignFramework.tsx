@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import SectionLabel from "@/components/shared/SectionLabel";
 import RevealText from "@/components/motion/RevealText";
 import { campaignAxes } from "@/content/method";
-import { gsap, MOTION_OK, useGSAP } from "@/lib/gsap";
+import { gsap, DESKTOP_MOTION, useGSAP } from "@/lib/gsap";
 import { cn } from "@/lib/utils";
 
 type Cell = { a: number; f: number; c: number };
@@ -21,7 +21,7 @@ export default function CampaignFramework() {
   useGSAP(
     () => {
       const mm = gsap.matchMedia();
-      mm.add(MOTION_OK, () => {
+      mm.add(DESKTOP_MOTION, () => {
         gsap.fromTo(
           ".cf-plane",
           { z: 0, autoAlpha: 0.2 },

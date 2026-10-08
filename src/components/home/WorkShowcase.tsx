@@ -32,7 +32,7 @@ function ReelVideo({
       if (!video.src && reel.videoSrc) video.src = reel.videoSrc;
       video.muted = false;
       video.play().catch(() => {});
-    } else {
+    } else if (video.src) {
       video.pause();
       video.currentTime = 0;
       video.muted = true;
@@ -59,7 +59,7 @@ function ReelVideo({
     <>
       <video
         ref={videoRef}
-        src={reel.videoSrc}
+        src={isActive ? reel.videoSrc : undefined}
         poster={reel.poster}
         title={reel.title}
         loop
