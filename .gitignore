@@ -42,3 +42,7 @@ next-env.d.ts
 
 .vercel
 .gstack/
+
+# brief source PDFs
+/HPF_Product_Methodology.pdf
+/corporate DNA HPF 2.0.pdf
