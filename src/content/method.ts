@@ -29,14 +29,14 @@ export const stages: Stage[] = [
     id: "clarity-check",
     index: "00",
     name: "Clarity Check",
-    tagline: "See your own marketing gaps, on your own evidence.",
+    tagline: "See where your marketing needs improvement.",
     summary:
       "A short diagnostic questionnaire. You answer honestly, and you leave with a clear first read on where your marketing is drifting across positioning, messaging, market understanding, channels and measurement.",
     price: "Free",
     duration: "About 4 minutes",
     deliverable: "Your gap score and dimension breakdown",
-    deliverableShort: "Gap score",
-    output: "Your answers show where to look first.",
+    deliverableShort: "Marketing Gap Score",
+    output: "You know what needs attention first.",
   },
   {
     id: "identifier",
@@ -49,7 +49,7 @@ export const stages: Stage[] = [
     duration: "2–3 weeks",
     deliverable:
       "The Identifier Report: findings and prioritized recommendations, walked through in a working session",
-    deliverableShort: "The Identifier Report",
+    deliverableShort: "Your Marketing Diagnosis",
     axisWeeks: 3,
     axisLabel: "Week",
     phases: [
@@ -87,7 +87,7 @@ export const stages: Stage[] = [
     ],
     handoff:
       "Identifier's positioning conclusions and prioritized recommendations are the direct input for BrandArch. Nothing in BrandArch is developed independently of these findings.",
-    output: "Root causes and priorities become the brief for BrandArch.",
+    output: "You know exactly what to fix and prioritize.",
   },
   {
     id: "brandarch",
@@ -100,7 +100,7 @@ export const stages: Stage[] = [
     duration: "3–4 weeks",
     deliverable:
       "The BrandArch Playbook: brand architecture, campaign frameworks with sample content, and OKRs/KPIs",
-    deliverableShort: "The BrandArch Playbook",
+    deliverableShort: "Your Marketing Playbook",
     axisWeeks: 4,
     axisLabel: "Week",
     phases: [
@@ -136,7 +136,7 @@ export const stages: Stage[] = [
     ],
     handoff:
       "Only the campaign frameworks and KPI targets approved in the Playbook become execution briefs. Nothing is executed under LaunchX without a documented framework and target from BrandArch.",
-    output: "Approved frameworks and KPI targets become LaunchX execution briefs.",
+    output: "You have a clear strategy ready to launch.",
   },
   {
     id: "launchx",
@@ -149,7 +149,7 @@ export const stages: Stage[] = [
     duration: "Ongoing, scope reviewed quarterly",
     deliverable:
       "Monthly execution across agreed channels, plus monthly reporting against BrandArch's KPIs",
-    deliverableShort: "Monthly KPI Report",
+    deliverableShort: "Monthly Performance Report",
     axisWeeks: 4,
     axisLabel: "Week",
     phases: [
@@ -188,7 +188,7 @@ export const stages: Stage[] = [
     ],
     handoff:
       "Because scope varies by client, LaunchX pricing is only finalized once BrandArch has defined exactly which channels and volume are required. It is never quoted upfront.",
-    output: "Results reported against the numbers we agreed together.",
+    output: "You see what's working and what we improve next.",
   },
 ];
 

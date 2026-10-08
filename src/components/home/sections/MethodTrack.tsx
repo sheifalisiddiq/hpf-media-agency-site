@@ -72,7 +72,7 @@ export default function MethodTrack() {
           <div>
             <SectionLabel index="02">The method</SectionLabel>
             <RevealText as="h2" className="t-h2 mt-5 max-w-3xl text-bone">
-              Four steps. Each one earns the next.
+              From clarity to revenue. Four stages.
             </RevealText>
           </div>
           <Link href="/method" className="t-label hidden shrink-0 border-b border-crimson pb-1 text-bone hover:text-crimson-bright md:inline-block">
@@ -129,7 +129,7 @@ export default function MethodTrack() {
                   <p className="text-xl text-bone">{stage.deliverableShort}</p>
                 </div>
                 <div className="mt-in">
-                  <p className="t-label mb-2 text-mute">Becomes</p>
+                  <p className="t-label mb-2 text-mute">What it means</p>
                   <p className="text-base leading-snug text-bone/75">{stage.output}</p>
                 </div>
               </div>

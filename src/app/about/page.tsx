@@ -63,9 +63,8 @@ export default function AboutPage() {
           <div className="mt-14 grid gap-10 md:grid-cols-12">
             <Reveal delay={0.5} className="md:col-span-6">
               <p className="t-lead">
-                This is not a marketing brochure or a list of aspirations. It is the blueprint that governs every decision
-                we make, every client we take on, and every piece of work we produce. We share it openly so you know
-                exactly what to expect from us, and what we will hold ourselves to.
+                These principles guide every decision we make, every client we work with, and every piece of work we
+                produce.
               </p>
             </Reveal>
           </div>
@@ -145,9 +144,9 @@ export default function AboutPage() {
 
           <div className="mt-24 grid gap-12 lg:grid-cols-12">
             <div className="lg:col-span-4">
-              <h3 className="t-h2 text-bone">How our values guide decisions.</h3>
+              <h3 className="t-h2 text-bone">Put a decision to the test.</h3>
               <p className="t-lead mt-6">
-                Every decision at HPF, big or small, runs through the same filter. Run one of yours through it.
+                See how your decision holds up against the same five principles we use at HPF.
               </p>
             </div>
             <div className="lg:col-span-7 lg:col-start-6">
@@ -164,7 +163,7 @@ export default function AboutPage() {
             Absolute boundaries.
           </RevealText>
           <p className="t-lead mt-6 max-w-xl">
-            These are not preferences. They are absolute, and they protect the integrity of everything we build.
+            Our standards don&apos;t change for money, pressure, or convenience.
           </p>
           <div className="mt-16">
             <StandardTable />
@@ -201,28 +200,21 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section aria-label="Our ambition" className="relative z-10 overflow-hidden border-t border-line py-24 md:py-36">
+      <section aria-label="Our ambition" className="relative z-10 overflow-hidden border-t border-line py-20 md:py-28">
         <div
           aria-hidden
           className="pointer-events-none absolute -right-[10vw] bottom-0 h-[50vmax] w-[50vmax] rounded-full bg-[radial-gradient(circle,rgba(255,84,73,0.18),transparent_60%)]"
         />
         <div className="wrap relative">
           <SectionLabel index="Part 05">Our ambition</SectionLabel>
-          <div className="mt-12 grid gap-16 lg:grid-cols-12 lg:items-end">
-            <div className="lg:col-span-7">
-              <p className="t-label mb-4 text-mute">The 5-year milestone</p>
-              <p className="font-display text-[clamp(6rem,22vw,20rem)] leading-[0.8] tracking-[-0.04em] text-bone">
-                <CountUp value={ambition.milestone} />
-                <span className="text-crimson">+</span>
-              </p>
-              <p className="t-h3 mt-6 max-w-xl text-bone/80">{ambition.milestoneText}</p>
-              <p className="mt-4 max-w-lg text-bone/60">{ambition.milestoneBody}</p>
-            </div>
-            <div className="border-l-2 border-crimson pl-6 lg:col-span-4 lg:col-start-9">
-              <p className="t-label mb-4 text-crimson-bright">The big goal</p>
-              <p className="font-display text-4xl leading-tight text-bone">&ldquo;{ambition.bigGoal}&rdquo;</p>
-              <p className="mt-4 text-bone/60">{ambition.bigGoalBody}</p>
-            </div>
+          <div className="mt-12">
+            <p className="t-label mb-4 text-mute">The 5-year milestone</p>
+            <p className="font-display text-[clamp(4rem,14vw,10rem)] leading-[0.8] tracking-[-0.04em] text-bone">
+              <CountUp value={ambition.milestone} />
+              <span className="text-crimson">+</span>
+            </p>
+            <p className="t-h3 mt-6 max-w-xl text-bone/80">{ambition.milestoneText}</p>
+            <p className="mt-4 max-w-lg text-bone/60">{ambition.milestoneBody}</p>
           </div>
         </div>
       </section>
