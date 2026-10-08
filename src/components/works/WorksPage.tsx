@@ -1,7 +1,5 @@
-import Image from "next/image";
 import RevealText from "@/components/motion/RevealText";
 import Reveal from "@/components/motion/Reveal";
-import Marquee from "@/components/motion/Marquee";
 import ParallaxLayer from "@/components/motion/ParallaxLayer";
 import MagneticButton from "@/components/motion/MagneticButton";
 import CountUp from "@/components/motion/CountUp";
@@ -9,6 +7,7 @@ import SectionLabel from "@/components/shared/SectionLabel";
 import DocumentCover from "@/components/shared/DocumentCover";
 import FinalCTA from "@/components/shared/FinalCTA";
 import WorkShowcase from "@/components/home/WorkShowcase";
+import LogoMarquee from "@/components/shared/LogoMarquee";
 import { brandLogos, featuredViewTotal, socialReels } from "@/content/works";
 
 export default function WorksPage() {
@@ -56,27 +55,7 @@ export default function WorksPage() {
           <p className="t-label text-mute">Brands we&apos;ve worked with</p>
           <p className="t-label hidden text-mute md:block">Hover to pause</p>
         </div>
-        <div className="wrap hidden gap-px bg-line md:grid md:grid-cols-4">
-          {brandLogos.map((logo) => (
-            <div key={logo.name} className="group relative flex aspect-[4/3] items-center justify-center bg-ink p-8">
-              <div className="relative h-full w-full overflow-hidden bg-bone transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]">
-                <Image src={logo.src} alt={`${logo.name} logo`} fill sizes="320px" className="object-contain p-5" />
-              </div>
-              <span className="t-label absolute bottom-3 left-4 text-mute opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                {logo.name}
-              </span>
-            </div>
-          ))}
-        </div>
-        <div className="md:hidden">
-          <Marquee duration={28} trackClassName="gap-4 pr-4" className="mask-fade-x">
-            {brandLogos.map((logo) => (
-              <div key={logo.name} className="relative h-20 w-40 shrink-0 overflow-hidden bg-bone">
-                <Image src={logo.src} alt={`${logo.name} logo`} fill sizes="160px" className="object-contain p-3" />
-              </div>
-            ))}
-          </Marquee>
-        </div>
+        <LogoMarquee />
       </section>
 
       <section aria-label="Content portfolio" className="border-t border-line py-20 md:py-28">

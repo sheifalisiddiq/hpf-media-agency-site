@@ -95,7 +95,7 @@ export default function CampaignFramework() {
         <div
           ref={sceneRef}
           onPointerMove={onPointer}
-          className="relative flex aspect-square items-center justify-center lg:col-span-7"
+          className="relative flex aspect-square items-center justify-center lg:col-span-7 lg:max-w-[560px] lg:mx-auto"
           style={{ perspective: "1600px" }}
         >
           <div className="cf-tilt relative h-[62%] w-[62%]" style={{ transformStyle: "preserve-3d", transform: "rotateX(58deg)" }}>

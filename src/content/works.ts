@@ -60,15 +60,15 @@ export const socialReels: SocialReel[] = [
   },
 ];
 
-export const brandLogos: { src: string; name: string }[] = [
-  { src: "/emirates_FC_logo.jpeg", name: "Emirates FC" },
-  { src: "/Mecca_al_mukarramah_perfumes.jpeg", name: "Mecca Al Mukarramah Perfumes" },
-  { src: "/mr_glass_logo.jpeg", name: "Mr Glass" },
-  { src: "/bunzai_burgers.jpeg", name: "Bunzai Burgers" },
-  { src: "/beston_woods.jpeg", name: "Beston Wood" },
-  { src: "/play_and_sip.jpeg", name: "Play & Sip" },
-  { src: "/windmaster_logo.jpeg", name: "Windmaster" },
-  { src: "/cvrd_logo.jpeg", name: "CVRD" },
+export const brandLogos: { src: string; name: string; width: number; height: number }[] = [
+  { src: "/logos/emirates-fc.png", name: "Emirates FC", width: 512, height: 512 },
+  { src: "/logos/mecca-perfumes.png", name: "Mecca Al Mukarramah Perfumes", width: 1210, height: 264 },
+  { src: "/logos/mr-glass.png", name: "Mr Glass", width: 512, height: 512 },
+  { src: "/logos/bunzai-burgers.png", name: "Bunzai Burgers", width: 512, height: 512 },
+  { src: "/logos/beston-wood.png", name: "Beston Wood", width: 1117, height: 376 },
+  { src: "/logos/play-and-sip.png", name: "Play & Sip", width: 512, height: 512 },
+  { src: "/logos/windmaster.png", name: "Windmaster", width: 512, height: 512 },
+  { src: "/logos/cvrd.png", name: "CVRD", width: 512, height: 512 },
 ];
 
 /** Sum of the published view counts on the featured reels. */

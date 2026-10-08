@@ -37,7 +37,7 @@ export default function ScrubQuote({ text, label }: { text: string; label: strin
   );
 
   return (
-    <section ref={ref} aria-label={label} className="relative flex min-h-[100svh] items-center border-t border-line py-24">
+    <section ref={ref} aria-label={label} className="relative flex min-h-[70svh] items-center border-t border-line py-24">
       <div className="wrap">
         <p className="t-label mb-10 flex items-center gap-4 text-mute">
           <span className="h-1 w-8 bg-crimson" />

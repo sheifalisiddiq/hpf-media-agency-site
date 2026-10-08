@@ -19,7 +19,7 @@ export default function HomeExperience() {
       <CampaignFramework />
       <Proof />
 
-      <section aria-label="The HPF Standard" className="relative border-t border-line py-28 md:py-40">
+      <section aria-label="The HPF Standard" className="relative border-t border-line py-20 md:py-28">
         <div className="wrap">
           <div className="mb-16 grid gap-8 md:mb-20 md:grid-cols-12">
             <div className="md:col-span-7">

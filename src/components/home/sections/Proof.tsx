@@ -1,12 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
 import SectionLabel from "@/components/shared/SectionLabel";
 import RevealText from "@/components/motion/RevealText";
-import Marquee from "@/components/motion/Marquee";
 import CountUp from "@/components/motion/CountUp";
+import LogoMarquee from "@/components/shared/LogoMarquee";
 import { SocialReelCard } from "@/components/home/WorkShowcase";
 import { brandLogos, featuredViewTotal, socialReels } from "@/content/works";
 import { gsap, ScrollTrigger, DESKTOP_MOTION, useGSAP } from "@/lib/gsap";
@@ -47,22 +46,8 @@ export default function Proof() {
     { scope: ref }
   );
 
-  const logoRow = (reverse: boolean) => (
-    <Marquee duration={38} reverse={reverse} trackClassName="gap-4 pr-4 md:gap-6 md:pr-6" className="mask-fade-x">
-      {brandLogos.map((logo) => (
-        <div
-          key={logo.name}
-          className="relative h-20 w-40 shrink-0 overflow-hidden border border-line bg-bone md:h-24 md:w-52"
-          title={logo.name}
-        >
-          <Image src={logo.src} alt={`${logo.name} logo`} fill sizes="208px" className="object-contain p-3" />
-        </div>
-      ))}
-    </Marquee>
-  );
-
   return (
-    <section ref={ref} aria-label="Proof" className="relative overflow-hidden border-t border-line py-28 md:py-40">
+    <section ref={ref} aria-label="Proof" className="relative overflow-hidden border-t border-line py-20 md:py-28">
       <div className="wrap">
         <div className="grid gap-10 md:grid-cols-12">
           <div className="md:col-span-7">
@@ -94,9 +79,8 @@ export default function Proof() {
         </div>
       </div>
 
-      <div className="proof-logos mt-16 space-y-4 md:mt-24 md:space-y-6">
-        {logoRow(false)}
-        {logoRow(true)}
+      <div className="proof-logos mt-16 md:mt-24">
+        <LogoMarquee />
       </div>
 
       <div className="wrap">

@@ -40,8 +40,8 @@ export default function Values() {
   );
 
   return (
-    <section ref={ref} aria-label="Our values" className="relative border-t border-line pt-28 md:pt-40">
-      <div className="wrap mb-16 grid gap-8 md:mb-24 md:grid-cols-12">
+    <section ref={ref} aria-label="Our values" className="relative border-t border-line pt-20 md:pt-28">
+      <div className="wrap mb-8 grid gap-8 md:mb-12 md:grid-cols-12">
         <div className="md:col-span-7">
           <SectionLabel index="06">Five non-negotiables</SectionLabel>
           <h2 className="t-h2 mt-6 text-bone">Every decision runs through the same filter.</h2>

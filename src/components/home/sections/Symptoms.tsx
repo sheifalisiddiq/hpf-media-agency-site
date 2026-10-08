@@ -58,9 +58,9 @@ export default function Symptoms() {
 
   return (
     <section ref={ref} aria-label="Symptoms and root causes" className="relative border-t border-line">
-      <div ref={pinRef} className="flex min-h-[100svh] flex-col justify-center py-24">
+      <div ref={pinRef} className="flex min-h-[100svh] flex-col justify-center py-14 md:py-20">
         <div className="wrap">
-          <div className="mb-14 grid gap-8 md:mb-20 md:grid-cols-12">
+          <div className="mb-8 grid gap-8 md:mb-12 md:grid-cols-12">
             <div className="md:col-span-7">
               <SectionLabel index="01">The real problem</SectionLabel>
               <RevealText as="h2" className="t-h1 mt-6 text-bone">
@@ -80,7 +80,7 @@ export default function Symptoms() {
 
           <ul className="border-t border-line">
             {symptoms.map((s, i) => (
-              <li key={s.symptom} className="sym-row grid gap-3 border-b border-line py-6 lg:grid-cols-12 lg:items-center lg:gap-6 lg:py-8">
+              <li key={s.symptom} className="sym-row grid gap-3 border-b border-line py-4 lg:grid-cols-12 lg:items-center lg:gap-6 lg:py-6">
                 <div className="flex items-center gap-5 lg:col-span-6">
                   <span className="sym-dot h-2 w-2 shrink-0 rounded-full bg-bone/30" aria-hidden />
                   <span className="t-label w-6 text-mute">0{i + 1}</span>

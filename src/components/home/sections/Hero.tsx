@@ -38,8 +38,7 @@ export default function Hero() {
           .to(".hero-line-1", { xPercent: 22, ease: "none" }, 0)
           .to(".hero-line-2", { xPercent: -8, ease: "none" }, 0)
           .to(".hero-copy", { yPercent: -40, autoAlpha: 0, ease: "none" }, 0)
-          .to(".hero-index", { yPercent: -25, autoAlpha: 0, ease: "none" }, 0)
-          .to(".hero-thread", { scaleY: 1, ease: "none" }, 0);
+          .to(".hero-index", { yPercent: -25, autoAlpha: 0, ease: "none" }, 0);
 
         return () => sub.revert();
       });
@@ -134,11 +133,6 @@ export default function Hero() {
           ))}
         </Marquee>
       </div>
-
-      <span
-        aria-hidden
-        className="hero-thread pointer-events-none absolute bottom-0 left-[var(--gutter)] hidden h-[40vh] w-px origin-bottom scale-y-0 bg-crimson md:block"
-      />
     </section>
   );
 }
