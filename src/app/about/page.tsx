@@ -82,7 +82,7 @@ export default function AboutPage() {
       </section>
 
       <ScrubQuote label="Purpose" text={purpose.quote} />
-      <section aria-label="Purpose explained" className="pb-24">
+      <section aria-label="Purpose explained" className="pb-16">
         <div className="wrap grid gap-8 md:grid-cols-12">
           {purpose.body.map((p, i) => (
             <Reveal key={i} delay={i * 0.1} className={i === 0 ? "md:col-span-5 md:col-start-2" : "md:col-span-5"}>
@@ -94,7 +94,7 @@ export default function AboutPage() {
 
       <section aria-label="Vision and mission" className="relative">
         {chapters.map((c) => (
-          <article key={c.name} className="flex items-center border-t border-line py-24 md:py-32">
+          <article key={c.name} className="flex items-center border-t border-line py-20 md:py-28">
             <div className="wrap grid gap-12 lg:grid-cols-12">
               <div className="lg:col-span-4">
                 <p className="t-label flex items-center gap-4 text-mute">
@@ -256,7 +256,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section aria-label="Our commitment" className="relative z-10 border-t border-line py-24 md:py-36">
+      <section aria-label="Our commitment" className="relative z-10 border-t border-line py-20 md:py-28">
         <div className="wrap max-w-5xl text-center">
           <p className="t-label mb-8 text-crimson-bright">Our commitment</p>
           {commitment.map((p, i) => (
