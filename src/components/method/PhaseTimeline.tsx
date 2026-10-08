@@ -30,7 +30,10 @@ export default function PhaseTimeline({ stage }: { stage: Stage }) {
 
   return (
     <div ref={ref} className="glass overflow-hidden p-5 md:p-7">
-      <div className="mb-4 grid text-mute" style={{ gridTemplateColumns: `9rem repeat(${weeks}, 1fr)` }}>
+      <div
+        className="mb-4 grid text-mute"
+        style={{ gridTemplateColumns: `clamp(6rem, 20vw, 9rem) repeat(${weeks}, 1fr)` }}
+      >
         <span className="t-label">Phase</span>
         {Array.from({ length: weeks }, (_, w) => (
           <span key={w} className="t-label min-w-0 truncate border-l border-line pl-2 text-[0.55rem] tracking-[0.12em] sm:text-[0.68rem] sm:tracking-[0.32em]">
@@ -40,7 +43,7 @@ export default function PhaseTimeline({ stage }: { stage: Stage }) {
       </div>
       <ul className="space-y-3">
         {stage.phases?.map((p) => (
-          <li key={p.title} className="grid items-center" style={{ gridTemplateColumns: `9rem 1fr` }}>
+          <li key={p.title} className="grid items-center" style={{ gridTemplateColumns: `clamp(6rem, 20vw, 9rem) 1fr` }}>
             <span className="pr-3 text-sm leading-tight text-bone/80">{p.title}</span>
             <span className="relative h-8">
               <span

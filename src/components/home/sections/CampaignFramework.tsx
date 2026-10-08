@@ -132,7 +132,7 @@ export default function CampaignFramework() {
                   )}
                   <span
                     className={cn(
-                      "t-label pointer-events-none absolute -left-3 top-0 -translate-x-full whitespace-nowrap transition-colors",
+                      "t-label pointer-events-none absolute -left-3 top-0 hidden -translate-x-full whitespace-nowrap transition-colors lg:block",
                       active.c === c ? "text-crimson-bright" : "text-bone/45"
                     )}
                   >

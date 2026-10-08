@@ -26,22 +26,22 @@ export default function WorksPage() {
                 the original post. Nothing rounded up, nothing borrowed.
               </p>
             </Reveal>
-            <Reveal delay={0.6} stagger={0.1} as="dl" className="grid grid-cols-3 gap-6 md:col-span-5 md:col-start-8">
-              <div>
+            <Reveal delay={0.6} stagger={0.1} as="dl" className="grid grid-cols-3 gap-3 sm:gap-6 md:col-span-5 md:col-start-8">
+              <div className="min-w-0">
                 <dt className="t-label mb-2 text-mute">Brands</dt>
-                <dd className="font-display text-5xl text-bone">
+                <dd className="font-display text-3xl text-bone sm:text-5xl">
                   <CountUp value={brandLogos.length} />
                 </dd>
               </div>
-              <div>
+              <div className="min-w-0">
                 <dt className="t-label mb-2 text-mute">Featured reels</dt>
-                <dd className="font-display text-5xl text-bone">
+                <dd className="font-display text-3xl text-bone sm:text-5xl">
                   <CountUp value={socialReels.length} />
                 </dd>
               </div>
-              <div>
+              <div className="min-w-0">
                 <dt className="t-label mb-2 text-mute">Views</dt>
-                <dd className="font-display text-5xl text-crimson-bright">
+                <dd className="font-display text-3xl text-crimson-bright sm:text-5xl">
                   <CountUp value={featuredViewTotal} compact suffix="+" />
                 </dd>
               </div>

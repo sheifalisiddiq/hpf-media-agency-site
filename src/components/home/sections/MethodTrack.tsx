@@ -113,7 +113,7 @@ export default function MethodTrack() {
                   <span className="h-px flex-1 bg-line" />
                   <span className="t-label text-mute">{stage.duration}</span>
                 </div>
-                <h3 className="mt-in font-display text-6xl leading-[0.9] tracking-tight text-bone md:text-8xl">{stage.name}</h3>
+                <h3 className="mt-in break-words font-display text-4xl leading-[0.9] tracking-tight text-bone sm:text-5xl md:text-8xl">{stage.name}</h3>
                 <p className="mt-in mt-5 max-w-xl font-display text-2xl leading-snug text-bone/75 md:text-3xl">
                   {stage.tagline}
                 </p>

@@ -56,22 +56,22 @@ export default function Proof() {
               Work that the market actually watched.
             </RevealText>
           </div>
-          <dl className="grid grid-cols-3 gap-6 self-end md:col-span-5">
-            <div>
+          <dl className="grid grid-cols-3 gap-3 self-end sm:gap-6 md:col-span-5">
+            <div className="min-w-0">
               <dt className="t-label mb-2 text-mute">Brands</dt>
-              <dd className="font-display text-5xl text-bone md:text-6xl">
+              <dd className="font-display text-3xl text-bone sm:text-5xl md:text-6xl">
                 <CountUp value={brandLogos.length} />
               </dd>
             </div>
-            <div>
+            <div className="min-w-0">
               <dt className="t-label mb-2 text-mute">Views, featured</dt>
-              <dd className="font-display text-5xl text-bone md:text-6xl">
+              <dd className="font-display text-3xl text-bone sm:text-5xl md:text-6xl">
                 <CountUp value={featuredViewTotal} compact suffix="+" />
               </dd>
             </div>
-            <div>
+            <div className="min-w-0">
               <dt className="t-label mb-2 text-mute">Values-aligned</dt>
-              <dd className="font-display text-5xl text-crimson-bright md:text-6xl">
+              <dd className="font-display text-3xl text-crimson-bright sm:text-5xl md:text-6xl">
                 <CountUp value={100} suffix="%" />
               </dd>
             </div>

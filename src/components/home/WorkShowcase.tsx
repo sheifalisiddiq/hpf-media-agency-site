@@ -29,14 +29,17 @@ function ReelVideo({
     const video = videoRef.current;
     if (!video) return;
     if (isActive) {
+      if (!video.src && reel.videoSrc) video.src = reel.videoSrc;
       video.muted = false;
       video.play().catch(() => {});
     } else {
       video.pause();
       video.currentTime = 0;
       video.muted = true;
+      video.removeAttribute("src");
+      video.load();
     }
-  }, [isActive]);
+  }, [isActive, reel.videoSrc]);
 
   useEffect(() => {
     if (!isActive) return;
