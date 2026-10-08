@@ -143,7 +143,7 @@ export default function MethodPage() {
           <div className="lg:col-span-4">
             <SectionLabel>Questions</SectionLabel>
             <RevealText as="h2" className="t-h2 mt-6 text-bone">
-              Asked honestly. Answered honestly.
+              FAQ
             </RevealText>
           </div>
           <div className="lg:col-span-8">

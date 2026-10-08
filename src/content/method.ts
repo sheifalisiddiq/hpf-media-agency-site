@@ -3,7 +3,7 @@ export type Phase = {
   weeks: string;
   /** Start and end on the stage's week axis, used to draw the timeline bar. */
   span: [number, number];
-  steps: string[];
+  description: string;
 };
 
 export type Stage = {
@@ -43,12 +43,10 @@ export const stages: Stage[] = [
     index: "01",
     name: "Identifier",
     tagline: "Find out what's actually broken before spending a dirham fixing the wrong thing.",
-    summary:
-      "Identifier is a full diagnostic of your marketing, inside and out. We look at how the market actually sees you, how your competitors are positioned, and where the disconnect sits between what you think you're saying and what's actually landing. You leave with a clear, evidenced picture of your real marketing gaps, the root causes behind them (not just the symptoms) and a prioritized set of recommendations for what to fix first, second, and third.",
+    summary: "A full diagnostic of your marketing, so you know exactly what's broken and what to fix first.",
     price: "AED 15,000 – 20,000",
     duration: "2–3 weeks",
-    deliverable:
-      "The Identifier Report: findings and prioritized recommendations, walked through in a working session",
+    deliverable: "Your Marketing Diagnosis + prioritized action plan.",
     deliverableShort: "Your Marketing Diagnosis",
     axisWeeks: 3,
     axisLabel: "Week",
@@ -57,36 +55,22 @@ export const stages: Stage[] = [
         title: "External Research",
         weeks: "Week 1",
         span: [0, 1],
-        steps: [
-          "Competitor analysis: 3–5 direct and indirect competitors mapped across positioning, messaging, channels, pricing and share of voice.",
-          "Market overview: industry size, growth trajectory, and the regulatory, cultural and technology trends shaping your category across the GCC.",
-          "Brand research: an audit of current market perception, covering digital presence, reviews, customer feedback and stakeholder input.",
-        ],
+        description: "We study your market, competitors, and how your brand is currently positioned.",
       },
       {
         title: "Gap Diagnosis",
         weeks: "Week 1–2",
         span: [0.5, 2],
-        steps: [
-          "Internal marketing gaps: process, team structure, tooling, content cadence and decision-making bottlenecks.",
-          "External marketing gaps: messaging consistency, channel presence, campaign performance and competitive differentiation.",
-          "Positioning issues clarified: where your stated positioning breaks down against what the market actually experiences.",
-          "SWOT / PESTEL analysis: internal strengths and weaknesses set against external opportunities, threats and macro factors.",
-        ],
+        description: "We identify what's holding your marketing back and where the biggest opportunities are.",
       },
       {
-        title: "Synthesis & Recommendations",
+        title: "Recommendations",
         weeks: "Week 2–3",
         span: [1.5, 3],
-        steps: [
-          "Root cause mapping: every gap traced back to its underlying cause, not its symptom.",
-          "Prioritized recommendations, sequenced by impact and urgency, not just severity.",
-          "The Identifier Report, presented directly to your team.",
-        ],
+        description: "We show you what to fix first, what to improve next, and why.",
       },
     ],
-    handoff:
-      "Identifier's positioning conclusions and prioritized recommendations are the direct input for BrandArch. Nothing in BrandArch is developed independently of these findings.",
+    handoff: "These findings become the brief for BrandArch.",
     output: "You know exactly what to fix and prioritize.",
   },
   {
@@ -94,12 +78,10 @@ export const stages: Stage[] = [
     index: "02",
     name: "BrandArch",
     tagline: "Turn the diagnosis into a system you can actually run campaigns on.",
-    summary:
-      "BrandArch takes what Identifier uncovered and builds it into an operating system for your brand's communication: your messaging architecture, your campaign frameworks, and a clear plan for what gets said, where, and to whom. Every campaign concept is engineered around measurable objectives, so you know exactly what success looks like before a single piece of content or ad goes live.",
+    summary: "We turn your diagnosis into a clear marketing message and campaign plan.",
     price: "AED 20,000 – 30,000",
     duration: "3–4 weeks",
-    deliverable:
-      "The BrandArch Playbook: brand architecture, campaign frameworks with sample content, and OKRs/KPIs",
+    deliverable: "Your Marketing Playbook, ready to launch.",
     deliverableShort: "Your Marketing Playbook",
     axisWeeks: 4,
     axisLabel: "Week",
@@ -108,34 +90,22 @@ export const stages: Stage[] = [
         title: "Brand Architecture",
         weeks: "Week 1",
         span: [0, 1],
-        steps: [
-          "Identifier's positioning conclusions translated into a documented messaging architecture: core narrative, messaging pillars, tone and voice.",
-          "Internal and external communications separated, so what's said to the market and what's aligned with your team and partners stay consistent.",
-          "A clear decision on the type of marketing your business actually needs: brand-building, demand generation, retention, or a hybrid.",
-        ],
+        description: "We define what your brand should say, how it should sound, and who it needs to reach.",
       },
       {
         title: "Campaign Engineering",
         weeks: "Week 2–3",
         span: [1, 3],
-        steps: [
-          "The Three-Dimensional Campaign Framework (Audience Segment × Funnel Stage × Channel) applied to engineer a complete campaign matrix rather than isolated ideas.",
-          "2–4 campaign frameworks, each with sample content direction and creative references.",
-          "OKRs and KPIs assigned to every framework, tied directly to the gaps Identifier diagnosed, not generic industry benchmarks.",
-        ],
+        description: "We plan what campaigns to run, who to target, and where to reach them.",
       },
       {
         title: "Documentation & Handoff",
         weeks: "Week 4",
         span: [3, 4],
-        steps: [
-          "The BrandArch Playbook: architecture, campaign frameworks, OKRs/KPIs and recommended channel mix.",
-          "A walkthrough of the Playbook, aligning on which frameworks move into execution first.",
-        ],
+        description: "You receive a clear marketing playbook your team can use.",
       },
     ],
-    handoff:
-      "Only the campaign frameworks and KPI targets approved in the Playbook become execution briefs. Nothing is executed under LaunchX without a documented framework and target from BrandArch.",
+    handoff: "Your approved Playbook becomes the execution brief for LaunchX.",
     output: "You have a clear strategy ready to launch.",
   },
   {
@@ -143,12 +113,10 @@ export const stages: Stage[] = [
     index: "03",
     name: "LaunchX",
     tagline: "Where the plan becomes revenue.",
-    summary:
-      "LaunchX is where everything BrandArch designed gets built and run: content production, media buying, SEO, social management and ongoing optimization, measured against the OKRs and KPIs set in your Playbook. You get monthly execution and a monthly report against the same numbers we agreed on together, not vanity metrics.",
+    summary: "We execute your marketing, track the results, and improve it every month.",
     price: "Custom retainer",
     duration: "Ongoing, scope reviewed quarterly",
-    deliverable:
-      "Monthly execution across agreed channels, plus monthly reporting against BrandArch's KPIs",
+    deliverable: "Monthly Performance Report, so you always know what's working.",
     deliverableShort: "Monthly Performance Report",
     axisWeeks: 4,
     axisLabel: "Week",
@@ -157,37 +125,22 @@ export const stages: Stage[] = [
         title: "Onboarding",
         weeks: "Week 1",
         span: [0, 1],
-        steps: [
-          "Tracking, ad accounts and analytics set up against the KPIs defined in BrandArch.",
-          "The content and production calendar built against the approved campaign frameworks.",
-          "Channel mix and monthly scope confirmed. This is what determines final retainer pricing.",
-        ],
+        description: "We set up everything needed to start executing the plan.",
       },
       {
         title: "Execution",
         weeks: "Monthly cycles",
         span: [1, 4],
-        steps: [
-          "Content production in the formats BrandArch specified: video, static, copy or other.",
-          "Paid media management across scoped platforms: Meta Ads, Google Ads or others.",
-          "SEO, technical and content, as scoped.",
-          "Social media management: publishing, community management and engagement.",
-          "Campaign launches, sequenced per the BrandArch frameworks.",
-        ],
+        description: "We create content, run campaigns, and manage your marketing.",
       },
       {
         title: "Optimization & Reporting",
         weeks: "Weekly · Monthly · Quarterly",
         span: [1, 4],
-        steps: [
-          "Weekly performance checks against KPIs, with mid-cycle optimization: creative refresh, budget reallocation, targeting adjustments.",
-          "A monthly report measured against BrandArch's OKRs and KPIs, not generic platform metrics.",
-          "A quarterly strategic review: is the current scope still the right scope, or does BrandArch need revisiting?",
-        ],
+        description: "We track results, improve what isn't working, and show you what's performing.",
       },
     ],
-    handoff:
-      "Because scope varies by client, LaunchX pricing is only finalized once BrandArch has defined exactly which channels and volume are required. It is never quoted upfront.",
+    handoff: "Pricing depends on scope, finalized once BrandArch defines your channels and volume.",
     output: "You see what's working and what we improve next.",
   },
 ];

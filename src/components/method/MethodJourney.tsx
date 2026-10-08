@@ -130,31 +130,18 @@ export default function MethodJourney() {
 
               {s.phases && (
                 <>
-                  <div className="mt-14">
+                  <div className="mt-10">
                     <PhaseTimeline stage={s} />
                   </div>
-                  <div className="mt-14 grid gap-10 md:grid-cols-3">
-                    {(() => {
-                      let n = 0;
-                      return s.phases.map((p, pi) => (
-                        <Reveal key={p.title} delay={pi * 0.08}>
-                          <p className="t-label mb-2 text-crimson-bright">Phase {pi + 1}</p>
-                          <h3 className="t-h3 text-bone">{p.title}</h3>
-                          <p className="t-label mb-5 mt-2 text-mute">{p.weeks}</p>
-                          <ol className="space-y-4">
-                            {p.steps.map((step) => {
-                              n += 1;
-                              return (
-                                <li key={step} className="flex gap-4 text-[0.95rem] leading-relaxed text-bone/75">
-                                  <span className="text-xs leading-7 text-crimson-bright">{String(n).padStart(2, "0")}</span>
-                                  <span>{step}</span>
-                                </li>
-                              );
-                            })}
-                          </ol>
-                        </Reveal>
-                      ));
-                    })()}
+                  <div className="mt-10 grid gap-10 md:grid-cols-3">
+                    {s.phases.map((p, pi) => (
+                      <Reveal key={p.title} delay={pi * 0.08}>
+                        <p className="t-label mb-2 text-crimson-bright">Phase {pi + 1}</p>
+                        <h3 className="t-h3 text-bone">{p.title}</h3>
+                        <p className="t-label mb-5 mt-2 text-mute">{p.weeks}</p>
+                        <p className="text-[0.95rem] leading-relaxed text-bone/75">{p.description}</p>
+                      </Reveal>
+                    ))}
                   </div>
                 </>
               )}
