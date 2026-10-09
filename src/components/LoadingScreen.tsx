@@ -51,7 +51,7 @@ export default function LoadingScreen() {
         @media (prefers-reduced-motion: reduce) { .hpf-loader__logo, .hpf-loader__meta { opacity: 1; animation: none; } }
       `}</style>
       <div className="hpf-loader__logo">
-        <Image src="/logo.jpg" alt="" width={130} height={65} className="h-[65px] w-[130px]" priority />
+        <Image src="/logo.jpg" alt="" width={160} height={160} className="h-[160px] w-[160px]" priority />
       </div>
       <div className="hpf-loader__track">
         <div className="hpf-loader__bar" />
