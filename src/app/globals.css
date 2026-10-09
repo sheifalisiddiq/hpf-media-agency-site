@@ -164,7 +164,15 @@ body {
   background: var(--color-crimson);
   transform-origin: top;
   pointer-events: none;
-  animation: curtain-out 0.75s var(--ease-in-out-quart) 0.05s both;
+  transform: scaleY(0);
+  visibility: hidden;
+}
+.route-curtain.is-covering {
+  transform: scaleY(1);
+  visibility: visible;
+}
+.route-curtain.is-leaving {
+  animation: curtain-out 0.75s var(--ease-in-out-quart) 0.05s forwards;
 }
 .route-page {
   /* `backwards` so no transform lingers after the animation (it would break fixed/pinned children). */

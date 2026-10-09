@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 const SHOW_MS = 2000;
@@ -12,6 +12,8 @@ const SHOW_MS = 2000;
  */
 export default function LoadingScreen() {
   const ref = useRef<HTMLDivElement>(null);
+  const [isDone, setIsDone] = useState(false);
+  const [isRemoved, setIsRemoved] = useState(false);
 
   useEffect(() => {
     const el = ref.current;
@@ -19,11 +21,11 @@ export default function LoadingScreen() {
     const root = document.documentElement;
     root.dataset.preloading = "1";
     const done = setTimeout(() => {
-      el.classList.add("is-done");
+      setIsDone(true);
       root.dataset.introSeen = "1";
       delete root.dataset.preloading;
     }, SHOW_MS);
-    const remove = setTimeout(() => el.remove(), SHOW_MS + 1000);
+    const remove = setTimeout(() => setIsRemoved(true), SHOW_MS + 1000);
     return () => {
       clearTimeout(done);
       clearTimeout(remove);
@@ -31,8 +33,10 @@ export default function LoadingScreen() {
     };
   }, []);
 
+  if (isRemoved) return null;
+
   return (
-    <div ref={ref} className="hpf-loader" role="presentation" aria-hidden>
+    <div ref={ref} className={`hpf-loader${isDone ? " is-done" : ""}`} role="presentation" aria-hidden>
       <style>{`
         html[data-preloading] { overflow: hidden; }
         .hpf-loader {

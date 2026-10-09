@@ -11,6 +11,7 @@ import VisualBackground from "@/components/VisualBackground";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 import JsonLd from "@/components/JsonLd";
 import LoadingScreen from "@/components/LoadingScreen";
+import RouteTransitionCurtain from "@/components/RouteTransitionCurtain";
 import { site } from "@/content/site";
 
 const inter = Inter({
@@ -177,6 +178,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     >
       <body className="flex min-h-screen flex-col bg-black font-sans text-bone antialiased selection:bg-primary-container selection:text-on-primary-container">
         <LoadingScreen />
+        <RouteTransitionCurtain />
         <JsonLd data={organizationSchema} />
         <VisualBackground />
         <CursorTrail />
