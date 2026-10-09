@@ -3,6 +3,7 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
 import Lenis from "lenis";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
+import { registerLenis } from "@/lib/routeTransition";
 
 const LenisContext = createContext<Lenis | null>(null);
 
@@ -23,6 +24,7 @@ export default function SmoothScrollProvider({ children }: { children: ReactNode
     // Lenis is an external system; exposing the instance via context is the point of this effect.
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setLenis(instance);
+    registerLenis(instance);
 
     instance.on("scroll", ScrollTrigger.update);
     const tick = (time: number) => instance.raf(time * 1000);
@@ -33,6 +35,7 @@ export default function SmoothScrollProvider({ children }: { children: ReactNode
       gsap.ticker.remove(tick);
       instance.destroy();
       setLenis(null);
+      registerLenis(null);
     };
   }, []);
 
