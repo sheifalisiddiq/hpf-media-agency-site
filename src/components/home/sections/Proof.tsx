@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import SectionLabel from "@/components/shared/SectionLabel";
 import RevealText from "@/components/motion/RevealText";
 import CountUp from "@/components/motion/CountUp";
@@ -14,7 +14,6 @@ const teaser = [socialReels[1], socialReels[4], socialReels[2]];
 
 export default function Proof() {
   const ref = useRef<HTMLElement>(null);
-  const [active, setActive] = useState<string | null>(null);
 
   useGSAP(
     () => {
@@ -87,17 +86,13 @@ export default function Proof() {
         <div className="proof-reels mt-20 flex snap-x gap-5 overflow-x-auto pb-4 md:mt-32 md:justify-center md:gap-8 md:overflow-visible [scrollbar-width:none]">
           {teaser.map((reel, i) => (
             <div key={reel.id} className={`proof-reel snap-center ${i === 1 ? "md:mt-24" : ""}`}>
-              <SocialReelCard
-                reel={reel}
-                isActive={active === reel.id}
-                onPlay={() => setActive(active === reel.id ? null : reel.id)}
-              />
+              <SocialReelCard reel={reel} />
             </div>
           ))}
         </div>
         <div className="mt-14 flex flex-col items-start justify-between gap-6 border-t border-line pt-8 md:flex-row md:items-center">
           <p className="max-w-lg text-sm text-mute">
-            View counts are the published figures on each original post. Tap a reel to play it with sound.
+            View counts are the published figures on each original post.
           </p>
           <Link href="/works" className="t-label border-b border-crimson pb-1 text-bone hover:text-crimson-bright">
             See all work →

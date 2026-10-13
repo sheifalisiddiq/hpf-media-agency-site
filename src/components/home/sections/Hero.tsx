@@ -2,10 +2,8 @@
 
 import { useRef } from "react";
 import MagneticButton from "@/components/motion/MagneticButton";
-import Marquee from "@/components/motion/Marquee";
 import { introDelay } from "@/lib/intro";
 import Link from "next/link";
-import { valueNames } from "@/content/site";
 import { stages } from "@/content/method";
 import { gsap, SplitText, MOTION_OK, useGSAP } from "@/lib/gsap";
 
@@ -121,17 +119,6 @@ export default function Hero() {
             </MagneticButton>
           </div>
         </div>
-      </div>
-
-      <div className="hero-fade relative mt-16 border-y border-line py-5">
-        <Marquee duration={30} trackClassName="gap-12 pr-12" label="HPF values">
-          {[...valueNames, ...valueNames].map((v, i) => (
-            <span key={i} className="flex items-center gap-12 font-display text-3xl text-bone/70 md:text-4xl">
-              {v}
-              <span className="h-1.5 w-1.5 rounded-full bg-crimson" aria-hidden />
-            </span>
-          ))}
-        </Marquee>
       </div>
     </section>
   );

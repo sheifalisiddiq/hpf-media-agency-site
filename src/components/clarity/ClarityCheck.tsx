@@ -313,6 +313,22 @@ export default function ClarityCheck() {
                     <span className="sr-only">Phone or WhatsApp</span>
                     <input name="phone" placeholder="Phone / WhatsApp (optional)" className="field" autoComplete="tel" />
                   </label>
+                  <label className="block">
+                    <span className="sr-only">Current annual revenue</span>
+                    <input name="revenue" required placeholder="Current annual revenue (AED) *" className="field" />
+                  </label>
+                  <label className="block">
+                    <span className="sr-only">Marketing budget</span>
+                    <select name="budget" required defaultValue="" className="field">
+                      <option value="" disabled>
+                        Marketing budget (AED/month) *
+                      </option>
+                      <option value="10k-25k">10,000 – 25,000 AED</option>
+                      <option value="25k-50k">25,000 – 50,000 AED</option>
+                      <option value="50k-75k">50,000 – 75,000 AED</option>
+                      <option value="75k-100k">75,000 – 100,000+ AED</option>
+                    </select>
+                  </label>
                   {error && <p className="pt-3 text-sm text-crimson-bright">{error}</p>}
                   <div className="flex flex-col gap-4 pt-8 sm:flex-row sm:items-center">
                     <button

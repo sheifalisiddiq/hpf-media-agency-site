@@ -24,7 +24,7 @@ export async function POST(request: Request) {
   // Honeypot: bots fill hidden fields. Pretend success.
   if (contact.website) return NextResponse.json({ success: true });
 
-  const { name, email, company, phone } = contact;
+  const { name, email, company, phone, revenue, budget } = contact;
   if (!name || !email || !company || !EMAIL_RE.test(email)) {
     return NextResponse.json({ error: "Please add your name, a valid email and your company." }, { status: 400 });
   }
@@ -61,7 +61,9 @@ export async function POST(request: Request) {
         <p><strong>Name:</strong> ${escape(name)}<br/>
         <strong>Email:</strong> ${escape(email)}<br/>
         <strong>Company:</strong> ${escape(company)}<br/>
-        <strong>Phone:</strong> ${escape(phone) || "N/A"}</p>
+        <strong>Phone:</strong> ${escape(phone) || "N/A"}<br/>
+        <strong>Current revenue:</strong> ${escape(revenue) || "N/A"}<br/>
+        <strong>Marketing budget:</strong> ${escape(budget) || "N/A"}</p>
         <h3>Dimensions (higher = wider gap)</h3>
         <ul>${dimensionRows}</ul>
         <h3>Answers</h3>
